@@ -1,0 +1,124 @@
+{% extends 'home/base.html' %}
+{% load crispy_forms_tags %}
+{% load static i18n %}
+{% load static %}
+{% block custom_css %}
+<link href="{% static 'accounts/css/styles.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+{% block title %}
+
+{{ title }}
+
+
+{% endblock %}
+{% block content %}
+<!--Here-->
+ {% get_current_language as MY_LANGUAGE %}
+{% if MY_LANGUAGE == 'en' %}
+<div class="home-page-profile" >
+<div class="update-profile-form">
+
+
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <div class="media-body">
+          <h2 class="account-heading">{{ user.username }}</h2>
+          <p class="text-secondary">{{ user.email }}</p>
+        </div>
+      </div>
+      <form method="Post" enctype="multipart/form-data" class="field">
+          {% csrf_token %}
+          <fieldset class="form-group">
+              <legend class=" mb-4 info border-bottom-title-profile">{% trans 'Profile Info' %}</legend>
+          </fieldset>
+              <div class="form-row">
+     <div class="form-group col-md-4 mb-2 first-field">
+       {{ u_form.username|as_crispy_field }}
+      </div>
+
+     <div class="form-group col-md-4 mb-2">
+        {{ u_form.email|as_crispy_field }}
+      </div>
+              </div>
+              <div class="form-row">
+     <div class="form-group col-md-4 mb-2 first-field">
+       {{ u_form.first_name|as_crispy_field }}
+      </div>
+
+     <div class="form-group col-md-4 mb-2">
+        {{ u_form.last_name|as_crispy_field }}
+      </div>
+              </div>
+              <div class="form-row">
+     <div class="form-group col-md-6 mb-2 first-field">
+       {{ p_form.image|as_crispy_field }}
+      </div>
+
+              </div>
+               <div class="form-row">
+<div class="form-group col-md-5 mb-2 first-field" id="signup-btn">
+    <button class="btn btn-outline-info"  type="submit"> {% trans 'Save' %}</button>
+</div>
+</div>
+
+
+
+      </form>
+
+</div>
+    </div>
+{% else %}
+<div class="home-page-profile-arabic" >
+<div class="update-profile-form-arabic">
+     <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <div class="media-body-profile-arabic">
+          <h2 class="account-heading">{{ user.username }}</h2>
+          <p class="text-secondary">{{ user.email }}</p>
+        </div>
+      </div>
+      <form method="Post" enctype="multipart/form-data" class="field">
+          {% csrf_token %}
+          <fieldset class="form-group">
+              <legend class=" mb-4 info-arabic border-bottom-title-profile">{% trans 'Profile Info' %}</legend>
+          </fieldset>
+              <div class="form-row">
+     <div class="form-group col-md-4 mb-2 first-field">
+       {{ u_form.username|as_crispy_field }}
+      </div>
+
+     <div class="form-group col-md-4 mb-2">
+        {{ u_form.email|as_crispy_field }}
+      </div>
+              </div>
+              <div class="form-row">
+     <div class="form-group col-md-4 mb-2 first-field">
+       {{ u_form.first_name|as_crispy_field }}
+      </div>
+
+     <div class="form-group col-md-4 mb-2">
+        {{ u_form.last_name|as_crispy_field }}
+      </div>
+              </div>
+              <div class="form-row">
+     <div class="form-group col-md-6 mb-2 first-field">
+       {{ p_form.image|as_crispy_field }}
+      </div>
+
+              </div>
+               <div class="form-row">
+<div class="form-group col-md-5 mb-2 first-field" id="signup-btn-arabic">
+    <button class="btn btn-outline-info"  type="submit"> {% trans 'Save' %}</button>
+</div>
+</div>
+
+
+
+      </form>
+
+</div>
+    </div>
+{% endif %}
+{% endblock %}
+{% block custom_javascript %}
+{% endblock %}

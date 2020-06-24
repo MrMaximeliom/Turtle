@@ -1,0 +1,92 @@
+{% extends 'home/base.html' %}
+{% load crispy_forms_tags %}
+{% load static i18n %}
+{% load static %}
+{% block custom_css %}
+<link href="{% static 'accounts/css/styles.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+{% block title %}
+
+{{ title }}
+
+
+{% endblock %}
+{% block content %}
+<!--Here-->
+<div class="home-page">
+    <div class="signup-form">
+        {% get_current_language as MY_LANGUAGE %}
+        <h5 style="display:none;" id="lang">{{  MY_LANGUAGE }}</h5>
+        {% if user == 'teacher' %}
+   <h3 class="border-bottom-title mb-4">{% trans 'We are proud to have you with us!' %}</h3>
+        {% else %}
+           <h3 class="border-bottom-title mb-4">{% trans 'Keep on going your future is a head of you!' %}</h3>
+
+        {% endif %}
+<form class="field" method="post">
+{% csrf_token %}
+ <div class="form-row">
+     {% if MY_LANGUAGE == 'ar' %}
+     <div class="form-group col-md-4 mb-2 first-field">
+       {{ form.last_name|as_crispy_field }}
+      </div>
+
+     <div class="form-group col-md-4 mb-2">
+        {{ form.first_name|as_crispy_field }}
+      </div>
+     {% else %}
+     <div class="form-group col-md-4 mb-2 first-field">
+        {{ form.first_name|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-2">
+        {{ form.last_name|as_crispy_field }}
+      </div>
+     {% endif %}
+
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4 mb-2 first-field">
+        {{ form.country|as_crispy_field }}
+      </div>
+
+      <div class="form-group col-md-4 mb-2  " >
+
+        {{ form.gender|as_crispy_field }}
+
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4 mb-2 first-field">
+        {{ form.email|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-2">
+        {{ form.username|as_crispy_field }}
+      </div>
+    </div>
+        <div class="form-row">
+      <div class="form-group col-md-4 mb-2 first-field">
+        {{ form.password1|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-2">
+        {{ form.password2|as_crispy_field }}
+      </div>
+    </div>
+<div class="form-row">
+    <div class="form-group form-check col-md-5 mb-2 first-field confirm-signup">
+        <input type="radio">{% trans 'I Agree To' %} <a href="#">{% trans 'Terms' %}</a> {% trans 'and' %} <a href="#">{% trans 'Conditions' %}</a>
+      </div>
+</div>
+<div class="form-row">
+<div class="form-group col-md-5 mb-2 first-field" id="signup-btn">
+    <button class="btn btn-outline-info"  type="submit"> {% trans 'Sign Up' %}</button>
+</div>
+</div>
+</form>
+    </div>
+
+
+</div>
+{% endblock %}
+{% block custom_javascript %}
+<script src="{% static 'accounts/js/change_text_direction.js' %}"></script>
+{% endblock %}

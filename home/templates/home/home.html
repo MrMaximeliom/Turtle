@@ -1,0 +1,24 @@
+{% extends 'home/base.html' %}
+{% load i18n %}
+{% block title %}
+{{ title }}
+{% endblock %}
+{%  block content %}
+<div class="home-page">
+<h1> Welcome To Home Page , {{ MY_LANGUAGE }} </h1>
+<form action="{% url 'set_language' %}" method="post">
+  {% csrf_token %}
+        {% if  MY_LANGUAGE  != 'en' %}
+        <input name="next" type="hidden" value="{{ redirect_to }}" />
+  <input name="language" type="hidden" value="es" />
+  <input type="submit" value="English" />
+        {% else %}
+        <input name="next" type="hidden" value="{{ redirect_to }}" />
+  <input name="language" type="hidden" value="ar" />
+  <input type="submit" value="Arabic" />
+        {% endif %}
+</form>
+    {% if user.is_authenticated %}
+    {% endif %}
+</div>
+{% endblock %}

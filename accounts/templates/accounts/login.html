@@ -1,0 +1,73 @@
+{% extends 'home/base.html' %}
+{% load crispy_forms_tags %}
+{% load static i18n %}
+{% load static %}
+{% block content %}
+{% get_current_language as MY_LANGUAGE %}
+<div class="home-page">
+    {% if MY_LANGUAGE == 'en' %}
+<div class="login">
+
+    <h2>{% trans 'Welcome' %}</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-row">
+      <div class="form-group col-md-4 mb-2 first-field">
+        {{ form.email |as_crispy_field }}
+      </div>
+    </div>
+     <div class="form-row">
+      <div class="form-group col-md-4 mb-2 first-field">
+        {{ form.password |as_crispy_field }}
+      </div>
+    </div>
+      <div class="form-group col-md-5 mb-2 first-field" id="signup-btn">
+    <button class="btn btn-outline-info"  type="submit"> {% trans 'Log In' %}</button>
+
+</div>
+       <div class="form-row">
+      <div class="form-group col-md-4 mb-2 first-field">
+          <small class="text-muted">
+            {% trans 'Do you need an account?' %}  <a href="{% url 'register-page'%}" class="ml-2" >{% trans 'Sign Up' %}</a>
+          </small>
+      </div>
+       </div>
+  </form>
+
+</div>
+    {% else %}
+    <div class="login-arabic">
+
+    <h2 class="login-welcome-arabic">{% trans 'Welcome' %}</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-row">
+      <div class="form-group col-md-4 mb-2 first-field">
+        {{ form.email |as_crispy_field }}
+      </div>
+    </div>
+     <div class="form-row">
+      <div class="form-group col-md-4 mb-2 first-field">
+        {{ form.password |as_crispy_field }}
+      </div>
+    </div>
+      <div class="form-group col-md-5 mb-2 first-field" id="login-btn-arabic">
+    <button class="btn btn-outline-info"  type="submit"> {% trans 'Log In' %}</button>
+
+</div>
+       <div class="form-row">
+      <div class="form-group col-md-4 mb-2 first-field">
+          <small class="text-muted">
+            {% trans 'Do you need an account?' %}  <a href="{% url 'register-page'%}" class="ml-2" >{% trans 'Sign Up' %}</a>
+          </small>
+      </div>
+       </div>
+  </form>
+
+</div>
+    {% endif %}
+</div>
+{% endblock %}
+{% block custom_javascript %}
+
+{% endblock %}

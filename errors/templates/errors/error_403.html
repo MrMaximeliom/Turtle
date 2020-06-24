@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+{% load static i18n %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans 'Error Access Denied' %}</title>
+    <link href="{% static 'errors/css/error_403.css' %}" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="holder">
+<div class='hover'>
+
+  <div class='background'>
+
+    <div class='door'>403</div>
+    <div class='rug'></div>
+  </div>
+  <div class='foreground'>
+    <div class='bouncer'>
+      <div class='head'>
+        <div class='neck'></div>
+        <div class='eye left'></div>
+        <div class='eye right'></div>
+        <div class='ear'></div>
+      </div>
+      <div class='body'></div>
+      <div class='arm'></div>
+    </div >
+    <div class='poles'>
+      <div class='pole left'></div>
+      <div class='pole right'></div>
+      <div class='rope'></div>
+    </div>
+
+  </div>
+</div>
+    <p class="error-message"><strong style="font-size:20px;">{% trans 'Sorry I Cannot Let You Pass Through ... Access Denied' %}</strong></p>
+  <a href="#" class="btn btn-outline-info error-btn link_403">{% trans 'Go to Home' %}</a>
+
+</div>
+</body>
+</html>

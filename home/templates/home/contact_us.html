@@ -1,0 +1,54 @@
+{% extends "home/base.html" %}
+{% block content %}
+     <div class="container">
+          <h1>Connect With Us</h1>
+          <p>We would love to respond to your queries and help you success.<br>Feel free to get in touch with us.</p>
+          <div class="contact-box">
+               <div class="contact-left">
+                   <h3>Send your request</h3>
+                   <form>
+                        <div class="input-row">
+                             <div >
+                                  <label>Name</label>
+                                  <input type="text" class="input-field" placeholder="Mohamed Ali">
+                             </div>
+                             <div >
+                                  <label>Phone Number</label>
+                                  <input type="text" class="input-field" placeholder="+1 421 555 6574">
+                             </div>
+                        </div>
+                        <div class="input-row">
+                             <div >
+                                  <label>Email</label>
+                                  <input type="email" class="input-field" placeholder="demo@example.com">
+                             </div>
+                             <div >
+                                  <label>Subject</label>
+                                  <input type="text" class="input-field" placeholder="exam">
+                             </div>
+                        </div>
+                        <label>Message</label>
+                        <textarea rows="5" placeholder="Your Message"></textarea>
+                        <button type="submit" class="button-contact">Send</button>
+                   </form>
+               </div>
+               <div class="contact-right">
+                    <h3>Reach Us</h3>
+                    <table>
+                         <tr>
+                              <td>Email</td>
+                              <td>mlzsddg07@gmail.com</td>
+                         </tr>
+                         <tr>
+                              <td>Phone Number</td>
+                              <td>+249 99 962 7376</td>
+                         </tr>
+                         <tr>
+                              <td>Address</td>
+                              <td>Al-ardha Street, Omdurman, Khartoum, Sudan</td>
+                         </tr>
+                    </table>
+               </div>
+          </div>
+     </div>
+{% endblock content %}

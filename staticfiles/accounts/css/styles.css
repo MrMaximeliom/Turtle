@@ -1,0 +1,80 @@
+.field input[type=text],
+.field input[type=password],
+.field input[type=email] {
+border-top: none;
+border-left: none;
+border-right: none;
+margin-bottom: 10px;
+
+margin-bottom:5px;
+font-size:17px;
+cursor:hand;
+display:inline-block;
+}
+.field input[type=radio]{
+display:inline-block;
+}
+/*display: block ruby;*/
+
+.first-field{
+margin-right:100px;
+margin-left: 50px;
+}
+.confirm-signup{
+cursor:pointer;
+}
+.field label{
+font-size:18px;
+}
+/* testing code */
+.signup-form{
+border:3px solid #dddddd;
+width:75%;
+margin-bottom: 10px;
+}
+.form-section{
+margin-bottom: 25px;
+}
+.border-bottom-title{
+border-bottom:3px solid #dddddd;
+width: max-content;
+margin-top: 5px;
+}
+.info{
+margin-left: 48px;
+}
+.info-arabic{
+margin-right: 48px;
+}
+.border-bottom-title-profile{
+border-bottom:3px solid #dddddd;
+width: max-content;
+}
+.home-page-profile{
+margin-top: 76px;
+}
+.update-profile-form{
+/*border:3px solid #dddddd;*/
+width:75%;
+}
+.home-page-profile-arabic{
+margin-top: 76px;
+direction: rtl;
+text-align: right;
+}
+.update-profile-form-arabic{
+/*border: 3px solid #dddddd;*/
+width: 75%;
+direction: rtl;
+margin-right: auto;
+}
+.media-body-profile-arabic{
+flex: 1;
+margin-right: 10px;
+margin-top: 10px;
+}
+
+
+
+
+/* ending testing code */

@@ -1,0 +1,68 @@
+{% extends 'home/base.html' %}
+{% load static i18n %}
+{% load static %}
+{% block custom_css %}
+<link href="{% static 'accounts/css/register.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block title %}
+{% trans 'Registration' %}
+{% endblock %}
+{% block content %}
+<div class="home-page">
+     {% get_current_language as MY_LANGUAGE %}
+    {% if MY_LANGUAGE == 'en' %}
+    <div class="welcome-message">
+<h4>{% trans 'Welcome To Our Site' %} </h4>
+</div>
+    <p class="details">
+
+      {% trans "We think that learning is the powerful process of all times in making our lives better ," %}
+       {% trans  "helping us to improve our lives , finding solutions to our endless problems , and making" %}
+        {% trans "the world a better place for all of us. Testing process is one of the most important used" %}
+        {% trans "ways to prove that to which degree the students have understood the learning material, and" %}
+        {% trans "to measure the overall learning progress. Our system aims to provide a convenient environment" %}
+        {% trans "for each teachers and students , to help teachers prepare exams to students and make those students" %}
+        {% trans "able to attempt those exams , it will help teachers in the process of auto-correcting students' answers," %}
+        {% trans "and provide a detailed results to describe how the correcting process was conducted" %}
+
+        </p>
+
+    <h5 class="join-us">{% trans  "Join Us Today!" %}</h5>
+    {% else %}
+<div class="welcome-message-arabic">
+<h4>{% trans 'Welcome To Our Site' %} </h4>
+</div>
+    <p class="details-arabic">
+
+      {% trans "We think that learning is the powerful process of all times in making our lives better ," %}
+       {% trans  "helping us to improve our lives , finding solutions to our endless problems , and making" %}
+        {% trans "the world a better place for all of us. Testing process is one of the most important used" %}
+        {% trans "ways to prove that to which degree the students have understood the learning material, and" %}
+        {% trans "to measure the overall learning progress. Our system aims to provide a convenient environment" %}
+        {% trans "for each teachers and students , to help teachers prepare exams to students and make those students" %}
+        {% trans "able to attempt those exams , it will help teachers in the process of auto-correcting students' answers," %}
+        {% trans "and provide a detailed results to describe how the correcting process was conducted" %}
+
+        </p>
+
+    <h5 class="join-us">{% trans  "Join Us Today!" %}</h5>
+       {% endif %}
+    <div class="row justify-content-start">
+    <div class="col-4">
+<div class="register-teacher">
+      <a href="{% url 'teacher-signup-page' %}" class="btn btn-outline-info">{% trans "Sign Up As Teacher" %}</a>
+    </div>
+    </div>
+    <div class="col-4">
+     <div class="register-student">
+         <a href="{% url 'student-signup-page' %}" class="btn btn-outline-info">{% trans "Sign Up As Student" %}</a>
+
+    </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,672 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";
+body,html{
+  height: 100%;
+  margin:0;
+}
+body {
+  /*background: #fafafa;*/
+  color: #333333;
+  /*margin-top: 5rem;*/
+  /* my code */
+ font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  margin:0;
+  /* ends here */
+}
+
+.custom-content{
+margin-left:370px;
+}
+/* full background image for whole website */
+.bg {
+  /* The image used */
+  background-image: url(/static/home/img/bg2.jpg);
+
+  /* Full height */
+  height: 100%;
+
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* changing default color for h1-h6 */
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+}
+/* removing margin from all lists */
+ul {
+  margin: 0;
+}
+
+/* color of links in header */
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+/* hover color of links in header */
+.site-header .navbar-nav .nav-link:hover {
+  color: #e77b73;
+}
+/* font weight of links in header which have the class active */
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+/* specifying behaviour of sidebar */
+#customSideBar{
+position: fixed;
+  z-index: 1;
+  top: 75px;
+  left: 10px;
+overflow:auto;
+/* my code */
+max-width: 297px;
+min-width: 200px;
+/*max-width: 267px;*/
+max-height: 81%;
+/* ends */
+
+}
+/* specifying behaviour of sidebar */
+#arabicCustomSideBar{
+position: fixed;
+  z-index: 1;
+  top: 75px;
+  left: 10px;
+overflow:auto;
+/* my code */
+max-width: 297px;
+min-width: 200px;
+max-width: 267px;
+max-height: 81%;
+/* ends */
+text-align: right;
+
+}
+/* customizing site logo icon */
+.site-logo{
+border-radius:12px;
+width:40px;
+height:40px;
+}
+
+/* customizing window links of sign up link in header */
+#SignUpOptions.dropdown-menu.show{
+margin-right: 165px;
+font-size: 18px;
+}
+/* customizing  links of sign-up dorp-down button in header  */
+#SignUpOptions.dropdown-menu.show a{
+color:#222629;
+}
+/* customizing  links of sign-up dorp-down button in header when hovered  */
+#SignUpOptions.dropdown-menu.show a:hover{
+color:#e77b73;
+}
+/* customizing window links of sign up link in header */
+#ArabicSignUpOptions.dropdown-menu.show{
+margin-right: 165px;
+font-size: 18px;
+}
+/* customizing  links of sign-up dorp-down button in header  */
+#ArabicSignUpOptions.dropdown-menu.show a{
+color:black;
+}
+/* customizing  links of sign-up dorp-down button in header when hovered  */
+#ArabicSignUpOptions.dropdown-menu.show a:hover{
+color:#e77b73;
+}
+/* customizing  links of header  */
+#navbar-links.container-fluid  a{
+color:white;
+}
+#navbar-links.container-fluid  a:hover{
+color:#e77b73;
+}
+/* changing font size of header links */
+#navbar-links{
+font-size: 18px;
+}
+/* changing behaviour of header links when hovered */
+#nav .navbar-nav li > a:hover
+{
+ background-color: #333;
+  color: #fff;
+}
+/* changing behaviour of header links when focused */
+#navbar-links.container-fluid  a:focus{
+background:unset;
+}
+/* changing width of drop-down menu in sign up link in header */
+#SignUpOptions.dropdown-menu{
+width:7rem;
+}
+/* changing behavior of drop-down menu for user's profile  */
+#profile_pic.dropdown-menu.show{
+margin-left: -82px;
+color: black;
+}
+/* changing behavior of drop-down menu for links of user's profile  */
+#profile_pic.dropdown-menu.show a{
+color:black;
+}
+/* changing behavior of drop-down menu for hovered links of user's profile  */
+#profile_pic.dropdown-menu.show a:hover{
+color:#375C47;
+}
+/* customizing page contents to appear perfectly while using base page */
+.home-page{
+	margin-top:100px;
+}
+.home-page h1, h2, h3, h4, h5, h6{
+	color:#0B6478;
+}
+.terms-page-arabic{
+margin-top:100px;
+direction:rtl;
+text-align:right;
+margin-right: 280px;
+}
+.terms-page{
+    margin-right:170px;
+
+}
+.baseContent-arabic{
+
+}
+/* customizing message box */
+.message-box{
+margin-top:100px;
+margin-bottom: -84px;
+width: max-content;
+}
+/* changing behaviour of drop-down icon (used in sidebar)*/
+.sidebar-dropdown-icon   {
+  margin-left:5px;
+}
+/* changing behaviour of drop-down icon (used in header)*/
+.header-dropdown-icon   {
+  margin-top:13px;
+  color:white;
+  margin-right:-5
+}
+
+/* changing behaviour of sidebar*/
+.content-section-sidebar{
+background: #ffffff;
+padding: 10px 20px;
+border: 2px solid #dddddd;
+border-radius: 3px;
+}
+/* changing behaviour of sidebar*/
+.arabic-content-section-sidebar{
+background: #ffffff;
+padding: 10px 20px;
+border: 2px solid #dddddd;
+border-radius: 3px;
+width: 209px;
+}
+/* changing link colors of sidebar*/
+.arabic-content-section-sidebar a{
+color:#941351;
+}
+/* changing link behaviour of sidebar when hovered*/
+.arabic-content-section-sidebar a:hover,a:active, a:focus{
+color:#941351;
+text-decoration:none;
+outline: none;
+}
+/* changing color of sidebar links*/
+.content-section-sidebar a{
+color:#941351;
+}
+/* changing behavior of sidebar links when hovered*/
+.content-section-sidebar a:hover,a:active, a:focus{
+color:#941351;
+text-decoration:none;
+outline: none;
+}
+/* changing color of h3 header in sidebar */
+.content-section-sidebar h3{
+color:#0092B3;
+}
+/* customizing behaviour of language btn in sidebar */
+.language-btn{
+text-align: revert;
+color:#941351;
+}
+/* changing nav bar background color */
+#nav{
+/*background-color:#0B6478;*/
+background-color:#5C374C;
+}
+#nav .navbar-nav li > a:hover{
+background-color: #333;
+  color: #e77b73;
+}
+.nav-active{
+background-color:#331F2A;
+}
+#nav a{
+/*color:#941351;*/
+color:white;
+}
+
+/* ends */
+
+/* default styles begins here */
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 2px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+
+.content-section a:hover{
+color:red;
+}
+.content-section ul li a[aria-expanded=true]{
+color:red;
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+/* default styles ends here */
+/* Preloder */
+
+#preloder {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 999999;
+	background: #fff;
+}
+
+.loader {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -13px;
+	margin-left: -13px;
+	border-radius: 60px;
+	animation: loader 0.8s linear infinite;
+	-webkit-animation: loader 0.8s linear infinite;
+}
+
+@keyframes loader {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+		border: 4px solid #f44336;
+		border-left-color: transparent;
+	}
+	50% {
+		-webkit-transform: rotate(180deg);
+		transform: rotate(180deg);
+		border: 4px solid #673ab7;
+		border-left-color: transparent;
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+		border: 4px solid #f44336;
+		border-left-color: transparent;
+	}
+}
+
+@-webkit-keyframes loader {
+	0% {
+		-webkit-transform: rotate(0deg);
+		border: 4px solid #f44336;
+		border-left-color: transparent;
+	}
+	50% {
+		-webkit-transform: rotate(180deg);
+		border: 4px solid #673ab7;
+		border-left-color: transparent;
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		border: 4px solid #f44336;
+		border-left-color: transparent;
+	}
+}
+/* Circle progress */
+
+.circle-progress {
+	text-align: center;
+	display: block;
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.circle-progress canvas {
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.circle-progress .progress-info {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	margin-top: -45px;
+}
+
+.circle-progress .progress-info h2 {
+	font-weight: 700;
+	margin-bottom: 5px;
+}
+
+.circle-progress .progress-info p {
+	font-size: 14px;
+	margin-bottom: 0;
+}
+
+.fact-item h2 {
+	font-size: 60px;
+	color: #d82a4e;
+}
+
+.icon-box h5 {
+	margin-bottom: 20px;
+}
+
+.icon-box h5 span {
+	font-size: 60px;
+	color: #d82a4e;
+	margin-right: 15px;
+}
+/* The footer section */
+/* my edits */
+
+.content-page{
+  min-height: calc(100vh - 70px);
+}
+.footer-page{
+  height: 69px;
+  background: #5C374C;
+   padding: 40px 40px 0 40px;
+   font-size: 18px;
+}
+
+
+/*  ends */
+.footer-bottom {
+overflow: hidden;
+background: #343a40;
+padding: 20px 0;
+margin-top: 50px;
+position: fixed;
+bottom: -2px;
+width: 100%;
+}
+/* changing behaviour of footer menu */
+.footer-menu {
+	list-style: none;
+	float: right;
+}
+/* changing behaviour of footer menu list items */
+.footer-menu li {
+	display: inline;
+
+}
+/* changing behaviour of footer menu list item for last child with a tag*/
+.footer-menu li:last-child a {
+	padding-right: 0;
+	margin-right: 0;
+}
+/* changing behaviour of footer menu list item for last child with a tag after being clicked */
+.footer-menu li:last-child a:after {
+	display: none;
+}
+/* changing behaviour of footer menu list item with a tag when hovered */
+.footer-menu li a:hover {
+
+
+}
+
+#footer.footer-menu a:hover{
+border:none;
+color:white;
+text-decoration:none;
+}
+
+/* changing behaviour of footer menu list item with a tag */
+.footer-menu li a {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 600;
+	color: #fff;
+	padding-right: 10px;
+	margin-right: 10px;
+	position: relative;
+}
+/* changing behaviour of footer menu list item with a tag after being clicked */
+.footer-menu li a:after {
+	position: absolute;
+	content: "|";
+	right: 0;
+	top: 0;
+}
+/* copyright section of footer  */
+.copyright {
+	padding-top: 3px;
+	float: left;
+	font-size: 15px;
+	font-weight: 600;
+	color: #fff;
+}
+/* link to authors in copyright  */
+.copyright a {
+color:#F0C808;
+
+}
+/* customizing footer section (currently not used ) */
+.footer-warp {
+	max-width: 1559px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+/* changing color heart in footer  */
+#footerHeart{
+color:red;
+}
+/* end footer section */
+
+.input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+/* pre-loader styles */
+/* original */
+.pre-container-old{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+/* ends here*/
+.pre-container{
+position:absolute;
+top:50%;
+left:50%;
+transform: translate(-50%,-50%);
+z-index: 99;
+display: flex;
+height: 100vh;
+width: 100vw;
+/*background-image:url(https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);
+background-position: center;
+background-repeat: no-repeat;*/
+background-color:#fff;
+ overflow:hidden;
+}
+/*
+old
+.dot-container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+width:120px;
+*/
+.dot-container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+width:120px;
+position: fixed;
+top: 50%;
+left: 50%;
+}
+.special{
+position:fixed;
+
+top:0;
+left:0;
+width:100%;
+height:100%
+
+
+}
+.dot-first{
+width:24px;
+height:24px;
+border-radius:50%;
+background:#9A1750;
+}
+.dot-second{
+width:24px;
+height:24px;
+border-radius:50%;
+background:#EE4C7C;
+}
+.dot-third{
+width:24px;
+height:24px;
+border-radius:50%;
+background:#E3AFBC;
+}
+.dot-1{
+animation-name:flow;
+animation-duration:.4s;
+animation-timing-function:ease;
+animation-delay:0s;
+animation-iteration-count:infinite;
+animation-direction:alternate;
+}
+.dot-2{
+animation:flow .4s ease .2s infinite alternate;
+}
+.dot-3{
+animation:flow .4s ease .4s infinite alternate;
+}
+.special.hidden{
+animation:fadeOut 1s;
+animation-fill-mode:forwards;
+}
+.pre-container.hidden{
+animation:fadeOut 1s;
+animation-fill-mode:forwards;
+
+}
+@keyframes flow{
+from{
+opacity:1;
+transform:scale(1.2);
+}
+to{
+opacity:.20;
+transform:scale(.75);
+}
+}
+/*@keyframes fadeOut{
+100%{
+opacity:0;
+visibility:hidden;
+}
+}*/
+@keyframes fadeOut{
+0% {
+opacity:1.5;
+
+}
+50% {
+opacity:.9;
+}
+70% {
+opacity:.5;
+}
+100%{
+opacity:0;
+visibility:hidden;
+}
+}
+/* pre-loader ends */
+.login-arabic{
+margin-top: 100px;
+text-align: right;
+}
+.login{
+direction:ltr;
+text-align:left;
+}
+#login-btn-arabic{
+margin-left : -73px;
+}
+.login-welcome-arabic{
+margin-right: 667px;
+}

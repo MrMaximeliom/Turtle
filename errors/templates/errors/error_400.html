@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+{% load static i18n %}
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% trans 'Bad Request Error' %} </title>
+<link href="{% static 'errors/css/error_400.css' %}" type="text/css" rel="stylesheet">
+
+
+</head>
+<body>
+
+
+<section class="page_404">
+	<div class="container">
+		<div class="row">
+		<div class="col-md-4 ">
+		<div class="col-sm-10 col-sm-offset-1  text-center">
+			 {% get_current_language as MY_LANGUAGE %}
+
+{% if MY_LANGUAGE == 'en' %}
+			<div class="four_zero_four_bg">
+			<h1 class="text-center ">400</h1>
+
+
+		</div>
+
+		<div class="contant_box_404">
+		<h3 class="h2">
+		{% trans 'Something went wrong ..' %}
+		</h3>
+
+		<p>{% trans 'Sorry we could not understand your request , please try again!' %}</p>
+
+		<a href="{% url 'home-page' %}" class="link_404">{% trans 'Go to Home' %}</a>
+	</div>
+			{% else %}
+
+		<div class="four_zero_four_bg" style="direction:rtl;">
+			<h1 class="text-center ">400</h1>
+
+
+		</div>
+
+		<div class="contant_box_404-arabic">
+		<h3 class="h2">
+		{% trans 'Something went wrong ..' %}
+		</h3>
+
+		<p>{% trans 'Sorry we could not understand your request , please try again!' %}</p>
+
+		<a href="{% url 'home-page' %}" class="link_404">{% trans 'Go to Home' %}</a>
+	</div>
+			{% endif %}
+		</div>
+		</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+</body>
+</html>

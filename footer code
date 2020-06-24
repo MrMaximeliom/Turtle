@@ -1,0 +1,29 @@
+<!-- footer section -->
+	<footer class="footer-page">
+
+		<div class="">
+			<div class="">
+				<ul class="footer-menu">
+					<li><a href="#">
+                        <i class="fas fa-file-contract"></i>
+                        {% trans 'Terms' %} {% trans '&' %} {% trans 'Conditions' %}
+                    </a></li>
+					<li><a href="#">
+
+                 <i class="fas fa-eye-slash"></i>
+                        {% trans 'Privacy Policy' %}
+                    </a>
+                    </li>
+					<li><a href="#">
+                        <i class="fas fa-cookie-bite"></i>
+                        {% trans 'Cookies Policy' %}</a>
+                    </li>
+				</ul>
+				<div class="copyright">
+{% trans 'Copyright' %} &copy;<script>document.write(new Date().getFullYear());</script> {% trans 'All rights reserved' %} | {% trans 'Made with' %} <i class="fa fa-heart" id="footerHeart"  aria-hidden="true"></i> {% trans 'by' %} <a href="#" target="_blank">{% trans 'Malaz' %} </a>{% trans '&' %}
+                    <a href="#" target="_blank">{% trans "Moa'yed" %}</a>
+</div>
+			</div>
+		</div>
+	</footer>
+	<!-- footer section end -->

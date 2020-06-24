@@ -1,0 +1,30 @@
+.welcome-message{
+border-bottom: 6px dotted #dddddd;
+width: max-content;
+margin-bottom: 20px;
+
+}
+.welcome-message-arabic{
+border-bottom: 6px dotted #dddddd;
+width: max-content;
+margin-bottom: 20px;
+margin-left: 495px;
+}
+.details{
+width: 70%;
+}
+.details-arabic{
+width: 70%;
+text-align: right;
+direction: rtl;
+}
+.register-teacher{
+margin-left: 60px;
+}
+.register-student{
+
+}
+.join-us{
+margin-left: 209px;
+margin-bottom: 20px;
+}
