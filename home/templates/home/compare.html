@@ -1,41 +1,61 @@
-{% extends "home/corybase.html" %}
+{% extends "home/base.html" %}
+{% load static i18n %}
+{% load static %}
+{% block custom_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/compare.css' %}">
+{% endblock %}
 {% block content %}
+{% get_current_language as MY_LANGUAGE %}
+<div class = "home-page">
+    <div class="compare">
 <div class="container py-2">
-
- <form class="" action="process.html" method="post">
-<!--     <div class="form-group">-->
-<!--        <div class="form-group row">-->
-<!--          <div class="col-sm-auto">-->
-<!--         <label for="ansFile">Choose Student Answer File or Write it below!:</label>-->
-<!--         <input type="file" class="form-control-file" name="ansFile" id="ansFile" value="">-->
-<!--         </div>-->
-
-<!--       <div class="col-sm-auto">-->
-<!--      <label for="optFile">Choose Optimal Answer File or Write it below!:</label>-->
-<!--      <input type="file" class="form-control-file" name="optFile" id="optFile" value="">-->
-<!--      </div>-->
-<!--       </div>-->
-<!--     </div>-->
+{% if MY_LANGUAGE == 'en' %}
+ <form class="compare-form" action="process.html" method="post">
      <div class="form-group row">
-         <div class="col-md-6">
-       <label for="optAnsw">Student Answer:</label>
+         <div class="col-md-6" id="studentAnswer">
+       <label for="optAnsw">{% trans 'Student Answer' %}</label>
        <textarea name="optAnsw" rows="10" id="optAnsw"  class="form-control"></textarea>
      </div>
-       <div class="col-md-6">
-       <label for="stdAnsw">Optimal Answer:</label>
+       <div class="col-md-6" id="optimalAnswer">
+       <label for="stdAnsw">{% trans 'Optimal Answer' %}</label>
        <textarea name="stdAnsw" rows="10" id="stdAnsw" class="form-control"></textarea>
        </div>
      </div>
      <br>
-     <div class="col-md-12 text-center">
-    <button name="compare" class="btn btn-primary">Compare Answers!</button>
+     <div class="col-md-12 text-center" id="compare-results-button">
+    <button name="compare" class="btn btn-primary">{% trans 'Compare Answers!' %}</button>
 </div>
 <div class="col-md-12 text-center">
   <br>
-  <label for="results">Results:</label>
-<textarea name="results" rows="5" id="results" class="form-control"></textarea>
+  <label for="results" class="results-label">{% trans 'Results' %}</label>
+<textarea name="results" rows="5" id="results" class="form-control" ></textarea>
 </div>
    </form>
-        </div>
+    {% else %}
+    <form class="compare-form-arabic" action="process.html" method="post">
+     <div class="form-group row">
+         <div class="col-md-6" id="studentAnswerArabic">
+       <label for="optAnsw">{% trans 'Student Answer' %}</label>
+       <textarea name="optAnsw" rows="10" id="optAnswArabic"  class="form-control"></textarea>
+     </div>
+       <div class="col-md-6" id="optimalAnswerArabic">
+       <label for="stdAnsw">{% trans 'Optimal Answer' %}</label>
+       <textarea name="stdAnsw" rows="10" id="stdAnswArabic" class="form-control"></textarea>
+       </div>
+     </div>
+     <br>
+     <div class="col-md-12 text-center" id="compare-results-button-Arabic">
+    <button name="compare" class="btn btn-primary">{% trans 'Compare Answers!' %}</button>
+</div>
+<div class="col-md-12 text-center">
+  <br>
+  <label for="results" class="results-label-Arabic">{% trans 'Results' %}</label>
+<textarea name="results" rows="5" id="results-Arabic" class="form-control" ></textarea>
+</div>
+   </form>
+    {% endif %}
 
+        </div>
+        </div>
+</div>
 {% endblock %}

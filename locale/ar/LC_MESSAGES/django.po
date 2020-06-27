@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-17 08:44+0200\n"
+"POT-Creation-Date: 2020-06-27 11:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,36 +19,36 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: accounts/forms.py:9 accounts/models.py:9 accounts/models.py:272
+#: accounts/forms.py:9 accounts/models.py:10 accounts/models.py:273
 msgid "Male"
 msgstr "ذكر"
 
-#: accounts/forms.py:10 accounts/models.py:10
+#: accounts/forms.py:10 accounts/models.py:11
 msgid "Female"
 msgstr "أنثى"
 
 #: accounts/forms.py:222 accounts/forms.py:261 accounts/forms.py:271
-#: accounts/forms.py:280 accounts/models.py:259
+#: accounts/forms.py:280 accounts/models.py:260
 msgid "email"
 msgstr "البريد الإلكتروني"
 
 #: accounts/forms.py:223 accounts/forms.py:262 accounts/forms.py:282
-#: accounts/models.py:270
+#: accounts/models.py:271
 msgid "first name"
 msgstr "الاسم الأول"
 
 #: accounts/forms.py:224 accounts/forms.py:263 accounts/forms.py:283
-#: accounts/models.py:271
+#: accounts/models.py:272
 #, fuzzy
 #| msgid "last name"
 msgid "last name"
 msgstr "الاسم الأخير"
 
-#: accounts/forms.py:225 accounts/forms.py:264 accounts/models.py:275
+#: accounts/forms.py:225 accounts/forms.py:264 accounts/models.py:276
 msgid "country"
 msgstr "الدولة"
 
-#: accounts/forms.py:226 accounts/forms.py:265 accounts/models.py:272
+#: accounts/forms.py:226 accounts/forms.py:265 accounts/models.py:273
 msgid "gender"
 msgstr "النوع"
 
@@ -64,65 +64,71 @@ msgstr ""
 msgid "image"
 msgstr "الصورة"
 
-#: accounts/models.py:215
+#: accounts/models.py:216
 msgid "Users must have an email address"
 msgstr "لابد أن يمتلك المستخدمين بريد إلكتروني"
 
-#: accounts/models.py:217
+#: accounts/models.py:218
 msgid "Users must have a username"
 msgstr "لابد أن يمتلك المستخدمين اسم مستخدم"
 
-#: accounts/models.py:219
+#: accounts/models.py:220
 msgid "Users must provide their first name"
 msgstr "لابد أن يوفر المستخدمين الاسم الأول لهم"
 
-#: accounts/models.py:221
+#: accounts/models.py:222
 msgid "Users must provide their last name"
 msgstr "لابد أن يوفر المستخدمين الاسم الثاني لهم"
 
-#: accounts/models.py:223
+#: accounts/models.py:224
 msgid "Users must provide their gender"
 msgstr "لابد أن يوفر المستخدمين النوع الخاص بهم"
 
-#: accounts/models.py:258
+#: accounts/models.py:259
 msgid "Only alphabet characters are allowed."
 msgstr "مسموح فقط بالأحرف هنا"
 
-#: accounts/models.py:261
+#: accounts/models.py:262
 msgid "date joined"
 msgstr "تاريخ الانضمام"
 
-#: accounts/models.py:262
+#: accounts/models.py:263
 msgid "last login"
 msgstr "آخر تسجيل دخول"
 
-#: accounts/models.py:274
+#: accounts/models.py:275
 msgid "profile picture"
 msgstr "صورة الملف الشخصي"
 
-#: accounts/templates/accounts/login.html:13
+#: accounts/templates/accounts/login.html:11
+#: accounts/templates/accounts/login.html:41
 msgid "Welcome"
 msgstr "مرحبا بك"
 
-#: accounts/templates/accounts/login.html:28
+#: accounts/templates/accounts/login.html:25
+#: accounts/templates/accounts/login.html:55
 msgid "Log In"
 msgstr "تسجيل الدخول"
 
-#: accounts/templates/accounts/login.html:34
+#: accounts/templates/accounts/login.html:31
+#: accounts/templates/accounts/login.html:61
 msgid "Do you need an account?"
 msgstr "هل تحتاج إلى حساب؟"
 
-#: accounts/templates/accounts/login.html:34
-#: accounts/templates/accounts/signup.html:88 home/templates/home/base.html:84
+#: accounts/templates/accounts/login.html:31
+#: accounts/templates/accounts/login.html:61
+#: accounts/templates/accounts/signup.html:81 home/templates/home/base.html:84
 #: home/templates/home/base.html:100
 msgid "Sign Up"
 msgstr "إنشاء حساب"
 
-#: accounts/templates/accounts/profile.html:28
+#: accounts/templates/accounts/profile.html:32
+#: accounts/templates/accounts/profile.html:83
 msgid "Profile Info"
 msgstr "المعلومات الشخصية"
 
-#: accounts/templates/accounts/profile.html:56
+#: accounts/templates/accounts/profile.html:60
+#: accounts/templates/accounts/profile.html:111
 msgid "Save"
 msgstr "حفظ"
 
@@ -217,21 +223,21 @@ msgstr "نحن مسرورون بانضمامك إلينا "
 msgid "Keep on going your future is a head of you!"
 msgstr "واصل تقدمك فالمستقبل أمامك"
 
-#: accounts/templates/accounts/signup.html:83
+#: accounts/templates/accounts/signup.html:76
 msgid "I Agree To"
 msgstr "أنا أوافق على"
 
-#: accounts/templates/accounts/signup.html:83 home/templates/home/base.html:346
+#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:346
 msgid "Terms"
 msgstr "الأحكام"
 
-#: accounts/templates/accounts/signup.html:83
+#: accounts/templates/accounts/signup.html:76
 #: venv/lib/python3.8/site-packages/django/db/models/base.py:1181
 #: venv/lib/python3.8/site-packages/django/forms/models.py:759
 msgid "and"
 msgstr "و"
 
-#: accounts/templates/accounts/signup.html:83 home/templates/home/base.html:346
+#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:346
 msgid "Conditions"
 msgstr "الشروط"
 
@@ -480,13 +486,42 @@ msgstr "ملاذ"
 msgid "Moa'yed"
 msgstr "مؤيد"
 
+#: home/templates/home/compare.html:15
+msgid "Student Answer"
+msgstr "إجابة الطالب"
+
+#: home/templates/home/compare.html:19
+msgid "Optimal Answer"
+msgstr "الإجابة النموذجية"
+
+#: home/templates/home/compare.html:25
+msgid "Compare Answers!"
+msgstr "!مقارنة الإجابتين"
+
+#: home/templates/home/compare.html:29
+msgid "Results"
+msgstr "النتائج"
+
 #: home/views.py:8
 msgid "HomePage"
 msgstr "الصفحة الرئيسية"
 
-#: support/templates/support/terms_and_conditions.html:18
+#: support/templates/support/terms_and_conditions.html:20
+#: support/templates/support/terms_and_conditions.html:147
 msgid "Terms and Conditions"
 msgstr "الأحكام والشروط"
+
+#: venv/lib/python3.8/site-packages/botocore/docs/bcdoc/textwriter.py:469
+#, fuzzy, python-format
+#| msgid "image"
+msgid "[image: %s]"
+msgstr "الصورة"
+
+#: venv/lib/python3.8/site-packages/botocore/docs/bcdoc/textwriter.py:470
+#, fuzzy
+#| msgid "image"
+msgid "[image]"
+msgstr "الصورة"
 
 #: venv/lib/python3.8/site-packages/crispy_forms/tests/test_form_helper.py:129
 #: venv/lib/python3.8/site-packages/crispy_forms/tests/test_form_helper.py:139

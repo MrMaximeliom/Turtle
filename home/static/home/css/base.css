@@ -480,7 +480,7 @@ width: 100%;
 
 #footer.footer-menu a:hover{
 border:none;
-color:white;
+color:#e77b73;
 text-decoration:none;
 }
 
@@ -500,6 +500,7 @@ text-decoration:none;
 	content: "|";
 	right: 0;
 	top: 0;
+	color:white;
 }
 /* copyright section of footer  */
 .copyright {
