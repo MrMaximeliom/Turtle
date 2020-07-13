@@ -88,8 +88,8 @@ text-align: right;
 /* customizing site logo icon */
 .site-logo{
 border-radius:12px;
-width:40px;
-height:40px;
+width:35px;
+height:35px;
 }
 
 /* customizing window links of sign up link in header */
@@ -113,6 +113,7 @@ font-size: 18px;
 /* customizing  links of sign-up dorp-down button in header  */
 #ArabicSignUpOptions.dropdown-menu.show a{
 color:black;
+direction: rtl;
 }
 /* customizing  links of sign-up dorp-down button in header when hovered  */
 #ArabicSignUpOptions.dropdown-menu.show a:hover{
@@ -252,6 +253,10 @@ background-color:#331F2A;
 #nav a{
 /*color:#941351;*/
 color:white;
+}
+.links-in-navbar{
+display: inherit;
+margin-left: 60px;
 }
 
 /* ends */
@@ -513,6 +518,7 @@ text-decoration:none;
 /* link to authors in copyright  */
 .copyright a {
 color:#F0C808;
+text-decoration: none;
 
 }
 /* customizing footer section (currently not used ) */

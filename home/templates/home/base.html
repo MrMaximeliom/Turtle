@@ -44,16 +44,51 @@
     <header class="site-header">
       <nav class="navbar navbar-expand-lg navbar-dark  " id="nav">
         <div class="container-fluid " id="navbar-links">
+            <nav class="navbar navbar-dark bg-steel">
           <a class="navbar-brand mr-4" href="{% url 'home-page' %}">
           <img src="{% static 'home/img/logo.png' %}" class="d-inline-block align-top logo site-logo"  alt="">
+               ExaOnline
           </a>
+            </nav>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
+
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{% url 'home-page' %}">{% trans 'Home' %}</a>
-              <a class="nav-item nav-link" href="#">{% trans 'About' %}</a>
+                <div class="links-in-navbar">
+                {% if MY_LANGUAGE == 'en' %}
+              <a class="nav-item nav-link" href="{% url 'home-page' %}">
+                  <i class="fa fa-home"></i>
+                  {% trans 'Home' %}
+              </a>
+              <a class="nav-item nav-link" href="#">
+                  <i class="fa fa-briefcase"></i>
+                  {% trans 'About' %}
+              </a>
+                   <a class="nav-item nav-link" href="{% url 'contact_us-page' %}">
+                  <i class="fa fa-paper-plane"></i>
+                  {% trans 'Contact Us' %}
+              </a>
+                {% else %}
+                <a class="nav-item nav-link" href="{% url 'home-page' %}">
+
+                  {% trans 'Home' %}
+                    <i class="fa fa-home"></i>
+              </a>
+              <a class="nav-item nav-link" href="#">
+
+                  {% trans 'About' %}
+                   <i class="fa fa-briefcase"></i>
+              </a>
+                   <a class="nav-item nav-link" href="{% url 'contact_us-page' %}">
+
+                 {% trans 'Contact Us' %}
+                        <i class="fa fa-paper-plane"></i>
+              </a>
+                {% endif %}
+                </div>
+
             </div>
             <!-- Navbar Right Side dropdown-toggle -->
             <div class="navbar-nav">

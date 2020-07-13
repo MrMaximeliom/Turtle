@@ -10,7 +10,7 @@
     <div class="compare">
 <div class="container py-2">
 {% if MY_LANGUAGE == 'en' %}
- <form class="compare-form" action="process.html" method="post">
+ <form class="compare-form" action="" method="post">
      <div class="form-group row">
          <div class="col-md-6" id="studentAnswer">
        <label for="optAnsw">{% trans 'Student Answer' %}</label>
@@ -28,7 +28,7 @@
 <div class="col-md-12 text-center">
   <br>
   <label for="results" class="results-label">{% trans 'Results' %}</label>
-<textarea name="results" rows="5" id="results" class="form-control" ></textarea>
+<textarea name="results" rows="5" id="results" class="form-control" readonly ></textarea>
 </div>
    </form>
     {% else %}
@@ -50,7 +50,7 @@
 <div class="col-md-12 text-center">
   <br>
   <label for="results" class="results-label-Arabic">{% trans 'Results' %}</label>
-<textarea name="results" rows="5" id="results-Arabic" class="form-control" ></textarea>
+<textarea name="results" rows="5" id="results-Arabic" class="form-control" readonly ></textarea>
 </div>
    </form>
     {% endif %}

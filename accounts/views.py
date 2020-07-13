@@ -119,7 +119,5 @@ def profile_page(request):
         'p_form':profileUpdateForm,
         'title':_('Profile Page'),
          }
-
-
     return render(request,'accounts/profile.html',context)
 

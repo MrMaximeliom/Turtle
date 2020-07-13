@@ -1,40 +1,55 @@
 {% extends "home/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block custom_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'home/css/contact_us.css' %}">
+{% endblock %}
 {% block content %}
-     <div class="container">
-          <h1>Connect With Us</h1>
-          <p>We would love to respond to your queries and help you success.<br>Feel free to get in touch with us.</p>
+<div class="home-page">
+     <h1><p>
+          <span style="color: #5C374C; border-bottom: 5px solid #E77B73;">Connect</span>
+          <span style="color: #E77B73;">With Us</span>
+     </p></h1>
+     <p>We would love to respond to your queries and help you success.<br>Feel free to get in touch with us.</p>
           <div class="contact-box">
                <div class="contact-left">
                    <h3>Send your request</h3>
                    <form>
                         <div class="input-row">
-                             <div >
+                             <div class="input-group">
                                   <label>Name</label>
-                                  <input type="text" class="input-field" placeholder="Mohamed Ali">
+                                  <input type="text" placeholder="Mohamed Ali">
                              </div>
-                             <div >
+                             <div class="input-group">
                                   <label>Phone Number</label>
-                                  <input type="text" class="input-field" placeholder="+1 421 555 6574">
+                                  <input type="text" placeholder="+1 421 555 6574">
                              </div>
                         </div>
                         <div class="input-row">
-                             <div >
+                             <div class="input-group">
                                   <label>Email</label>
-                                  <input type="email" class="input-field" placeholder="demo@example.com">
+                                  <input type="email" placeholder="demo@example.com">
                              </div>
-                             <div >
+                             <div class="input-group">
                                   <label>Subject</label>
-                                  <input type="text" class="input-field" placeholder="exam">
+                                  <input type="text" placeholder="exam">
                              </div>
                         </div>
                         <label>Message</label>
                         <textarea rows="5" placeholder="Your Message"></textarea>
-                        <button type="submit" class="button-contact">Send</button>
+                        <button class="contact-button" type="submit">Send</button>
                    </form>
                </div>
                <div class="contact-right">
                     <h3>Reach Us</h3>
                     <table>
+                         <tr>
+                              <td>Name</td>
+                              <td>Malaz Siddiq</td>
+                         </tr>
                          <tr>
                               <td>Email</td>
                               <td>mlzsddg07@gmail.com</td>
@@ -47,8 +62,27 @@
                               <td>Address</td>
                               <td>Al-ardha Street, Omdurman, Khartoum, Sudan</td>
                          </tr>
+                         <tr>
+                              <td><hr></td>
+                         </tr>
+                          <tr>
+                              <td>Name</td>
+                              <td>Moa'yed Abdulhafiez</td>
+                         </tr>
+                         <tr>
+                              <td>Email</td>
+                              <td>hysoca7@gmail.com</td>
+                         </tr>
+                         <tr>
+                              <td>Phone Number</td>
+                              <td>+249 99 962 7379</td>
+                         </tr>
+                         <tr>
+                              <td>Address</td>
+                              <td>Al-shaheed Taha Al-Mahie, Khartoum, Sudan</td>
+                         </tr>
                     </table>
                </div>
           </div>
-     </div>
+</div>
 {% endblock content %}

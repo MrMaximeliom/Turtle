@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-27 11:44+0200\n"
+"POT-Creation-Date: 2020-07-13 16:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -117,8 +117,8 @@ msgstr "هل تحتاج إلى حساب؟"
 
 #: accounts/templates/accounts/login.html:31
 #: accounts/templates/accounts/login.html:61
-#: accounts/templates/accounts/signup.html:81 home/templates/home/base.html:84
-#: home/templates/home/base.html:100
+#: accounts/templates/accounts/signup.html:81 home/templates/home/base.html:119
+#: home/templates/home/base.html:135
 msgid "Sign Up"
 msgstr "إنشاء حساب"
 
@@ -227,7 +227,7 @@ msgstr "واصل تقدمك فالمستقبل أمامك"
 msgid "I Agree To"
 msgstr "أنا أوافق على"
 
-#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:346
+#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:381
 msgid "Terms"
 msgstr "الأحكام"
 
@@ -237,7 +237,7 @@ msgstr "الأحكام"
 msgid "and"
 msgstr "و"
 
-#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:346
+#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:381
 msgid "Conditions"
 msgstr "الشروط"
 
@@ -390,115 +390,115 @@ msgstr "خطأ"
 msgid "Don't Worry we are working hard to solve this!"
 msgstr "لا تقلق نحن نعمل جاهدين لحل هذه المشكلة"
 
-#: home/templates/home/base.html:55 home/templates/home/base.html:138
-#: home/templates/home/base.html:228
+#: home/templates/home/base.html:63 home/templates/home/base.html:76
+#: home/templates/home/base.html:173 home/templates/home/base.html:263
 #, fuzzy
 #| msgid "HomePage"
 msgid "Home"
 msgstr "الصفحة الرئيسية"
 
-#: home/templates/home/base.html:56 home/templates/home/base.html:153
-#: home/templates/home/base.html:244
+#: home/templates/home/base.html:67 home/templates/home/base.html:81
+#: home/templates/home/base.html:188 home/templates/home/base.html:279
 msgid "About"
 msgstr "حول"
 
-#: home/templates/home/base.html:69
+#: home/templates/home/base.html:71 home/templates/home/base.html:86
+msgid "Contact Us"
+msgstr "الاتصال بنا"
+
+#: home/templates/home/base.html:104
 msgid "Edit Profile"
 msgstr "تعديل الملف الشخصي"
 
-#: home/templates/home/base.html:71
+#: home/templates/home/base.html:106
 msgid "Log out"
 msgstr "تسجيل الخروج"
 
-#: home/templates/home/base.html:87 home/templates/home/base.html:103
-#, fuzzy
-#| msgid "SignUp Teacher"
+#: home/templates/home/base.html:122 home/templates/home/base.html:138
 msgid "As Teacher"
 msgstr "تسجيل معلم "
 
-#: home/templates/home/base.html:91 home/templates/home/base.html:107
-#, fuzzy
-#| msgid "SignUp Student"
+#: home/templates/home/base.html:126 home/templates/home/base.html:142
 msgid "As Student"
 msgstr "تسجيل طالب "
 
-#: home/templates/home/base.html:95 home/templates/home/base.html:111
+#: home/templates/home/base.html:130 home/templates/home/base.html:146
 msgid "Sign In"
 msgstr "تسجيل الدخول"
 
-#: home/templates/home/base.html:133 home/templates/home/base.html:222
+#: home/templates/home/base.html:168 home/templates/home/base.html:257
 msgid "Our Sidebar"
 msgstr "جانبنا"
 
-#: home/templates/home/base.html:158 home/templates/home/base.html:251
+#: home/templates/home/base.html:193 home/templates/home/base.html:286
 msgid "Categories"
 msgstr "الفئات"
 
-#: home/templates/home/base.html:175 home/templates/home/base.html:268
+#: home/templates/home/base.html:210 home/templates/home/base.html:303
 msgid "Portfolio"
 msgstr "الملف"
 
-#: home/templates/home/base.html:181 home/templates/home/base.html:275
+#: home/templates/home/base.html:216 home/templates/home/base.html:310
 msgid "FAQ"
 msgstr "الأسئلة المتكررة"
 
-#: home/templates/home/base.html:187 home/templates/home/base.html:282
+#: home/templates/home/base.html:222 home/templates/home/base.html:317
 msgid "Contact"
 msgstr "الاتصال بنا"
 
-#: home/templates/home/base.html:193 home/templates/home/base.html:289
+#: home/templates/home/base.html:228 home/templates/home/base.html:324
 msgid "Compare"
 msgstr "المقارنة"
 
-#: home/templates/home/base.html:346 home/templates/home/base.html:360
+#: home/templates/home/base.html:381 home/templates/home/base.html:395
 msgid "&"
 msgstr "و"
 
-#: home/templates/home/base.html:351
+#: home/templates/home/base.html:386
 msgid "Privacy Policy"
 msgstr "سياسة الخصصوصية"
 
-#: home/templates/home/base.html:356
+#: home/templates/home/base.html:391
 msgid "Cookies Policy"
 msgstr "سياسة ملفات تعريف الارتباط"
 
-#: home/templates/home/base.html:360
+#: home/templates/home/base.html:395
 msgid "Copyright"
 msgstr "حقوق النشر"
 
-#: home/templates/home/base.html:360
+#: home/templates/home/base.html:395
 msgid "All rights reserved"
 msgstr "جميع الحقوق محفوظة"
 
-#: home/templates/home/base.html:360
+#: home/templates/home/base.html:395
 msgid "Made with"
 msgstr "صنع بال"
 
-#: home/templates/home/base.html:360
+#: home/templates/home/base.html:395
 msgid "by"
 msgstr "بواسطة"
 
-#: home/templates/home/base.html:360
+#: home/templates/home/base.html:395
 msgid "Malaz"
 msgstr "ملاذ"
 
-#: home/templates/home/base.html:361
+#: home/templates/home/base.html:396
 msgid "Moa'yed"
 msgstr "مؤيد"
 
-#: home/templates/home/compare.html:15
+#: home/templates/home/compare.html:16 home/templates/home/compare.html:38
 msgid "Student Answer"
 msgstr "إجابة الطالب"
 
-#: home/templates/home/compare.html:19
+#: home/templates/home/compare.html:20 home/templates/home/compare.html:42
 msgid "Optimal Answer"
 msgstr "الإجابة النموذجية"
 
-#: home/templates/home/compare.html:25
+#: home/templates/home/compare.html:26 home/templates/home/compare.html:48
 msgid "Compare Answers!"
 msgstr "!مقارنة الإجابتين"
 
-#: home/templates/home/compare.html:29
+#: home/templates/home/compare.html:30 home/templates/home/compare.html:52
 msgid "Results"
 msgstr "النتائج"
 
@@ -510,6 +510,48 @@ msgstr "الصفحة الرئيسية"
 #: support/templates/support/terms_and_conditions.html:147
 msgid "Terms and Conditions"
 msgstr "الأحكام والشروط"
+
+#: teacher/models.py:6
+#, fuzzy
+#| msgid "first name"
+msgid "field name"
+msgstr "الاسم الأول"
+
+#: teacher/models.py:10
+msgid "course"
+msgstr ""
+
+#: teacher/models.py:15
+msgid "exam name"
+msgstr "اسم الامتحان"
+
+#: teacher/models.py:16
+msgid "exam date"
+msgstr "تاريخ الامتحان"
+
+#: teacher/models.py:17
+msgid "exam period"
+msgstr "مدة الامتحان"
+
+#: teacher/models.py:18
+msgid "exam notes"
+msgstr "ملاحظات الامتحان"
+
+#: teacher/models.py:19
+msgid "exam secret key"
+msgstr "المفتاح السري للامتحان"
+
+#: teacher/models.py:20
+msgid "exam full mark"
+msgstr "الدرجة الكاملة للامتحان"
+
+#: teacher/models.py:21
+msgid "exam pass mark"
+msgstr "درجة مرور الامتحان"
+
+#: teacher/models.py:22
+msgid "exam status"
+msgstr "حالة الامتحان"
 
 #: venv/lib/python3.8/site-packages/botocore/docs/bcdoc/textwriter.py:469
 #, fuzzy, python-format

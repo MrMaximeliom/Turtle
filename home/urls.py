@@ -6,7 +6,7 @@ urlpatterns = [
     path('home/', views.home, name='home-page'),
     path('about/', views.about, name='about-page'),
 
-    path('contact/', views.contact_us, name='contact_us-page'),
+    path('contact-us/', views.contact_us, name='contact_us-page'),
     path('compare/', views.compare, name='compare-page'),
     path('base/', views.base, name='fix-page'),
 

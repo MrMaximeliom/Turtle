@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'support.apps.SupportConfig',
     'errors',
+    'teacher.apps.TeacherConfig',
 ]
 
 MIDDLEWARE = [
