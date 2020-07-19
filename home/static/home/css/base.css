@@ -5,7 +5,8 @@ body,html{
 }
 body {
   /*background: #fafafa;*/
-  color: #333333;
+  color:#222629; /* #333333;*/
+
   /*margin-top: 5rem;*/
   /* my code */
  font-size: 16px;
@@ -235,8 +236,18 @@ color:#0092B3;
 }
 /* customizing behaviour of language btn in sidebar */
 .language-btn{
-text-align: revert;
-color:#941351;
+/*color:#941351;*/
+  background: #E77B73;
+  text-align: revert;
+  width: -moz-fit-content;/*114px;*/
+  border: none;
+  outline: none;
+  color: white;
+  height: 45px;
+  border-radius: 30px !important;
+  /*margin-top: 20px;*/
+  box-shadow: 0px 5px 15px 0px rgba(28,0,181,0.3);
+  cursor: pointer;
 }
 /* changing nav bar background color */
 #nav{
@@ -676,4 +687,96 @@ margin-left : -73px;
 }
 .login-welcome-arabic{
 margin-right: 667px;
+}
+.spec-button{
+  background: #E77B73;
+  width: 100px;
+  border: none;
+  outline: none;
+  color: white;
+  height: 35px;
+  border-radius: 30px;
+  margin-top: 20px;
+  box-shadow: 0px 5px 15px 0px rgba(28,0,181,0.3);
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: -18px;
+}
+.dropdown-arabic{
+  position: relative;
+  display: inline-block;
+  margin-top: -18px;
+  direction:rtl;
+  text-align:right;
+}
+.dropbtn {
+  background-color: #E77B73;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  margin-left: -40px;
+}
+.navbar-sign-up{
+margin-top: 20px;
+}
+.raw-button{
+  background: #E77B73;
+  width: -moz-fit-content;
+  border: none;
+  outline: none;
+  color: white;
+  height: 35px;
+  border-radius: 30px;
+  /*margin-top: 20px;*/
+  box-shadow: 0px 5px 15px 0px rgba(28,0,181,0.3);
+  cursor: pointer;
+}
+.arabic{
+ text-align: right;
+}
+.dropdown-content a {
+  color: black !important;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
+
+ .dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-arabic:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #E77B73;
+}
+.dropdown-arabic:hover .dropbtn {
+  background-color: #E77B73;
+}
+
+#navbar-links.container-fluid #ProfileNavbarDropdownMenuLink{
+color:white;
+}
+
+ #navbar-links.container-fluid #ProfileNavbarDropdownMenuLink:hover{
+color: #e77b73;
+text-decoration:none;
+background:none;
 }

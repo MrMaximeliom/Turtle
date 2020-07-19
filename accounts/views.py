@@ -30,7 +30,6 @@ def teacher_sign_up(request):
             teacher_model = form.save(commit=False)
             teacher_model.is_teacher = True
             teacher_model.save()
-            gender = form.cleaned_data.get('gender')
 
             messages.success(request, _('Your account has been created! you are now able to log in'))
 

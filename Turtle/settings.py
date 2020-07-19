@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'accounts.apps.AccountsConfig',
     'support.apps.SupportConfig',
-    'errors',
+    'errors.apps.ErrorsConfig',
     'teacher.apps.TeacherConfig',
 ]
 

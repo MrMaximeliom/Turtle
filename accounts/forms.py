@@ -1,10 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
-from django.core.validators import RegexValidator
-
 from .models import User,Profile
 from django import forms
 from django.utils.translation import gettext_lazy as _
-from django.contrib.auth.password_validation import UserAttributeSimilarityValidator
 GENDER_CHOICES = (
     (_('Male'), _('Male')),
     (_('Female'), _('Female')),

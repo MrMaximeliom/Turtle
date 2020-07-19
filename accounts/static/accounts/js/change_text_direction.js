@@ -11,12 +11,18 @@ $( document ).ready(function() {
        $(".form-check").css('direction','rtl');
        $(".form-check").css('margin-left','auto');
        $("input[type='radio']").css('margin-left','5px');
+        $("input[type='radio']").css('cursor','pointer');
        $("input[type='text']").css('text-align','right');
        $(".border-bottom-title").css('direction','rtl');
        $(".border-bottom-title ").css('margin-left','auto');
        $("#signup-btn").css('margin-left','auto');
 
 
+    }
+    else{
+ $("input[type='radio']").css('margin-right','5px');
+ $("input[type='radio']").css('vertical-align','-3px');
+ $("input[type='radio']").css('cursor','pointer');
     }
 
 });

@@ -7,6 +7,8 @@ from .models import Profile
 def create_profile(sender,instance,created,**kwargs):
     if created:
          new_profile = Profile.objects.create(user=instance)
+         # new_profile.image = "/profile_pics/default_male.jpg"
+
          if instance.gender == 'Male':
              new_profile.image = "/profile_pics/default_male.jpg"
          else:
@@ -15,4 +17,9 @@ def create_profile(sender,instance,created,**kwargs):
 
 @receiver(post_save,sender=User)
 def save_profile(sender,instance,**kwargs):
+    # if instance.gender == 'Male':
+    #     instance.profile.image = "/profile_pics/default_male.jpg"
+    # else:
+    #     instance.profile.image = "/profile_pics/default_female.jpg"
+
     instance.profile.save()

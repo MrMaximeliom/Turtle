@@ -7,8 +7,8 @@ from PIL import Image
 # Create your models here.
 
 GENDER_CHOICES = (
-    (_('Male'), _('Male')),
-    (_('Female'), _('Female')),
+    (('Male'), _('Male')),
+    (('Female'), _('Female')),
 )
 COUNTRIES = (
     ('Afghanistan', 'Afghanistan'),
@@ -272,7 +272,7 @@ class User(AbstractBaseUser):
     last_name = models.CharField(verbose_name=_('last name'), max_length=40,validators=[alphanumeric])
     gender = models.CharField(verbose_name=_('gender'), choices=GENDER_CHOICES, max_length=10,default=_('Male'))
     # password = models.CharField(verbose_name='password', max_length=128)
-    profile_pic = models.CharField(verbose_name=_('profile picture'), max_length=320,blank=True)
+    # profile_pic = models.CharField(verbose_name=_('profile picture'), max_length=320,blank=True)
     country = models.CharField(verbose_name=_('country'), choices=COUNTRIES, max_length=180,blank=True)
     USERNAME_FIELD = 'email'
     # 'username', 'first_name', 'last_name', 'gender'
@@ -290,18 +290,17 @@ class User(AbstractBaseUser):
 
 class Profile(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='profile_pics')
+    image = models.ImageField(upload_to='profile_pics',null=True)
 
     def __str__(self):
         return f'{self.user.username} Profile'
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
-
-        img = Image.open(self.image.path)
-
-        if img.height > 300 or img.width > 300:
-            output_size = (300, 300)
-            img.thumbnail(output_size)
-            img.save(self.image.path)
+        # img = Image.open(self.image.path)
+        #
+        # if img.height > 300 or img.width > 300:
+        #     output_size = (300, 300)
+        #     img.thumbnail(output_size)
+        #     img.save(self.image.path)
 

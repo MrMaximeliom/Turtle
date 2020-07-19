@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-13 16:57+0200\n"
+"POT-Creation-Date: 2020-07-15 20:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,48 +19,48 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: accounts/forms.py:9 accounts/models.py:10 accounts/models.py:273
+#: accounts/forms.py:6 accounts/models.py:10 accounts/models.py:273
 msgid "Male"
 msgstr "ذكر"
 
-#: accounts/forms.py:10 accounts/models.py:11
+#: accounts/forms.py:7 accounts/models.py:11
 msgid "Female"
 msgstr "أنثى"
 
-#: accounts/forms.py:222 accounts/forms.py:261 accounts/forms.py:271
-#: accounts/forms.py:280 accounts/models.py:260
+#: accounts/forms.py:219 accounts/forms.py:258 accounts/forms.py:268
+#: accounts/forms.py:277 accounts/models.py:260
 msgid "email"
 msgstr "البريد الإلكتروني"
 
-#: accounts/forms.py:223 accounts/forms.py:262 accounts/forms.py:282
+#: accounts/forms.py:220 accounts/forms.py:259 accounts/forms.py:279
 #: accounts/models.py:271
 msgid "first name"
 msgstr "الاسم الأول"
 
-#: accounts/forms.py:224 accounts/forms.py:263 accounts/forms.py:283
+#: accounts/forms.py:221 accounts/forms.py:260 accounts/forms.py:280
 #: accounts/models.py:272
 #, fuzzy
 #| msgid "last name"
 msgid "last name"
 msgstr "الاسم الأخير"
 
-#: accounts/forms.py:225 accounts/forms.py:264 accounts/models.py:276
+#: accounts/forms.py:222 accounts/forms.py:261 accounts/models.py:276
 msgid "country"
 msgstr "الدولة"
 
-#: accounts/forms.py:226 accounts/forms.py:265 accounts/models.py:273
+#: accounts/forms.py:223 accounts/forms.py:262 accounts/models.py:273
 msgid "gender"
 msgstr "النوع"
 
-#: accounts/forms.py:227 accounts/forms.py:266 accounts/forms.py:281
+#: accounts/forms.py:224 accounts/forms.py:263 accounts/forms.py:278
 msgid "username"
 msgstr "اسم المستخدم"
 
-#: accounts/forms.py:272
+#: accounts/forms.py:269
 msgid "password"
 msgstr ""
 
-#: accounts/forms.py:290
+#: accounts/forms.py:287
 msgid "image"
 msgstr "الصورة"
 
@@ -117,8 +117,9 @@ msgstr "هل تحتاج إلى حساب؟"
 
 #: accounts/templates/accounts/login.html:31
 #: accounts/templates/accounts/login.html:61
-#: accounts/templates/accounts/signup.html:81 home/templates/home/base.html:119
-#: home/templates/home/base.html:135
+#: accounts/templates/accounts/signup.html:81 home/templates/home/base.html:124
+#: home/templates/home/base.html:138 home/templates/home/base.html:155
+#: home/templates/home/base.html:169
 msgid "Sign Up"
 msgstr "إنشاء حساب"
 
@@ -136,49 +137,49 @@ msgstr "حفظ"
 msgid "Registration"
 msgstr "التسجيل"
 
-#: accounts/templates/accounts/register.html:15
-#: accounts/templates/accounts/register.html:33
+#: accounts/templates/accounts/register.html:16
+#: accounts/templates/accounts/register.html:50
 msgid "Welcome To Our Site"
 msgstr "مرحبا بك في موقعنا"
 
-#: accounts/templates/accounts/register.html:19
-#: accounts/templates/accounts/register.html:37
+#: accounts/templates/accounts/register.html:20
+#: accounts/templates/accounts/register.html:54
 msgid ""
 "We think that learning is the powerful process of all times in making our "
 "lives better ,"
 msgstr ""
 "نحن نعتقد أن التعليم هو العملية الأقوى على الإطلاق في جعل حياتنا أفضل ،"
 
-#: accounts/templates/accounts/register.html:20
-#: accounts/templates/accounts/register.html:38
+#: accounts/templates/accounts/register.html:21
+#: accounts/templates/accounts/register.html:55
 msgid ""
 "helping us to improve our lives , finding solutions to our endless "
 "problems , and making"
 msgstr "مساعدتنا على تحسين حياتنا، إيجاد حلول لمشاكلنا اللانهائية، وجعل"
 
-#: accounts/templates/accounts/register.html:21
-#: accounts/templates/accounts/register.html:39
+#: accounts/templates/accounts/register.html:22
+#: accounts/templates/accounts/register.html:56
 msgid ""
 "the world a better place for all of us. Testing process is one of the most "
 "important used"
 msgstr "العالم مكانا أفضل لكل منا. عملية الاختبار هي إحدى الطرق المستخدمة"
 
-#: accounts/templates/accounts/register.html:22
-#: accounts/templates/accounts/register.html:40
+#: accounts/templates/accounts/register.html:23
+#: accounts/templates/accounts/register.html:57
 msgid ""
 "ways to prove that to which degree the students have understood the learning "
 "material, and"
 msgstr "لبرهان إلى أي مدى قد استوعب الطلاب المحتوى التعليمي، و"
 
-#: accounts/templates/accounts/register.html:23
-#: accounts/templates/accounts/register.html:41
+#: accounts/templates/accounts/register.html:24
+#: accounts/templates/accounts/register.html:58
 msgid ""
 "to measure the overall learning progress. Our system aims to provide a "
 "convenient environment"
 msgstr "لقياس عملية التعليم بشكل عام. نظامنا يهدف إلى توفير بيئة مريحة"
 
-#: accounts/templates/accounts/register.html:24
-#: accounts/templates/accounts/register.html:42
+#: accounts/templates/accounts/register.html:25
+#: accounts/templates/accounts/register.html:59
 msgid ""
 "for each teachers and students , to help teachers prepare exams to students "
 "and make those students"
@@ -186,8 +187,8 @@ msgstr ""
 "لكل من الطلاب والمعلمين ، لمساعدة المعلمين على تحضير الامتحانات للطلاب وجعل "
 "هؤلاء الطلاب"
 
-#: accounts/templates/accounts/register.html:25
-#: accounts/templates/accounts/register.html:43
+#: accounts/templates/accounts/register.html:26
+#: accounts/templates/accounts/register.html:60
 msgid ""
 "able to attempt those exams , it will help teachers in the process of auto-"
 "correcting students' answers,"
@@ -195,23 +196,27 @@ msgstr ""
 "قادرين على امتحان هذه الامتحانات، كما أنه سيساعد المعلمين في عملية التصحيح "
 "التلقائي لإجابات الطلاب،"
 
-#: accounts/templates/accounts/register.html:26
-#: accounts/templates/accounts/register.html:44
+#: accounts/templates/accounts/register.html:27
+#: accounts/templates/accounts/register.html:61
 msgid ""
 "and provide a detailed results to describe how the correcting process was "
 "conducted"
 msgstr "وتوفير نتائج مفصلة لتوضيح الكيفية التي تمت بها عملية التصحيح. "
 
-#: accounts/templates/accounts/register.html:30
-#: accounts/templates/accounts/register.html:48
+#: accounts/templates/accounts/register.html:31
+#: accounts/templates/accounts/register.html:65
 msgid "Join Us Today!"
 msgstr "انضم إلينا اليوم!"
 
-#: accounts/templates/accounts/register.html:53
+#: accounts/templates/accounts/register.html:35
+#: accounts/templates/accounts/register.html:69
 msgid "Sign Up As Teacher"
 msgstr "تسجيل معلم "
 
-#: accounts/templates/accounts/register.html:58
+#: accounts/templates/accounts/register.html:40
+#: accounts/templates/accounts/register.html:41
+#: accounts/templates/accounts/register.html:74
+#: accounts/templates/accounts/register.html:75
 msgid "Sign Up As Student"
 msgstr "تسجيل طالب "
 
@@ -227,7 +232,7 @@ msgstr "واصل تقدمك فالمستقبل أمامك"
 msgid "I Agree To"
 msgstr "أنا أوافق على"
 
-#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:381
+#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:412
 msgid "Terms"
 msgstr "الأحكام"
 
@@ -237,7 +242,7 @@ msgstr "الأحكام"
 msgid "and"
 msgstr "و"
 
-#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:381
+#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:412
 msgid "Conditions"
 msgstr "الشروط"
 
@@ -391,14 +396,14 @@ msgid "Don't Worry we are working hard to solve this!"
 msgstr "لا تقلق نحن نعمل جاهدين لحل هذه المشكلة"
 
 #: home/templates/home/base.html:63 home/templates/home/base.html:76
-#: home/templates/home/base.html:173 home/templates/home/base.html:263
+#: home/templates/home/base.html:204 home/templates/home/base.html:294
 #, fuzzy
 #| msgid "HomePage"
 msgid "Home"
 msgstr "الصفحة الرئيسية"
 
 #: home/templates/home/base.html:67 home/templates/home/base.html:81
-#: home/templates/home/base.html:188 home/templates/home/base.html:279
+#: home/templates/home/base.html:219 home/templates/home/base.html:310
 msgid "About"
 msgstr "حول"
 
@@ -414,75 +419,77 @@ msgstr "تعديل الملف الشخصي"
 msgid "Log out"
 msgstr "تسجيل الخروج"
 
-#: home/templates/home/base.html:122 home/templates/home/base.html:138
-msgid "As Teacher"
-msgstr "تسجيل معلم "
-
-#: home/templates/home/base.html:126 home/templates/home/base.html:142
-msgid "As Student"
-msgstr "تسجيل طالب "
-
-#: home/templates/home/base.html:130 home/templates/home/base.html:146
+#: home/templates/home/base.html:119 home/templates/home/base.html:150
 msgid "Sign In"
 msgstr "تسجيل الدخول"
 
-#: home/templates/home/base.html:168 home/templates/home/base.html:257
+#: home/templates/home/base.html:127 home/templates/home/base.html:141
+#: home/templates/home/base.html:158 home/templates/home/base.html:173
+msgid "As Teacher"
+msgstr "تسجيل معلم "
+
+#: home/templates/home/base.html:131 home/templates/home/base.html:142
+#: home/templates/home/base.html:162 home/templates/home/base.html:172
+msgid "As Student"
+msgstr "تسجيل طالب "
+
+#: home/templates/home/base.html:199 home/templates/home/base.html:288
 msgid "Our Sidebar"
 msgstr "جانبنا"
 
-#: home/templates/home/base.html:193 home/templates/home/base.html:286
+#: home/templates/home/base.html:224 home/templates/home/base.html:317
 msgid "Categories"
 msgstr "الفئات"
 
-#: home/templates/home/base.html:210 home/templates/home/base.html:303
+#: home/templates/home/base.html:241 home/templates/home/base.html:334
 msgid "Portfolio"
 msgstr "الملف"
 
-#: home/templates/home/base.html:216 home/templates/home/base.html:310
+#: home/templates/home/base.html:247 home/templates/home/base.html:341
 msgid "FAQ"
 msgstr "الأسئلة المتكررة"
 
-#: home/templates/home/base.html:222 home/templates/home/base.html:317
+#: home/templates/home/base.html:253 home/templates/home/base.html:348
 msgid "Contact"
 msgstr "الاتصال بنا"
 
-#: home/templates/home/base.html:228 home/templates/home/base.html:324
+#: home/templates/home/base.html:259 home/templates/home/base.html:355
 msgid "Compare"
 msgstr "المقارنة"
 
-#: home/templates/home/base.html:381 home/templates/home/base.html:395
+#: home/templates/home/base.html:412 home/templates/home/base.html:426
 msgid "&"
 msgstr "و"
 
-#: home/templates/home/base.html:386
+#: home/templates/home/base.html:417
 msgid "Privacy Policy"
 msgstr "سياسة الخصصوصية"
 
-#: home/templates/home/base.html:391
+#: home/templates/home/base.html:422
 msgid "Cookies Policy"
 msgstr "سياسة ملفات تعريف الارتباط"
 
-#: home/templates/home/base.html:395
+#: home/templates/home/base.html:426
 msgid "Copyright"
 msgstr "حقوق النشر"
 
-#: home/templates/home/base.html:395
+#: home/templates/home/base.html:426
 msgid "All rights reserved"
 msgstr "جميع الحقوق محفوظة"
 
-#: home/templates/home/base.html:395
+#: home/templates/home/base.html:426
 msgid "Made with"
 msgstr "صنع بال"
 
-#: home/templates/home/base.html:395
+#: home/templates/home/base.html:426
 msgid "by"
 msgstr "بواسطة"
 
-#: home/templates/home/base.html:395
+#: home/templates/home/base.html:426
 msgid "Malaz"
 msgstr "ملاذ"
 
-#: home/templates/home/base.html:396
+#: home/templates/home/base.html:427
 msgid "Moa'yed"
 msgstr "مؤيد"
 
@@ -511,47 +518,97 @@ msgstr "الصفحة الرئيسية"
 msgid "Terms and Conditions"
 msgstr "الأحكام والشروط"
 
-#: teacher/models.py:6
-#, fuzzy
-#| msgid "first name"
-msgid "field name"
-msgstr "الاسم الأول"
-
-#: teacher/models.py:10
+#: teacher/forms.py:16 teacher/models.py:24
 msgid "course"
 msgstr ""
 
-#: teacher/models.py:15
+#: teacher/forms.py:17
+#, fuzzy
+#| msgid "As Teacher"
+msgid "teacher"
+msgstr "تسجيل معلم "
+
+#: teacher/forms.py:18 teacher/models.py:29
 msgid "exam name"
 msgstr "اسم الامتحان"
 
-#: teacher/models.py:16
+#: teacher/forms.py:19 teacher/models.py:30
 msgid "exam date"
 msgstr "تاريخ الامتحان"
 
-#: teacher/models.py:17
+#: teacher/forms.py:20 teacher/models.py:31
 msgid "exam period"
 msgstr "مدة الامتحان"
 
-#: teacher/models.py:18
-msgid "exam notes"
-msgstr "ملاحظات الامتحان"
-
-#: teacher/models.py:19
+#: teacher/forms.py:21 teacher/models.py:33
 msgid "exam secret key"
 msgstr "المفتاح السري للامتحان"
 
-#: teacher/models.py:20
+#: teacher/forms.py:22 teacher/models.py:34
 msgid "exam full mark"
 msgstr "الدرجة الكاملة للامتحان"
 
-#: teacher/models.py:21
+#: teacher/forms.py:23
+#, fuzzy
+#| msgid "exam notes"
+msgid "exam note"
+msgstr "ملاحظات الامتحان"
+
+#: teacher/forms.py:24 teacher/models.py:35
 msgid "exam pass mark"
 msgstr "درجة مرور الامتحان"
 
-#: teacher/models.py:22
+#: teacher/forms.py:25 teacher/models.py:36
 msgid "exam status"
 msgstr "حالة الامتحان"
+
+#: teacher/models.py:5
+msgid "Information Technology"
+msgstr "تقنية المعلومات"
+
+#: teacher/models.py:6
+msgid "Computer Science"
+msgstr "علوم الحاسوب"
+
+#: teacher/models.py:7
+msgid "Software Engineering"
+msgstr "هندسة البرمجيات"
+
+#: teacher/models.py:10
+msgid "Cloud Computing"
+msgstr "الحوسبة السحابية"
+
+#: teacher/models.py:11
+msgid "Cyber Security"
+msgstr "الأمن الإلكتروني"
+
+#: teacher/models.py:12
+msgid "Advanced Databases"
+msgstr "قواعد البيانات المتقدمة"
+
+#: teacher/models.py:13
+msgid "Network Principles"
+msgstr "مبادئ الشبكات"
+
+#: teacher/models.py:14
+msgid "Network Security"
+msgstr "حماية الشبكة"
+
+#: teacher/models.py:15
+msgid "Multimedia"
+msgstr "الوسائط المتعددة"
+
+#: teacher/models.py:16
+msgid "Programming Principles"
+msgstr "مبادئ البرمجة"
+
+#: teacher/models.py:20
+msgid "field name"
+msgstr "اسم المجال"
+
+#: teacher/models.py:32
+msgid "exam notes"
+msgstr "ملاحظات الامتحان"
 
 #: venv/lib/python3.8/site-packages/botocore/docs/bcdoc/textwriter.py:469
 #, fuzzy, python-format

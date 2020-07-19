@@ -8,9 +8,10 @@
 {% trans 'Registration' %}
 {% endblock %}
 {% block content %}
-<div class="home-page">
+
      {% get_current_language as MY_LANGUAGE %}
     {% if MY_LANGUAGE == 'en' %}
+<div class="home-page ">
     <div class="welcome-message">
 <h4>{% trans 'Welcome To Our Site' %} </h4>
 </div>
@@ -28,11 +29,27 @@
         </p>
 
     <h5 class="join-us">{% trans  "Join Us Today!" %}</h5>
+    <div class="row justify-content-start signup-buttons">
+    <div class="col-4">
+<div class="register-teacher ">
+      <a href="{% url 'teacher-signup-page' %}" class="btn raw-button">{% trans "Sign Up As Teacher" %}</a>
+    </div>
+    </div>
+    <div class="col-4">
+     <div class="register-student ">
+<!--         <a href="{% url 'student-signup-page' %}" class="btn btn-outline-info">{% trans "Sign Up As Student" %}</a>-->
+         <a href="{% url 'student-signup-page' %}" class="btn raw-button">{% trans "Sign Up As Student" %}</a>
+
+    </div>
+    </div>
+  </div>
+</div>
     {% else %}
+<div class="home-page arabic ">
 <div class="welcome-message-arabic">
 <h4>{% trans 'Welcome To Our Site' %} </h4>
 </div>
-    <p class="details-arabic">
+    <p class="details-arabic ">
 
       {% trans "We think that learning is the powerful process of all times in making our lives better ," %}
        {% trans  "helping us to improve our lives , finding solutions to our endless problems , and making" %}
@@ -45,24 +62,27 @@
 
         </p>
 
-    <h5 class="join-us">{% trans  "Join Us Today!" %}</h5>
-       {% endif %}
-    <div class="row justify-content-start">
+    <h5 class="join-us-arabic">{% trans  "Join Us Today!" %}</h5>
+    <div class="row justify-content-start signup-buttons-arabic">
     <div class="col-4">
-<div class="register-teacher">
-      <a href="{% url 'teacher-signup-page' %}" class="btn btn-outline-info">{% trans "Sign Up As Teacher" %}</a>
+<div class="register-teacher ">
+      <a href="{% url 'teacher-signup-page' %}" class="btn raw-button">{% trans "Sign Up As Teacher" %}</a>
     </div>
     </div>
     <div class="col-4">
-     <div class="register-student">
-         <a href="{% url 'student-signup-page' %}" class="btn btn-outline-info">{% trans "Sign Up As Student" %}</a>
+     <div class="register-student ">
+<!--         <a href="{% url 'student-signup-page' %}" class="btn btn-outline-info">{% trans "Sign Up As Student" %}</a>-->
+         <a href="{% url 'student-signup-page' %}" class="btn raw-button">{% trans "Sign Up As Student" %}</a>
 
     </div>
     </div>
   </div>
-
-
-
 </div>
+       {% endif %}
+
+
+
+
+
 
 {% endblock %}
