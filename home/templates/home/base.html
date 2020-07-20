@@ -97,13 +97,22 @@
                     <a class="nav-link dropdown-toggle">
                      <img src="{{ user.profile.image.url }}" width="40" height="40" class="rounded-circle">
                     </a>
+                     {% if MY_LANGUAGE == 'en' %}
                     <div class="dropdown-content">
                         <a class="dropdown-item" href="#">{% trans "Edit Profile" %}</a>
                         <a class="dropdown-item " href="{% url 'logout-page' %}"  >
                              {% trans 'Log out' %}
                         </a>
-
                     </div>
+                     {% else %}
+                      <div class="dropdown-content arabic" style="margin-left:-100px;">
+                        <a class="dropdown-item" href="#">{% trans "Edit Profile" %}</a>
+                        <a class="dropdown-item " href="{% url 'logout-page' %}"  >
+                             {% trans 'Log out' %}
+                        </a>
+                    </div>
+
+                     {% endif %}
                    </div>
 
                 {% else %}
@@ -113,19 +122,6 @@
                                      {% trans 'Sign In' %}
                                        <i class="fa fa-sign-in" aria-hidden="true"></i>
                                  </a>
-<!--                <i class="fa fa-caret-down header-dropdown-icon" ></i>-->
-<!--                        <a class="nav-item nav-link  " href="#" id="ArabicnavbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--          {% trans 'Sign Up' %}-->
-<!--                        </a>-->
-<!--                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="ArabicnavbarDropdown" id="ArabicSignUpOptions">-->
-<!--          <a class="dropdown-item" href="{% url 'teacher-signup-page' %}">{% trans 'As Teacher' %}-->
-<!--          <i class="fas fa-user-plus"></i>-->
-<!--          </a>-->
-<!--            <div class="dropdown-divider"></div>-->
-<!--          <a class="dropdown-item" href="{% url 'student-signup-page' %}">{% trans 'As Student' %}-->
-<!--          <i class="fas fa-user-plus"></i>-->
-<!--          </a>-->
-<!--        </div>-->
                    <div class="dropdown-arabic" >
                     <button class="dropbtn raw-button navbar-sign-up arabic">
                         <i class="fa fa-user-plus"></i>
@@ -143,20 +139,6 @@
                                                            <i class="fa fa-sign-in" aria-hidden="true"></i>
                                      {% trans 'Sign In' %}
                                  </a>
-<!--                            <i class="fa fa-caret-down header-dropdown-icon" ></i>-->
-<!--                        <a class="nav-item nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-
-<!--          {% trans 'Sign Up' %}-->
-<!--                            </a>-->
-<!--                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" id="SignUpOptions">-->
-<!--          <a class="dropdown-item" href="{% url 'teacher-signup-page' %}">{% trans 'As Teacher' %}-->
-<!--          <i class="fas fa-user-plus"></i>-->
-<!--          </a>-->
-<!--            <div class="dropdown-divider"></div>-->
-<!--          <a class="dropdown-item" href="{% url 'student-signup-page' %}">{% trans 'As Student' %}-->
-<!--          <i class="fas fa-user-plus"></i>-->
-<!--          </a>-->
-<!--        </div>-->
                      <div class="dropdown" id="sign-up-block">
                     <button class="dropbtn raw-button navbar-sign-up">
                         <i class="fa fa-user-plus"></i>
@@ -172,12 +154,6 @@
                 {% endif %}
 
                 {% endif %}
-
-
-
-
-
-
             </div>
           </div>
         </div>
@@ -256,7 +232,7 @@
                   {% if request.user.is_authenticated and request.user.is_teacher%}
                 <li class="list-group-item list-group-item-light">
                      <a href="{% url 'create_exam-page' %}">
-                        <i class="fas fa-book-open"></i>
+                        <i class="fas fa-edit"></i>
                         {% trans 'Create Exam' %}
                     </a>
                 </li>
@@ -359,6 +335,14 @@
 
                     </a>
                 </li>
+                {% if request.user.is_authenticated and request.user.is_teacher%}
+                <li class="list-group-item list-group-item-light">
+                     <a href="{% url 'create_exam-page' %}">
+                        {% trans 'Create Exam' %}
+                          <i class="fas fa-edit"></i>
+                    </a>
+                </li>
+                {% endif %}
 
 
 <li class="list-group-item list-group-item-light "><form action="{% url 'set_language' %}" class="list-group" method="post">

@@ -726,8 +726,9 @@ margin-right: 667px;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  margin-left: -40px;
+  margin-left: -70px;
 }
+
 .navbar-sign-up{
 margin-top: 20px;
 }
@@ -779,4 +780,11 @@ color:white;
 color: #e77b73;
 text-decoration:none;
 background:none;
+}
+.about-title{
+color: #5C374C;
+border-bottom: 5px solid #E77B73;
+}
+.about-subtitle{
+color: #E77B73;
 }

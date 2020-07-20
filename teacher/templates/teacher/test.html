@@ -1,0 +1,21 @@
+{% extends 'home/base.html' %}
+{% load crispy_forms_tags %}
+{% load static i18n %}
+{% load static %}
+{% block custom_css %}
+<link href="{% static 'teacher/css/createExam.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block content %}
+<div class="home-page">
+    <h3>Hi</h3>
+</div>
+
+
+
+{% endblock %}
+{% block custom_javascript %}
+<script src="{% static 'teacher/js/createExam.js' %}"></script>
+{% endblock %}

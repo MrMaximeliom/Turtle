@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-15 20:52+0200\n"
+"POT-Creation-Date: 2020-07-19 16:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -96,10 +96,6 @@ msgstr "تاريخ الانضمام"
 msgid "last login"
 msgstr "آخر تسجيل دخول"
 
-#: accounts/models.py:275
-msgid "profile picture"
-msgstr "صورة الملف الشخصي"
-
 #: accounts/templates/accounts/login.html:11
 #: accounts/templates/accounts/login.html:41
 msgid "Welcome"
@@ -117,9 +113,8 @@ msgstr "هل تحتاج إلى حساب؟"
 
 #: accounts/templates/accounts/login.html:31
 #: accounts/templates/accounts/login.html:61
-#: accounts/templates/accounts/signup.html:81 home/templates/home/base.html:124
-#: home/templates/home/base.html:138 home/templates/home/base.html:155
-#: home/templates/home/base.html:169
+#: accounts/templates/accounts/signup.html:81 home/templates/home/base.html:128
+#: home/templates/home/base.html:145
 msgid "Sign Up"
 msgstr "إنشاء حساب"
 
@@ -232,7 +227,7 @@ msgstr "واصل تقدمك فالمستقبل أمامك"
 msgid "I Agree To"
 msgstr "أنا أوافق على"
 
-#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:412
+#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:398
 msgid "Terms"
 msgstr "الأحكام"
 
@@ -242,7 +237,7 @@ msgstr "الأحكام"
 msgid "and"
 msgstr "و"
 
-#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:412
+#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:398
 msgid "Conditions"
 msgstr "الشروط"
 
@@ -301,38 +296,38 @@ msgstr "كلمة مرورك يجب ألا تكون رقمية بالكامل"
 msgid "SignUp Teacher"
 msgstr "تسجيل معلم "
 
-#: accounts/views.py:35 accounts/views.py:65
+#: accounts/views.py:34 accounts/views.py:64
 msgid "Your account has been created! you are now able to log in"
 msgstr "تم إنشاء حسابك ! يمكنك الآن تسجيل الدخول"
 
-#: accounts/views.py:47 accounts/views.py:54
+#: accounts/views.py:46 accounts/views.py:53
 msgid "SignUp Student"
 msgstr "تسجيل طالب "
 
-#: accounts/views.py:76
+#: accounts/views.py:75
 #, fuzzy
 #| msgid "last login"
 msgid "login"
 msgstr "آخر تسجيل دخول"
 
-#: accounts/views.py:90
+#: accounts/views.py:89
 msgid "Either username or password are wrong ! please try again .."
 msgstr "إما اسم المسخدم خاطئ أو كلمة المرور خاطئة ! رجاء حاول مرة أخرى .. "
 
-#: accounts/views.py:92
+#: accounts/views.py:91
 msgid ""
 "Either username or password are wrong ! please try again .. form is not valid"
 msgstr ""
 "إما اسم المستخدم خاطئ أو كلمة المرور خاطئة ! رجاء حاول مرة أخرى .. المعلومات "
 "خاطئة"
 
-#: accounts/views.py:112
+#: accounts/views.py:111
 #, fuzzy
 #| msgid "Your account has been created! you are now able to log in"
 msgid "Your account has been updated!"
 msgstr "تم إنشاء حسابك ! يمكنك الآن تسجيل الدخول"
 
-#: accounts/views.py:120
+#: accounts/views.py:119
 #, fuzzy
 #| msgid "Profile Info"
 msgid "Profile Page"
@@ -396,14 +391,14 @@ msgid "Don't Worry we are working hard to solve this!"
 msgstr "لا تقلق نحن نعمل جاهدين لحل هذه المشكلة"
 
 #: home/templates/home/base.html:63 home/templates/home/base.html:76
-#: home/templates/home/base.html:204 home/templates/home/base.html:294
+#: home/templates/home/base.html:174 home/templates/home/base.html:272
 #, fuzzy
 #| msgid "HomePage"
 msgid "Home"
 msgstr "الصفحة الرئيسية"
 
 #: home/templates/home/base.html:67 home/templates/home/base.html:81
-#: home/templates/home/base.html:219 home/templates/home/base.html:310
+#: home/templates/home/base.html:189 home/templates/home/base.html:288
 msgid "About"
 msgstr "حول"
 
@@ -411,85 +406,87 @@ msgstr "حول"
 msgid "Contact Us"
 msgstr "الاتصال بنا"
 
-#: home/templates/home/base.html:104
+#: home/templates/home/base.html:102 home/templates/home/base.html:109
 msgid "Edit Profile"
 msgstr "تعديل الملف الشخصي"
 
-#: home/templates/home/base.html:106
+#: home/templates/home/base.html:104 home/templates/home/base.html:111
 msgid "Log out"
 msgstr "تسجيل الخروج"
 
-#: home/templates/home/base.html:119 home/templates/home/base.html:150
+#: home/templates/home/base.html:122 home/templates/home/base.html:140
 msgid "Sign In"
 msgstr "تسجيل الدخول"
 
-#: home/templates/home/base.html:127 home/templates/home/base.html:141
-#: home/templates/home/base.html:158 home/templates/home/base.html:173
+#: home/templates/home/base.html:131 home/templates/home/base.html:148
 msgid "As Teacher"
 msgstr "تسجيل معلم "
 
-#: home/templates/home/base.html:131 home/templates/home/base.html:142
-#: home/templates/home/base.html:162 home/templates/home/base.html:172
+#: home/templates/home/base.html:132 home/templates/home/base.html:149
 msgid "As Student"
 msgstr "تسجيل طالب "
 
-#: home/templates/home/base.html:199 home/templates/home/base.html:288
+#: home/templates/home/base.html:169 home/templates/home/base.html:266
 msgid "Our Sidebar"
 msgstr "جانبنا"
 
-#: home/templates/home/base.html:224 home/templates/home/base.html:317
+#: home/templates/home/base.html:194 home/templates/home/base.html:295
 msgid "Categories"
 msgstr "الفئات"
 
-#: home/templates/home/base.html:241 home/templates/home/base.html:334
+#: home/templates/home/base.html:211 home/templates/home/base.html:312
 msgid "Portfolio"
 msgstr "الملف"
 
-#: home/templates/home/base.html:247 home/templates/home/base.html:341
+#: home/templates/home/base.html:217 home/templates/home/base.html:319
 msgid "FAQ"
 msgstr "الأسئلة المتكررة"
 
-#: home/templates/home/base.html:253 home/templates/home/base.html:348
+#: home/templates/home/base.html:223 home/templates/home/base.html:326
 msgid "Contact"
 msgstr "الاتصال بنا"
 
-#: home/templates/home/base.html:259 home/templates/home/base.html:355
+#: home/templates/home/base.html:229 home/templates/home/base.html:333
 msgid "Compare"
 msgstr "المقارنة"
 
-#: home/templates/home/base.html:412 home/templates/home/base.html:426
+#: home/templates/home/base.html:236 home/templates/home/base.html:342
+msgid "Create Exam"
+msgstr "إنشاء امتحان"
+
+#: home/templates/home/base.html:398 home/templates/home/base.html:412
 msgid "&"
 msgstr "و"
 
-#: home/templates/home/base.html:417
+#: home/templates/home/base.html:403
 msgid "Privacy Policy"
 msgstr "سياسة الخصصوصية"
 
-#: home/templates/home/base.html:422
+#: home/templates/home/base.html:408
 msgid "Cookies Policy"
 msgstr "سياسة ملفات تعريف الارتباط"
 
-#: home/templates/home/base.html:426
+#: home/templates/home/base.html:412
 msgid "Copyright"
 msgstr "حقوق النشر"
 
-#: home/templates/home/base.html:426
+#: home/templates/home/base.html:412
 msgid "All rights reserved"
 msgstr "جميع الحقوق محفوظة"
 
-#: home/templates/home/base.html:426
+#: home/templates/home/base.html:412
 msgid "Made with"
 msgstr "صنع بال"
 
-#: home/templates/home/base.html:426
+#: home/templates/home/base.html:412
 msgid "by"
 msgstr "بواسطة"
 
-#: home/templates/home/base.html:426
+#: home/templates/home/base.html:412
 msgid "Malaz"
 msgstr "ملاذ"
 
-#: home/templates/home/base.html:427
+#: home/templates/home/base.html:413
 msgid "Moa'yed"
 msgstr "مؤيد"
 
@@ -518,49 +515,47 @@ msgstr "الصفحة الرئيسية"
 msgid "Terms and Conditions"
 msgstr "الأحكام والشروط"
 
-#: teacher/forms.py:16 teacher/models.py:24
-msgid "course"
-msgstr ""
-
 #: teacher/forms.py:17
 #, fuzzy
 #| msgid "As Teacher"
 msgid "teacher"
 msgstr "تسجيل معلم "
 
-#: teacher/forms.py:18 teacher/models.py:29
+#: teacher/forms.py:18 teacher/models.py:28
 msgid "exam name"
 msgstr "اسم الامتحان"
 
-#: teacher/forms.py:19 teacher/models.py:30
+#: teacher/forms.py:19 teacher/models.py:29
 msgid "exam date"
 msgstr "تاريخ الامتحان"
 
-#: teacher/forms.py:20 teacher/models.py:31
+#: teacher/forms.py:20 teacher/models.py:30
 msgid "exam period"
 msgstr "مدة الامتحان"
 
-#: teacher/forms.py:21 teacher/models.py:33
+#: teacher/forms.py:21 teacher/models.py:32
 msgid "exam secret key"
 msgstr "المفتاح السري للامتحان"
 
-#: teacher/forms.py:22 teacher/models.py:34
+#: teacher/forms.py:22 teacher/models.py:33
 msgid "exam full mark"
 msgstr "الدرجة الكاملة للامتحان"
 
-#: teacher/forms.py:23
-#, fuzzy
-#| msgid "exam notes"
-msgid "exam note"
+#: teacher/forms.py:23 teacher/models.py:31
+msgid "exam notes"
 msgstr "ملاحظات الامتحان"
 
-#: teacher/forms.py:24 teacher/models.py:35
+#: teacher/forms.py:24 teacher/models.py:34
 msgid "exam pass mark"
 msgstr "درجة مرور الامتحان"
 
-#: teacher/forms.py:25 teacher/models.py:36
+#: teacher/forms.py:25 teacher/models.py:35
 msgid "exam status"
 msgstr "حالة الامتحان"
+
+#: teacher/forms.py:26 teacher/models.py:37
+msgid "exam number of questions"
+msgstr ""
 
 #: teacher/models.py:5
 msgid "Information Technology"
@@ -606,9 +601,21 @@ msgstr "مبادئ البرمجة"
 msgid "field name"
 msgstr "اسم المجال"
 
-#: teacher/models.py:32
-msgid "exam notes"
-msgstr "ملاحظات الامتحان"
+#: teacher/models.py:24
+msgid "course"
+msgstr ""
+
+#: teacher/models.py:36
+msgid "exam unique identifier"
+msgstr ""
+
+#: teacher/views.py:13 teacher/views.py:23
+msgid "Create New Exam"
+msgstr "إنشاء امتحان جديد"
+
+#: teacher/views.py:18
+msgid "Your New Exam has been created Successfully!"
+msgstr "لقد تم إنشاء امتحانك الجديد بنجاح!"
 
 #: venv/lib/python3.8/site-packages/botocore/docs/bcdoc/textwriter.py:469
 #, fuzzy, python-format
@@ -1799,6 +1806,14 @@ msgstr ""
 #: venv/lib/python3.8/site-packages/django/views/templates/default_urlconf.html:409
 msgid "Connect, get help, or contribute"
 msgstr ""
+
+#, fuzzy
+#~| msgid "exam notes"
+#~ msgid "exam note"
+#~ msgstr "ملاحظات الامتحان"
+
+#~ msgid "profile picture"
+#~ msgstr "صورة الملف الشخصي"
 
 #, fuzzy
 #~| msgid "HomePage"

@@ -17,7 +17,7 @@ def about(request):
         'title':'about',
         'about': 'active',
     }
-    return render(request,'home/about-1.html',context)
+    return render(request,'home/about.html',context)
 
 def contact_us(request):
     context={
