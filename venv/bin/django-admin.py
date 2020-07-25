@@ -1,4 +1,4 @@
-#!/home/moayed/PycharmProjects/Turtle/venv/bin/python
+#!/home/moayed/Documents/PycharmProjects/Turtle/venv/bin/python3.8
 from django.core import management
 
 if __name__ == "__main__":
