@@ -9,7 +9,7 @@ cupshelpers==1.0
 defer==1.0.6
 Django==1.11.11
 django-crispy-forms==1.9.2
-httplib2==0.11.3
+httplib2==0.18.0
 idna==2.6
 louis==3.5.0
 macaroonbakery==1.1.3
