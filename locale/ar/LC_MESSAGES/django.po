@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-19 16:01+0200\n"
+"POT-Creation-Date: 2020-08-09 09:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -125,6 +125,7 @@ msgstr "المعلومات الشخصية"
 
 #: accounts/templates/accounts/profile.html:60
 #: accounts/templates/accounts/profile.html:111
+#: teacher/templates/teacher/createExam.html:83
 msgid "Save"
 msgstr "حفظ"
 
@@ -227,7 +228,7 @@ msgstr "واصل تقدمك فالمستقبل أمامك"
 msgid "I Agree To"
 msgstr "أنا أوافق على"
 
-#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:398
+#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:400
 msgid "Terms"
 msgstr "الأحكام"
 
@@ -237,7 +238,7 @@ msgstr "الأحكام"
 msgid "and"
 msgstr "و"
 
-#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:398
+#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:400
 msgid "Conditions"
 msgstr "الشروط"
 
@@ -450,43 +451,43 @@ msgstr "الاتصال بنا"
 msgid "Compare"
 msgstr "المقارنة"
 
-#: home/templates/home/base.html:236 home/templates/home/base.html:342
+#: home/templates/home/base.html:236 home/templates/home/base.html:341
 msgid "Create Exam"
 msgstr "إنشاء امتحان"
 
-#: home/templates/home/base.html:398 home/templates/home/base.html:412
+#: home/templates/home/base.html:400 home/templates/home/base.html:414
 msgid "&"
 msgstr "و"
 
-#: home/templates/home/base.html:403
+#: home/templates/home/base.html:405
 msgid "Privacy Policy"
 msgstr "سياسة الخصصوصية"
 
-#: home/templates/home/base.html:408
+#: home/templates/home/base.html:410
 msgid "Cookies Policy"
 msgstr "سياسة ملفات تعريف الارتباط"
 
-#: home/templates/home/base.html:412
+#: home/templates/home/base.html:414
 msgid "Copyright"
 msgstr "حقوق النشر"
 
-#: home/templates/home/base.html:412
+#: home/templates/home/base.html:414
 msgid "All rights reserved"
 msgstr "جميع الحقوق محفوظة"
 
-#: home/templates/home/base.html:412
+#: home/templates/home/base.html:414
 msgid "Made with"
 msgstr "صنع بال"
 
-#: home/templates/home/base.html:412
+#: home/templates/home/base.html:414
 msgid "by"
 msgstr "بواسطة"
 
-#: home/templates/home/base.html:412
+#: home/templates/home/base.html:414
 msgid "Malaz"
 msgstr "ملاذ"
 
-#: home/templates/home/base.html:413
+#: home/templates/home/base.html:415
 msgid "Moa'yed"
 msgstr "مؤيد"
 
@@ -515,47 +516,125 @@ msgstr "الصفحة الرئيسية"
 msgid "Terms and Conditions"
 msgstr "الأحكام والشروط"
 
-#: teacher/forms.py:17
+#: teacher/forms.py:25
+msgid "question text"
+msgstr ""
+
+#: teacher/forms.py:26
+#, fuzzy
+#| msgid "Optimal Answer"
+msgid "question optimal answer"
+msgstr "الإجابة النموذجية"
+
+#: teacher/forms.py:27
+msgid "question degree"
+msgstr ""
+
+#: teacher/forms.py:30
+#, fuzzy
+#| msgid "add your exam notes here!"
+msgid "add your question here!"
+msgstr "قم بإضافة ملاحظاتك هنا!"
+
+#: teacher/forms.py:32
+#, fuzzy
+#| msgid "add your exam notes here!"
+msgid "add your question's optimal answer here!"
+msgstr "قم بإضافة ملاحظاتك هنا!"
+
+#: teacher/forms.py:34
+#, fuzzy
+#| msgid "add your exam notes here!"
+msgid "add your question degree here!"
+msgstr "قم بإضافة ملاحظاتك هنا!"
+
+#: teacher/forms.py:51
 #, fuzzy
 #| msgid "As Teacher"
 msgid "teacher"
 msgstr "تسجيل معلم "
 
-#: teacher/forms.py:18 teacher/models.py:28
+#: teacher/forms.py:52 teacher/models.py:31
 msgid "exam name"
 msgstr "اسم الامتحان"
 
-#: teacher/forms.py:19 teacher/models.py:29
+#: teacher/forms.py:53 teacher/models.py:32
 msgid "exam date"
 msgstr "تاريخ الامتحان"
 
-#: teacher/forms.py:20 teacher/models.py:30
+#: teacher/forms.py:54 teacher/models.py:33
 msgid "exam period"
 msgstr "مدة الامتحان"
 
-#: teacher/forms.py:21 teacher/models.py:32
+#: teacher/forms.py:55 teacher/models.py:35
 msgid "exam secret key"
 msgstr "المفتاح السري للامتحان"
 
-#: teacher/forms.py:22 teacher/models.py:33
+#: teacher/forms.py:56 teacher/models.py:36
 msgid "exam full mark"
 msgstr "الدرجة الكاملة للامتحان"
 
-#: teacher/forms.py:23 teacher/models.py:31
+#: teacher/forms.py:57 teacher/models.py:34
 msgid "exam notes"
 msgstr "ملاحظات الامتحان"
 
-#: teacher/forms.py:24 teacher/models.py:34
+#: teacher/forms.py:58 teacher/models.py:37
 msgid "exam pass mark"
 msgstr "درجة مرور الامتحان"
 
-#: teacher/forms.py:25 teacher/models.py:35
+#: teacher/forms.py:59 teacher/models.py:38
 msgid "exam status"
 msgstr "حالة الامتحان"
 
-#: teacher/forms.py:26 teacher/models.py:37
+#: teacher/forms.py:60 teacher/models.py:40
 msgid "exam number of questions"
 msgstr ""
+
+#: teacher/forms.py:61 teacher/models.py:39
+msgid "exam unique identifier"
+msgstr "المعرف الرقمي الفريد للامتحان"
+
+#: teacher/forms.py:64
+msgid "exam name goes here!"
+msgstr "اكتب اسم الامتحان هنا!"
+
+#: teacher/forms.py:65
+msgid "add your exam notes here!"
+msgstr "قم بإضافة ملاحظاتك هنا!"
+
+#: teacher/forms.py:66 teacher/templates/teacher/createExam.html:45
+msgid "set exam period here!"
+msgstr "قم بضبط مدة الامتحان هنا!"
+
+#: teacher/forms.py:67
+msgid "specify exam secret key!"
+msgstr "قم بتحديد المتاح السري للامتحان!"
+
+#: teacher/forms.py:68
+msgid "set exam date here!"
+msgstr "قم بضبط تاريخ الامتحان هنا!"
+
+#: teacher/forms.py:69
+msgid "exam pass mark here!"
+msgstr "درجة مرور الامتحان"
+
+#: teacher/forms.py:70
+msgid "exam full mark here!"
+msgstr "الدرجة الكاملة للامتحان"
+
+#: teacher/forms.py:71
+#, fuzzy
+#| msgid "exam status"
+msgid "exam status here!"
+msgstr "حالة الامتحان"
+
+#: teacher/forms.py:72
+msgid "exam number of questions!"
+msgstr "عدد أسئلة الامتحان!"
+
+#: teacher/forms.py:74
+msgid "exam unique identifier!"
+msgstr "المعرف الرقمي الفريد للامتحان"
 
 #: teacher/models.py:5
 msgid "Information Technology"
@@ -597,37 +676,83 @@ msgstr "الوسائط المتعددة"
 msgid "Programming Principles"
 msgstr "مبادئ البرمجة"
 
-#: teacher/models.py:20
+#: teacher/models.py:21
 msgid "field name"
 msgstr "اسم المجال"
 
-#: teacher/models.py:24
+#: teacher/models.py:26
 msgid "course"
 msgstr ""
 
-#: teacher/models.py:36
-msgid "exam unique identifier"
-msgstr ""
+#: teacher/templates/teacher/createExam.html:37
+msgid "Exam Date"
+msgstr "تاريخ الامتحان"
 
-#: teacher/views.py:13 teacher/views.py:23
+#: teacher/templates/teacher/createExam.html:74
+msgid "Exam UID"
+msgstr "المعرف الفريد للامتحان"
+
+#: teacher/templates/teacher/createExam.html:87
+#: teacher/templates/teacher/createQuestions.html:71
+msgid "Cancel"
+msgstr "إلغاء"
+
+#: teacher/templates/teacher/createQuestions.html:25
+msgid "Add Questions"
+msgstr "إضافة أسئلة"
+
+#: teacher/templates/teacher/createQuestions.html:28
+msgid "choose number of questions"
+msgstr "اختر عدد الأسئلة"
+
+#: teacher/templates/teacher/createQuestions.html:34 teacher/views.py:56
+msgid "Question"
+msgstr "السؤال"
+
+#: teacher/templates/teacher/createQuestions.html:38 teacher/views.py:55
+msgid "Remove Question"
+msgstr "إزالة السؤال"
+
+#: teacher/templates/teacher/createQuestions.html:43
+msgid "question full degree"
+msgstr "الدرجة الكاملة للسؤال"
+
+#: teacher/templates/teacher/createQuestions.html:50
+msgid "question here"
+msgstr "اكتب السؤال هنا"
+
+#: teacher/templates/teacher/createQuestions.html:53
+msgid "optimal answer here"
+msgstr "اكتب الإجابة النموذجية هنا"
+
+#: teacher/templates/teacher/createQuestions.html:65
+msgid "Delete Question?"
+msgstr "إزالة السؤال؟"
+
+#: teacher/templates/teacher/createQuestions.html:72
+#: venv/lib/python3.8/site-packages/django/forms/formsets.py:391
+msgid "Delete"
+msgstr "حذف"
+
+#: teacher/views.py:24 teacher/views.py:45
 msgid "Create New Exam"
 msgstr "إنشاء امتحان جديد"
 
-#: teacher/views.py:18
+#: teacher/views.py:38
 msgid "Your New Exam has been created Successfully!"
 msgstr "لقد تم إنشاء امتحانك الجديد بنجاح!"
 
-#: venv/lib/python3.8/site-packages/botocore/docs/bcdoc/textwriter.py:469
-#, fuzzy, python-format
-#| msgid "image"
-msgid "[image: %s]"
-msgstr "الصورة"
-
-#: venv/lib/python3.8/site-packages/botocore/docs/bcdoc/textwriter.py:470
+#: teacher/views.py:64 teacher/views.py:76
 #, fuzzy
-#| msgid "image"
-msgid "[image]"
-msgstr "الصورة"
+#| msgid "Create Exam"
+msgid "Create Exam Questions"
+msgstr "إنشاء امتحان"
+
+#: teacher/views.py:70
+#, fuzzy
+#| msgid "Your New Exam has been created Successfully!"
+msgid "Your Exam Questions has been created Successfully!"
+msgstr "لقد تم إنشاء امتحانك الجديد بنجاح!"
 
 #: venv/lib/python3.8/site-packages/crispy_forms/tests/test_form_helper.py:129
 #: venv/lib/python3.8/site-packages/crispy_forms/tests/test_form_helper.py:139
@@ -1167,10 +1292,6 @@ msgstr[1] ""
 #: venv/lib/python3.8/site-packages/django/forms/formsets.py:379
 #: venv/lib/python3.8/site-packages/django/forms/formsets.py:386
 msgid "Order"
-msgstr ""
-
-#: venv/lib/python3.8/site-packages/django/forms/formsets.py:391
-msgid "Delete"
 msgstr ""
 
 #: venv/lib/python3.8/site-packages/django/forms/models.py:754
@@ -1807,8 +1928,167 @@ msgstr ""
 msgid "Connect, get help, or contribute"
 msgstr ""
 
+#: venv/lib/python3.8/site-packages/django_mysql/apps.py:13
+msgid "MySQL extensions"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/django_mysql/forms.py:20
+#, python-format
+msgid "Item %(nth)s in the list did not validate: "
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/django_mysql/forms.py:21
+#: venv/lib/python3.8/site-packages/django_mysql/forms.py:132
+msgid "No leading, trailing, or double commas."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/django_mysql/forms.py:130
+#, python-format
+msgid "Item \"%(item)s\" in the set did not validate: "
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/django_mysql/forms.py:131
+#, python-format
+msgid "Item %(nth)s in the set did not validate: "
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/django_mysql/forms.py:134
+#, python-format
+msgid "Duplicates are not supported. '%(item)s' appears twice or more."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/django_mysql/forms.py:254
+#, python-format
+msgid "'%(value)s' value must be valid JSON."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/django_mysql/models/fields/dynamic.py:29
+msgid "Mapping"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/django_mysql/models/fields/enum.py:7
 #, fuzzy
-#~| msgid "exam notes"
+#| msgid "Registration"
+msgid "Enumeration"
+msgstr "التسجيل"
+
+#: venv/lib/python3.8/site-packages/django_mysql/models/fields/lists.py:59
+#, python-format
+msgid "List of %(base_description)s"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/django_mysql/models/fields/sets.py:59
+#, python-format
+msgid "Set of %(base_description)s"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/django_mysql/models/query.py:286
+#, python-format
+msgid "Approximately %(number)s"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/django_mysql/validators.py:7
+#, python-format
+msgid ""
+"List contains %(show_value)d item, it should contain no more than "
+"%(limit_value)d."
+msgid_plural ""
+"List contains %(show_value)d items, it should contain no more than "
+"%(limit_value)d."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: venv/lib/python3.8/site-packages/django_mysql/validators.py:17
+#, python-format
+msgid ""
+"List contains %(show_value)d item, it should contain no fewer than "
+"%(limit_value)d."
+msgid_plural ""
+"List contains %(show_value)d items, it should contain no fewer than "
+"%(limit_value)d."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: venv/lib/python3.8/site-packages/django_mysql/validators.py:27
+#, python-format
+msgid ""
+"Set contains %(show_value)d item, it should contain no more than "
+"%(limit_value)d."
+msgid_plural ""
+"Set contains %(show_value)d items, it should contain no more than "
+"%(limit_value)d."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: venv/lib/python3.8/site-packages/django_mysql/validators.py:37
+#, python-format
+msgid ""
+"Set contains %(show_value)d item, it should contain no fewer than "
+"%(limit_value)d."
+msgid_plural ""
+"Set contains %(show_value)d items, it should contain no fewer than "
+"%(limit_value)d."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: venv/lib/python3.8/site-packages/httplib2/__init__.py:373
+#, python-format
+msgid "Content purported to be compressed with %s but failed to decompress."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/httplib2/__init__.py:524
+#, python-format
+msgid "Unsupported value for qop: %s."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/httplib2/__init__.py:527
+#: venv/lib/python3.8/site-packages/httplib2/__init__.py:589
+#, python-format
+msgid "Unsupported value for algorithm: %s."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/httplib2/__init__.py:586
+msgid "The challenge doesn't contain a server nonce, or this one is empty."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/httplib2/__init__.py:592
+#, python-format
+msgid "Unsupported value for pw-algorithm: %s."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/httplib2/__init__.py:1287
+msgid "Redirected but the response is missing a Location: header."
+msgstr ""
+
+#~ msgid "exam unique identifier here!"
+#~ msgstr "اكتب المعرف الفريد للامتحان!"
+
+#, fuzzy
+#~| msgid "image"
+#~ msgid "[image: %s]"
+#~ msgstr "الصورة"
+
+#, fuzzy
+#~| msgid "image"
+#~ msgid "[image]"
+#~ msgstr "الصورة"
+
 #~ msgid "exam note"
 #~ msgstr "ملاحظات الامتحان"
 

@@ -1,0 +1,39 @@
+.compare-form #studentAnswer{
+margin-left: -113px;
+}
+.compare-form #optimalAnswer{
+
+}
+.compare-form #compare-results-button{
+    margin-left: -115px;
+}
+.results-label{
+margin-left: -222px;
+}
+.compare-form #results{
+margin-left: -110px;
+}
+
+.compare-form-arabic #studentAnswerArabic{
+margin-left: -113px;
+text-align: right;
+direction: rtl;
+}
+.compare-form-arabic #optimalAnswerArabic{
+
+text-align: right;
+direction: rtl;
+}
+.compare-form-arabic #compare-results-button-Arabic{
+    margin-left: -115px;
+    text-align: right;
+
+}
+.results-label-Arabic{
+margin-left: -222px;
+}
+.compare-form-arabic #results-Arabic{
+margin-left: -110px;
+text-align: right;
+direction: rtl;
+}

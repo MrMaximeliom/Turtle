@@ -1,0 +1,21 @@
+.question{
+right: 15%;
+position: relative;
+border: 2px solid #ddd;
+margin-bottom: 30px;
+}
+.border-bottom-question{
+border-bottom:3px solid #dddddd;
+width: max-content;
+margin-top: 5px;
+color: #941351;
+font-size: 18px;
+}
+.fit-border-bottom{
+margin-bottom:-16px;
+}
+.remove-question{
+position: absolute;
+left: 83%;
+top: 4%;
+}

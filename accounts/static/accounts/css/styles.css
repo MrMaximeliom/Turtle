@@ -1,5 +1,9 @@
 .field input[type=text],
 .field input[type=password],
+.field input[type=date],
+.field input[type=number],
+.field textarea,
+.field select,
 .field input[type=email] {
 border-top: none;
 border-left: none;
@@ -19,6 +23,10 @@ display:inline-block;
 .first-field{
 margin-right:100px;
 margin-left: 50px;
+}
+.first-field-arabic{
+margin-right:100px;
+margin-left: 100px;
 }
 .confirm-signup{
 cursor:pointer;
@@ -73,8 +81,38 @@ flex: 1;
 margin-right: 10px;
 margin-top: 10px;
 }
-
-
-
-
+.exam-notes{
+left: 12%;
+top: 20%;
+margin-bottom: 40px;
+}
+.exam-notes-arabic{
+right: 50%;
+top: 10%;
+margin-bottom: 40px;}
+.exam-btn{
+font-size: 17px;}
+.save-btn:hover{
+color: #462342;
+}
+.cancel-btn:hover{
+color:#c40303
+}
+.arabic{
+text-align:right;
+direction:rtl;
+position: absolute;
+}
+.exam-name-arabic{
+right: 30%;
+}
+.exam-label{
+display: block ruby;
+}
+.exam-label-color{
+color: gray;
+}
+#id_exam_date{
+width:190px;
+}
 /* ending testing code */

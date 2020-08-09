@@ -1,0 +1,82 @@
+{% extends 'home/base.html' %}
+{% load crispy_forms_tags %}
+{% load static i18n %}
+{% load static %}
+{% block custom_css %}
+<link href="{% static 'accounts/css/styles.css' %}" type="text/css" rel="stylesheet">
+<link href="{% static 'teacher/css/createQuestions.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block content %}
+{{ exam_question_count|json_script:"my-questions" }}
+{{ translations|json_script:"my-translations" }}
+
+<div class="home-page">
+    {% get_current_language as MY_LANGUAGE %}
+    <h5 style="display:none;" id="lang">{{  MY_LANGUAGE }}</h5>
+
+    <div class="field" id="parent-div">
+
+         {% csrf_token %}
+        <div class="form-row">
+             <div class="form-group col-md-2 " >
+                 <button class="raw-button" id="add-questions">{% trans 'Add Questions' %}</button>
+             </div>
+             <div class="form-group col-md-4  " >
+                 <input type="number" min="1" max="100" id="num_questions" placeholder="{% trans 'choose number of questions' %}"/>
+             </div>
+
+    </div>
+        <div class="question " id="question_text_" style="display:none;">
+            <div class="border-bottom-question mb-3">
+                <span id="question_number_">{% trans 'Question' %} (1)</span>
+
+            </div>
+
+                             <button class="raw-button remove-question" id="remove-question_">{% trans 'Remove Question' %}</button>
+
+
+                   <div class="form-row" >
+            <div class="form-group col-md-4  " >
+                          <input type="number" min="1" max="100" placeholder="{% trans 'question full degree' %}" id="question_degree_">
+
+                          </div>
+        </div>
+
+         <div class="form-row fit-border-bottom">
+                          <div class="form-group col-md-6 " id="question_area_" >
+                              <textarea placeholder="{% trans 'question here' %}" id="question_" class="question_class"></textarea>
+                          </div>
+             <div class="form-group col-md-6  " id="answer_area_" >
+                          <textarea placeholder="{% trans 'optimal answer here' %}" cols="20" id="optimal_" class="answer_class"></textarea>
+
+                          </div>
+
+         </div>
+        </div>
+</div>
+    <!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">{% trans 'Delete Question?' %}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" id="closeIcon">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans 'Cancel' %}</button>
+        <button type="button" class="btn btn-danger" id="remove_question_modal" data-dismiss="modal">{% trans 'Delete' %}</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}
+{% block custom_javascript %}
+<script src="{% static 'teacher/js/ckeditor5/build/ckeditor.js' %}"></script>
+<script src="{% static 'teacher/js/addQuestions.js' %}"></script>
+{% endblock %}
