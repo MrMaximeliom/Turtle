@@ -1,0 +1,85 @@
+{% extends "home/base.html" %}
+{% load static i18n %}
+{% load static %}
+
+{% block custom_css %}
+<link href="{% static 'accounts/css/styles.css' %}" type="text/css" rel="stylesheet">
+<link href="{% static 'teacher/css/createQuestions.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block content %}
+{{ exam_question_count|json_script:"my-questions" }}
+{{ translations|json_script:"my-translations" }}
+<div class="home-page">
+  {% get_current_language as MY_LANGUAGE %}
+    <h5 style="display:none;" id="lang">{{  MY_LANGUAGE }}</h5>
+    <form id="form-container" class="field" method="POST" >
+        {% csrf_token %}
+        {{question_formset.management_form}}
+        <div class="form-row">
+             <div class="form-group col-md-2 " >
+
+                 <button class="raw-button" id="add-questions" type="button">{% trans 'Add Questions' %}</button>
+             </div>
+             <div class="form-group col-md-4  " >
+                 <input type="number" min="1" max="100" id="num_questions" name="number_of_questions" placeholder="{% trans 'choose number of questions' %}" data-send-numberQ-url="{% url 'number-questions' 1%} " />
+             </div>
+
+    </div>
+        {% for form in question_formset %}
+        <div class="question-form">
+          <div class="question " id="question_text_" >
+            <div class="border-bottom-question mb-3">
+                <span id="question_number_">{% trans 'Question' %} (1)</span>
+
+            </div>
+
+                             <button class="raw-button remove-question" type="button" id="remove-question_">{% trans 'Remove Question' %}</button>
+
+
+                   <div class="form-row" >
+            <div class="form-group col-md-4  " >
+              {{ form.question_degree }}
+
+                          </div>
+        </div>
+
+         <div class="form-row fit-border-bottom">
+                          <div class="form-group col-md-6 " id="question_area_" >
+                            {{ form.question_text}}
+                          </div>
+             <div class="form-group col-md-6  " id="answer_area_" >
+                                           {{ form.question_optimal_answer }}
+
+                          </div>
+
+         </div>
+        </div>
+
+        </div>
+        {% endfor %}
+        <div class="form-row" id="controlButtons"  >
+<div class="form-group col-md-4 mb-2 first-field" id="signup-btn" >
+
+    <button class="raw-button save-btn exam-btn"  type="submit" id="save-btn">
+        <i class="fa fa-floppy-o" aria-hidden="true"></i>
+        {% trans 'Save' %}
+    </button>
+     <a class="raw-button ml-5 exam-btn cancel-btn btn" href="{% url 'exam_list' %}">
+         <i class="fa fa-times" aria-hidden="true"></i>
+         {% trans 'Cancel' %}
+     </a>
+</div>
+</div>
+    </form>
+
+
+    </div>
+{% endblock content %}
+{% block custom_javascript %}
+<script src="{% static 'teacher/js/add_question.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+{% endblock %}

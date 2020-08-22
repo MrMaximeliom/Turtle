@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     'support.apps.SupportConfig',
     'errors.apps.ErrorsConfig',
     'teacher.apps.TeacherConfig',
+    'ckeditor',
+    'dajaxice',
+    'dajax',
 ]
 
 MIDDLEWARE = [
@@ -59,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+
 ]
 
 ROOT_URLCONF = 'Turtle.urls'
@@ -78,6 +82,29 @@ TEMPLATES = [
         },
     },
 ]
+TEMPLATE_LOADERS = (
+   'django.template.loaders.filesystem.Loader',
+   'django.template.loaders.app_directories.Loader',
+   'django.template.loaders.eggs.Loader',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+   'django.contrib.auth.context_processors.auth',
+   'django.core.context_processors.debug',
+   'django.core.context_processors.i18n',
+   'django.core.context_processors.media',
+   'django.core.context_processors.static',
+   'django.core.context_processors.request',
+   'django.contrib.messages.context_processors.messages'
+)
+
+STATICFILES_FINDERS = (
+   'django.contrib.staticfiles.finders.FileSystemFinder',
+   'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+   'dajaxice.finders.DajaxiceFinder',
+)
+
+DAJAXICE_MEDIA_PREFIX = 'dajaxice'
 
 WSGI_APPLICATION = 'Turtle.wsgi.application'
 
@@ -149,6 +176,29 @@ MEDIA_URL = '/media/'
 #STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT  = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+# CKEDITOR_BASEPATH = "/staticfiles/ckeditor/ckeditor/"
+# CKEDITOR_CONFIGS = {
+#     'my_ckeditor': {
+#         'toolbar': 'Basic',
+#     },
+# }
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'height': 150,
+        'width': 470,
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat']
+        ],
+        'extraPlugins': ','.join([
+        'placeholder'
+        ]),
+    }
+}
+# CKEDITOR_JQUERY_URL = 'https://code.jquery.com/jquery-3.5.1.slim.min.js'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 AUTH_USER_MODEL = 'accounts.User'

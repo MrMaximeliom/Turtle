@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-09 09:51+0200\n"
+"POT-Creation-Date: 2020-08-13 23:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -113,8 +113,8 @@ msgstr "هل تحتاج إلى حساب؟"
 
 #: accounts/templates/accounts/login.html:31
 #: accounts/templates/accounts/login.html:61
-#: accounts/templates/accounts/signup.html:81 home/templates/home/base.html:128
-#: home/templates/home/base.html:145
+#: accounts/templates/accounts/signup.html:81 home/templates/home/base.html:129
+#: home/templates/home/base.html:146
 msgid "Sign Up"
 msgstr "إنشاء حساب"
 
@@ -126,6 +126,7 @@ msgstr "المعلومات الشخصية"
 #: accounts/templates/accounts/profile.html:60
 #: accounts/templates/accounts/profile.html:111
 #: teacher/templates/teacher/createExam.html:83
+#: teacher/templates/teacher/createQuestions.html:64
 msgid "Save"
 msgstr "حفظ"
 
@@ -228,7 +229,7 @@ msgstr "واصل تقدمك فالمستقبل أمامك"
 msgid "I Agree To"
 msgstr "أنا أوافق على"
 
-#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:400
+#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:401
 msgid "Terms"
 msgstr "الأحكام"
 
@@ -238,7 +239,7 @@ msgstr "الأحكام"
 msgid "and"
 msgstr "و"
 
-#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:400
+#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:401
 msgid "Conditions"
 msgstr "الشروط"
 
@@ -323,16 +324,12 @@ msgstr ""
 "خاطئة"
 
 #: accounts/views.py:111
-#, fuzzy
-#| msgid "Your account has been created! you are now able to log in"
 msgid "Your account has been updated!"
-msgstr "تم إنشاء حسابك ! يمكنك الآن تسجيل الدخول"
+msgstr "لقد تم تحديث الحساب الخاص بك!"
 
 #: accounts/views.py:119
-#, fuzzy
-#| msgid "Profile Info"
 msgid "Profile Page"
-msgstr "المعلومات الشخصية"
+msgstr "صفحة المستخدم"
 
 #: errors/templates/errors/error_400.html:9
 msgid "Bad Request Error"
@@ -391,103 +388,103 @@ msgstr "خطأ"
 msgid "Don't Worry we are working hard to solve this!"
 msgstr "لا تقلق نحن نعمل جاهدين لحل هذه المشكلة"
 
-#: home/templates/home/base.html:63 home/templates/home/base.html:76
-#: home/templates/home/base.html:174 home/templates/home/base.html:272
+#: home/templates/home/base.html:64 home/templates/home/base.html:77
+#: home/templates/home/base.html:175 home/templates/home/base.html:273
 #, fuzzy
 #| msgid "HomePage"
 msgid "Home"
 msgstr "الصفحة الرئيسية"
 
-#: home/templates/home/base.html:67 home/templates/home/base.html:81
-#: home/templates/home/base.html:189 home/templates/home/base.html:288
+#: home/templates/home/base.html:68 home/templates/home/base.html:82
+#: home/templates/home/base.html:190 home/templates/home/base.html:289
 msgid "About"
 msgstr "حول"
 
-#: home/templates/home/base.html:71 home/templates/home/base.html:86
+#: home/templates/home/base.html:72 home/templates/home/base.html:87
 msgid "Contact Us"
 msgstr "الاتصال بنا"
 
-#: home/templates/home/base.html:102 home/templates/home/base.html:109
+#: home/templates/home/base.html:103 home/templates/home/base.html:110
 msgid "Edit Profile"
 msgstr "تعديل الملف الشخصي"
 
-#: home/templates/home/base.html:104 home/templates/home/base.html:111
+#: home/templates/home/base.html:105 home/templates/home/base.html:112
 msgid "Log out"
 msgstr "تسجيل الخروج"
 
-#: home/templates/home/base.html:122 home/templates/home/base.html:140
+#: home/templates/home/base.html:123 home/templates/home/base.html:141
 msgid "Sign In"
 msgstr "تسجيل الدخول"
 
-#: home/templates/home/base.html:131 home/templates/home/base.html:148
+#: home/templates/home/base.html:132 home/templates/home/base.html:149
 msgid "As Teacher"
 msgstr "تسجيل معلم "
 
-#: home/templates/home/base.html:132 home/templates/home/base.html:149
+#: home/templates/home/base.html:133 home/templates/home/base.html:150
 msgid "As Student"
 msgstr "تسجيل طالب "
 
-#: home/templates/home/base.html:169 home/templates/home/base.html:266
+#: home/templates/home/base.html:170 home/templates/home/base.html:267
 msgid "Our Sidebar"
 msgstr "جانبنا"
 
-#: home/templates/home/base.html:194 home/templates/home/base.html:295
+#: home/templates/home/base.html:195 home/templates/home/base.html:296
 msgid "Categories"
 msgstr "الفئات"
 
-#: home/templates/home/base.html:211 home/templates/home/base.html:312
+#: home/templates/home/base.html:212 home/templates/home/base.html:313
 msgid "Portfolio"
 msgstr "الملف"
 
-#: home/templates/home/base.html:217 home/templates/home/base.html:319
+#: home/templates/home/base.html:218 home/templates/home/base.html:320
 msgid "FAQ"
 msgstr "الأسئلة المتكررة"
 
-#: home/templates/home/base.html:223 home/templates/home/base.html:326
+#: home/templates/home/base.html:224 home/templates/home/base.html:327
 msgid "Contact"
 msgstr "الاتصال بنا"
 
-#: home/templates/home/base.html:229 home/templates/home/base.html:333
+#: home/templates/home/base.html:230 home/templates/home/base.html:334
 msgid "Compare"
 msgstr "المقارنة"
 
-#: home/templates/home/base.html:236 home/templates/home/base.html:341
+#: home/templates/home/base.html:237 home/templates/home/base.html:342
 msgid "Create Exam"
 msgstr "إنشاء امتحان"
 
-#: home/templates/home/base.html:400 home/templates/home/base.html:414
+#: home/templates/home/base.html:401 home/templates/home/base.html:415
 msgid "&"
 msgstr "و"
 
-#: home/templates/home/base.html:405
+#: home/templates/home/base.html:406
 msgid "Privacy Policy"
 msgstr "سياسة الخصصوصية"
 
-#: home/templates/home/base.html:410
+#: home/templates/home/base.html:411
 msgid "Cookies Policy"
 msgstr "سياسة ملفات تعريف الارتباط"
 
-#: home/templates/home/base.html:414
+#: home/templates/home/base.html:415
 msgid "Copyright"
 msgstr "حقوق النشر"
 
-#: home/templates/home/base.html:414
+#: home/templates/home/base.html:415
 msgid "All rights reserved"
 msgstr "جميع الحقوق محفوظة"
 
-#: home/templates/home/base.html:414
+#: home/templates/home/base.html:415
 msgid "Made with"
 msgstr "صنع بال"
 
-#: home/templates/home/base.html:414
+#: home/templates/home/base.html:415
 msgid "by"
 msgstr "بواسطة"
 
-#: home/templates/home/base.html:414
+#: home/templates/home/base.html:415
 msgid "Malaz"
 msgstr "ملاذ"
 
-#: home/templates/home/base.html:415
+#: home/templates/home/base.html:416
 msgid "Moa'yed"
 msgstr "مؤيد"
 
@@ -531,66 +528,58 @@ msgid "question degree"
 msgstr ""
 
 #: teacher/forms.py:30
-#, fuzzy
-#| msgid "add your exam notes here!"
 msgid "add your question here!"
-msgstr "قم بإضافة ملاحظاتك هنا!"
+msgstr "قم بإضافة سؤالك هنا!"
 
 #: teacher/forms.py:32
-#, fuzzy
-#| msgid "add your exam notes here!"
 msgid "add your question's optimal answer here!"
-msgstr "قم بإضافة ملاحظاتك هنا!"
+msgstr "قم بإضافة إجابة السؤال النموذجية هنا!"
 
 #: teacher/forms.py:34
-#, fuzzy
-#| msgid "add your exam notes here!"
 msgid "add your question degree here!"
-msgstr "قم بإضافة ملاحظاتك هنا!"
+msgstr "قم بإضافة درجة سؤالك هنا!"
 
 #: teacher/forms.py:51
-#, fuzzy
-#| msgid "As Teacher"
 msgid "teacher"
-msgstr "تسجيل معلم "
+msgstr "معلم"
 
-#: teacher/forms.py:52 teacher/models.py:31
+#: teacher/forms.py:52 teacher/models.py:34
 msgid "exam name"
 msgstr "اسم الامتحان"
 
-#: teacher/forms.py:53 teacher/models.py:32
+#: teacher/forms.py:53 teacher/models.py:35
 msgid "exam date"
 msgstr "تاريخ الامتحان"
 
-#: teacher/forms.py:54 teacher/models.py:33
+#: teacher/forms.py:54 teacher/models.py:36
 msgid "exam period"
 msgstr "مدة الامتحان"
 
-#: teacher/forms.py:55 teacher/models.py:35
+#: teacher/forms.py:55 teacher/models.py:38
 msgid "exam secret key"
 msgstr "المفتاح السري للامتحان"
 
-#: teacher/forms.py:56 teacher/models.py:36
+#: teacher/forms.py:56 teacher/models.py:39
 msgid "exam full mark"
 msgstr "الدرجة الكاملة للامتحان"
 
-#: teacher/forms.py:57 teacher/models.py:34
+#: teacher/forms.py:57 teacher/models.py:37
 msgid "exam notes"
 msgstr "ملاحظات الامتحان"
 
-#: teacher/forms.py:58 teacher/models.py:37
+#: teacher/forms.py:58 teacher/models.py:40
 msgid "exam pass mark"
 msgstr "درجة مرور الامتحان"
 
-#: teacher/forms.py:59 teacher/models.py:38
+#: teacher/forms.py:59 teacher/models.py:41
 msgid "exam status"
 msgstr "حالة الامتحان"
 
-#: teacher/forms.py:60 teacher/models.py:40
+#: teacher/forms.py:60 teacher/models.py:43
 msgid "exam number of questions"
-msgstr ""
+msgstr "عدد أسئلة الامتحان"
 
-#: teacher/forms.py:61 teacher/models.py:39
+#: teacher/forms.py:61 teacher/models.py:42
 msgid "exam unique identifier"
 msgstr "المعرف الرقمي الفريد للامتحان"
 
@@ -623,10 +612,8 @@ msgid "exam full mark here!"
 msgstr "الدرجة الكاملة للامتحان"
 
 #: teacher/forms.py:71
-#, fuzzy
-#| msgid "exam status"
 msgid "exam status here!"
-msgstr "حالة الامتحان"
+msgstr "حالة الامتحان هنا!"
 
 #: teacher/forms.py:72
 msgid "exam number of questions!"
@@ -636,51 +623,51 @@ msgstr "عدد أسئلة الامتحان!"
 msgid "exam unique identifier!"
 msgstr "المعرف الرقمي الفريد للامتحان"
 
-#: teacher/models.py:5
+#: teacher/models.py:8
 msgid "Information Technology"
 msgstr "تقنية المعلومات"
 
-#: teacher/models.py:6
+#: teacher/models.py:9
 msgid "Computer Science"
 msgstr "علوم الحاسوب"
 
-#: teacher/models.py:7
+#: teacher/models.py:10
 msgid "Software Engineering"
 msgstr "هندسة البرمجيات"
 
-#: teacher/models.py:10
+#: teacher/models.py:13
 msgid "Cloud Computing"
 msgstr "الحوسبة السحابية"
 
-#: teacher/models.py:11
+#: teacher/models.py:14
 msgid "Cyber Security"
 msgstr "الأمن الإلكتروني"
 
-#: teacher/models.py:12
+#: teacher/models.py:15
 msgid "Advanced Databases"
 msgstr "قواعد البيانات المتقدمة"
 
-#: teacher/models.py:13
+#: teacher/models.py:16
 msgid "Network Principles"
 msgstr "مبادئ الشبكات"
 
-#: teacher/models.py:14
+#: teacher/models.py:17
 msgid "Network Security"
 msgstr "حماية الشبكة"
 
-#: teacher/models.py:15
+#: teacher/models.py:18
 msgid "Multimedia"
 msgstr "الوسائط المتعددة"
 
-#: teacher/models.py:16
+#: teacher/models.py:19
 msgid "Programming Principles"
 msgstr "مبادئ البرمجة"
 
-#: teacher/models.py:21
+#: teacher/models.py:24
 msgid "field name"
 msgstr "اسم المجال"
 
-#: teacher/models.py:26
+#: teacher/models.py:29
 msgid "course"
 msgstr ""
 
@@ -693,7 +680,9 @@ msgid "Exam UID"
 msgstr "المعرف الفريد للامتحان"
 
 #: teacher/templates/teacher/createExam.html:87
-#: teacher/templates/teacher/createQuestions.html:71
+#: teacher/templates/teacher/createQuestions.html:68
+#: teacher/templates/teacher/createQuestions.html:84
+#: teacher/templates/teacher/exam_confirm_delete.html:22
 msgid "Cancel"
 msgstr "إلغاء"
 
@@ -705,11 +694,11 @@ msgstr "إضافة أسئلة"
 msgid "choose number of questions"
 msgstr "اختر عدد الأسئلة"
 
-#: teacher/templates/teacher/createQuestions.html:34 teacher/views.py:56
+#: teacher/templates/teacher/createQuestions.html:34 teacher/views.py:65
 msgid "Question"
 msgstr "السؤال"
 
-#: teacher/templates/teacher/createQuestions.html:38 teacher/views.py:55
+#: teacher/templates/teacher/createQuestions.html:38 teacher/views.py:64
 msgid "Remove Question"
 msgstr "إزالة السؤال"
 
@@ -725,34 +714,68 @@ msgstr "اكتب السؤال هنا"
 msgid "optimal answer here"
 msgstr "اكتب الإجابة النموذجية هنا"
 
-#: teacher/templates/teacher/createQuestions.html:65
+#: teacher/templates/teacher/createQuestions.html:78
 msgid "Delete Question?"
 msgstr "إزالة السؤال؟"
 
-#: teacher/templates/teacher/createQuestions.html:72
+#: teacher/templates/teacher/createQuestions.html:85
+#: teacher/templates/teacher/exam_detail.html:24
 #: venv/lib/python3.8/site-packages/django/forms/formsets.py:391
 msgid "Delete"
 msgstr "حذف"
 
-#: teacher/views.py:24 teacher/views.py:45
+#: teacher/templates/teacher/exam_confirm_delete.html:17 teacher/views.py:148
+msgid "Delete Exam"
+msgstr "حذف الامتحان"
+
+#: teacher/templates/teacher/exam_confirm_delete.html:18
+msgid "Are you sure you want to delete this exam"
+msgstr "هل أنت متأكد من حذف هذا الامتحان"
+
+#: teacher/templates/teacher/exam_confirm_delete.html:18
+msgid "?"
+msgstr "؟"
+
+#: teacher/templates/teacher/exam_confirm_delete.html:21
+msgid "Yes, Delete"
+msgstr "نعم ، حذف"
+
+#: teacher/templates/teacher/exam_detail.html:23
+#: teacher/templates/teacher/exam_form.html:21
+msgid "Update"
+msgstr "تحديث"
+
+#: teacher/templates/teacher/exam_form.html:17
+msgid "Exam"
+msgstr "الامتحان"
+
+#: teacher/templates/teacher/teacher_exams.html:14
+msgid "Exams by"
+msgstr "الامتحانات التي أنشئت بواسطة "
+
+#: teacher/views.py:32 teacher/views.py:54
 msgid "Create New Exam"
 msgstr "إنشاء امتحان جديد"
 
-#: teacher/views.py:38
+#: teacher/views.py:47
 msgid "Your New Exam has been created Successfully!"
 msgstr "لقد تم إنشاء امتحانك الجديد بنجاح!"
 
-#: teacher/views.py:64 teacher/views.py:76
-#, fuzzy
-#| msgid "Create Exam"
+#: teacher/views.py:73 teacher/views.py:85
 msgid "Create Exam Questions"
-msgstr "إنشاء امتحان"
+msgstr "إنشاء أسئلة الامتحان"
 
-#: teacher/views.py:70
-#, fuzzy
-#| msgid "Your New Exam has been created Successfully!"
+#: teacher/views.py:79
 msgid "Your Exam Questions has been created Successfully!"
-msgstr "لقد تم إنشاء امتحانك الجديد بنجاح!"
+msgstr "لقد تمت إضافة الأسئلة إلى امتحانك الجديد بنجاح!"
+
+#: teacher/views.py:100
+msgid "All Exams"
+msgstr "جميع الامتحانات"
+
+#: teacher/views.py:116
+msgid "All teacher's exams"
+msgstr "جميع امتحانات الأستاذ"
 
 #: venv/lib/python3.8/site-packages/crispy_forms/tests/test_form_helper.py:129
 #: venv/lib/python3.8/site-packages/crispy_forms/tests/test_form_helper.py:139
@@ -2076,8 +2099,14 @@ msgstr ""
 msgid "Redirected but the response is missing a Location: header."
 msgstr ""
 
-#~ msgid "exam unique identifier here!"
-#~ msgstr "اكتب المعرف الفريد للامتحان!"
+msgid "Update Exam"
+msgstr "تحديث الامتحان"
+
+msgid "Exam Details"
+msgstr "تفاصيل الامتحان"
+
+msgid "exam unique identifier here!"
+msgstr "اكتب المعرف الفريد للامتحان!"
 
 #, fuzzy
 #~| msgid "image"
@@ -2089,16 +2118,14 @@ msgstr ""
 #~ msgid "[image]"
 #~ msgstr "الصورة"
 
-#~ msgid "exam note"
-#~ msgstr "ملاحظات الامتحان"
+msgid "exam note"
+msgstr "ملاحظات الامتحان"
 
-#~ msgid "profile picture"
-#~ msgstr "صورة الملف الشخصي"
+msgid "profile picture"
+msgstr "صورة الملف الشخصي"
 
-#, fuzzy
-#~| msgid "HomePage"
-#~ msgid "Home Page"
-#~ msgstr "الصفحة الرئيسية"
+msgid "Home Page"
+msgstr "الصفحة الرئيسية"
 
 #~ msgid "Internal Server Error"
 #~ msgstr "خ"

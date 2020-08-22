@@ -1,0 +1,128 @@
+{% extends 'home/base.html' %}
+{% load crispy_forms_tags %}
+{% load static i18n %}
+{% load static %}
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+
+{% block custom_css %}
+<link href="{% static 'accounts/css/styles.css' %}" type="text/css" rel="stylesheet">
+<link href="{% static 'teacher/css/createQuestions.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block content %}
+{{ exam_question_count|json_script:"my-questions" }}
+{{ translations|json_script:"my-translations" }}
+
+<div class="home-page">
+    {% get_current_language as MY_LANGUAGE %}
+    <h5 style="display:none;" id="lang">{{  MY_LANGUAGE }}</h5>
+
+    <form class="field" id="parent-div" method="post">
+{{ form.media }}
+         {% csrf_token %}
+        <div class="form-row">
+             <div class="form-group col-md-2 " >
+                 <button class="raw-button" id="add-questions">{% trans 'Add Questions' %}</button>
+             </div>
+             <div class="form-group col-md-4  " >
+                 <input type="number" min="1" max="100" id="num_questions" placeholder="{% trans 'choose number of questions' %}"/>
+             </div>
+
+    </div>
+<!--        style="display:none;"-->
+        <div class="question " id="question_text_"  >
+            <div class="border-bottom-question mb-3">
+                <span id="question_number_">{% trans 'Question' %} (1)</span>
+
+            </div>
+
+                             <button class="raw-button remove-question" type="button" id="remove-question_">{% trans 'Remove Question' %}</button>
+
+
+                   <div class="form-row" >
+            <div class="form-group col-md-4  " >
+<!--                          <input type="number" min="1" max="100" placeholder="{% trans 'question full degree' %}" id="question_degree_">-->
+   {{ form.question_degree  }}
+                          </div>
+        </div>
+
+         <div class="form-row fit-border-bottom">
+                          <div class="form-group col-md-6 " id="question_area_" >
+                              {{ form.question_text|safe  }}
+                          </div>
+             <div class="form-group col-md-6  " id="answer_area_" >
+                 {{ form.question_optimal_answer|safe }}
+
+                          </div>
+
+         </div>
+        </div>
+        <div class="question " id="question_text_1"  >
+            <div class="border-bottom-question mb-3">
+                <span id="question_number_2">{% trans 'Question' %} (2)</span>
+
+            </div>
+
+                             <button class="raw-button remove-question" type="button" id="remove-question_2">{% trans 'Remove Question' %}</button>
+
+
+                   <div class="form-row" >
+            <div class="form-group col-md-4  " >
+<!--                          <input type="number" min="1" max="100" placeholder="{% trans 'question full degree' %}" id="question_degree_2">-->
+
+
+                          </div>
+        </div>
+
+         <div class="form-row fit-border-bottom">
+                          <div class="form-group col-md-6 " id="question_area_2" >
+                              {{ form.question_text   }}
+                          </div>
+             <div class="form-group col-md-6  " id="answer_area_2" >
+                 {{ form.question_optimal_answer  }}
+
+                          </div>
+
+         </div>
+        </div>
+<!--        style="display:none;"-->
+                <div class="form-row" id="controlButtons" style="display:none;">
+<div class="form-group col-md-4 mb-2 first-field" id="signup-btn" >
+
+    <button class="raw-button save-btn exam-btn"  type="submit" id="save-btn">
+        <i class="fa fa-floppy-o" aria-hidden="true"></i>
+        {% trans 'Save' %}
+    </button>
+     <a class="raw-button ml-5 exam-btn cancel-btn btn" href="{% url 'exam_list' %}">
+         <i class="fa fa-times" aria-hidden="true"></i>
+         {% trans 'Cancel' %}
+     </a>
+</div>
+</div>
+</form>
+    <!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">{% trans 'Delete Question?' %}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" id="closeIcon">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans 'Cancel' %}</button>
+        <button type="button" class="btn btn-danger" id="remove_question_modal" data-dismiss="modal">{% trans 'Delete' %}</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}
+{% block custom_javascript %}
+<!--<script src="{% static 'teacher/js/ckeditor5/build/ckeditor.js' %}"></script>-->
+<!--<script src="{% static 'teacher/js/addQuestions2.js' %}"></script>-->
+{% endblock %}

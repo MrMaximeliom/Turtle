@@ -17,46 +17,68 @@
     {% get_current_language as MY_LANGUAGE %}
     <h5 style="display:none;" id="lang">{{  MY_LANGUAGE }}</h5>
 
-    <div class="field" id="parent-div">
+    <form class="field" id="parent-div" method="post" >
 
          {% csrf_token %}
+        {{form.management_form}}
         <div class="form-row">
              <div class="form-group col-md-2 " >
-                 <button class="raw-button" id="add-questions">{% trans 'Add Questions' %}</button>
+                 <button class="raw-button" id="add-questions" type="button">{% trans 'Add Questions' %}</button>
              </div>
              <div class="form-group col-md-4  " >
                  <input type="number" min="1" max="100" id="num_questions" placeholder="{% trans 'choose number of questions' %}"/>
              </div>
 
     </div>
-        <div class="question " id="question_text_" style="display:none;">
+<!--        style="display:none;"-->
+         {% for f in form %}
+        <div class="j-question-form">
+<!--             style="display:none;"-->
+        <div class="question " id="question_text_"  style="display:none;" >
             <div class="border-bottom-question mb-3">
                 <span id="question_number_">{% trans 'Question' %} (1)</span>
 
             </div>
 
-                             <button class="raw-button remove-question" id="remove-question_">{% trans 'Remove Question' %}</button>
+                             <button class="raw-button remove-question" type="button" id="remove-question_">{% trans 'Remove Question' %}</button>
 
 
                    <div class="form-row" >
             <div class="form-group col-md-4  " >
-                          <input type="number" min="1" max="100" placeholder="{% trans 'question full degree' %}" id="question_degree_">
-
+<!--                          <input type="number" min="1" max="100" placeholder="{% trans 'question full degree' %}" id="question_degree_">-->
+ {{ f.question_degree }}
                           </div>
         </div>
 
          <div class="form-row fit-border-bottom">
                           <div class="form-group col-md-6 " id="question_area_" >
-                              <textarea placeholder="{% trans 'question here' %}" id="question_" class="question_class"></textarea>
+<!--                              <textarea placeholder="{% trans 'question here' %}" id="question_" class="question_class"></textarea>-->
+                               {{ f.question_text}}
                           </div>
              <div class="form-group col-md-6  " id="answer_area_" >
-                          <textarea placeholder="{% trans 'optimal answer here' %}" cols="20" id="optimal_" class="answer_class"></textarea>
+<!--                          <textarea placeholder="{% trans 'optimal answer here' %}" cols="20" id="optimal_" class="answer_class"></textarea>-->
+                                           {{ f.question_optimal_answer }}
 
                           </div>
 
          </div>
         </div>
+        </div>
+         {% endfor %}
+                <div class="form-row" id="controlButtons" >
+<div class="form-group col-md-4 mb-2 first-field" id="signup-btn" >
+
+    <button class="raw-button save-btn exam-btn"  type="submit" id="save-btn">
+        <i class="fa fa-floppy-o" aria-hidden="true"></i>
+        {% trans 'Save' %}
+    </button>
+     <a class="raw-button ml-5 exam-btn cancel-btn btn" href="{% url 'exam_list' %}">
+         <i class="fa fa-times" aria-hidden="true"></i>
+         {% trans 'Cancel' %}
+     </a>
 </div>
+</div>
+</form>
     <!-- Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -78,5 +100,5 @@
 {% endblock %}
 {% block custom_javascript %}
 <script src="{% static 'teacher/js/ckeditor5/build/ckeditor.js' %}"></script>
-<script src="{% static 'teacher/js/addQuestions.js' %}"></script>
+<script src="{% static 'teacher/js/questions.js' %}"></script>
 {% endblock %}

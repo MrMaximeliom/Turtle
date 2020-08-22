@@ -1,0 +1,35 @@
+{% extends "home/base.html" %}
+{% load static i18n %}
+{% load static %}
+{% block custom_css %}
+<link href="{% static 'teacher/css/exam.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block content %}
+<div class="home-page">
+  {% get_current_language as MY_LANGUAGE %}
+    <h5 style="display:none;" id="lang">{{  MY_LANGUAGE }}</h5>
+  <h1>Questions List</h1>
+    <a href='#'>Add Question</a>
+    {% for question in object_list %}
+
+          <article class="media content-section-exam">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">Abs</a>
+
+            </div>
+            <h2><a class="article-title" href="#">{{ question.question_text }}</a></h2>
+            <p class="article-content">{{ question.question_optimal_answer }}</p>
+            <small class="text-muted"> Question Degree: {{ question.question_degree }}</small>
+          </div>
+        </article>
+    {% endfor %}
+
+    </div>
+{% endblock content %}
+{% block custom_javascript %}
+<script src="{% static 'teacher/js/exam.js' %}"></script>
+{% endblock %}

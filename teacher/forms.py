@@ -1,7 +1,10 @@
 from .models import Exam, Question
 from django import forms
-from django.utils.translation import gettext_lazy as _
-from django.forms import ModelForm
+from django.utils.translation import gettext_lazy as lazy
+from django.utils.translation import gettext as _
+from django.forms import ModelForm,CharField
+from ckeditor.widgets import CKEditorWidget
+from django.forms import modelformset_factory,formset_factory
 
 TIME_LENGTH = (
     ('10 minutes', '10 minutes'),
@@ -21,6 +24,7 @@ class CreateExamQuestions(ModelForm):
             'question_optimal_answer',
             'question_degree',
         ]
+        exclude = ["exam"]
         labels = {
             'question_text': _('question text'),
             'question_optimal_answer': _('question optimal answer'),
@@ -34,6 +38,20 @@ class CreateExamQuestions(ModelForm):
                 attrs={'placeholder': _('add your question degree here!'), 'min': 1, 'max': 100}),
 
         }
+
+
+
+
+class CreateExamQuestions2(forms.ModelForm):
+    # config_name='my_ckeditor'
+
+     question_text = forms.CharField(widget=CKEditorWidget(),label=_('question text'))
+     question_optimal_answer = forms.CharField(widget=CKEditorWidget(),label=_('question optimal answer'))
+     question_degree = forms.NumberInput(attrs={'placeholder': _('add your question degree here!'), 'min': 1, 'max': 100})
+     class Meta:
+         model = Exam
+         fields = "__all__"
+         exclude = ["exam"]
 
 
 class CreateExam(ModelForm):
@@ -74,3 +92,26 @@ class CreateExam(ModelForm):
                 attrs={'placeholder': _('exam unique identifier!'), 'readonly': True}),
 
         }
+        exclude = ["teacher","exam_status"]
+
+
+# QuestionFormSet = formset_factory(CreateExamQuestions2,extra=1)
+QuestionFormset = modelformset_factory(
+    Question, extra=1,exclude=['exam'],
+    labels={
+        'question_text': _('question text'),
+        'question_optimal_answer': _('question optimal answer'),
+        'question_degree': _('question degree')
+    }
+    ,
+widgets = {
+    'question_text': forms.Textarea(attrs={'class':'question_class','placeholder': _('add your question here!'), 'cols': 25, 'rows': 2}),
+    'question_optimal_answer': forms.Textarea(
+        attrs={'class':'answer_class','placeholder': _("add your question's optimal answer here!"), 'cols': 25, 'rows': 2}),
+    'question_degree': forms.NumberInput(
+        attrs={'placeholder': _('add your question degree here!'), 'min': 1, 'max': 100}),
+
+}
+
+)
+

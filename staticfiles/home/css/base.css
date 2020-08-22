@@ -163,7 +163,8 @@ color:#375C47;
 	margin-top:100px;
 }
 .home-page h1, h2, h3, h4, h5, h6{
-	color:#0B6478;
+	/*color:#0B6478;* default*/
+	color:#0092B3;
 }
 .terms-page-arabic{
 margin-top:100px;
@@ -208,7 +209,7 @@ background: #ffffff;
 padding: 10px 20px;
 border: 2px solid #dddddd;
 border-radius: 3px;
-width: 209px;
+width: 210px;
 }
 /* changing link colors of sidebar*/
 .arabic-content-section-sidebar a{

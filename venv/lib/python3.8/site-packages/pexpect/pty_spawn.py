@@ -12,7 +12,9 @@ from ptyprocess.ptyprocess import use_native_pty_fork
 
 from .exceptions import ExceptionPexpect, EOF, TIMEOUT
 from .spawnbase import SpawnBase
-from .utils import which, split_command_line, select_ignore_interrupts
+from .utils import (
+    which, split_command_line, select_ignore_interrupts, poll_ignore_interrupts
+)
 
 @contextmanager
 def _wrap_ptyprocess_err():
@@ -34,7 +36,8 @@ class spawn(SpawnBase):
     def __init__(self, command, args=[], timeout=30, maxread=2000,
                  searchwindowsize=None, logfile=None, cwd=None, env=None,
                  ignore_sighup=False, echo=True, preexec_fn=None,
-                 encoding=None, codec_errors='strict', dimensions=None):
+                 encoding=None, codec_errors='strict', dimensions=None,
+                 use_poll=False):
         '''This is the constructor. The command parameter may be a string that
         includes a command and any arguments to the command. For example::
 
@@ -106,8 +109,9 @@ class spawn(SpawnBase):
             child = pexpect.spawn('some_command')
             child.logfile = sys.stdout
 
-            # In Python 3, spawnu should be used to give str to stdout:
-            child = pexpect.spawnu('some_command')
+            # In Python 3, we'll use the ``encoding`` argument to decode data
+            # from the subprocess and handle it as unicode:
+            child = pexpect.spawn('some_command', encoding='utf-8')
             child.logfile = sys.stdout
 
         The logfile_read and logfile_send members can be used to separately log
@@ -170,7 +174,7 @@ class spawn(SpawnBase):
         using setecho(False) followed by waitnoecho().  However, for some
         platforms such as Solaris, this is not possible, and should be
         disabled immediately on spawn.
-        
+
         If preexec_fn is given, it will be called in the child process before
         launching the given command. This is useful to e.g. reset inherited
         signal handlers.
@@ -178,12 +182,16 @@ class spawn(SpawnBase):
         The dimensions attribute specifies the size of the pseudo-terminal as
         seen by the subprocess, and is specified as a two-entry tuple (rows,
         columns). If this is unspecified, the defaults in ptyprocess will apply.
+
+        The use_poll attribute enables using select.poll() over select.select()
+        for socket handling. This is handy if your system could have > 1024 fds
         '''
         super(spawn, self).__init__(timeout=timeout, maxread=maxread, searchwindowsize=searchwindowsize,
                                     logfile=logfile, encoding=encoding, codec_errors=codec_errors)
         self.STDIN_FILENO = pty.STDIN_FILENO
         self.STDOUT_FILENO = pty.STDOUT_FILENO
         self.STDERR_FILENO = pty.STDERR_FILENO
+        self.str_last_chars = 100
         self.cwd = cwd
         self.env = env
         self.echo = echo
@@ -195,6 +203,7 @@ class spawn(SpawnBase):
             self.name = '<pexpect factory incomplete>'
         else:
             self._spawn(command, args, preexec_fn, dimensions)
+        self.use_poll = use_poll
 
     def __str__(self):
         '''This returns a human-readable string that represents the state of
@@ -204,10 +213,8 @@ class spawn(SpawnBase):
         s.append(repr(self))
         s.append('command: ' + str(self.command))
         s.append('args: %r' % (self.args,))
-        s.append('buffer (last 100 chars): %r' % (
-                self.buffer[-100:] if self.buffer else self.buffer,))
-        s.append('before (last 100 chars): %r' % (
-                self.before[-100:] if self.before else self.before,))
+        s.append('buffer (last %s chars): %r' % (self.str_last_chars,self.buffer[-self.str_last_chars:]))
+        s.append('before (last %s chars): %r' % (self.str_last_chars,self.before[-self.str_last_chars:] if self.before else ''))
         s.append('after: %r' % (self.after,))
         s.append('match: %r' % (self.match,))
         s.append('match_index: ' + str(self.match_index))
@@ -315,9 +322,13 @@ class spawn(SpawnBase):
         and SIGINT). '''
 
         self.flush()
-        self.ptyproc.close(force=force)
+        with _wrap_ptyprocess_err():
+            # PtyProcessError may be raised if it is not possible to terminate
+            # the child.
+            self.ptyproc.close(force=force)
         self.isalive()  # Update exit status from ptyproc
         self.child_fd = -1
+        self.closed = True
 
     def isatty(self):
         '''This returns True if the file descriptor is open and connected to a
@@ -420,51 +431,83 @@ class spawn(SpawnBase):
         available right away then one character will be returned immediately.
         It will not wait for 30 seconds for another 99 characters to come in.
 
-        This is a wrapper around os.read(). It uses select.select() to
-        implement the timeout. '''
+        On the other hand, if there are bytes available to read immediately,
+        all those bytes will be read (up to the buffer size). So, if the
+        buffer size is 1 megabyte and there is 1 megabyte of data available
+        to read, the buffer will be filled, regardless of timeout.
+
+        This is a wrapper around os.read(). It uses select.select() or
+        select.poll() to implement the timeout. '''
 
         if self.closed:
             raise ValueError('I/O operation on closed file.')
 
+        if self.use_poll:
+            def select(timeout):
+                return poll_ignore_interrupts([self.child_fd], timeout)
+        else:
+            def select(timeout):
+                return select_ignore_interrupts([self.child_fd], [], [], timeout)[0]
+
+        # If there is data available to read right now, read as much as
+        # we can. We do this to increase performance if there are a lot
+        # of bytes to be read. This also avoids calling isalive() too
+        # often. See also:
+        # * https://github.com/pexpect/pexpect/pull/304
+        # * http://trac.sagemath.org/ticket/10295
+        if select(0):
+            try:
+                incoming = super(spawn, self).read_nonblocking(size)
+            except EOF:
+                # Maybe the child is dead: update some attributes in that case
+                self.isalive()
+                raise
+            while len(incoming) < size and select(0):
+                try:
+                    incoming += super(spawn, self).read_nonblocking(size - len(incoming))
+                except EOF:
+                    # Maybe the child is dead: update some attributes in that case
+                    self.isalive()
+                    # Don't raise EOF, just return what we read so far.
+                    return incoming
+            return incoming
+
         if timeout == -1:
             timeout = self.timeout
 
-        # Note that some systems such as Solaris do not give an EOF when
-        # the child dies. In fact, you can still try to read
-        # from the child_fd -- it will block forever or until TIMEOUT.
-        # For this case, I test isalive() before doing any reading.
-        # If isalive() is false, then I pretend that this is the same as EOF.
         if not self.isalive():
-            # timeout of 0 means "poll"
-            r, w, e = select_ignore_interrupts([self.child_fd], [], [], 0)
-            if not r:
-                self.flag_eof = True
-                raise EOF('End Of File (EOF). Braindead platform.')
+            # The process is dead, but there may or may not be data
+            # available to read. Note that some systems such as Solaris
+            # do not give an EOF when the child dies. In fact, you can
+            # still try to read from the child_fd -- it will block
+            # forever or until TIMEOUT. For that reason, it's important
+            # to do this check before calling select() with timeout.
+            if select(0):
+                return super(spawn, self).read_nonblocking(size)
+            self.flag_eof = True
+            raise EOF('End Of File (EOF). Braindead platform.')
         elif self.__irix_hack:
             # Irix takes a long time before it realizes a child was terminated.
+            # Make sure that the timeout is at least 2 seconds.
             # FIXME So does this mean Irix systems are forced to always have
             # FIXME a 2 second delay when calling read_nonblocking? That sucks.
-            r, w, e = select_ignore_interrupts([self.child_fd], [], [], 2)
-            if not r and not self.isalive():
-                self.flag_eof = True
-                raise EOF('End Of File (EOF). Slow platform.')
+            if timeout is not None and timeout < 2:
+                timeout = 2
 
-        r, w, e = select_ignore_interrupts([self.child_fd], [], [], timeout)
-
-        if not r:
-            if not self.isalive():
-                # Some platforms, such as Irix, will claim that their
-                # processes are alive; timeout on the select; and
-                # then finally admit that they are not alive.
-                self.flag_eof = True
-                raise EOF('End of File (EOF). Very slow platform.')
-            else:
-                raise TIMEOUT('Timeout exceeded.')
-
-        if self.child_fd in r:
+        # Because of the select(0) check above, we know that no data
+        # is available right now. But if a non-zero timeout is given
+        # (possibly timeout=None), we call select() with a timeout.
+        if (timeout != 0) and select(timeout):
             return super(spawn, self).read_nonblocking(size)
 
-        raise ExceptionPexpect('Reached an unexpected state.')  # pragma: no cover
+        if not self.isalive():
+            # Some platforms, such as Irix, will claim that their
+            # processes are alive; timeout on the select; and
+            # then finally admit that they are not alive.
+            self.flag_eof = True
+            raise EOF('End of File (EOF). Very slow platform.')
+        else:
+            raise TIMEOUT('Timeout exceeded.')
 
     def write(self, s):
         '''This is similar to send() except that there is no return value.
@@ -710,10 +753,14 @@ class spawn(SpawnBase):
         child process in interact mode is duplicated to the given log.
 
         You may pass in optional input and output filter functions. These
-        functions should take a string and return a string. The output_filter
-        will be passed all the output from the child process. The input_filter
-        will be passed all the keyboard input from the user. The input_filter
-        is run BEFORE the check for the escape_character.
+        functions should take bytes array and return bytes array too. Even
+        with ``encoding='utf-8'`` support, meth:`interact` will always pass
+        input_filter and output_filter bytes. You may need to wrap your
+        function to decode and encode back to UTF-8.
+
+        The output_filter will be passed all the output from the child process.
+        The input_filter will be passed all the keyboard input from the user.
+        The input_filter is run BEFORE the check for the escape_character.
 
         Note that if you change the window size of the parent the SIGWINCH
         signal will not be passed through to the child. If you want the child
@@ -725,9 +772,10 @@ class spawn(SpawnBase):
                 s = struct.pack("HHHH", 0, 0, 0, 0)
                 a = struct.unpack('hhhh', fcntl.ioctl(sys.stdout.fileno(),
                     termios.TIOCGWINSZ , s))
-                global p
-                p.setwinsize(a[0],a[1])
-            # Note this 'p' global and used in sigwinch_passthrough.
+                if not p.closed:
+                    p.setwinsize(a[0],a[1])
+
+            # Note this 'p' is global and used in sigwinch_passthrough.
             p = pexpect.spawn('/bin/bash')
             signal.signal(signal.SIGWINCH, sigwinch_passthrough)
             p.interact()
@@ -736,7 +784,7 @@ class spawn(SpawnBase):
         # Flush the buffer.
         self.write_to_stdout(self.buffer)
         self.stdout.flush()
-        self.buffer = self.string_type()
+        self._buffer = self.buffer_type()
         mode = tty.tcgetattr(self.STDIN_FILENO)
         tty.setraw(self.STDIN_FILENO)
         if escape_character is not None and PY3:
@@ -760,14 +808,20 @@ class spawn(SpawnBase):
 
         return os.read(fd, 1000)
 
-    def __interact_copy(self, escape_character=None,
-            input_filter=None, output_filter=None):
+    def __interact_copy(
+        self, escape_character=None, input_filter=None, output_filter=None
+    ):
 
         '''This is used by the interact() method.
         '''
 
         while self.isalive():
-            r, w, e = select_ignore_interrupts([self.child_fd, self.STDIN_FILENO], [], [])
+            if self.use_poll:
+                r = poll_ignore_interrupts([self.child_fd, self.STDIN_FILENO])
+            else:
+                r, w, e = select_ignore_interrupts(
+                    [self.child_fd, self.STDIN_FILENO], [], []
+                )
             if self.child_fd in r:
                 try:
                     data = self.__interact_read(self.child_fd)

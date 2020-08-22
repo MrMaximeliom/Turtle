@@ -1,5 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext as _
+from accounts.models import User
+from django.utils import timezone
+from django.urls import reverse
 
 FIELDS = (
     (('Information Technology'), _('Information Technology')),
@@ -27,7 +30,7 @@ class Course(models.Model):
 
 
 class Exam(models.Model):
-    teacher = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='+',blank=True)
+    teacher = models.ForeignKey(User, on_delete=models.CASCADE)
     exam_name = models.CharField(max_length=250, blank=False, verbose_name=_('exam name'))
     exam_date = models.DateField(verbose_name=_('exam date'), blank=False)
     exam_period = models.CharField(max_length=250,verbose_name=_('exam period'), blank=False)
@@ -38,10 +41,14 @@ class Exam(models.Model):
     exam_status = models.CharField(max_length=30, verbose_name=_('exam status'), blank=True)
     exam_unique_identifier = models.CharField(verbose_name=_('exam unique identifier'), max_length=120, blank=True)
     exam_number_of_questions = models.IntegerField(verbose_name=_('exam number of questions'), blank=True, null=True)
+    exam_date_created = models.DateTimeField(default=timezone.now,blank=True)
+
+    def get_absolute_url(self):
+        return reverse('exam-detail', kwargs={'pk': self.pk})
 
 
 class Question(models.Model):
-    exam = models.ForeignKey(Exam, on_delete=models.CASCADE, related_name='+')
+    exam = models.ForeignKey(Exam, on_delete=models.CASCADE)
     question_text = models.CharField(max_length=650, blank=False)
     question_optimal_answer = models.TextField(blank=False)
     question_degree = models.IntegerField(blank=False)

@@ -1,0 +1,36 @@
+{% extends "home/base.html" %}
+{% load static i18n %}
+{% load static %}
+{% block custom_css %}
+<link href="{% static 'teacher/css/exam.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block content %}
+<div class="home-page">
+  {% get_current_language as MY_LANGUAGE %}
+    <h5 style="display:none;" id="lang">{{  MY_LANGUAGE }}</h5>
+  <article class="media content-section-exam">
+
+    <img class="rounded-circle article-img" src="{{  object.teacher.profile.image.url }}">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="{% url 'teacher-exams' object.teacher.username %}">{{ object.teacher.username }}</a>
+        <small class="text-muted">{{ object.exam_date|date:"F d, Y" }}</small>
+        {% if object.teacher == user %}
+          <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'exam-update' exam.id %}">{% trans 'Update' %}</a>
+            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'exam-delete' exam.id %}">{% trans 'Delete' %}</a>
+          </div>
+        {% endif %}
+      </div>
+      <h2 class="article-title">{{ object.exam_name }}</h2>
+      <p class="article-content">{{ object.exam_note }}</p>
+    </div>
+  </article>
+</div>
+{% endblock content %}
+{% block custom_javascript %}
+<script src="{% static 'teacher/js/exam.js' %}"></script>
+{% endblock %}
