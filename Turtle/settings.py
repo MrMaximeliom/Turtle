@@ -119,6 +119,8 @@ WSGI_APPLICATION = 'Turtle.wsgi.application'
 #     }
 # }
 
+SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',

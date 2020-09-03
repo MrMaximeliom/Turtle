@@ -6,8 +6,11 @@ $( "#pre-loader" ).css('display','none');
 navBar.className += "   fixed-top";
 });
 $( document ).ready(function() {
+var language = $( "#lang" ).text();
 var message_box = document.getElementById("message-box");
-
+if (language == "ar"){
+$( ".message-box" ).css('direction','rtl');
+}
 setTimeout(function(){
    message_box.style.display = "none";
 }, 2000);

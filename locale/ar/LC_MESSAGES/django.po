@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-13 23:24+0200\n"
+"POT-Creation-Date: 2020-08-23 12:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -125,8 +125,10 @@ msgstr "المعلومات الشخصية"
 
 #: accounts/templates/accounts/profile.html:60
 #: accounts/templates/accounts/profile.html:111
+#: teacher/templates/teacher/add_question.html:68
 #: teacher/templates/teacher/createExam.html:83
-#: teacher/templates/teacher/createQuestions.html:64
+#: teacher/templates/teacher/createQuestions.html:73
+#: teacher/templates/teacher/createQuestions2.html:97
 msgid "Save"
 msgstr "حفظ"
 
@@ -234,8 +236,8 @@ msgid "Terms"
 msgstr "الأحكام"
 
 #: accounts/templates/accounts/signup.html:76
-#: venv/lib/python3.8/site-packages/django/db/models/base.py:1181
-#: venv/lib/python3.8/site-packages/django/forms/models.py:759
+#: venv/lib/python3.8/site-packages/django/db/models/base.py:1187
+#: venv/lib/python3.8/site-packages/django/forms/models.py:760
 msgid "and"
 msgstr "و"
 
@@ -513,113 +515,113 @@ msgstr "الصفحة الرئيسية"
 msgid "Terms and Conditions"
 msgstr "الأحكام والشروط"
 
-#: teacher/forms.py:25
+#: teacher/forms.py:29 teacher/forms.py:48 teacher/forms.py:102
 msgid "question text"
 msgstr ""
 
-#: teacher/forms.py:26
+#: teacher/forms.py:30 teacher/forms.py:49 teacher/forms.py:103
 #, fuzzy
 #| msgid "Optimal Answer"
 msgid "question optimal answer"
 msgstr "الإجابة النموذجية"
 
-#: teacher/forms.py:27
+#: teacher/forms.py:31 teacher/forms.py:104
 msgid "question degree"
 msgstr ""
 
-#: teacher/forms.py:30
+#: teacher/forms.py:34 teacher/forms.py:108
 msgid "add your question here!"
 msgstr "قم بإضافة سؤالك هنا!"
 
-#: teacher/forms.py:32
+#: teacher/forms.py:36 teacher/forms.py:110
 msgid "add your question's optimal answer here!"
 msgstr "قم بإضافة إجابة السؤال النموذجية هنا!"
 
-#: teacher/forms.py:34
+#: teacher/forms.py:38 teacher/forms.py:50 teacher/forms.py:112
 msgid "add your question degree here!"
 msgstr "قم بإضافة درجة سؤالك هنا!"
 
-#: teacher/forms.py:51
+#: teacher/forms.py:69
 msgid "teacher"
 msgstr "معلم"
 
-#: teacher/forms.py:52 teacher/models.py:34
+#: teacher/forms.py:70 teacher/models.py:34
 msgid "exam name"
 msgstr "اسم الامتحان"
 
-#: teacher/forms.py:53 teacher/models.py:35
+#: teacher/forms.py:71 teacher/models.py:35
 msgid "exam date"
 msgstr "تاريخ الامتحان"
 
-#: teacher/forms.py:54 teacher/models.py:36
+#: teacher/forms.py:72 teacher/models.py:36
 msgid "exam period"
 msgstr "مدة الامتحان"
 
-#: teacher/forms.py:55 teacher/models.py:38
+#: teacher/forms.py:73 teacher/models.py:38
 msgid "exam secret key"
 msgstr "المفتاح السري للامتحان"
 
-#: teacher/forms.py:56 teacher/models.py:39
+#: teacher/forms.py:74 teacher/models.py:39
 msgid "exam full mark"
 msgstr "الدرجة الكاملة للامتحان"
 
-#: teacher/forms.py:57 teacher/models.py:37
+#: teacher/forms.py:75 teacher/models.py:37
 msgid "exam notes"
 msgstr "ملاحظات الامتحان"
 
-#: teacher/forms.py:58 teacher/models.py:40
+#: teacher/forms.py:76 teacher/models.py:40
 msgid "exam pass mark"
 msgstr "درجة مرور الامتحان"
 
-#: teacher/forms.py:59 teacher/models.py:41
+#: teacher/forms.py:77 teacher/models.py:41
 msgid "exam status"
 msgstr "حالة الامتحان"
 
-#: teacher/forms.py:60 teacher/models.py:43
+#: teacher/forms.py:78 teacher/models.py:43
 msgid "exam number of questions"
 msgstr "عدد أسئلة الامتحان"
 
-#: teacher/forms.py:61 teacher/models.py:42
+#: teacher/forms.py:79 teacher/models.py:42
 msgid "exam unique identifier"
 msgstr "المعرف الرقمي الفريد للامتحان"
 
-#: teacher/forms.py:64
+#: teacher/forms.py:82
 msgid "exam name goes here!"
 msgstr "اكتب اسم الامتحان هنا!"
 
-#: teacher/forms.py:65
+#: teacher/forms.py:83
 msgid "add your exam notes here!"
 msgstr "قم بإضافة ملاحظاتك هنا!"
 
-#: teacher/forms.py:66 teacher/templates/teacher/createExam.html:45
+#: teacher/forms.py:84 teacher/templates/teacher/createExam.html:45
 msgid "set exam period here!"
 msgstr "قم بضبط مدة الامتحان هنا!"
 
-#: teacher/forms.py:67
+#: teacher/forms.py:85
 msgid "specify exam secret key!"
 msgstr "قم بتحديد المتاح السري للامتحان!"
 
-#: teacher/forms.py:68
+#: teacher/forms.py:86
 msgid "set exam date here!"
 msgstr "قم بضبط تاريخ الامتحان هنا!"
 
-#: teacher/forms.py:69
+#: teacher/forms.py:87
 msgid "exam pass mark here!"
 msgstr "درجة مرور الامتحان"
 
-#: teacher/forms.py:70
+#: teacher/forms.py:88
 msgid "exam full mark here!"
 msgstr "الدرجة الكاملة للامتحان"
 
-#: teacher/forms.py:71
+#: teacher/forms.py:89
 msgid "exam status here!"
 msgstr "حالة الامتحان هنا!"
 
-#: teacher/forms.py:72
+#: teacher/forms.py:90
 msgid "exam number of questions!"
 msgstr "عدد أسئلة الامتحان!"
 
-#: teacher/forms.py:74
+#: teacher/forms.py:92
 msgid "exam unique identifier!"
 msgstr "المعرف الرقمي الفريد للامتحان"
 
@@ -671,6 +673,42 @@ msgstr "اسم المجال"
 msgid "course"
 msgstr ""
 
+#: teacher/templates/teacher/add_question.html:24
+#: teacher/templates/teacher/createQuestions.html:26
+#: teacher/templates/teacher/createQuestions2.html:28
+msgid "Add Questions"
+msgstr "إضافة أسئلة"
+
+#: teacher/templates/teacher/add_question.html:27
+#: teacher/templates/teacher/createQuestions.html:29
+#: teacher/templates/teacher/createQuestions2.html:31
+msgid "choose number of questions"
+msgstr "اختر عدد الأسئلة"
+
+#: teacher/templates/teacher/add_question.html:35
+#: teacher/templates/teacher/createQuestions.html:39
+#: teacher/templates/teacher/createQuestions2.html:38
+#: teacher/templates/teacher/createQuestions2.html:65 teacher/views.py:69
+msgid "Question"
+msgstr "السؤال"
+
+#: teacher/templates/teacher/add_question.html:39
+#: teacher/templates/teacher/createQuestions.html:43
+#: teacher/templates/teacher/createQuestions2.html:42
+#: teacher/templates/teacher/createQuestions2.html:69 teacher/views.py:68
+msgid "Remove Question"
+msgstr "إزالة السؤال"
+
+#: teacher/templates/teacher/add_question.html:72
+#: teacher/templates/teacher/createExam.html:87
+#: teacher/templates/teacher/createQuestions.html:77
+#: teacher/templates/teacher/createQuestions.html:93
+#: teacher/templates/teacher/createQuestions2.html:101
+#: teacher/templates/teacher/createQuestions2.html:117
+#: teacher/templates/teacher/exam_confirm_delete.html:22
+msgid "Cancel"
+msgstr "إلغاء"
+
 #: teacher/templates/teacher/createExam.html:37
 msgid "Exam Date"
 msgstr "تاريخ الامتحان"
@@ -679,52 +717,33 @@ msgstr "تاريخ الامتحان"
 msgid "Exam UID"
 msgstr "المعرف الفريد للامتحان"
 
-#: teacher/templates/teacher/createExam.html:87
-#: teacher/templates/teacher/createQuestions.html:68
-#: teacher/templates/teacher/createQuestions.html:84
-#: teacher/templates/teacher/exam_confirm_delete.html:22
-msgid "Cancel"
-msgstr "إلغاء"
-
-#: teacher/templates/teacher/createQuestions.html:25
-msgid "Add Questions"
-msgstr "إضافة أسئلة"
-
-#: teacher/templates/teacher/createQuestions.html:28
-msgid "choose number of questions"
-msgstr "اختر عدد الأسئلة"
-
-#: teacher/templates/teacher/createQuestions.html:34 teacher/views.py:65
-msgid "Question"
-msgstr "السؤال"
-
-#: teacher/templates/teacher/createQuestions.html:38 teacher/views.py:64
-msgid "Remove Question"
-msgstr "إزالة السؤال"
-
-#: teacher/templates/teacher/createQuestions.html:43
+#: teacher/templates/teacher/createQuestions.html:48
+#: teacher/templates/teacher/createQuestions2.html:47
+#: teacher/templates/teacher/createQuestions2.html:74
 msgid "question full degree"
 msgstr "الدرجة الكاملة للسؤال"
 
-#: teacher/templates/teacher/createQuestions.html:50
+#: teacher/templates/teacher/createQuestions.html:55
 msgid "question here"
 msgstr "اكتب السؤال هنا"
 
-#: teacher/templates/teacher/createQuestions.html:53
+#: teacher/templates/teacher/createQuestions.html:59
 msgid "optimal answer here"
 msgstr "اكتب الإجابة النموذجية هنا"
 
-#: teacher/templates/teacher/createQuestions.html:78
+#: teacher/templates/teacher/createQuestions.html:87
+#: teacher/templates/teacher/createQuestions2.html:111
 msgid "Delete Question?"
 msgstr "إزالة السؤال؟"
 
-#: teacher/templates/teacher/createQuestions.html:85
+#: teacher/templates/teacher/createQuestions.html:94
+#: teacher/templates/teacher/createQuestions2.html:118
 #: teacher/templates/teacher/exam_detail.html:24
 #: venv/lib/python3.8/site-packages/django/forms/formsets.py:391
 msgid "Delete"
 msgstr "حذف"
 
-#: teacher/templates/teacher/exam_confirm_delete.html:17 teacher/views.py:148
+#: teacher/templates/teacher/exam_confirm_delete.html:17 teacher/views.py:212
 msgid "Delete Exam"
 msgstr "حذف الامتحان"
 
@@ -753,33 +772,80 @@ msgstr "الامتحان"
 msgid "Exams by"
 msgstr "الامتحانات التي أنشئت بواسطة "
 
-#: teacher/views.py:32 teacher/views.py:54
+#: teacher/views.py:36 teacher/views.py:58
 msgid "Create New Exam"
 msgstr "إنشاء امتحان جديد"
 
-#: teacher/views.py:47
+#: teacher/views.py:51
 msgid "Your New Exam has been created Successfully!"
 msgstr "لقد تم إنشاء امتحانك الجديد بنجاح!"
 
-#: teacher/views.py:73 teacher/views.py:85
+#: teacher/views.py:82 teacher/views.py:104
 msgid "Create Exam Questions"
 msgstr "إنشاء أسئلة الامتحان"
 
-#: teacher/views.py:79
+#: teacher/views.py:93
 msgid "Your Exam Questions has been created Successfully!"
 msgstr "لقد تمت إضافة الأسئلة إلى امتحانك الجديد بنجاح!"
 
-#: teacher/views.py:100
-msgid "All Exams"
-msgstr "جميع الامتحانات"
+#: teacher/views.py:225
+msgid "Questions List"
+msgstr "قائمة الأسئلة"
 
-#: teacher/views.py:116
-msgid "All teacher's exams"
-msgstr "جميع امتحانات الأستاذ"
+#: venv/lib/python3.8/site-packages/ckeditor_uploader/forms.py:8
+msgid "Search files"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:5
+msgid "Select an image to embed"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:27
+msgid "Browse for the image you want, then click 'Embed Image' to continue..."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:29
+msgid ""
+"No images found. Upload images using the 'Image Button' dialog's 'Upload' "
+"tab."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:50
+msgid "Images in: "
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:62
+#: venv/lib/python3.8/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:80
+msgid "Embed Image"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:146
+msgid "Play Slideshow"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:147
+msgid "Pause Slideshow"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:148
+msgid "&lsaquo; Previous Photo"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:149
+msgid "Next Photo &rsaquo;"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:150
+msgid "Next &rsaquo;"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:151
+msgid "&lsaquo; Prev"
+msgstr ""
 
 #: venv/lib/python3.8/site-packages/crispy_forms/tests/test_form_helper.py:129
 #: venv/lib/python3.8/site-packages/crispy_forms/tests/test_form_helper.py:139
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:53
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:54
 msgid "This field is required."
 msgstr ""
 
@@ -792,7 +858,7 @@ msgid "i18n legend"
 msgstr ""
 
 #: venv/lib/python3.8/site-packages/crispy_forms/tests/test_layout_objects.py:129
-#: venv/lib/python3.8/site-packages/django/core/validators.py:32
+#: venv/lib/python3.8/site-packages/django/core/validators.py:20
 msgid "Enter a valid value."
 msgstr ""
 
@@ -812,78 +878,78 @@ msgstr ""
 msgid "Syndication"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/core/paginator.py:45
+#: venv/lib/python3.8/site-packages/django/core/paginator.py:48
 msgid "That page number is not an integer"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/core/paginator.py:47
+#: venv/lib/python3.8/site-packages/django/core/paginator.py:50
 msgid "That page number is less than 1"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/core/paginator.py:52
+#: venv/lib/python3.8/site-packages/django/core/paginator.py:55
 msgid "That page contains no results"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/core/validators.py:103
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:659
+#: venv/lib/python3.8/site-packages/django/core/validators.py:91
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:671
 msgid "Enter a valid URL."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/core/validators.py:155
+#: venv/lib/python3.8/site-packages/django/core/validators.py:145
 msgid "Enter a valid integer."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/core/validators.py:166
+#: venv/lib/python3.8/site-packages/django/core/validators.py:156
 msgid "Enter a valid email address."
 msgstr ""
 
 #. Translators: "letters" means latin letters: a-z and A-Z.
-#: venv/lib/python3.8/site-packages/django/core/validators.py:240
+#: venv/lib/python3.8/site-packages/django/core/validators.py:230
 msgid ""
 "Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/core/validators.py:247
+#: venv/lib/python3.8/site-packages/django/core/validators.py:237
 msgid ""
 "Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
 "hyphens."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/core/validators.py:256
-#: venv/lib/python3.8/site-packages/django/core/validators.py:276
+#: venv/lib/python3.8/site-packages/django/core/validators.py:246
+#: venv/lib/python3.8/site-packages/django/core/validators.py:266
 msgid "Enter a valid IPv4 address."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/core/validators.py:261
-#: venv/lib/python3.8/site-packages/django/core/validators.py:277
+#: venv/lib/python3.8/site-packages/django/core/validators.py:251
+#: venv/lib/python3.8/site-packages/django/core/validators.py:267
 msgid "Enter a valid IPv6 address."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/core/validators.py:271
-#: venv/lib/python3.8/site-packages/django/core/validators.py:275
+#: venv/lib/python3.8/site-packages/django/core/validators.py:261
+#: venv/lib/python3.8/site-packages/django/core/validators.py:265
 msgid "Enter a valid IPv4 or IPv6 address."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/core/validators.py:305
+#: venv/lib/python3.8/site-packages/django/core/validators.py:295
 msgid "Enter only digits separated by commas."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/core/validators.py:311
+#: venv/lib/python3.8/site-packages/django/core/validators.py:301
 #, python-format
 msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/core/validators.py:343
+#: venv/lib/python3.8/site-packages/django/core/validators.py:334
 #, python-format
 msgid "Ensure this value is less than or equal to %(limit_value)s."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/core/validators.py:352
+#: venv/lib/python3.8/site-packages/django/core/validators.py:343
 #, python-format
 msgid "Ensure this value is greater than or equal to %(limit_value)s."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/core/validators.py:362
+#: venv/lib/python3.8/site-packages/django/core/validators.py:353
 #, python-format
 msgid ""
 "Ensure this value has at least %(limit_value)d character (it has "
@@ -894,7 +960,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/lib/python3.8/site-packages/django/core/validators.py:377
+#: venv/lib/python3.8/site-packages/django/core/validators.py:368
 #, python-format
 msgid ""
 "Ensure this value has at most %(limit_value)d character (it has "
@@ -905,27 +971,27 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/lib/python3.8/site-packages/django/core/validators.py:396
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:291
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:326
+#: venv/lib/python3.8/site-packages/django/core/validators.py:387
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:292
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:327
 msgid "Enter a number."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/core/validators.py:398
+#: venv/lib/python3.8/site-packages/django/core/validators.py:389
 #, python-format
 msgid "Ensure that there are no more than %(max)s digit in total."
 msgid_plural "Ensure that there are no more than %(max)s digits in total."
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/lib/python3.8/site-packages/django/core/validators.py:403
+#: venv/lib/python3.8/site-packages/django/core/validators.py:394
 #, python-format
 msgid "Ensure that there are no more than %(max)s decimal place."
 msgid_plural "Ensure that there are no more than %(max)s decimal places."
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/lib/python3.8/site-packages/django/core/validators.py:408
+#: venv/lib/python3.8/site-packages/django/core/validators.py:399
 #, python-format
 msgid ""
 "Ensure that there are no more than %(max)s digit before the decimal point."
@@ -934,318 +1000,330 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/lib/python3.8/site-packages/django/core/validators.py:470
+#: venv/lib/python3.8/site-packages/django/core/validators.py:461
 #, python-format
 msgid ""
 "File extension “%(extension)s” is not allowed. Allowed extensions are: "
 "%(allowed_extensions)s."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/core/validators.py:522
+#: venv/lib/python3.8/site-packages/django/core/validators.py:513
 msgid "Null characters are not allowed."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/base.py:1183
+#: venv/lib/python3.8/site-packages/django/db/models/base.py:1189
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:104
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:100
 #, python-format
 msgid "Value %(value)r is not a valid choice."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:105
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:101
 msgid "This field cannot be null."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:106
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:102
 msgid "This field cannot be blank."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:107
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:103
 #, python-format
 msgid "%(model_name)s with this %(field_label)s already exists."
 msgstr ""
 
 #. Translators: The 'lookup_type' is one of 'date', 'year' or 'month'.
 #. Eg: "Title must be unique for pub_date year"
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:111
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:107
 #, python-format
 msgid ""
 "%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:130
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:126
 #, python-format
 msgid "Field of type: %(field_type)s"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:937
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:939
 #, python-format
 msgid "“%(value)s” value must be either True or False."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:938
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:940
 #, python-format
 msgid "“%(value)s” value must be either True, False, or None."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:940
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:942
 msgid "Boolean (Either True or False)"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:981
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:983
 #, python-format
 msgid "String (up to %(max_length)s)"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1045
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1047
 msgid "Comma-separated integers"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1094
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1096
 #, python-format
 msgid ""
 "“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
 "format."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1096
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1239
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1098
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1241
 #, python-format
 msgid ""
 "“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
 "date."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1099
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1101
 msgid "Date (without time)"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1237
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1239
 #, python-format
 msgid ""
 "“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
 "uuuuuu]][TZ] format."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1241
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1243
 #, python-format
 msgid ""
 "“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
 "[TZ]) but it is an invalid date/time."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1245
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1247
 msgid "Date (with time)"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1393
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1395
 #, python-format
 msgid "“%(value)s” value must be a decimal number."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1395
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1397
 msgid "Decimal number"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1534
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1536
 #, python-format
 msgid ""
 "“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
 "uuuuuu] format."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1537
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1539
 msgid "Duration"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1587
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1589
 msgid "Email address"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1610
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1612
 msgid "File path"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1676
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1678
 #, python-format
 msgid "“%(value)s” value must be a float."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1678
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1680
 msgid "Floating point number"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1716
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1718
 #, python-format
 msgid "“%(value)s” value must be an integer."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1718
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1720
 msgid "Integer"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1801
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1803
 msgid "Big (8 byte) integer"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1817
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1819
 msgid "IPv4 address"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1848
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1850
 msgid "IP address"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1928
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1929
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1930
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1931
 #, python-format
 msgid "“%(value)s” value must be either None, True or False."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1931
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1933
 msgid "Boolean (Either True, False or None)"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1966
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1976
+msgid "Positive big integer"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1989
 msgid "Positive integer"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1979
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:2002
 msgid "Positive small integer"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1993
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:2016
 #, python-format
 msgid "Slug (up to %(max_length)s)"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:2025
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:2048
 msgid "Small integer"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:2032
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:2055
 msgid "Text"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:2060
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:2083
 #, python-format
 msgid ""
 "“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
 "format."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:2062
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:2085
 #, python-format
 msgid ""
 "“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
 "invalid time."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:2065
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:2088
 msgid "Time"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:2191
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:2214
 msgid "URL"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:2213
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:2236
 msgid "Raw binary data"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:2278
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:2301
 #, python-format
 msgid "“%(value)s” is not a valid UUID."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:2280
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:2303
 msgid "Universally unique identifier"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/files.py:221
+#: venv/lib/python3.8/site-packages/django/db/models/fields/files.py:231
 msgid "File"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/files.py:360
+#: venv/lib/python3.8/site-packages/django/db/models/fields/files.py:377
 msgid "Image"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/related.py:778
+#: venv/lib/python3.8/site-packages/django/db/models/fields/json.py:18
+msgid "A JSON object"
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/django/db/models/fields/json.py:20
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: venv/lib/python3.8/site-packages/django/db/models/fields/related.py:790
 #, python-format
 msgid "%(model)s instance with %(field)s %(value)r does not exist."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/related.py:780
+#: venv/lib/python3.8/site-packages/django/db/models/fields/related.py:792
 msgid "Foreign Key (type determined by related field)"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/related.py:1012
+#: venv/lib/python3.8/site-packages/django/db/models/fields/related.py:1045
 msgid "One-to-one relationship"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/related.py:1066
+#: venv/lib/python3.8/site-packages/django/db/models/fields/related.py:1099
 #, python-format
 msgid "%(from)s-%(to)s relationship"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/related.py:1067
+#: venv/lib/python3.8/site-packages/django/db/models/fields/related.py:1100
 #, python-format
 msgid "%(from)s-%(to)s relationships"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/db/models/fields/related.py:1109
+#: venv/lib/python3.8/site-packages/django/db/models/fields/related.py:1142
 msgid "Many-to-many relationship"
 msgstr ""
 
 #. Translators: If found as last label character, these punctuation
 #. characters will prevent the default label_suffix to be appended to the label
-#: venv/lib/python3.8/site-packages/django/forms/boundfield.py:149
+#: venv/lib/python3.8/site-packages/django/forms/boundfield.py:150
 msgid ":?.!"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:246
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:247
 msgid "Enter a whole number."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:397
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:1127
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:398
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:1139
 msgid "Enter a valid date."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:421
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:1128
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:422
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:1140
 msgid "Enter a valid time."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:443
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:450
 msgid "Enter a valid date/time."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:472
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:484
 msgid "Enter a valid duration."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:473
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:485
 #, python-brace-format
 msgid "The number of days must be between {min_days} and {max_days}."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:533
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:545
 msgid "No file was submitted. Check the encoding type on the form."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:534
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:546
 msgid "No file was submitted."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:535
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:547
 msgid "The submitted file is empty."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:537
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:549
 #, python-format
 msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
 msgid_plural ""
@@ -1253,43 +1331,47 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:540
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:552
 msgid "Please either submit a file or check the clear checkbox, not both."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:601
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:613
 msgid ""
 "Upload a valid image. The file you uploaded was either not an image or a "
 "corrupted image."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:763
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:853
-#: venv/lib/python3.8/site-packages/django/forms/models.py:1275
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:775
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:865
+#: venv/lib/python3.8/site-packages/django/forms/models.py:1296
 #, python-format
 msgid "Select a valid choice. %(value)s is not one of the available choices."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:854
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:969
-#: venv/lib/python3.8/site-packages/django/forms/models.py:1274
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:866
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:981
+#: venv/lib/python3.8/site-packages/django/forms/models.py:1295
 msgid "Enter a list of values."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:970
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:982
 msgid "Enter a complete value."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/fields.py:1186
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:1198
 msgid "Enter a valid UUID."
 msgstr ""
 
+#: venv/lib/python3.8/site-packages/django/forms/fields.py:1228
+msgid "Enter a valid JSON."
+msgstr ""
+
 #. Translators: This is the default suffix added to form field labels
-#: venv/lib/python3.8/site-packages/django/forms/forms.py:81
+#: venv/lib/python3.8/site-packages/django/forms/forms.py:78
 msgid ":"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/forms.py:207
+#: venv/lib/python3.8/site-packages/django/forms/forms.py:205
 #, python-format
 msgid "(Hidden field %(name)s) %(error)s"
 msgstr ""
@@ -1317,56 +1399,56 @@ msgstr[1] ""
 msgid "Order"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/models.py:754
+#: venv/lib/python3.8/site-packages/django/forms/models.py:755
 #, python-format
 msgid "Please correct the duplicate data for %(field)s."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/models.py:758
+#: venv/lib/python3.8/site-packages/django/forms/models.py:759
 #, python-format
 msgid "Please correct the duplicate data for %(field)s, which must be unique."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/models.py:764
+#: venv/lib/python3.8/site-packages/django/forms/models.py:765
 #, python-format
 msgid ""
 "Please correct the duplicate data for %(field_name)s which must be unique "
 "for the %(lookup)s in %(date_field)s."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/models.py:773
+#: venv/lib/python3.8/site-packages/django/forms/models.py:774
 msgid "Please correct the duplicate values below."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/models.py:1094
+#: venv/lib/python3.8/site-packages/django/forms/models.py:1096
 msgid "The inline value did not match the parent instance."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/models.py:1161
+#: venv/lib/python3.8/site-packages/django/forms/models.py:1180
 msgid "Select a valid choice. That choice is not one of the available choices."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/models.py:1277
+#: venv/lib/python3.8/site-packages/django/forms/models.py:1298
 #, python-format
 msgid "“%(pk)s” is not a valid value."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/utils.py:162
+#: venv/lib/python3.8/site-packages/django/forms/utils.py:167
 #, python-format
 msgid ""
 "%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
 "may be ambiguous or it may not exist."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/widgets.py:395
+#: venv/lib/python3.8/site-packages/django/forms/widgets.py:398
 msgid "Clear"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/widgets.py:396
+#: venv/lib/python3.8/site-packages/django/forms/widgets.py:399
 msgid "Currently"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/forms/widgets.py:397
+#: venv/lib/python3.8/site-packages/django/forms/widgets.py:400
 msgid "Change"
 msgstr ""
 
@@ -1382,64 +1464,65 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/template/defaultfilters.py:788
+#. Translators: Please do not add spaces around commas.
+#: venv/lib/python3.8/site-packages/django/template/defaultfilters.py:790
 msgid "yes,no,maybe"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/template/defaultfilters.py:817
-#: venv/lib/python3.8/site-packages/django/template/defaultfilters.py:834
+#: venv/lib/python3.8/site-packages/django/template/defaultfilters.py:819
+#: venv/lib/python3.8/site-packages/django/template/defaultfilters.py:836
 #, python-format
 msgid "%(size)d byte"
 msgid_plural "%(size)d bytes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: venv/lib/python3.8/site-packages/django/template/defaultfilters.py:836
+#: venv/lib/python3.8/site-packages/django/template/defaultfilters.py:838
 #, python-format
 msgid "%s KB"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/template/defaultfilters.py:838
+#: venv/lib/python3.8/site-packages/django/template/defaultfilters.py:840
 #, python-format
 msgid "%s MB"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/template/defaultfilters.py:840
+#: venv/lib/python3.8/site-packages/django/template/defaultfilters.py:842
 #, python-format
 msgid "%s GB"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/template/defaultfilters.py:842
+#: venv/lib/python3.8/site-packages/django/template/defaultfilters.py:844
 #, python-format
 msgid "%s TB"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/template/defaultfilters.py:844
+#: venv/lib/python3.8/site-packages/django/template/defaultfilters.py:846
 #, python-format
 msgid "%s PB"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/utils/dateformat.py:62
+#: venv/lib/python3.8/site-packages/django/utils/dateformat.py:65
 msgid "p.m."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/utils/dateformat.py:63
+#: venv/lib/python3.8/site-packages/django/utils/dateformat.py:66
 msgid "a.m."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/utils/dateformat.py:68
+#: venv/lib/python3.8/site-packages/django/utils/dateformat.py:71
 msgid "PM"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/utils/dateformat.py:69
+#: venv/lib/python3.8/site-packages/django/utils/dateformat.py:72
 msgid "AM"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/utils/dateformat.py:150
+#: venv/lib/python3.8/site-packages/django/utils/dateformat.py:149
 msgid "midnight"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/utils/dateformat.py:152
+#: venv/lib/python3.8/site-packages/django/utils/dateformat.py:151
 msgid "noon"
 msgstr ""
 
@@ -1719,18 +1802,18 @@ msgstr ""
 msgid "This is not a valid IPv6 address."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/utils/text.py:69
+#: venv/lib/python3.8/site-packages/django/utils/text.py:70
 #, python-format
 msgctxt "String to return when truncating text"
 msgid "%(truncated_text)s…"
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/django/utils/text.py:235
+#: venv/lib/python3.8/site-packages/django/utils/text.py:236
 msgid "or"
 msgstr ""
 
 #. Translators: This string is used as a separator between list elements
-#: venv/lib/python3.8/site-packages/django/utils/text.py:254
+#: venv/lib/python3.8/site-packages/django/utils/text.py:255
 #: venv/lib/python3.8/site-packages/django/utils/timesince.py:83
 msgid ", "
 msgstr ""
@@ -1776,10 +1859,6 @@ msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] ""
 msgstr[1] ""
-
-#: venv/lib/python3.8/site-packages/django/utils/timesince.py:72
-msgid "0 minutes"
-msgstr ""
 
 #: venv/lib/python3.8/site-packages/django/views/csrf.py:110
 msgid "Forbidden"
@@ -2070,43 +2149,49 @@ msgstr[3] ""
 msgstr[4] ""
 msgstr[5] ""
 
-#: venv/lib/python3.8/site-packages/httplib2/__init__.py:373
+#: venv/lib/python3.8/site-packages/httplib2/__init__.py:470
 #, python-format
 msgid "Content purported to be compressed with %s but failed to decompress."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/httplib2/__init__.py:524
+#: venv/lib/python3.8/site-packages/httplib2/__init__.py:656
 #, python-format
 msgid "Unsupported value for qop: %s."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/httplib2/__init__.py:527
-#: venv/lib/python3.8/site-packages/httplib2/__init__.py:589
+#: venv/lib/python3.8/site-packages/httplib2/__init__.py:661
+#: venv/lib/python3.8/site-packages/httplib2/__init__.py:755
 #, python-format
 msgid "Unsupported value for algorithm: %s."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/httplib2/__init__.py:586
+#: venv/lib/python3.8/site-packages/httplib2/__init__.py:750
 msgid "The challenge doesn't contain a server nonce, or this one is empty."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/httplib2/__init__.py:592
+#: venv/lib/python3.8/site-packages/httplib2/__init__.py:761
 #, python-format
 msgid "Unsupported value for pw-algorithm: %s."
 msgstr ""
 
-#: venv/lib/python3.8/site-packages/httplib2/__init__.py:1287
+#: venv/lib/python3.8/site-packages/httplib2/__init__.py:1687
 msgid "Redirected but the response is missing a Location: header."
 msgstr ""
 
-msgid "Update Exam"
-msgstr "تحديث الامتحان"
+#~ msgid "All Exams"
+#~ msgstr "جميع الامتحانات"
 
-msgid "Exam Details"
-msgstr "تفاصيل الامتحان"
+#~ msgid "All teacher's exams"
+#~ msgstr "جميع امتحانات الأستاذ"
 
-msgid "exam unique identifier here!"
-msgstr "اكتب المعرف الفريد للامتحان!"
+#~ msgid "Update Exam"
+#~ msgstr "تحديث الامتحان"
+
+#~ msgid "Exam Details"
+#~ msgstr "تفاصيل الامتحان"
+
+#~ msgid "exam unique identifier here!"
+#~ msgstr "اكتب المعرف الفريد للامتحان!"
 
 #, fuzzy
 #~| msgid "image"
@@ -2118,14 +2203,14 @@ msgstr "اكتب المعرف الفريد للامتحان!"
 #~ msgid "[image]"
 #~ msgstr "الصورة"
 
-msgid "exam note"
-msgstr "ملاحظات الامتحان"
+#~ msgid "exam note"
+#~ msgstr "ملاحظات الامتحان"
 
-msgid "profile picture"
-msgstr "صورة الملف الشخصي"
+#~ msgid "profile picture"
+#~ msgstr "صورة الملف الشخصي"
 
-msgid "Home Page"
-msgstr "الصفحة الرئيسية"
+#~ msgid "Home Page"
+#~ msgstr "الصفحة الرئيسية"
 
 #~ msgid "Internal Server Error"
 #~ msgstr "خ"

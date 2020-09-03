@@ -79,7 +79,7 @@ def create_questions(request):
 
 
         context = {
-            'title': _('Create Exam Questions'),
+            'title': lazy('Create Exam Questions'),
             'form': formset,
             'translations': translations,
             'exam_question_count': exam_question_count,
@@ -89,6 +89,7 @@ def create_questions(request):
             for form in new_formset:
                 # Exam.objects.filter(id=5).first()
                 form.exam_id = 5
+                print(form.question_text+"\n")
                 form.save()
             messages.success(request, _('Your Exam Questions has been created Successfully!'))
             return redirect('questions-list')
@@ -101,57 +102,13 @@ def create_questions(request):
         # form = CreateExamQuestions()
         formset = QuestionFormset(queryset=Question.objects.none())
         context = {
-            'title': _('Create Exam Questions'),
+            'title': lazy('Create Exam Questions'),
             'form': formset,
             'translations': translations,
             'exam_question_count': exam_question_count,
         }
 
     return render(request, 'teacher/createQuestions.html', context)
-
-#
-# @login_required
-# def create_questions2(request):
-#     translations = {
-#         'remove_question': _('Remove Question'),
-#         'question': _('Question')
-#     }
-#     if request.session['exam_number_of_questions'] is not None:
-#         exam_question_count = {
-#             'count': request.session['exam_number_of_questions']
-#         }
-#     else:
-#         exam_question_count = {
-#             'count': 0
-#         }
-#
-#     if request.method == 'POST':
-#         form = CreateExamQuestions2(request.POST, instance=request.user)
-#         context = {
-#             'title': _('Create Exam Questions'),
-#             'form': form,
-#             'translations': translations,
-#             'exam_question_count': exam_question_count,
-#         }
-#         if form.is_valid():
-#             messages.success(request, _('Your Exam Questions has been created Successfully!'))
-#             return redirect('home-page')
-#         else:
-#             print("not valid", "\n", form.errors, "\n")
-#
-#             print("degree ", request.POST.get('editorQuestions[#question_1].getData()', False))
-#
-#     else:
-#         # print(request.session.get('exam_number_of_questions'))
-#         form = CreateExamQuestions2()
-#         context = {
-#             'title': _('Create Exam Questions'),
-#             'form': form,
-#             'translations': translations,
-#             'exam_question_count': exam_question_count,
-#         }
-#
-#     return render(request, 'teacher/createQuestions2.html', context)
 
 
 class ExamListView(ListView):
@@ -209,7 +166,7 @@ class ExamDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Exam
     success_url = '/'
     extra_context = {
-        'title': _("Delete Exam")
+        'title': lazy("Delete Exam")
     }
 
     def test_func(self):
@@ -219,100 +176,7 @@ class ExamDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return False
 
 
-
-
-
-# class QuestionAddView(TemplateView):
-#     template_name = "teacher/add_question.html"
-#     def get_formset(self,type):
-#         if 'number_of_questions' not in self.request.session:
-#             self.request.session['number_of_questions'] = 1
-#         if self.request.session['number_of_questions'] is not None:
-#             number_of_questions = self.request.session.get('number_of_questions')
-#             QuestionFormSet = modelformset_factory(
-#
-#                 Question, exclude=['exam'], extra=number_of_questions, widgets={
-#                     'question_text': CKEditorWidget(attrs={'placeholder': _('add your question here!')}),
-#                     'question_optimal_answer': CKEditorWidget(
-#                         attrs={'placeholder': _("add your question's optimal answer here!")}),
-#                     'question_degree': forms.NumberInput(
-#                         attrs={'placeholder': _('add your question degree here!'), 'min': 1, 'max': 100})
-#                 }, labels={
-#                     'question_text': _('question text'),
-#                     'question_optimal_answer': _('question optimal answer'),
-#                     'question_degree': _('question degree'),
-#                 },
-#
-#             )
-#             if type == "get":
-#                 formset = QuestionFormSet(queryset=Question.objects.none())
-#             else:
-#                 formset = QuestionFormSet(data=self.request.POST)
-#
-#         else:
-#             if type == "get":
-#                 formset = BaseFormSet(queryset=Question.objects.none())
-#             else:
-#                 formset = BaseFormSet(data=self.request.POST)
-#         return formset
-#
-#
-#
-#     def get(self, *args, **kwargs):
-#         # formset = self.get_formset("get")
-#         formset = BaseFormSet(queryset=Question.objects.none())
-#         print(self.request.session['number_of_questions'])
-#         translations = {
-#             'remove_question': _('Remove Question'),
-#             'question': _('Question')
-#         }
-#         exam_question_count = {
-#             'count': '0'
-#         }
-#         extra_context = {
-#             'title': _('Create Exam Questions'),
-#             'translations': translations,
-#             'exam_question_count': exam_question_count,
-#             'question_formset': formset
-#         }
-#
-#         return self.render_to_response(extra_context)
-#
-#     # Define method to handle POST request
-#     def post(self, *args, **kwargs):
-#         # formset = self.get_formset("post")
-#         formset = BaseFormSet(data=self.request.POST)
-#
-#         if 'exam_number_of_questions' not in self.request.session:
-#             self.request.session['exam_number_of_questions'] = 1
-#         exam_question_count = {
-#             'count': self.request.session['exam_number_of_questions']
-#         }
-#
-#         translations = {
-#             'remove_question': _('Remove Question'),
-#             'question': _('Question')
-#         }
-#         extra_context = {
-#             'title': _('Create Exam Questions'),
-#             'translations': translations,
-#             'exam_question_count': exam_question_count,
-#             'question_formset': formset
-#         }
-#
-#         # Check if submitted forms are valid
-#         if formset.is_valid():
-#             new_formset = formset.save(commit=False)
-#             for form in new_formset:
-#                 form.exam = Exam.objects.filter(id=5).first()
-#                 form.save()
-#             # new_formset.save()
-#             messages.success(self.request, _('Your New Exam has been created Successfully!'))
-#             return redirect(reverse_lazy("questions-list"))
-#
-#         return self.render_to_response(extra_context)
-
-
 class QuestionListView(ListView):
     model = Question
     template_name = "teacher/question_list.html"
+    extra_context = {"title":lazy("Questions List")}

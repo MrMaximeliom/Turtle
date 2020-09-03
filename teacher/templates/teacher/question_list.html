@@ -11,7 +11,7 @@
 <div class="home-page">
   {% get_current_language as MY_LANGUAGE %}
     <h5 style="display:none;" id="lang">{{  MY_LANGUAGE }}</h5>
-  <h1>Questions List</h1>
+  <h1>{% trans 'Questions List' %}</h1>
     <a href='#'>Add Question</a>
     {% for question in object_list %}
 

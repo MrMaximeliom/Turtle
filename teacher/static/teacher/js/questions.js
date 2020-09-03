@@ -61,7 +61,7 @@ controlButtons.before(question);
 //parent_div.appendChild(controlButtons);
 //controlButtons.style.display = 'block';
   }
-$(document).on('click', ".question_class", function() {
+$(document).on('focus', ".question_class", function() {
 var id = $(this).attr("id");
 //console.log("#"+id);
 if( language == 'ar'){
@@ -146,7 +146,7 @@ ClassicEditor
 }
 console.log(id);
 });
-$(document).on('click', ".answer_class", function() {
+$(document).on('focus', ".answer_class", function() {
 var id = $(this).attr("id");
 //console.log("#"+id);
 if( language == 'ar'){
@@ -235,13 +235,27 @@ questionToBeDeleted = $(this).attr("id");
 $(document).on('click', '#remove_question_modal', function() {
 var button = document.getElementById(questionToBeDeleted);
 var element = document.getElementById( button.parentNode.getAttribute('id') );
-if(button.parentNode.getAttribute('id') == "question_text1"){
-button.parentNode.css('display','none');
-}
-else{
+//if(button.parentNode.getAttribute('id') == "question_text1"){
+//button.parentNode.css('display','none');
+//}
+//else{
 parent_div.removeChild(element);
-}
+//}
 });
+
+if(language == "ar"){
+$(".question").css('text-align','right');
+$(".question,#deleteModal").css('direction','rtl');
+$(".raw-button , .remove-question").css('direction','rtl');
+$(".raw-button , .remove-question").css('right','88%');
+$(".remove-question").css('width','108px');
+$("#closeIcon").css('position','absolute');
+$("#closeIcon").css('right','93%');
+
+
+
+}
+
 
 
 });

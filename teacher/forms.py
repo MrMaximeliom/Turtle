@@ -105,11 +105,11 @@ QuestionFormset = modelformset_factory(
     }
     ,
 widgets = {
-    'question_text': forms.Textarea(attrs={'class':'question_class','placeholder': _('add your question here!'), 'cols': 25, 'rows': 2}),
+    'question_text': forms.Textarea(attrs={'class':'question_class','placeholder': lazy('add your question here!'), 'cols': 25, 'rows': 2}),
     'question_optimal_answer': forms.Textarea(
-        attrs={'class':'answer_class','placeholder': _("add your question's optimal answer here!"), 'cols': 25, 'rows': 2}),
+        attrs={'class':'answer_class','placeholder': lazy("add your question's optimal answer here!"), 'cols': 25, 'rows': 2}),
     'question_degree': forms.NumberInput(
-        attrs={'placeholder': _('add your question degree here!'), 'min': 1, 'max': 100}),
+        attrs={'placeholder': lazy('add your question degree here!'), 'min': 1, 'max': 100}),
 
 }
 
