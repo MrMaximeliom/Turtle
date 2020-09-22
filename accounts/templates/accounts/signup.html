@@ -26,6 +26,8 @@
 <form class="field" method="post">
 {% csrf_token %}
  <div class="form-row">
+       <!--- إذا كانت لغة الموقع هي اللغة العربية -->
+
      {% if MY_LANGUAGE == 'ar' %}
      <div class="form-group col-md-4 mb-2 first-field">
        {{ form.last_name|as_crispy_field }}
@@ -34,6 +36,8 @@
      <div class="form-group col-md-4 mb-2">
         {{ form.first_name|as_crispy_field }}
       </div>
+            <!--- إذا كانت لغة الموقع هي اللغة الإنجليزية -->
+
      {% else %}
      <div class="form-group col-md-4 mb-2 first-field">
         {{ form.first_name|as_crispy_field }}

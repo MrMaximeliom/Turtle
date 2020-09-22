@@ -2,10 +2,18 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import User,Profile
 from django import forms
 from django.utils.translation import gettext_lazy as _
+"""
+خيارات تحديد نوع الجنس وتستخدم في كلا من فورم تسجيل المعلم و فورم 
+تسجيل الطالب
+"""
 GENDER_CHOICES = (
     (_('Male'), _('Male')),
     (_('Female'), _('Female')),
 )
+"""
+خيارات تحديد الدولة وتستخدم في كلا من فورم تسجيل المعلم 
+وفورم تسجيل الطالب
+"""
 COUNTRIES = (
     ('Afghanistan', 'Afghanistan'),
     ('Albania', 'Albania'),
@@ -204,6 +212,13 @@ COUNTRIES = (
     ('Zimbabwe', 'Zimbabwe')
 )
 # Create the form class.
+"""
+فورم تسجيل أستاذ جديد ، حقوله تحتوي على:
+- الاسم الأول - الاسم الأخير
+- الإيميل - النوع - اسم المستخدم
+- كلمة المرور - التحقق من كلمة المرور - اسم الدولة
+تم استخراج الحقل "هل هو أستاذ؟" لتتم معالجته بشكل منفصل
+"""
 class TeacherSignUpForm(UserCreationForm):
     class Meta:
         model = User
@@ -226,23 +241,13 @@ class TeacherSignUpForm(UserCreationForm):
 
 
         exclude = ["is_teacher"]
-
-# class TeacherSignUpForm(forms.Form):
-#     alphanumeric = RegexValidator(r'^[a-zA-Z]*$', _('Only alphabet characters are allowed.'))
-#     first_name = forms.CharField(max_length=40,validators=[alphanumeric],label=_('first name'))
-#     last_name = forms.CharField( max_length=40, validators=[alphanumeric])
-#     username = forms.CharField(max_length=30)
-#     gender = forms.ChoiceField(choices=GENDER_CHOICES)
-#     is_teacher = forms.BooleanField()
-#     is_student = forms.BooleanField()
-#     profile_pic = forms.CharField( max_length=320)
-#     country = forms.ChoiceField(choices=COUNTRIES)
-#     email = forms.EmailField( max_length=60)
-#     password1 = forms.CharField( max_length=128)
-#     password2 = forms.CharField( max_length=128)
-
-
-
+"""
+فورم تسجيل طالب جديد ، حقوله تحتوي على:
+- الاسم الأول - الاسم الأخير
+- الإيميل - النوع - اسم المستخدم
+- كلمة المرور - التحقق من كلمة المرور - اسم الدولة
+تم استخراج الحقل "هل هو طالب؟" لتتم معالجته بشكل منفصل
+"""
 class StudentSignUpForm(UserCreationForm):
     class Meta:
         model = User
@@ -263,11 +268,17 @@ class StudentSignUpForm(UserCreationForm):
             'username': _('username')
         }
         exclude = ["is_student"]
-
+"""
+فورم تسجيل الدخول يحتوي على:
+- الإيميل - كلمة المرور
+"""
 class loginForm(forms.Form):
     email = forms.EmailField(max_length=60,label=_('email'))
     password = forms.CharField(max_length=32, widget=forms.PasswordInput, label=_('password'))
-
+"""
+فورم تحديث معلومات المستخدم يحتوي على :
+- اسم المستخدم - الإيميل - الاسم الأول - الاسم الأخير
+"""
 class UserUpdateForm(forms.ModelForm):
 
     class Meta:
@@ -279,6 +290,10 @@ class UserUpdateForm(forms.ModelForm):
            'first_name':_('first name'),
            'last_name':_('last name'),
         }
+"""
+فورم تحديث الملف الشخصي يحتوي على حقل الصورة فقط 
+
+"""
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile

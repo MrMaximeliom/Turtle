@@ -2,12 +2,13 @@ from django.db.models.signals import post_save
 from .models import User
 from django.dispatch import receiver
 from .models import Profile
-
+#عند تسجيل مستخدم جديد يتم إنشاء ملف شخصي خاص به تلقائيا
 @receiver(post_save,sender=User)
 def create_profile(sender,instance,created,**kwargs):
     if created:
          new_profile = Profile.objects.create(user=instance)
          # new_profile.image = "/profile_pics/default_male.jpg"
+         # تكون الصورة الشخصية مطابقة لجنس المستخدم الجديد
 
          if instance.gender == 'Male':
              new_profile.image = "/profile_pics/default_male.jpg"

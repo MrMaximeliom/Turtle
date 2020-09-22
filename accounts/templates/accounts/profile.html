@@ -14,6 +14,7 @@
 {% block content %}
 <!--Here-->
  {% get_current_language as MY_LANGUAGE %}
+  <!--- إذا كانت لغة الموقع إنجليزية -->
 {% if MY_LANGUAGE == 'en' %}
 <div class="home-page-profile" >
 <div class="update-profile-form">
@@ -68,6 +69,7 @@
 </div>
     </div>
 {% else %}
+  <!--- إذا كانت لغة الموقع عربية -->
 <div class="home-page-profile-arabic" >
 <div class="update-profile-form-arabic">
      <div class="media">
@@ -120,5 +122,6 @@
     </div>
 {% endif %}
 {% endblock %}
+  <!--- بلوك خاص بملفات الجافا اسكريبت لهذه الصفحة تحديدا -->
 {% block custom_javascript %}
 {% endblock %}

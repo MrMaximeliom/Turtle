@@ -13,9 +13,6 @@ import string
 from .models import Exam, Question
 from accounts.models import User
 from .forms import CreateExam
-from django.urls import reverse_lazy
-from django.http import JsonResponse
-from django import forms
 
 
 def get_random_string(length):

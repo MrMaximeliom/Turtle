@@ -6,10 +6,10 @@ from .forms import TeacherSignUpForm, StudentSignUpForm, loginForm
 from django.utils.translation import gettext as _
 from django.contrib.auth import logout
 from .forms import UserUpdateForm , ProfileUpdateForm
-from django.shortcuts import resolve_url
 
-
-
+"""
+تستخدم هذه الواجهة لإظهار فورم تسجيل معلم جديد
+"""
 
 def teacher_sign_up(request):
     form = TeacherSignUpForm()
@@ -39,7 +39,9 @@ def teacher_sign_up(request):
     #     form = TeacherSignUpForm()
     return render(request, 'accounts/signup.html', context)
 
-
+"""
+تستخدم هذه الواجهة لإظهار فورم تسجيل طالب جديد
+"""
 def student_sign_up(request):
     form = StudentSignUpForm()
     context = {
@@ -68,7 +70,9 @@ def student_sign_up(request):
     #     form = StudentSignUpForm()
     return render(request, 'accounts/signup.html', context)
 
-
+"""
+تستخدم هذه الواجهة لإظهار فورم تسجيل الدخول
+"""
 def login(request):
     form = loginForm()
     context = {
@@ -91,15 +95,21 @@ def login(request):
             messages.error(request, _('Either username or password are wrong ! please try again .. form is not valid'))
     return render(request, 'accounts/login.html', context)
 
-
+"""
+تستخدم هذه الواجهة لتسجيل الخروج من الحساب
+"""
 def logout_page(request):
     logout(request)
     return redirect('home-page')
 
 def register_page(request):
     return render(request,'accounts/register.html')
+"""
+تستخدم هذه الواجهة لعرض فورم الملف الشخصي للمستخدم
+"""
 @login_required
 def profile_page(request):
+    context = {'title':_('Profile Page')}
     if request.method == 'POST':
         userUpdateForm = UserUpdateForm(request.POST,instance=request.user)
         profileUpdateForm = ProfileUpdateForm(request.POST,

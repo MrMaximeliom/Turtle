@@ -1,3 +1,12 @@
+/*
+يستخدم هذا الملف بشكل خاص عند احتواء الصفحة على فورم محدد ولتخصيص ظهور حقول هذا الفورم
+*/
+
+
+/*
+الكلاس المستخدم لتخصيص ظهور كل من الحقل النصي ، كملة المرور ، التاريخ
+الحقل الرقمي ، حقل مساحة النصوص ، حقل الاختيار ، حقل الإيميل
+*/
 .field input[type=text],
 .field input[type=password],
 .field input[type=date],
@@ -15,26 +24,43 @@ font-size:17px;
 cursor:hand;
 display:inline-block;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور حقل الاختيار
+*/
 .field input[type=radio]{
 display:inline-block;
 }
 /*display: block ruby;*/
-
+/*
+الكلاس المستخدم لتخصيص ظهور الحقل الأول من الفورم ( باللغة الإنجليزية)
+*/
 .first-field{
 margin-right:100px;
 margin-left: 50px;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور الحقل الأول من الفورم ( باللغة العربية)
+*/
 .first-field-arabic{
 margin-right:100px;
 margin-left: 100px;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور تأكيد الموافقة على شروط التسجيل بالموقع
+*/
 .confirm-signup{
 cursor:pointer;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور التعريف بالحقول في الفورم
+*/
 .field label{
 font-size:18px;
 }
 /* testing code */
+/*
+الكلاس المستخدم لتخصيص ظهور فورم تسجيل المستخدم
+*/
 .signup-form{
 border:3px solid #dddddd;
 width:75%;
@@ -43,6 +69,9 @@ margin-bottom: 10px;
 .form-section{
 margin-bottom: 25px;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور الحد السفلي تحت أي نص
+*/
 .border-bottom-title{
 border-bottom:3px solid #dddddd;
 width: max-content;
@@ -54,38 +83,61 @@ margin-left: 48px;
 .info-arabic{
 margin-right: 48px;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور الحد السفلي تحت أي نص خاص بصفحة الملف الشخصي
+*/
 .border-bottom-title-profile{
 border-bottom:3px solid #dddddd;
 width: max-content;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور صفحة الملف الشخصي
+*/
 .home-page-profile{
 margin-top: 76px;
-}
+/*
+الكلاس المستخدم لتخصيص ظهور فورم تحديث الملف الشخصي
+*/
 .update-profile-form{
 /*border:3px solid #dddddd;*/
 width:75%;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور صفحة الملف الشخصي (باللغة العربية)
+*/
 .home-page-profile-arabic{
 margin-top: 76px;
 direction: rtl;
 text-align: right;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور فورم تحديث الملف الشخصي (باللغة العربية)
+*/
 .update-profile-form-arabic{
 /*border: 3px solid #dddddd;*/
 width: 75%;
 direction: rtl;
 margin-right: auto;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور حقول فورم تحديث الملف الشخصي (باللعة العربية)
+*/
 .media-body-profile-arabic{
 flex: 1;
 margin-right: 10px;
 margin-top: 10px;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور حقل ملاحظات الامتحان (باللغة الإنجليزية)
+*/
 .exam-notes{
 left: 12%;
 top: 20%;
 margin-bottom: 40px;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور حقل ملاحظات الامتحان (باللغةالعربية)
+*/
 .exam-notes-arabic{
 right: 50%;
 top: 10%;
@@ -95,23 +147,41 @@ font-size: 17px;}
 .save-btn:hover{
 color: #462342;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور زر الإلغاء عند مرور الماوس من فوقه
+*/
 .cancel-btn:hover{
 color:#c40303;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور الصفحة عندما تكون اللغة هي العربية
+*/
 .arabic{
 text-align:right;
 direction:rtl;
 position: absolute;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور حقل اسم الامتحان ( باللغة العربية)
+*/
 .exam-name-arabic{
 right: 30%;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور التعريف بالحقول في فورم إنشاء الامتحانات
+*/
 .exam-label{
 display: block ruby;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور التعريف بالحقول في فورم إنشاء الامتحانات من خلال تحديد اللون
+*/
 .exam-label-color{
 color: gray;
 }
+/*
+المعرف الفريد المستخدم لتخصيص ظهور تحديد تاريخ الامتحان
+*/
 #id_exam_date{
 width:190px;
 }

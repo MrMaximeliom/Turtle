@@ -10,6 +10,7 @@
 {% block content %}
 
      {% get_current_language as MY_LANGUAGE %}
+  <!--- إذا كانت لغة الموقع هي اللغة الإنجليزية -->
     {% if MY_LANGUAGE == 'en' %}
 <div class="home-page ">
     <div class="welcome-message">
@@ -45,6 +46,8 @@
   </div>
 </div>
     {% else %}
+  <!--- إذا كانت لغة الموقع هي اللغة العربية-->
+
 <div class="home-page arabic ">
 <div class="welcome-message-arabic">
 <h4>{% trans 'Welcome To Our Site' %} </h4>

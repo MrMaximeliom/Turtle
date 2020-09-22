@@ -5,6 +5,7 @@
 {% block content %}
 {% get_current_language as MY_LANGUAGE %}
 <div class="home-page">
+    <!--- إذا كانت لغة الموقع إنجليزية -->
     {% if MY_LANGUAGE == 'en' %}
 <div class="login">
 
@@ -35,6 +36,7 @@
   </form>
 
 </div>
+      <!--- إذا كانت لغة الموقع عربية -->
     {% else %}
     <div class="login-arabic">
 
@@ -68,6 +70,7 @@
     {% endif %}
 </div>
 {% endblock %}
+  <!--- بلوك خاص بملفات الجافا اسكريبت لهذه الصفحة تحديدا -->
 {% block custom_javascript %}
 
 {% endblock %}

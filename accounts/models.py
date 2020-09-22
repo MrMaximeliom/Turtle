@@ -2,14 +2,17 @@ from django.core.validators import RegexValidator
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.utils.translation import gettext as _
-from PIL import Image
 
-# Create your models here.
-
+"""
+خيارات تحديد الجنس 
+"""
 GENDER_CHOICES = (
     (('Male'), _('Male')),
     (('Female'), _('Female')),
 )
+"""
+خيارات تحديد الدولة
+"""
 COUNTRIES = (
     ('Afghanistan', 'Afghanistan'),
     ('Albania', 'Albania'),
@@ -208,7 +211,9 @@ COUNTRIES = (
     ('Zimbabwe', 'Zimbabwe')
 )
 
-
+"""
+الكلاس المسؤول عن معالجة أخطاء الادخال بالنسبة لمعلومات تسجيل الطالب والمعلم
+"""
 class UserAccountManager(BaseUserManager):
 
     def create_user(self, email, username, first_name, last_name, gender, password=None):
@@ -254,7 +259,10 @@ class UserAccountManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-
+"""
+الجدول الأساسي للمستخدم في دجانجو تم إعادة تعريف حقوله وإضافة المزيد من الحقول 
+والتي تعتبر مهمة بالنسبة للنظام
+"""
 class User(AbstractBaseUser):
     alphanumeric = RegexValidator(r'^[a-zA-Z]*$', _('Only alphabet characters are allowed.'))
     email = models.EmailField(verbose_name=_('email'), max_length=60, unique=True)
@@ -287,7 +295,9 @@ class User(AbstractBaseUser):
 
     def has_module_perms(self, app_level):
         return True
-
+"""
+الجدول الأساسي للملف الشخصي 
+"""
 class Profile(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)
     image = models.ImageField(upload_to='profile_pics',null=True)
