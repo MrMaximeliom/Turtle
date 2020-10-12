@@ -4,6 +4,8 @@
 <html>
 <head>
   {% get_current_language as MY_LANGUAGE %}
+        <h5 style="display:none;" id="lang">{{  MY_LANGUAGE }}</h5>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
      {% block meta_tags %}{% endblock %}
@@ -14,13 +16,8 @@
 
    <!-- Google  Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-
+     <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
     <!-- Font Awesome JS -->
-
-<!--    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>-->
-<!--<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>-->
-<!--    <script src="https://use.fontawesome.com/4b287c6082.js"></script>-->
-<!--    <script src='https://kit.fontawesome.com/a076d05399.js'></script>-->
     <script src="https://kit.fontawesome.com/75322d0869.js" crossorigin="anonymous"></script>
 
      <!-- custom css code -->
@@ -58,7 +55,7 @@
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
                 <div class="links-in-navbar">
-                {% if MY_LANGUAGE == 'en' %}
+                {% if MY_LANGUAGE == 'en'   %}
               <a class="nav-item nav-link" href="{% url 'home-page' %}">
                   <i class="fa fa-home"></i>
                   {% trans 'Home' %}
@@ -92,11 +89,19 @@
 
             </div>
             <!-- Navbar Right Side dropdown-toggle -->
-            <div class="navbar-nav">
+            <div class="navbar-nav" id="user-dropDown">
                 {% if request.user.is_authenticated %}
+                <a href="#">
+   <img src="{{ user.profile.image.url }}" width="40" height="40" class="rounded-circle">
+                    </a>
+
                  <div class="dropdown" >
-                    <a class="nav-link dropdown-toggle">
-                     <img src="{{ user.profile.image.url }}" width="40" height="40" class="rounded-circle">
+
+                    <a class="nav-link dropdown-toggle username-dropdown">
+
+                            {{ user.username }}
+
+
                     </a>
                      {% if MY_LANGUAGE == 'en' %}
                     <div class="dropdown-content">
@@ -106,12 +111,15 @@
                         </a>
                     </div>
                      {% else %}
+
                       <div class="dropdown-content arabic" style="margin-left:-100px;">
                         <a class="dropdown-item" href="#">{% trans "Edit Profile" %}</a>
                         <a class="dropdown-item " href="{% url 'logout-page' %}"  >
                              {% trans 'Log out' %}
                         </a>
                     </div>
+
+
 
                      {% endif %}
                    </div>
@@ -163,78 +171,123 @@
     <main role="main" class="container-fluid">
       <div class="row">
            <div class="col-md-4" >
-               {% if MY_LANGUAGE == 'en' %}
+               {% if MY_LANGUAGE == 'en'%}
           <div id="customSideBar">
 
           <div class="content-section-sidebar" id="SideBarElements">
             <h3>{% trans 'Our Sidebar' %}</h3>
 
               <ul class="list-group">
-              <li class="list-group-item list-group-item-light "><a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="" >
-                        <i class="fas fa-home"></i>
-                        {% trans 'Home' %}
-                   <i class="fa fa-caret-down sidebar-dropdown-icon"></i>
+<!--              <li class="list-group-item list-group-item-light "><a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="" >-->
+<!--                        <i class="fas fa-book-reader"></i>-->
+<!--                        {% trans 'Home' %}-->
+<!--                   <i class="fa fa-caret-down sidebar-dropdown-icon"></i>-->
+<!--                    </a>-->
+<!--                    <ul class="collapse list-unstyled" id="homeSubmenu">-->
+<!--                        <li>-->
+<!--                            <a href="#">Home 1</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#">Home 2</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#">Home 3</a></li>-->
+<!--                    </ul>-->
+<!--              </li>-->
+<!--                <li class="list-group-item list-group-item-light"> <a href="#">-->
+<!--                        <i class="fas fa-briefcase"></i>-->
+<!--                        {% trans 'About' %}-->
+<!--                    </a></li>-->
+<!--                <li class="list-group-item list-group-item-light ">-->
+<!--                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="">-->
+<!--                        <i class="fas fa-copy"></i>-->
+<!--                        {% trans 'Categories' %}-->
+<!--                          <i class="fa fa-caret-down sidebar-dropdown-icon"></i>-->
+<!--                    </a>-->
+<!--                    <ul class="collapse list-unstyled" id="pageSubmenu">-->
+<!--                        <li>-->
+<!--                            <a href="#">Page 1</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#">Page 2</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#">Page 3</a>-->
+<!--                </li>-->
+<!--                    </ul>-->
+<!--                </li>-->
+<!--                <li class="list-group-item list-group-item-light">-->
+<!--               <a href="#">-->
+<!--                        <i class="fas fa-image"></i>-->
+<!--                        {% trans 'Portfolio' %}-->
+<!--                    </a>-->
+<!--          </li>-->
+                     <li class="list-group-item list-group-item-light">
+                     <a href="{% url 'compare-page' %}">
+                        <i class="fas fa-book-open"></i>
+                        {% trans 'Compare' %}
                     </a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#">Home 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 3</a></li>
-                    </ul>
-                <li class="list-group-item list-group-item-light"> <a href="#">
-                        <i class="fas fa-briefcase"></i>
-                        {% trans 'About' %}
-                    </a></li>
-                <li class="list-group-item list-group-item-light ">
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="">
-                        <i class="fas fa-copy"></i>
-                        {% trans 'Categories' %}
-                          <i class="fa fa-caret-down sidebar-dropdown-icon"></i>
-                    </a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
                 </li>
-                    </ul>
-                <li class="list-group-item list-group-item-light">
-               <a href="#">
-                        <i class="fas fa-image"></i>
-                        {% trans 'Portfolio' %}
-                    </a>
-          </li>
                 <li class="list-group-item list-group-item-light">
                     <a href="#">
                         <i class="fas fa-question"></i>
                         {% trans 'FAQ' %}
                     </a>
                 </li>
-                <li class="list-group-item list-group-item-light">
-                     <a href="#">
-                        <i class="fas fa-paper-plane"></i>
-                        {% trans 'Contact' %}
-                    </a>
-                </li>
-                <li class="list-group-item list-group-item-light">
-                     <a href="{% url 'compare-page' %}">
-                        <i class="fas fa-book-open"></i>
-                        {% trans 'Compare' %}
-                    </a>
-                </li>
+<!--                <li class="list-group-item list-group-item-light">-->
+<!--                     <a href="#">-->
+<!--                        <i class="fas fa-paper-plane"></i>-->
+<!--                        {% trans 'Contact' %}-->
+<!--                    </a>-->
+<!--                </li>-->
+
                   {% if request.user.is_authenticated and request.user.is_teacher%}
                 <li class="list-group-item list-group-item-light">
-                     <a href="{% url 'create_exam-page' %}">
+                     <a href="{% url 'create_exam-page' %}" >
                         <i class="fas fa-edit"></i>
                         {% trans 'Create Exam' %}
+                    </a>
+                </li>
+                  <!-- First Solution -->
+<!--                  <li class="list-group-item list-group-item-light ">-->
+<!--                    <a href="#pageSubmenu" data-toggle="collapse"  aria-expanded="false" class="">-->
+<!--                        <svg class="teacher-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+<!--  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />-->
+<!--  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />-->
+<!--</svg>-->
+<!--                        {% trans 'Manage Exams' %}-->
+<!--                          <i class="fa fa-caret-down sidebar-dropdown-icon"></i>-->
+<!--                    </a>-->
+<!--                    <ul class="collapse list-unstyled" id="pageSubmenu">-->
+<!--                        <li>-->
+<!--                            <svg class="teacher-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+<!--  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />-->
+<!--</svg>-->
+<!--                            <a href="{% url 'teacher-exams' user.username %}">{% trans 'Update Exam' %}</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <svg class="teacher-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+<!--  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />-->
+<!--</svg>-->
+<!--                            <a href="#">{% trans 'Delete Exam' %}</a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </li>-->
+                  <!-- Better Solution -->
+                  <li class="list-group-item list-group-item-light ">
+                    <a href="{% url 'teacher-exams' user.username %}"  class="">
+                        <svg class="teacher-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+</svg>
+                        {% trans 'Manage Exams' %}
+                    </a>
+                  </li>
+                  {% elif request.user.is_authenticated and request.user.is_student %}
+ <li class="list-group-item list-group-item-light">
+                     <a href="{% url 'create_exam-page' %}">
+                       <i class="fas fa-search"></i>
+                        {% trans 'Search For Exam' %}
                     </a>
                 </li>
                   {% endif %}
@@ -267,54 +320,63 @@
             <h3>{% trans 'Our Sidebar' %}</h3>
 
                            <ul class="list-group">
-              <li class="list-group-item list-group-item-light "><a href="#ArabichomeSubmenu" data-toggle="collapse" aria-expanded="false" class="" >
-                    <i class="fa fa-caret-down sidebar-dropdown-icon"></i>
+<!--              <li class="list-group-item list-group-item-light "><a href="#ArabichomeSubmenu" data-toggle="collapse" aria-expanded="false" class="" >-->
+<!--                    <i class="fa fa-caret-down sidebar-dropdown-icon"></i>-->
 
-                  {% trans 'Home' %}
-                  <i class="fas fa-home"></i>
+<!--                  {% trans 'Home' %}-->
+<!--                  <i class="fas fa-home"></i>-->
 
+
+<!--                    </a>-->
+<!--                    <ul class="collapse list-unstyled" id="ArabichomeSubmenu">-->
+<!--                        <li>-->
+<!--                            <a href="#">Home 1</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#">Home 2</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#">Home 3</a></li>-->
+<!--                    </ul>-->
+<!--              </li>-->
+<!--                <li class="list-group-item list-group-item-light"> <a href="#">-->
+<!--                        {% trans 'About' %}-->
+<!--                        <i class="fas fa-briefcase"></i>-->
+
+<!--                    </a></li>-->
+<!--                <li class="list-group-item list-group-item-light ">-->
+<!--                    <a href="#ArabicpageSubmenu" data-toggle="collapse" aria-expanded="false" class="">-->
+<!--                        <i class="fa fa-caret-down sidebar-dropdown-icon"></i>-->
+<!--                        {% trans 'Categories' %}-->
+<!--                         <i class="fas fa-copy"></i>-->
+
+<!--                    </a>-->
+<!--                    <ul class="collapse list-unstyled" id="ArabicpageSubmenu">-->
+<!--                        <li>-->
+<!--                            <a href="#">Page 1</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#">Page 2</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#">Page 3</a>-->
+<!--                </li>-->
+<!--                    </ul>-->
+<!--                </li>-->
+<!--                <li class="list-group-item list-group-item-light">-->
+<!--               <a href="#">-->
+<!--                    {% trans 'Portfolio' %}-->
+<!--                        <i class="fas fa-image"></i>-->
+
+<!--                    </a>-->
+<!--          </li>-->
+             <li class="list-group-item list-group-item-light">
+                     <a href="{% url 'compare-page' %}">
+                          {% trans 'Compare' %}
+                        <i class="fas fa-book-open"></i>
 
                     </a>
-                    <ul class="collapse list-unstyled" id="ArabichomeSubmenu">
-                        <li>
-                            <a href="#">Home 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 3</a></li>
-                    </ul>
-                <li class="list-group-item list-group-item-light"> <a href="#">
-                        {% trans 'About' %}
-                        <i class="fas fa-briefcase"></i>
-
-                    </a></li>
-                <li class="list-group-item list-group-item-light ">
-                    <a href="#ArabicpageSubmenu" data-toggle="collapse" aria-expanded="false" class="">
-                        <i class="fa fa-caret-down sidebar-dropdown-icon"></i>
-                        {% trans 'Categories' %}
-                         <i class="fas fa-copy"></i>
-
-                    </a>
-                    <ul class="collapse list-unstyled" id="ArabicpageSubmenu">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
                 </li>
-                    </ul>
-                <li class="list-group-item list-group-item-light">
-               <a href="#">
-                    {% trans 'Portfolio' %}
-                        <i class="fas fa-image"></i>
-
-                    </a>
-          </li>
                 <li class="list-group-item list-group-item-light">
                     <a href="#">
                           {% trans 'FAQ' %}
@@ -322,25 +384,64 @@
 
                     </a>
                 </li>
-                <li class="list-group-item list-group-item-light">
-                     <a href="#">
-                          {% trans 'Contact' %}
-                        <i class="fas fa-paper-plane"></i>
+<!--                <li class="list-group-item list-group-item-light">-->
+<!--                     <a href="#">-->
+<!--                          {% trans 'Contact' %}-->
+<!--                        <i class="fas fa-paper-plane"></i>-->
 
-                    </a>
-                </li>
-                <li class="list-group-item list-group-item-light">
-                     <a href="{% url 'compare-page' %}">
-                          {% trans 'Compare' %}
-                        <i class="fas fa-book-open"></i>
+<!--                    </a>-->
+<!--                </li>-->
 
-                    </a>
-                </li>
                 {% if request.user.is_authenticated and request.user.is_teacher%}
                 <li class="list-group-item list-group-item-light">
                      <a href="{% url 'create_exam-page' %}">
                         {% trans 'Create Exam' %}
                           <i class="fas fa-edit"></i>
+                    </a>
+                </li>
+<!--                                <li class="list-group-item list-group-item-light ">-->
+<!--                    <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="" style="margin-left:-19px;">-->
+<!--                          <i class="fa fa-caret-down sidebar-dropdown-icon"></i>-->
+
+<!--                        {% trans 'Manage Exams' %}-->
+<!--                    <svg class="teacher-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+<!--  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />-->
+<!--  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />-->
+<!--</svg>-->
+<!--                    </a>-->
+<!--                    <ul class="collapse list-unstyled" id="pageSubmenu2">-->
+<!--                        <li>-->
+
+<!--                            <a href="{% url 'teacher-exams' user.username %}">{% trans 'Update Exam' %}</a>-->
+<!--                             <svg class="teacher-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+<!--  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />-->
+<!--</svg>-->
+<!--                        </li>-->
+<!--                        <li>-->
+
+<!--                            <a href="#">{% trans 'Delete Exam' %}</a>-->
+<!--                            <svg class="teacher-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+<!--  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />-->
+<!--</svg>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </li>-->
+                                <li class="list-group-item list-group-item-light ">
+                    <a href="{% url 'teacher-exams' user.username %}"  style="margin-left:-19px;">
+
+                        {% trans 'Manage Exams' %}
+                    <svg class="teacher-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+</svg>
+                    </a>
+                                </li>
+  {% elif request.user.is_authenticated and request.user.is_student %}
+ <li class="list-group-item list-group-item-light">
+                     <a href="{% url 'create_exam-page' %}" style="margin-left:-12px;">
+                           {% trans 'Search For Exam' %}
+                       <i class="fas fa-search"></i>
+
                     </a>
                 </li>
                 {% endif %}
@@ -397,17 +498,17 @@
 
 
 				<ul class="footer-menu" id="footer" >
-					<li><a href="#"  >
+					<li><a href="{% url 'terms-and-conditions-page' %}"  >
                         <i class="fas fa-file-contract"></i>
                         {% trans 'Terms' %} {% trans '&' %} {% trans 'Conditions' %}
                     </a></li>
-					<li><a href="#">
+					<li><a href="{% url 'privacy-policy-page' %}">
 
                  <i class="fas fa-eye-slash"></i>
                         {% trans 'Privacy Policy' %}
                     </a>
                     </li>
-					<li><a href="#">
+					<li><a href="{% url 'cookies-policy-page' %}">
                         <i class="fas fa-cookie-bite"></i>
                         {% trans 'Cookies Policy' %}</a>
                     </li>

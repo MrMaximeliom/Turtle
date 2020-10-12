@@ -16,7 +16,7 @@
     <img class="rounded-circle article-img" src="{{  object.teacher.profile.image.url }}">
     <div class="media-body">
       <div class="article-metadata">
-        <a class="mr-2" href="{% url 'teacher-exams' object.teacher.username %}">{{ object.teacher.username }}</a>
+        <a class="mr-2 teacher-username" href="{% url 'teacher-exams' object.teacher.username %}">{{ object.teacher.username }}</a>
         <small class="text-muted">{{ object.exam_date|date:"F d, Y" }}</small>
         {% if object.teacher == user %}
           <div>

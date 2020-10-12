@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-23 12:51+0200\n"
+"POT-Creation-Date: 2020-10-12 05:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,116 +19,115 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: accounts/forms.py:6 accounts/models.py:10 accounts/models.py:273
+#: accounts/forms.py:10 accounts/models.py:10 accounts/models.py:281
 msgid "Male"
 msgstr "ذكر"
 
-#: accounts/forms.py:7 accounts/models.py:11
+#: accounts/forms.py:11 accounts/models.py:11
 msgid "Female"
 msgstr "أنثى"
 
-#: accounts/forms.py:219 accounts/forms.py:258 accounts/forms.py:268
-#: accounts/forms.py:277 accounts/models.py:260
+#: accounts/forms.py:234 accounts/forms.py:263 accounts/forms.py:276
+#: accounts/forms.py:288 accounts/models.py:268
 msgid "email"
 msgstr "البريد الإلكتروني"
 
-#: accounts/forms.py:220 accounts/forms.py:259 accounts/forms.py:279
-#: accounts/models.py:271
+#: accounts/forms.py:235 accounts/forms.py:264 accounts/forms.py:290
+#: accounts/models.py:279
 msgid "first name"
 msgstr "الاسم الأول"
 
-#: accounts/forms.py:221 accounts/forms.py:260 accounts/forms.py:280
-#: accounts/models.py:272
+#: accounts/forms.py:236 accounts/forms.py:265 accounts/forms.py:291
+#: accounts/models.py:280
 #, fuzzy
 #| msgid "last name"
 msgid "last name"
 msgstr "الاسم الأخير"
 
-#: accounts/forms.py:222 accounts/forms.py:261 accounts/models.py:276
+#: accounts/forms.py:237 accounts/forms.py:266 accounts/models.py:284
 msgid "country"
 msgstr "الدولة"
 
-#: accounts/forms.py:223 accounts/forms.py:262 accounts/models.py:273
+#: accounts/forms.py:238 accounts/forms.py:267 accounts/models.py:281
 msgid "gender"
 msgstr "النوع"
 
-#: accounts/forms.py:224 accounts/forms.py:263 accounts/forms.py:278
+#: accounts/forms.py:239 accounts/forms.py:268 accounts/forms.py:289
 msgid "username"
 msgstr "اسم المستخدم"
 
-#: accounts/forms.py:269
+#: accounts/forms.py:277
 msgid "password"
 msgstr ""
 
-#: accounts/forms.py:287
+#: accounts/forms.py:302
 msgid "image"
 msgstr "الصورة"
 
-#: accounts/models.py:216
+#: accounts/models.py:221
 msgid "Users must have an email address"
 msgstr "لابد أن يمتلك المستخدمين بريد إلكتروني"
 
-#: accounts/models.py:218
+#: accounts/models.py:223
 msgid "Users must have a username"
 msgstr "لابد أن يمتلك المستخدمين اسم مستخدم"
 
-#: accounts/models.py:220
+#: accounts/models.py:225
 msgid "Users must provide their first name"
 msgstr "لابد أن يوفر المستخدمين الاسم الأول لهم"
 
-#: accounts/models.py:222
+#: accounts/models.py:227
 msgid "Users must provide their last name"
 msgstr "لابد أن يوفر المستخدمين الاسم الثاني لهم"
 
-#: accounts/models.py:224
+#: accounts/models.py:229
 msgid "Users must provide their gender"
 msgstr "لابد أن يوفر المستخدمين النوع الخاص بهم"
 
-#: accounts/models.py:259
+#: accounts/models.py:267
 msgid "Only alphabet characters are allowed."
 msgstr "مسموح فقط بالأحرف هنا"
 
-#: accounts/models.py:262
+#: accounts/models.py:270
 msgid "date joined"
 msgstr "تاريخ الانضمام"
 
-#: accounts/models.py:263
+#: accounts/models.py:271
 msgid "last login"
 msgstr "آخر تسجيل دخول"
 
-#: accounts/templates/accounts/login.html:11
-#: accounts/templates/accounts/login.html:41
+#: accounts/templates/accounts/login.html:12
+#: accounts/templates/accounts/login.html:43
 msgid "Welcome"
 msgstr "مرحبا بك"
 
-#: accounts/templates/accounts/login.html:25
-#: accounts/templates/accounts/login.html:55
+#: accounts/templates/accounts/login.html:26
+#: accounts/templates/accounts/login.html:57
 msgid "Log In"
 msgstr "تسجيل الدخول"
 
-#: accounts/templates/accounts/login.html:31
-#: accounts/templates/accounts/login.html:61
+#: accounts/templates/accounts/login.html:32
+#: accounts/templates/accounts/login.html:63
 msgid "Do you need an account?"
 msgstr "هل تحتاج إلى حساب؟"
 
-#: accounts/templates/accounts/login.html:31
-#: accounts/templates/accounts/login.html:61
-#: accounts/templates/accounts/signup.html:81 home/templates/home/base.html:129
-#: home/templates/home/base.html:146
+#: accounts/templates/accounts/login.html:32
+#: accounts/templates/accounts/login.html:63
+#: accounts/templates/accounts/signup.html:85 home/templates/home/base.html:137
+#: home/templates/home/base.html:154
 msgid "Sign Up"
 msgstr "إنشاء حساب"
 
-#: accounts/templates/accounts/profile.html:32
-#: accounts/templates/accounts/profile.html:83
+#: accounts/templates/accounts/profile.html:33
+#: accounts/templates/accounts/profile.html:85
 msgid "Profile Info"
 msgstr "المعلومات الشخصية"
 
-#: accounts/templates/accounts/profile.html:60
-#: accounts/templates/accounts/profile.html:111
+#: accounts/templates/accounts/profile.html:61
+#: accounts/templates/accounts/profile.html:113
 #: teacher/templates/teacher/add_question.html:68
 #: teacher/templates/teacher/createExam.html:83
 #: teacher/templates/teacher/createQuestions.html:73
-#: teacher/templates/teacher/createQuestions2.html:97
 msgid "Save"
 msgstr "حفظ"
 
@@ -136,49 +135,49 @@ msgstr "حفظ"
 msgid "Registration"
 msgstr "التسجيل"
 
-#: accounts/templates/accounts/register.html:16
-#: accounts/templates/accounts/register.html:50
+#: accounts/templates/accounts/register.html:17
+#: accounts/templates/accounts/register.html:53
 msgid "Welcome To Our Site"
 msgstr "مرحبا بك في موقعنا"
 
-#: accounts/templates/accounts/register.html:20
-#: accounts/templates/accounts/register.html:54
+#: accounts/templates/accounts/register.html:21
+#: accounts/templates/accounts/register.html:57
 msgid ""
 "We think that learning is the powerful process of all times in making our "
 "lives better ,"
 msgstr ""
 "نحن نعتقد أن التعليم هو العملية الأقوى على الإطلاق في جعل حياتنا أفضل ،"
 
-#: accounts/templates/accounts/register.html:21
-#: accounts/templates/accounts/register.html:55
+#: accounts/templates/accounts/register.html:22
+#: accounts/templates/accounts/register.html:58
 msgid ""
 "helping us to improve our lives , finding solutions to our endless "
 "problems , and making"
 msgstr "مساعدتنا على تحسين حياتنا، إيجاد حلول لمشاكلنا اللانهائية، وجعل"
 
-#: accounts/templates/accounts/register.html:22
-#: accounts/templates/accounts/register.html:56
+#: accounts/templates/accounts/register.html:23
+#: accounts/templates/accounts/register.html:59
 msgid ""
 "the world a better place for all of us. Testing process is one of the most "
 "important used"
 msgstr "العالم مكانا أفضل لكل منا. عملية الاختبار هي إحدى الطرق المستخدمة"
 
-#: accounts/templates/accounts/register.html:23
-#: accounts/templates/accounts/register.html:57
+#: accounts/templates/accounts/register.html:24
+#: accounts/templates/accounts/register.html:60
 msgid ""
 "ways to prove that to which degree the students have understood the learning "
 "material, and"
 msgstr "لبرهان إلى أي مدى قد استوعب الطلاب المحتوى التعليمي، و"
 
-#: accounts/templates/accounts/register.html:24
-#: accounts/templates/accounts/register.html:58
+#: accounts/templates/accounts/register.html:25
+#: accounts/templates/accounts/register.html:61
 msgid ""
 "to measure the overall learning progress. Our system aims to provide a "
 "convenient environment"
 msgstr "لقياس عملية التعليم بشكل عام. نظامنا يهدف إلى توفير بيئة مريحة"
 
-#: accounts/templates/accounts/register.html:25
-#: accounts/templates/accounts/register.html:59
+#: accounts/templates/accounts/register.html:26
+#: accounts/templates/accounts/register.html:62
 msgid ""
 "for each teachers and students , to help teachers prepare exams to students "
 "and make those students"
@@ -186,8 +185,8 @@ msgstr ""
 "لكل من الطلاب والمعلمين ، لمساعدة المعلمين على تحضير الامتحانات للطلاب وجعل "
 "هؤلاء الطلاب"
 
-#: accounts/templates/accounts/register.html:26
-#: accounts/templates/accounts/register.html:60
+#: accounts/templates/accounts/register.html:27
+#: accounts/templates/accounts/register.html:63
 msgid ""
 "able to attempt those exams , it will help teachers in the process of auto-"
 "correcting students' answers,"
@@ -195,27 +194,27 @@ msgstr ""
 "قادرين على امتحان هذه الامتحانات، كما أنه سيساعد المعلمين في عملية التصحيح "
 "التلقائي لإجابات الطلاب،"
 
-#: accounts/templates/accounts/register.html:27
-#: accounts/templates/accounts/register.html:61
+#: accounts/templates/accounts/register.html:28
+#: accounts/templates/accounts/register.html:64
 msgid ""
 "and provide a detailed results to describe how the correcting process was "
 "conducted"
 msgstr "وتوفير نتائج مفصلة لتوضيح الكيفية التي تمت بها عملية التصحيح. "
 
-#: accounts/templates/accounts/register.html:31
-#: accounts/templates/accounts/register.html:65
+#: accounts/templates/accounts/register.html:32
+#: accounts/templates/accounts/register.html:68
 msgid "Join Us Today!"
 msgstr "انضم إلينا اليوم!"
 
-#: accounts/templates/accounts/register.html:35
-#: accounts/templates/accounts/register.html:69
+#: accounts/templates/accounts/register.html:36
+#: accounts/templates/accounts/register.html:72
 msgid "Sign Up As Teacher"
 msgstr "تسجيل معلم "
 
-#: accounts/templates/accounts/register.html:40
 #: accounts/templates/accounts/register.html:41
-#: accounts/templates/accounts/register.html:74
-#: accounts/templates/accounts/register.html:75
+#: accounts/templates/accounts/register.html:42
+#: accounts/templates/accounts/register.html:77
+#: accounts/templates/accounts/register.html:78
 msgid "Sign Up As Student"
 msgstr "تسجيل طالب "
 
@@ -227,21 +226,21 @@ msgstr "نحن مسرورون بانضمامك إلينا "
 msgid "Keep on going your future is a head of you!"
 msgstr "واصل تقدمك فالمستقبل أمامك"
 
-#: accounts/templates/accounts/signup.html:76
+#: accounts/templates/accounts/signup.html:80
 msgid "I Agree To"
 msgstr "أنا أوافق على"
 
-#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:401
+#: accounts/templates/accounts/signup.html:80 home/templates/home/base.html:503
 msgid "Terms"
 msgstr "الأحكام"
 
-#: accounts/templates/accounts/signup.html:76
+#: accounts/templates/accounts/signup.html:80
 #: venv/lib/python3.8/site-packages/django/db/models/base.py:1187
 #: venv/lib/python3.8/site-packages/django/forms/models.py:760
 msgid "and"
 msgstr "و"
 
-#: accounts/templates/accounts/signup.html:76 home/templates/home/base.html:401
+#: accounts/templates/accounts/signup.html:80 home/templates/home/base.html:503
 msgid "Conditions"
 msgstr "الشروط"
 
@@ -300,38 +299,38 @@ msgstr "كلمة مرورك يجب ألا تكون رقمية بالكامل"
 msgid "SignUp Teacher"
 msgstr "تسجيل معلم "
 
-#: accounts/views.py:34 accounts/views.py:64
+#: accounts/views.py:34 accounts/views.py:66
 msgid "Your account has been created! you are now able to log in"
 msgstr "تم إنشاء حسابك ! يمكنك الآن تسجيل الدخول"
 
-#: accounts/views.py:46 accounts/views.py:53
+#: accounts/views.py:48 accounts/views.py:55
 msgid "SignUp Student"
 msgstr "تسجيل طالب "
 
-#: accounts/views.py:75
+#: accounts/views.py:79
 #, fuzzy
 #| msgid "last login"
 msgid "login"
 msgstr "آخر تسجيل دخول"
 
-#: accounts/views.py:89
+#: accounts/views.py:93
 msgid "Either username or password are wrong ! please try again .."
 msgstr "إما اسم المسخدم خاطئ أو كلمة المرور خاطئة ! رجاء حاول مرة أخرى .. "
 
-#: accounts/views.py:91
+#: accounts/views.py:95
 msgid ""
 "Either username or password are wrong ! please try again .. form is not valid"
 msgstr ""
 "إما اسم المستخدم خاطئ أو كلمة المرور خاطئة ! رجاء حاول مرة أخرى .. المعلومات "
 "خاطئة"
 
-#: accounts/views.py:111
-msgid "Your account has been updated!"
-msgstr "لقد تم تحديث الحساب الخاص بك!"
-
-#: accounts/views.py:119
+#: accounts/views.py:112 accounts/views.py:129
 msgid "Profile Page"
 msgstr "صفحة المستخدم"
+
+#: accounts/views.py:121
+msgid "Your account has been updated!"
+msgstr "لقد تم تحديث الحساب الخاص بك!"
 
 #: errors/templates/errors/error_400.html:9
 msgid "Bad Request Error"
@@ -390,103 +389,127 @@ msgstr "خطأ"
 msgid "Don't Worry we are working hard to solve this!"
 msgstr "لا تقلق نحن نعمل جاهدين لحل هذه المشكلة"
 
-#: home/templates/home/base.html:64 home/templates/home/base.html:77
-#: home/templates/home/base.html:175 home/templates/home/base.html:273
+#: home/templates/home/base.html:61 home/templates/home/base.html:74
+#: home/templates/home/base.html:183 home/templates/home/base.html:326
 #, fuzzy
 #| msgid "HomePage"
 msgid "Home"
 msgstr "الصفحة الرئيسية"
 
-#: home/templates/home/base.html:68 home/templates/home/base.html:82
-#: home/templates/home/base.html:190 home/templates/home/base.html:289
+#: home/templates/home/base.html:65 home/templates/home/base.html:79
+#: home/templates/home/base.html:199 home/templates/home/base.html:343
 msgid "About"
 msgstr "حول"
 
-#: home/templates/home/base.html:72 home/templates/home/base.html:87
+#: home/templates/home/base.html:69 home/templates/home/base.html:84
+#: support/templates/support/cookies_policy.html:73
+#: support/templates/support/cookies_policy.html:136
 msgid "Contact Us"
 msgstr "الاتصال بنا"
 
-#: home/templates/home/base.html:103 home/templates/home/base.html:110
+#: home/templates/home/base.html:108 home/templates/home/base.html:116
 msgid "Edit Profile"
 msgstr "تعديل الملف الشخصي"
 
-#: home/templates/home/base.html:105 home/templates/home/base.html:112
+#: home/templates/home/base.html:110 home/templates/home/base.html:118
 msgid "Log out"
 msgstr "تسجيل الخروج"
 
-#: home/templates/home/base.html:123 home/templates/home/base.html:141
+#: home/templates/home/base.html:131 home/templates/home/base.html:149
 msgid "Sign In"
 msgstr "تسجيل الدخول"
 
-#: home/templates/home/base.html:132 home/templates/home/base.html:149
+#: home/templates/home/base.html:140 home/templates/home/base.html:157
 msgid "As Teacher"
 msgstr "تسجيل معلم "
 
-#: home/templates/home/base.html:133 home/templates/home/base.html:150
+#: home/templates/home/base.html:141 home/templates/home/base.html:158
 msgid "As Student"
 msgstr "تسجيل طالب "
 
-#: home/templates/home/base.html:170 home/templates/home/base.html:267
+#: home/templates/home/base.html:178 home/templates/home/base.html:320
 msgid "Our Sidebar"
 msgstr "جانبنا"
 
-#: home/templates/home/base.html:195 home/templates/home/base.html:296
+#: home/templates/home/base.html:204 home/templates/home/base.html:350
 msgid "Categories"
 msgstr "الفئات"
 
-#: home/templates/home/base.html:212 home/templates/home/base.html:313
+#: home/templates/home/base.html:222 home/templates/home/base.html:368
 msgid "Portfolio"
 msgstr "الملف"
 
-#: home/templates/home/base.html:218 home/templates/home/base.html:320
-msgid "FAQ"
-msgstr "الأسئلة المتكررة"
-
-#: home/templates/home/base.html:224 home/templates/home/base.html:327
-msgid "Contact"
-msgstr "الاتصال بنا"
-
-#: home/templates/home/base.html:230 home/templates/home/base.html:334
+#: home/templates/home/base.html:228 home/templates/home/base.html:375
 msgid "Compare"
 msgstr "المقارنة"
 
-#: home/templates/home/base.html:237 home/templates/home/base.html:342
+#: home/templates/home/base.html:234 home/templates/home/base.html:382
+msgid "FAQ"
+msgstr "الأسئلة المتكررة"
+
+#: home/templates/home/base.html:240 home/templates/home/base.html:389
+msgid "Contact"
+msgstr "الاتصال بنا"
+
+#: home/templates/home/base.html:248 home/templates/home/base.html:398
 msgid "Create Exam"
 msgstr "إنشاء امتحان"
 
-#: home/templates/home/base.html:401 home/templates/home/base.html:415
+#: home/templates/home/base.html:258 home/templates/home/base.html:283
+#: home/templates/home/base.html:406 home/templates/home/base.html:432
+msgid "Manage Exams"
+msgstr "إدارة الامتحانات"
+
+#: home/templates/home/base.html:266 home/templates/home/base.html:415
+msgid "Update Exam"
+msgstr "تحديث الامتحان"
+
+#: home/templates/home/base.html:272 home/templates/home/base.html:422
+#: teacher/templates/teacher/exam_confirm_delete.html:17
+msgid "Delete Exam"
+msgstr "حذف الامتحان"
+
+#: home/templates/home/base.html:290 home/templates/home/base.html:442
+msgid "Search For Exam"
+msgstr "البحث عن امتحان"
+
+#: home/templates/home/base.html:503 home/templates/home/base.html:517
 msgid "&"
 msgstr "و"
 
-#: home/templates/home/base.html:406
+#: home/templates/home/base.html:508
+#: support/templates/support/privacy_policy.html:19
+#: support/templates/support/privacy_policy.html:54
 msgid "Privacy Policy"
 msgstr "سياسة الخصصوصية"
 
-#: home/templates/home/base.html:411
+#: home/templates/home/base.html:513
+#: support/templates/support/cookies_policy.html:18
+#: support/templates/support/cookies_policy.html:81
 msgid "Cookies Policy"
 msgstr "سياسة ملفات تعريف الارتباط"
 
-#: home/templates/home/base.html:415
+#: home/templates/home/base.html:517
 msgid "Copyright"
 msgstr "حقوق النشر"
 
-#: home/templates/home/base.html:415
+#: home/templates/home/base.html:517
 msgid "All rights reserved"
 msgstr "جميع الحقوق محفوظة"
 
-#: home/templates/home/base.html:415
+#: home/templates/home/base.html:517
 msgid "Made with"
 msgstr "صنع بال"
 
-#: home/templates/home/base.html:415
+#: home/templates/home/base.html:517
 msgid "by"
 msgstr "بواسطة"
 
-#: home/templates/home/base.html:415
+#: home/templates/home/base.html:517
 msgid "Malaz"
 msgstr "ملاذ"
 
-#: home/templates/home/base.html:416
+#: home/templates/home/base.html:518
 msgid "Moa'yed"
 msgstr "مؤيد"
 
@@ -510,34 +533,667 @@ msgstr "النتائج"
 msgid "HomePage"
 msgstr "الصفحة الرئيسية"
 
-#: support/templates/support/terms_and_conditions.html:20
-#: support/templates/support/terms_and_conditions.html:147
-msgid "Terms and Conditions"
-msgstr "الأحكام والشروط"
+#: support/templates/support/cookies_policy.html:19
+#: support/templates/support/cookies_policy.html:82
+#: support/templates/support/privacy_policy.html:20
+#: support/templates/support/privacy_policy.html:55
+msgid "Last updated: June 12, 2020"
+msgstr "آخر تحديث : 12 يونيو ، 2020"
 
-#: teacher/forms.py:29 teacher/forms.py:48 teacher/forms.py:102
-msgid "question text"
+#: support/templates/support/cookies_policy.html:20
+#: support/templates/support/cookies_policy.html:83
+msgid ""
+"This Cookies Policy explains what Cookies are and how We use them. You "
+"should read this policy so You can understand what type of cookies We use, "
+"or the information We collect using Cookies and how that information is used."
+msgstr ""
+"توضح سياسة ملفات تعريف الارتباط هذه ماهية ملفات تعريف الارتباط وكيفية "
+"استخدامها. يتعين عليك قراءة هذه السياسة حتى تتمكن من فهم نوع ملفات تعريف "
+"الارتباط التي نستخدمها، أو المعلومات التي نجمعها باستخدام ملفات تعريف "
+"الارتباط وكيفية استخدام هذه المعلومات."
+
+#: support/templates/support/cookies_policy.html:21
+#: support/templates/support/cookies_policy.html:84
+msgid ""
+"Cookies do not typically contain any information that personally identifies "
+"a user, but personal information that we store about You may be linked to "
+"the information stored in and obtained from Cookies. For further information "
+"on how We use, store and keep your personal data secure, see our Privacy "
+"Policy."
+msgstr ""
+"لا تحتوي ملفات تعريف الارتباط عادةً على أي معلومات تحدد هوية المستخدم شخصيًا، "
+"ولكن قد يتم ربط المعلومات الشخصية التي نحفظها عنك بالمعلومات المحفوظة في "
+"ملفات تعريف الارتباط التي يتم الحصول عليها منها. لمزيد من المعلومات حول "
+"كيفية استخدامنا لبياناتك الشخصية وحفظها والحفاظ عليها آمنة، راجع سياسة "
+"الخصوصية الخاصة بنا."
+
+#: support/templates/support/cookies_policy.html:22
+#: support/templates/support/cookies_policy.html:85
+msgid "Interpretation and Definitions"
+msgstr "التفسير والتعريفات"
+
+#: support/templates/support/cookies_policy.html:23
+#: support/templates/support/cookies_policy.html:86
+msgid "Interpretation"
+msgstr "التفسير"
+
+#: support/templates/support/cookies_policy.html:24
+#: support/templates/support/cookies_policy.html:87
+msgid ""
+"The words which they are bold have meanings defined under the following "
+"conditions."
+msgstr "الكلمات المكتوبة بالخط العريض لها معانٍ محددة بموجب الشروط التالية."
+
+#: support/templates/support/cookies_policy.html:25
+#: support/templates/support/cookies_policy.html:88
+msgid ""
+"The following definitions shall have the same meaning regardless of whether "
+"they appear in singular or in plural."
+msgstr ""
+"يكون للتعريفات التالية المعنى نفسه بغض النظر عما إذا كانت تظهر بصيغة المفرد "
+"أو بصيغة الجمع."
+
+#: support/templates/support/cookies_policy.html:26
+#: support/templates/support/cookies_policy.html:89
+msgid "Definitions"
+msgstr "التعريفات"
+
+#: support/templates/support/cookies_policy.html:27
+#: support/templates/support/cookies_policy.html:90
+msgid "For the purposes of this Cookies Policy:"
+msgstr "لأغراض سياسة ملفات تعريف الارتباط هذه:"
+
+#: support/templates/support/cookies_policy.html:29
+#: support/templates/support/cookies_policy.html:92
+msgid "Company"
+msgstr "شركة"
+
+#: support/templates/support/cookies_policy.html:29
+#: support/templates/support/cookies_policy.html:92
+msgid ""
+"(referred to as either \"the Company\", \"We\", \"Us\" or \"Our\" in this "
+"Cookies Policy) refers to ExaOnline."
 msgstr ""
 
+#: support/templates/support/cookies_policy.html:30
+#: support/templates/support/cookies_policy.html:93
+msgid "You"
+msgstr "أنت"
+
+#: support/templates/support/cookies_policy.html:30
+#: support/templates/support/cookies_policy.html:93
+msgid ""
+"means the individual accessing or using the Website, or a company, or any "
+"legal entity on behalf of which such individual is accessing or using the "
+"Website, as applicable."
+msgstr ""
+" تعني الشخص الذي يصل إلى الموقع الإلكتروني أو يستخدمه، أو شركة، أو أي كيان "
+"قانوني يصل هذا الشخص إلى الموقع الإلكتروني أو يستخدمه نيابة عنه، حسب "
+"الاقتضاء. "
+
+#: support/templates/support/cookies_policy.html:31
+#: support/templates/support/cookies_policy.html:94
+msgid "Cookies"
+msgstr " ملفات تعريف الارتباط"
+
+#: support/templates/support/cookies_policy.html:31
+#: support/templates/support/cookies_policy.html:94
+msgid ""
+"means small files that are placed on Your computer, mobile device or any "
+"other device by a website, containing details of your browsing history on "
+"that website among its many uses."
+msgstr ""
+" تعني الملفات الصغيرة التي يتم وضعها على جهاز الكمبيوتر أو الجهاز المحمول أو "
+"أي جهاز آخر خاص بك عن طريق موقع إلكتروني، والتي تحتوي على تفاصيل محفوظات "
+"الاستعراض على هذا الموقع الإلكتروني من بين استخداماته المتعددة. "
+
+#: support/templates/support/cookies_policy.html:32
+#: support/templates/support/cookies_policy.html:95
+msgid "Website"
+msgstr "موقع"
+
+#: support/templates/support/cookies_policy.html:32
+#: support/templates/support/cookies_policy.html:95
+msgid "refers to ExaOnline, accessible from"
+msgstr "يشير إلى ExaOnline ، يمكن الوصول إليه من خلال"
+
+#: support/templates/support/cookies_policy.html:34
+#: support/templates/support/cookies_policy.html:97
+msgid "The use of the Cookies"
+msgstr ""
+
+#: support/templates/support/cookies_policy.html:35
+#: support/templates/support/cookies_policy.html:98
+msgid "Type of Cookies We Use"
+msgstr "استخدام ملفات تعريف الارتباط"
+
+#: support/templates/support/cookies_policy.html:36
+#: support/templates/support/cookies_policy.html:99
+msgid ""
+"Cookies can be 'Persistent' or 'Session' Cookies. Persistent Cookies remain "
+"on your personal computer or mobile device when You go offline, while "
+"Session Cookies are deleted as soon as You close your web browser."
+msgstr ""
+"يمكن أن تكون ملفات تعريف الارتباط 'دائمة' أو 'جلسة'. تبقى ملفات تعريف "
+"الارتباط الدائمة على جهاز الكمبيوتر الشخصي أو الجهاز المحمول عندما تكون في "
+"وضع عدم الاتصال، بينما يتم حذف ملفات تعريف ارتباط الجلسة بمجرد إغلاق مستعرض "
+"الويب."
+
+#: support/templates/support/cookies_policy.html:37
+#: support/templates/support/cookies_policy.html:100
+msgid ""
+"We use both session and persistent Cookies for the purposes set out below:"
+msgstr "نستخدم ملفات تعريف الارتباط الدائمة والجلسة للأغراض المبينة أدناه:"
+
+#: support/templates/support/cookies_policy.html:40
+#: support/templates/support/cookies_policy.html:103
+msgid "Necessary / Essential Cookies"
+msgstr "ملفات تعريف الارتباط الضرورية / الأساسية"
+
+#: support/templates/support/cookies_policy.html:41
+#: support/templates/support/cookies_policy.html:104
+msgid "Type: Session Cookies"
+msgstr " النوع: ملفات تعريف ارتباط الجلسة"
+
+#: support/templates/support/cookies_policy.html:42
+#: support/templates/support/cookies_policy.html:48
+#: support/templates/support/cookies_policy.html:105
+#: support/templates/support/cookies_policy.html:111
+msgid "Administered by: Us"
+msgstr "تحت إدارتنا"
+
+#: support/templates/support/cookies_policy.html:43
+#: support/templates/support/cookies_policy.html:106
+msgid ""
+"Purpose: These Cookies are essential to provide You with services available "
+"through the Website and to enable You to use some of its features. They help "
+"to authenticate users and prevent fraudulent use of user accounts. Without "
+"these Cookies, the services that You have asked for cannot be provided, and "
+"We only use these Cookies to provide You with those services."
+msgstr ""
+"الغرض: ملفات تعريف الارتباط هذه ضرورية لتزويدك بالخدمات المتوفرة عبر الموقع "
+"الإلكتروني، ولتمكينك من استخدام بعض ميزاته. فهي تساعد في مصادقة المستخدمين "
+"ومنع الاستخدام الاحتيالي لحسابات المستخدمين. بدون ملفات تعريف الارتباط هذه، "
+"لا يمكن تقديم الخدمات التي تبحث عنها على موقعنا الإلكتروني، ونحن نستخدم "
+"ملفات تعريف الارتباط هذه فقط لتزويدك بتلك الخدمات."
+
+#: support/templates/support/cookies_policy.html:46
+#: support/templates/support/cookies_policy.html:109
+msgid "Functionality Cookies"
+msgstr "ملفات تعريف الارتباط الوظيفية"
+
+#: support/templates/support/cookies_policy.html:47
+#: support/templates/support/cookies_policy.html:110
+msgid "Type: Persistent Cookies"
+msgstr "النوع: ملفات تعريف الارتباط الدائمة"
+
+#: support/templates/support/cookies_policy.html:49
+#: support/templates/support/cookies_policy.html:112
+msgid ""
+"Purpose: These Cookies allow us to remember choices You make when You use "
+"the Website, such as remembering your login details or language preference. "
+"The purpose of these Cookies is to provide You with a more personal "
+"experience and to avoid You having to re-enter your preferences every time "
+"You use the Website."
+msgstr ""
+" الغرض: تمكننا ملفات تعريف الارتباط هذه بتذكر الاختيارات التي تتخذها عند "
+"استخدام الموقع الإلكتروني، مثل تذكر تفاصيل تسجيل الدخول أو تفضيلات اللغة. "
+"الغرض من ملفات تعريف الارتباط هذه هو تزويدك بتجربة شخصية أكثر وتجنب الاضطرار "
+"إلى إعادة إدخال تفضيلاتك في كل مرة تستخدم فيها الموقع الإلكتروني."
+
+#: support/templates/support/cookies_policy.html:52
+#: support/templates/support/cookies_policy.html:115
+msgid "Your Choices Regarding Cookies"
+msgstr "اختياراتك فيما يتعلق بملفات تعريف الارتباط"
+
+#: support/templates/support/cookies_policy.html:53
+#: support/templates/support/cookies_policy.html:116
+msgid ""
+"If You prefer to avoid the use of Cookies on the Website, first You must "
+"disable the use of Cookies in your browser and then delete the Cookies saved "
+"in your browser associated with this website. You may use this option for "
+"preventing the use of Cookies at any time."
+msgstr ""
+"إذا كنت تفضل تجنب استخدام ملفات تعريف الارتباط على الموقع الإلكتروني، فيجب "
+"عليك أولًا تعطيل استخدام ملفات تعريف الارتباط في المستعرض، ثم حذف ملفات تعريف "
+"الارتباط المحفوظة في المستعرض المرتبط بهذا الموقع. يمكنك استخدام هذا الخيار "
+"لمنع استخدام ملفات تعريف الارتباط في أي وقت."
+
+#: support/templates/support/cookies_policy.html:54
+#: support/templates/support/cookies_policy.html:117
+msgid ""
+"If You do not accept Our Cookies, You may experience some inconvenience in "
+"your use of the Website and some features may not function properly."
+msgstr ""
+"إذا لم تقبل ملفات تعريف الارتباط الخاصة بنا، فقد لا تعمل العديد من ميزات "
+"الموقع الإلكتروني بشكل سليم."
+
+#: support/templates/support/cookies_policy.html:55
+#: support/templates/support/cookies_policy.html:118
+msgid ""
+"If You'd like to delete Cookies or instruct your web browser to delete or "
+"refuse Cookies, please visit the help pages of your web browser."
+msgstr ""
+"إذا أردت حذف ملفات تعريف الارتباط أو توجيه مستعرض الويب إلى حذف ملفات تعريف "
+"الارتباط أو رفضها، يُرجى زيارة صفحات التعليمات الخاصة بمستعرض الويب."
+
+#: support/templates/support/cookies_policy.html:58
+#: support/templates/support/cookies_policy.html:121
+msgid "For the Chrome web browser, please visit this page from Google:"
+msgstr "لمتصفح كروم ، الرجاء زيارة هذه الصفحة من جوجل:"
+
+#: support/templates/support/cookies_policy.html:61
+#: support/templates/support/cookies_policy.html:124
+msgid ""
+"For the Internet Explorer web browser, please visit this page from Microsoft:"
+msgstr "لمتصفح انترنت اكسبلورر ، الرجاء زيارة هذه الصفحة من مايكروسوفت:"
+
+#: support/templates/support/cookies_policy.html:64
+#: support/templates/support/cookies_policy.html:127
+msgid "For the Firefox web browser, please visit this page from Mozilla:"
+msgstr "لمتصفح فايرفوكس ، الرجاء زيارة هذه الصفحة من موزيلا:"
+
+#: support/templates/support/cookies_policy.html:67
+#: support/templates/support/cookies_policy.html:130
+msgid "For the Safari web browser, please visit this page from Apple:"
+msgstr "لمتصفح سفاري ، الرجاء زيارة الصفحة التالية من آبل:"
+
+#: support/templates/support/cookies_policy.html:70
+#: support/templates/support/cookies_policy.html:133
+msgid ""
+"For any other web browser, please visit your web browser's official web "
+"pages."
+msgstr "لأي متصفح آخر ، الرجاء زيارة الصفحات الرسمية لذلك المتصفح"
+
+#: support/templates/support/cookies_policy.html:71
+#: support/templates/support/cookies_policy.html:134
+msgid "More Information about Cookies"
+msgstr "لمعلومات أكثر حول ملفات تعريف الارتباط"
+
+#: support/templates/support/cookies_policy.html:72
+#: support/templates/support/cookies_policy.html:135
+msgid "You can learn more about cookies:"
+msgstr "يمكنك معرفة المزيد عن ملفات تعريف الارتباط"
+
+#: support/templates/support/cookies_policy.html:72
+#: support/templates/support/cookies_policy.html:135
+msgid "All About Cookies"
+msgstr "حول ملفات تعريف الارتباط"
+
+#: support/templates/support/cookies_policy.html:74
+#: support/templates/support/cookies_policy.html:137
+msgid ""
+"If you have any questions about this Cookies Policy, You can contact us:"
+msgstr ""
+"إذا كان لديك أي أسئلة بخصوص سياسة ملفات الارتباط هذه ، يمكنك التواصل معنا:"
+
+#: support/templates/support/cookies_policy.html:76
+#: support/templates/support/cookies_policy.html:139
+msgid "By email:"
+msgstr "عن طريق البريد الإلكتروني"
+
+#: support/templates/support/privacy_policy.html:21
+#: support/templates/support/privacy_policy.html:56
+msgid ""
+"This Privacy Policy describes Our policies and procedures on the collection, "
+"use and disclosure of Your information when You use the Service and tells "
+"You about Your privacy rights and how the law protects You."
+msgstr ""
+"سياسة الخصوصية هذه تصف سياساتنا والإجراءات المتبعة لجمع ، استخدام ، ونشر "
+"المعلومات الخاصة بك عندما تستخدم خدماتنا ، وهي تصف لك حقوقك الخصوصية وكيفية "
+"حماية القانون لك ."
+
+#: support/templates/support/privacy_policy.html:22
+#: support/templates/support/privacy_policy.html:57
+msgid ""
+"We use Your Personal data to provide and improve the Service. By using the "
+"Service, You agree to the collection and use of information in accordance "
+"with this Privacy Policy"
+msgstr ""
+"نستخدم البيانات الخاصة بك لتوفير وتحسين خدماتنا. وباستخدامك لخدماتنا ، فأنت "
+"توافق على جمع واستخدام المعلومات وفقا لسياسة الخصوصية هذه."
+
+#: support/templates/support/privacy_policy.html:23
+#: support/templates/support/privacy_policy.html:58
+msgid ""
+"If you have any questions or concerns about the information in this Privacy "
+"Policy, or about our handling of personal data more generally, or if you "
+"would like more detailed information, you should email us at [hysoca7@gmail."
+"com]."
+msgstr ""
+"إذا كان لديك أي أسئلة أو مخاوف بشأن المعلومات الواردة في سياسة الخصوصية هذه، "
+"أو حول تعاملنا مع البيانات الشخصية بشكل عام، أو إذا كنت ترغب في الحصول على "
+"معلومات أكثر تفصيلًا، فيتعين عليك مراسلتنا عبر البريد الإلكتروني على "
+"hysoca7@gmail.com"
+
+#: support/templates/support/privacy_policy.html:24
+#: support/templates/support/privacy_policy.html:59
+msgid "The information we collect about you"
+msgstr "المعلومات التي نجمعها عنك:"
+
+#: support/templates/support/privacy_policy.html:25
+#: support/templates/support/privacy_policy.html:60
+msgid ""
+"By registering an account on  ExaOnline and in turn using our Services, we "
+"will collect from you the following information (“Personal Data”):"
+msgstr ""
+"من خلال تسجيل حساب في موقعنا وبدوره استخدام خدماتنا، سنجمع منك المعلومات "
+"التالية ('البيانات الشخصية'):"
+
+#: support/templates/support/privacy_policy.html:27
+#: support/templates/support/privacy_policy.html:62
+msgid "Your Name ( first and last names )"
+msgstr "اسمك ( الاسم الأول والاسم الأخير)"
+
+#: support/templates/support/privacy_policy.html:28
+#: support/templates/support/privacy_policy.html:63
+msgid "Your Email Address"
+msgstr "بريدك الإلكتروني"
+
+#: support/templates/support/privacy_policy.html:29
+#: support/templates/support/privacy_policy.html:64
+msgid "Gender"
+msgstr "النوع"
+
+#: support/templates/support/privacy_policy.html:30
+#: support/templates/support/privacy_policy.html:65
+msgid "Country of residence/origin"
+msgstr "بلد الإقامة (المنشأ)"
+
+#: support/templates/support/privacy_policy.html:31
+#: support/templates/support/privacy_policy.html:66
+msgid "Details of grades scored on examinations you took in our site"
+msgstr " تفاصيل الدرجات التي حصلت عليها في الاختبارات التي قمت بها في موقعنا."
+
+#: support/templates/support/privacy_policy.html:33
+#: support/templates/support/privacy_policy.html:68
+msgid "Our legal basis for using your Personal Data"
+msgstr "الأساس القانوني لاستخدام بياناتك الشخصية"
+
+#: support/templates/support/privacy_policy.html:34
+#: support/templates/support/privacy_policy.html:69
+msgid "Where we use your Personal Data, we process it on the following bases:"
+msgstr "عند استخدام بياناتك الشخصية، نعالجها على القواعد التالية:"
+
+#: support/templates/support/privacy_policy.html:36
+#: support/templates/support/privacy_policy.html:71
+msgid ""
+"Create a personal account for you contains all your primary personal "
+"information that you provided to us."
+msgstr ""
+"إنشاء حساب شخصي خاص بك يحتوي على جميع المعلومات الشخصية الأولية التي قدمتها "
+"لنا."
+
+#: support/templates/support/privacy_policy.html:37
+#: support/templates/support/privacy_policy.html:72
+msgid ""
+"Link your personal account with the exams you take and record your degrees."
+msgstr "ربط حسابك الشخصي بالامتحانات التي تقوم بامتحانها ورصد درجات امتحاناتك."
+
+#: support/templates/support/privacy_policy.html:38
+#: support/templates/support/privacy_policy.html:73
+msgid ""
+"Create detailed reports about your final degrees ( which contains your "
+"answers’ degrees of each question in addition to your exam’s total degree) , "
+"these reports will be available to you and to the exam’s teacher."
+msgstr ""
+"إعداد تقارير مفصلة عن درجاتك النهائية (التي تشمل درجاتك على إجابات كل سؤال "
+"بالإضافة إلى الدرجة الكلية للامتحان ) توفر منها نسخة إليك ونسخة إلى المعلم "
+"الذي وضع الامتحان ."
+
+#: support/templates/support/privacy_policy.html:40
+#: support/templates/support/privacy_policy.html:75
+msgid ""
+"We will never collect any unnecessary Personal Data from you and do not "
+"process your information in any way, other than as specified in this Policy."
+msgstr ""
+"لن نجمع أبدًا أي بيانات شخصية غير ضرورية منك ولن نعالج معلوماتك بأي طريقة، "
+"بخلاف ما هو محدد في هذه السياسة."
+
+#: support/templates/support/privacy_policy.html:41
+#: support/templates/support/privacy_policy.html:76
+msgid ""
+"We make every effort to maintain the accuracy and completeness of your "
+"Personal Data, which we store, and to ensure all of your Personal Data is up "
+"to date. However, you can assist us with this by promptly contacting us if "
+"there are any changes to your Personal Data. We shall not be responsible for "
+"any losses you suffer arising from any inaccurate, inauthentic, deficient or "
+"incomplete Personal Information that you provide to us."
+msgstr ""
+"نحن نبذل قصارى جهدنا للحفاظ على دقة بياناتك الشخصية واكتمالها، التي نحفظها، "
+"ولضمان تحديث كل بياناتك الشخصية. ومع ذلك، يمكنك مساعدتنا في ذلك عن طريق "
+"الاتصال بنا على الفور إذا طرأت أي تغييرات على بياناتك الشخصية. لن نتحمل "
+"مسؤولية أي خسائر تتكبدها نتيجة أي معلومات شخصية غير دقيقة أو غير صحيحة أو "
+"ناقصة أو غير كاملة تقدمها لنا."
+
+#: support/templates/support/privacy_policy.html:42
+#: support/templates/support/privacy_policy.html:77
+msgid "How long we will keep your Personal Data"
+msgstr "مدة احتفاظنا ببياناتك الشخصية"
+
+#: support/templates/support/privacy_policy.html:43
+#: support/templates/support/privacy_policy.html:78
+msgid ""
+"your account data will be saved by us until you submit a request for us to "
+"delete your data through the Website, after which your data will be deleted "
+"according to the timeline provided by the Website when you request the "
+"deletion."
+msgstr ""
+"سنحتفظ ببيانات حسابك حتى ترسل طلبًا إلينا لحذف بياناتك من خلال الموقع، وبعد "
+"ذلك سيتم حذف بياناتك وفقًا للجدول الزمني المُقدَّم من الموقع عندما تطلب الحذف."
+
+#: support/templates/support/privacy_policy.html:45
+#: support/templates/support/privacy_policy.html:80
+msgid "Who we share your Personal Data with"
+msgstr "مَن نشارك بياناتك الشخصية معهم:"
+
+#: support/templates/support/privacy_policy.html:46
+#: support/templates/support/privacy_policy.html:81
+msgid "We don’t share your personal data with any other third parties."
+msgstr "لا نشارك بياناتك الشخصية مع أي طرف خارجي."
+
+#: support/templates/support/privacy_policy.html:47
+#: support/templates/support/privacy_policy.html:82
+msgid "Use of your Personal Data for automated decision-making"
+msgstr "استخدام بياناتك الشخصية لاتخاذ القرارات آليًا"
+
+#: support/templates/support/privacy_policy.html:48
+#: support/templates/support/privacy_policy.html:83
+msgid "We do not make any automated decisions using this information."
+msgstr "نحن لا نتخذ أي قرارات آلية باستخدام هذه المعلومات."
+
+#: support/templates/support/privacy_policy.html:49
+#: support/templates/support/privacy_policy.html:84
+msgid "Changes to this policy"
+msgstr "التغييرات التي تطرأ على هذه السياسة"
+
+#: support/templates/support/privacy_policy.html:50
+#: support/templates/support/privacy_policy.html:85
+msgid ""
+"Except to the extent limited by applicable law, we reserve the right to "
+"update this policy to reflect changes to our information practices by "
+"prominently posting notice of the update on our Services, and as required, "
+"obtaining your consent. Any updates will become effective immediately after "
+"posting the updates to this policy and apply to all information collected "
+"about you, or where required, upon your consent. You agree that you will "
+"review this policy periodically. If we make any changes to this policy, we "
+"will change the \"Last Updated\" date above."
+msgstr ""
+"باستثناء الحد الذي يقتضيه القانون المعمول به، نحتفظ بحق تحديث هذه السياسة "
+"لتعكس التغييرات التي تطرأ على ممارسات المعلومات لدينا من خلال نشر إشعار "
+"بالتحديث في خدماتنا بوضوح، والحصول على موافقتك، حسب الاقتضاء. ستصبح أي "
+"تحديثات سارية المفعول فور نشر التحديثات على هذه السياسة وتنطبق على كل "
+"المعلومات المُجمَّعة عنك، أو عند الاقتضاء، بناءً على موافقتك. أنت توافق على "
+"مراجعة هذه السياسة بشكل دوري. إذا أدخلنا أي تغييرات على هذه السياسة، فسنغير "
+"تاريخ 'آخر تحديث' أعلاه."
+
+#: support/templates/support/terms_and_conditions.html:21
+#: support/templates/support/terms_and_conditions.html:48
+msgid "Terms of Service"
+msgstr "شروط الخدمة"
+
+#: support/templates/support/terms_and_conditions.html:23
+#: support/templates/support/terms_and_conditions.html:50
+msgid "Welcome to ExaOnline!"
+msgstr "مرحبا بك في ExaOnline!"
+
+#: support/templates/support/terms_and_conditions.html:25
+#: support/templates/support/terms_and_conditions.html:52
+msgid ""
+"Please read these Terms of Service (the \"TOS\") and the  Privacy Policy and "
+"Honor Code prior to registering for ExaOnline or using any portion of the "
+"ExaOnline website (the \"Site,\" which consists of all content and pages "
+"located within the ExaOnline.com web domain)"
+msgstr ""
+"يرجى قراءة شروط الخدمة هذه ('شروط الخدمة') وسياسة الخصوصية قبل التسجيل لدى "
+"الموقع الإلكتروني ExaOnline.com أو استخدام أي جزء من محتويات الموقع (ونعني "
+"بكلمة 'الموقع'، جميع المحتويات والصفحات التي تقع ضمن نطاق موقعنا الإلكتروني "
+"عبر الإنترنت)."
+
+#: support/templates/support/terms_and_conditions.html:27
+#: support/templates/support/terms_and_conditions.html:54
+msgid ""
+"ExaOnline reserves the right to modify these TOS at any time without any "
+"advance notice to you. Any changes to these TOS will be effective "
+"immediately upon posting on this page or on any other section of the Site. "
+"By accessing the Site after any changes have been made, you signify your "
+"agreement to the modified TOS and all of the changes contained therein."
+msgstr ""
+"ExaOnline يحتفظ بحق تعديل هذه الشروط في أي وقت دون إشعارك مسبقاً. تعتبر "
+"التغييرات التي تتم على هذه الشروط نافذةً فور نشرها على هذه الصفحة أو ضمن أي "
+"قسم آخر من الموقع. يُعد دخولك إلى الموقع بعد إجراء أية تغييرات موافقة منك على "
+"الشروط المعدّلة وكافة التغييرات الواردة فيه."
+
+#: support/templates/support/terms_and_conditions.html:28
+#: support/templates/support/terms_and_conditions.html:55
+msgid ""
+"Be sure to return to this page periodically to ensure familiarity with the "
+"most current version of these TOS."
+msgstr ""
+"تأكّد من أن تتطلع على هذه الصفحة بشكل دوري لتبقى مطلعاً على الإصدار الأحدث "
+"لهذه الشروط"
+
+#: support/templates/support/terms_and_conditions.html:30
+#: support/templates/support/terms_and_conditions.html:57
+msgid "Rules For Online Conduct"
+msgstr "قواعد السلوك عبر الإنترنت"
+
+#: support/templates/support/terms_and_conditions.html:32
+#: support/templates/support/terms_and_conditions.html:59
+msgid ""
+"You agree that you are fully responsible for your own use of the Site in "
+"compliance with the Agreements and all applicable local, national and "
+"international laws, rules and regulations, including copyright laws."
+msgstr ""
+"أنت توافق على أنك مسؤول بالكامل عن استخدامك للموقع ملتزماً بالاتفاقيات وجميع "
+"القوانين المحلية والإقليمية والدولية والقواعد والأنظمة المعمول بها، بما في "
+"ذلك قوانين حقوق التأليف والنشر."
+
+#: support/templates/support/terms_and_conditions.html:34
+#: support/templates/support/terms_and_conditions.html:61
+msgid ""
+"As a condition of your use of the services offered by ExaOnline on the Site, "
+"you hereby undertake that you will not use the Site in any manner intended "
+"to damage, disable, overburden or impair any ExaOnline server or the "
+"network(s) connected to any ExaOnline server or to interfere with any third "
+"party's use and enjoyment of the Site. You may not attempt to gain "
+"unauthorized access to the Site, other accounts, computer systems or "
+"networks connected to any ExaOnline server through hacking, password mining "
+"or any other means. You may not obtain or attempt to obtain any materials or "
+"information stored on the Site, its servers or associated computers through "
+"any means not intentionally made available through the Site."
+msgstr ""
+"أنت تتعهّد من خلال هذه الوثيقة، وكشرط لاستخدامك للخدمات التي نقدمها عبر "
+"ExaOnline، أنك لن تستخدم الموقع بأي طريقة تهدف إلى الإساءة أو تعطيل أو إعاقة "
+"أو إرهاق خادم ExaOnline أو شبكة (شبكات) موقعنا المتصلة بأي خادم من خوادم "
+"ExaOnline أو التدخّل بأي طرف ثالث والتمتّع بالموقع. كما لا يجوز لك محاولة "
+"الوصول غير المصرّح به إلى الموقع، وحسابات أخرى أو أنظمة كمبيوتر أو شبكات "
+"متصلة بأي خادم ل ExaOnline من خلال القرصنة واستخراج كلمة المرور أو أي وسيلة "
+"أخرى. لا يجوز لك الحصول أو محاولة الحصول على أي مواد أو المعلومات المخزنة "
+"على الموقع، أو أي من خوادمه أو أجهزة الحاسوب المرتبطة به من خلال أي وسيلة لم "
+"يتم إتاحتها عن قصد من خلال الموقع."
+
+#: support/templates/support/terms_and_conditions.html:36
+#: support/templates/support/terms_and_conditions.html:63
+msgid "User Accounts And Authority"
+msgstr "حسابات المستخدمين والصلاحيات"
+
+#: support/templates/support/terms_and_conditions.html:38
+#: support/templates/support/terms_and_conditions.html:65
+msgid ""
+"In order to participate fully in the activities and services offered by "
+"ExaOnline on the Site, you must provide your name, an email address and a "
+"user password in order to create a user account (the \"User Account\"). You "
+"agree that you will never divulge or share access or access information for "
+"your User Account with any third party for any reason. In setting up your "
+"User Account, you may be prompted to enter additional optional information "
+"(e.g., your address). You represent that all information provided by you is "
+"accurate and current. You agree to maintain and update your information to "
+"keep it accurate and current."
+msgstr ""
+"للاستفادة من المشاركة الكاملة في الأنشطة والخدمات التي نقدّمها  على "
+"ExaOnline ، يجب عليك تزويدنا باسمك وعنوان البريد الإلكتروني وكلمة المرور "
+"الخاصة بالمستخدم وذلك لإنشاء حساب مستخدم جديد (والذي يُشار إليه بـ 'حساب "
+"المستخدم'). إنك توافق على أنك لن تقوم أبداً بإفشاء أو مشاركة دخولك للموقع أو "
+"مشاركة معلومات حساب المستخدم الخاص بك مع أي طرف ثالث لأي سبب من الأسباب. "
+"أثناء إنشاء حساب المستخدم الخاص بك، قد تتم مطالبتك بإدخال معلومات إضافية "
+"اختيارية (على سبيل المثال، عنوانك). أنت تصرّح أنّ جميع المعلومات التي قدمتها "
+"هي معلومات دقيقة وحديثة. كما أنك توافق على صيانة وتحديث المعلومات الخاصة بك "
+"لابقائها دقيقة وحديثة. "
+
+#: support/templates/support/terms_and_conditions.html:40
+#: support/templates/support/terms_and_conditions.html:67
+msgid ""
+"We care about the confidentiality and security of your personal information. "
+"Please see our Privacy Policy for more information about what information "
+"ExaOnline may collect about you and how ExaOnline uses that information. By "
+"accessing the Site, you signify that you consent to the collection and use "
+"of your information by ExaOnline."
+msgstr ""
+"نحن نهتم بسرية وأمن المعلومات الشخصية الخاصة بك. يرجى الاطلاع على سياسة "
+"الخصوصية الخاصة بنا للمزيد من المعلومات حول ماهية المعلومات التي قد يجمعها "
+"ExaOnline عنك وكيف يستخدم ExaOnline تلك المعلومات. يُعد دخولك إلى الموقع "
+"دلالة على أنك توافق على جمع واستخدام المعلومات الخاصة بك من قبل ExaOnline."
+
+#: support/templates/support/terms_and_conditions.html:42
+#: support/templates/support/terms_and_conditions.html:69
+msgid " Your Right To Use Content On The Site"
+msgstr "حقك في استخدام المحتوى الموجود على الموقع"
+
+#: support/templates/support/terms_and_conditions.html:43
+#: support/templates/support/terms_and_conditions.html:70
+msgid ""
+"Unless otherwise expressly stated on the Site, the exams – alongside with "
+"all its reports such as users’ reports - offered on the Site are for your "
+"personal use"
+msgstr ""
+"إن جميع الامتحانات - وما يترتب عليها من تقارير مثل نتائج الطلاب - المقدّمة في "
+"هذا الموقع، هي للاستخدام الشخصي الخاص بك ، ما لم يرد خلاف ذلك صراحةً ضمن "
+"الموقع."
+
+#: teacher/forms.py:29 teacher/forms.py:48 teacher/forms.py:102
+#: teacher/forms.py:122
+msgid "question text"
+msgstr "نص السؤال"
+
 #: teacher/forms.py:30 teacher/forms.py:49 teacher/forms.py:103
-#, fuzzy
-#| msgid "Optimal Answer"
+#: teacher/forms.py:123
 msgid "question optimal answer"
 msgstr "الإجابة النموذجية"
 
-#: teacher/forms.py:31 teacher/forms.py:104
+#: teacher/forms.py:31 teacher/forms.py:104 teacher/forms.py:124
 msgid "question degree"
-msgstr ""
+msgstr "درجة السؤال"
 
-#: teacher/forms.py:34 teacher/forms.py:108
+#: teacher/forms.py:34
 msgid "add your question here!"
 msgstr "قم بإضافة سؤالك هنا!"
 
-#: teacher/forms.py:36 teacher/forms.py:110
+#: teacher/forms.py:36
 msgid "add your question's optimal answer here!"
 msgstr "قم بإضافة إجابة السؤال النموذجية هنا!"
 
-#: teacher/forms.py:38 teacher/forms.py:50 teacher/forms.py:112
+#: teacher/forms.py:38 teacher/forms.py:50
 msgid "add your question degree here!"
 msgstr "قم بإضافة درجة سؤالك هنا!"
 
@@ -675,27 +1331,28 @@ msgstr ""
 
 #: teacher/templates/teacher/add_question.html:24
 #: teacher/templates/teacher/createQuestions.html:26
-#: teacher/templates/teacher/createQuestions2.html:28
+#: teacher/templates/teacher/updateQuestions.html:26
 msgid "Add Questions"
 msgstr "إضافة أسئلة"
 
 #: teacher/templates/teacher/add_question.html:27
 #: teacher/templates/teacher/createQuestions.html:29
-#: teacher/templates/teacher/createQuestions2.html:31
+#: teacher/templates/teacher/updateQuestions.html:29
 msgid "choose number of questions"
 msgstr "اختر عدد الأسئلة"
 
 #: teacher/templates/teacher/add_question.html:35
 #: teacher/templates/teacher/createQuestions.html:39
-#: teacher/templates/teacher/createQuestions2.html:38
-#: teacher/templates/teacher/createQuestions2.html:65 teacher/views.py:69
+#: teacher/templates/teacher/updateQuestions.html:40 teacher/views.py:69
+#: teacher/views.py:170
 msgid "Question"
 msgstr "السؤال"
 
 #: teacher/templates/teacher/add_question.html:39
 #: teacher/templates/teacher/createQuestions.html:43
-#: teacher/templates/teacher/createQuestions2.html:42
-#: teacher/templates/teacher/createQuestions2.html:69 teacher/views.py:68
+#: teacher/templates/teacher/updateQuestions.html:44
+#: teacher/templates/teacher/updateQuestions.html:45 teacher/views.py:68
+#: teacher/views.py:169
 msgid "Remove Question"
 msgstr "إزالة السؤال"
 
@@ -703,9 +1360,10 @@ msgstr "إزالة السؤال"
 #: teacher/templates/teacher/createExam.html:87
 #: teacher/templates/teacher/createQuestions.html:77
 #: teacher/templates/teacher/createQuestions.html:93
-#: teacher/templates/teacher/createQuestions2.html:101
-#: teacher/templates/teacher/createQuestions2.html:117
 #: teacher/templates/teacher/exam_confirm_delete.html:22
+#: teacher/templates/teacher/question_confirm_delete.html:22
+#: teacher/templates/teacher/updateQuestions.html:78
+#: teacher/templates/teacher/updateQuestions.html:94
 msgid "Cancel"
 msgstr "إلغاء"
 
@@ -718,49 +1376,50 @@ msgid "Exam UID"
 msgstr "المعرف الفريد للامتحان"
 
 #: teacher/templates/teacher/createQuestions.html:48
-#: teacher/templates/teacher/createQuestions2.html:47
-#: teacher/templates/teacher/createQuestions2.html:74
+#: teacher/templates/teacher/updateQuestions.html:49
 msgid "question full degree"
 msgstr "الدرجة الكاملة للسؤال"
 
 #: teacher/templates/teacher/createQuestions.html:55
+#: teacher/templates/teacher/updateQuestions.html:56
 msgid "question here"
 msgstr "اكتب السؤال هنا"
 
 #: teacher/templates/teacher/createQuestions.html:59
+#: teacher/templates/teacher/updateQuestions.html:60
 msgid "optimal answer here"
 msgstr "اكتب الإجابة النموذجية هنا"
 
 #: teacher/templates/teacher/createQuestions.html:87
-#: teacher/templates/teacher/createQuestions2.html:111
+#: teacher/templates/teacher/updateQuestions.html:88
 msgid "Delete Question?"
 msgstr "إزالة السؤال؟"
 
 #: teacher/templates/teacher/createQuestions.html:94
-#: teacher/templates/teacher/createQuestions2.html:118
 #: teacher/templates/teacher/exam_detail.html:24
+#: teacher/templates/teacher/teacher_exams.html:62
+#: teacher/templates/teacher/updateQuestions.html:95
 #: venv/lib/python3.8/site-packages/django/forms/formsets.py:391
 msgid "Delete"
 msgstr "حذف"
-
-#: teacher/templates/teacher/exam_confirm_delete.html:17 teacher/views.py:212
-msgid "Delete Exam"
-msgstr "حذف الامتحان"
 
 #: teacher/templates/teacher/exam_confirm_delete.html:18
 msgid "Are you sure you want to delete this exam"
 msgstr "هل أنت متأكد من حذف هذا الامتحان"
 
 #: teacher/templates/teacher/exam_confirm_delete.html:18
+#: teacher/templates/teacher/question_confirm_delete.html:18
 msgid "?"
 msgstr "؟"
 
 #: teacher/templates/teacher/exam_confirm_delete.html:21
+#: teacher/templates/teacher/question_confirm_delete.html:21
 msgid "Yes, Delete"
 msgstr "نعم ، حذف"
 
 #: teacher/templates/teacher/exam_detail.html:23
 #: teacher/templates/teacher/exam_form.html:21
+#: teacher/templates/teacher/teacher_exams.html:61
 msgid "Update"
 msgstr "تحديث"
 
@@ -768,11 +1427,57 @@ msgstr "تحديث"
 msgid "Exam"
 msgstr "الامتحان"
 
-#: teacher/templates/teacher/teacher_exams.html:14
+#: teacher/templates/teacher/question_confirm_delete.html:17
+#, fuzzy
+#| msgid "Delete Question?"
+msgid "Delete Question"
+msgstr "إزالة السؤال؟"
+
+#: teacher/templates/teacher/question_confirm_delete.html:18
+#, fuzzy
+#| msgid "Are you sure you want to delete this exam"
+msgid "Are you sure you want to delete this question"
+msgstr "هل أنت متأكد من حذف هذا الامتحان"
+
+#: teacher/templates/teacher/question_list.html:14
+msgid "Questions List"
+msgstr "قائمة الأسئلة"
+
+#: teacher/templates/teacher/teacher_exams.html:15
 msgid "Exams by"
 msgstr "الامتحانات التي أنشئت بواسطة "
 
-#: teacher/views.py:36 teacher/views.py:58
+#: teacher/templates/teacher/teacher_exams.html:20
+msgid "Search"
+msgstr "بحث"
+
+#: teacher/templates/teacher/teacher_exams.html:23
+msgid "Search Phrase"
+msgstr "عبارة البحث"
+
+#: teacher/templates/teacher/teacher_exams.html:26
+msgid "Search By"
+msgstr "البحث بواسطة"
+
+#: teacher/templates/teacher/teacher_exams.html:28
+msgid "Choose .."
+msgstr "اختر .."
+
+#: teacher/templates/teacher/teacher_exams.html:29
+msgid "Exam Name"
+msgstr "اسم الامتحان"
+
+#: teacher/templates/teacher/teacher_exams.html:30
+msgid "Exam Unique Identifier"
+msgstr "المعرف الرقمي الفريد للامتحان"
+
+#: teacher/templates/teacher/updateQuestions.html:74
+#, fuzzy
+#| msgid "Update Exam"
+msgid "Update & Save"
+msgstr "تحديث الامتحان"
+
+#: teacher/views.py:33 teacher/views.py:58
 msgid "Create New Exam"
 msgstr "إنشاء امتحان جديد"
 
@@ -780,17 +1485,15 @@ msgstr "إنشاء امتحان جديد"
 msgid "Your New Exam has been created Successfully!"
 msgstr "لقد تم إنشاء امتحانك الجديد بنجاح!"
 
-#: teacher/views.py:82 teacher/views.py:104
-msgid "Create Exam Questions"
-msgstr "إنشاء أسئلة الامتحان"
-
 #: teacher/views.py:93
 msgid "Your Exam Questions has been created Successfully!"
 msgstr "لقد تمت إضافة الأسئلة إلى امتحانك الجديد بنجاح!"
 
-#: teacher/views.py:225
-msgid "Questions List"
-msgstr "قائمة الأسئلة"
+#: teacher/views.py:192
+#, fuzzy
+#| msgid "Your Exam Questions has been created Successfully!"
+msgid "Your Exam Questions has been updated Successfully!"
+msgstr "لقد تمت إضافة الأسئلة إلى امتحانك الجديد بنجاح!"
 
 #: venv/lib/python3.8/site-packages/ckeditor_uploader/forms.py:8
 msgid "Search files"
@@ -2178,14 +2881,29 @@ msgstr ""
 msgid "Redirected but the response is missing a Location: header."
 msgstr ""
 
+#~ msgid ""
+#~ "We do not store sensitive personal information, such as mailing "
+#~ "addresses, account passwords, etc. in the Cookies We use."
+#~ msgstr ""
+#~ "لا نحفظ المعلومات الشخصية الحساسة، مثل العناوين البريدية وكلمات مرور "
+#~ "الحساب وما إلى ذلك في ملفات تعريف الارتباط التي نستخدمها."
+
+#~ msgid "Terms and Conditions"
+#~ msgstr "الأحكام والشروط"
+
+#, fuzzy
+#~| msgid "Privacy Policy"
+#~ msgid "Please read Privacy Policy"
+#~ msgstr "سياسة الخصصوصية"
+
+#~ msgid "Create Exam Questions"
+#~ msgstr "إنشاء أسئلة الامتحان"
+
 #~ msgid "All Exams"
 #~ msgstr "جميع الامتحانات"
 
 #~ msgid "All teacher's exams"
 #~ msgstr "جميع امتحانات الأستاذ"
-
-#~ msgid "Update Exam"
-#~ msgstr "تحديث الامتحان"
 
 #~ msgid "Exam Details"
 #~ msgstr "تفاصيل الامتحان"

@@ -15,7 +15,7 @@
         <article class="media content-section-exam">
           <div class="media-body">
             <div class="article-metadata">
-              <a class="mr-2" href="{% url 'teacher-exams' exam.teacher.username %}">{{ exam.teacher.username }}</a>
+              <a class="mr-2 teacher-username" href="{% url 'teacher-exams' exam.teacher.username %}">{{ exam.teacher.username }}</a>
               <small class="text-muted">{{ exam.exam_date|date:"F d, Y" }}</small>
             </div>
             <h2><a class="article-title" href="{% url 'exam-detail' exam.id %}">{{ exam.exam_name }}</a></h2>

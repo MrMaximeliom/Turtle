@@ -20,3 +20,11 @@ position: absolute;
 left: 83%;
 top: 4%;
 }
+.remove-question-special{
+position: absolute;
+left: 82%;
+top: 4%;
+}
+.remove-question-special:hover{
+color:white;
+}

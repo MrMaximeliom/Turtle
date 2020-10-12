@@ -3,13 +3,13 @@ var translations = JSON.parse(document.getElementById('my-translations').textCon
 var questions_of_exam = JSON.parse(document.getElementById('my-questions').textContent);
 var counter = 0;
 var language = $( "#lang" ).text();
-if (questions_of_exam.count > 0 ){
-createQuestions(questions_of_exam.count);
-
-}
-else{
-createQuestions(1);
-}
+//if (questions_of_exam.count > 0 ){
+//createQuestions(questions_of_exam.count);
+//
+//}
+//else{
+//createQuestions(1);
+//}
 let questionToBeDeleted;
 var parent_div = document.querySelector( '#parent-div' );
 $( "#add-questions" ).click( function(){
@@ -17,13 +17,13 @@ createQuestions(document.querySelector( '#num_questions' ).value);
 });
 function createQuestions(num_questions){
         let controlButtons = document.querySelector("#controlButtons")
-//  console.log(document.querySelector( '#num_questions' ).value);
+//  console.log(document.querySelector( '#num_questionsnum_questions' ).value);
 var parent_div = document.querySelector( '#parent-div' );
 //    let questionForm = document.querySelectorAll(".j-question-form")
 let questionForm = document.querySelectorAll(".question")
         let container = document.querySelector(".question-form")
         let addButton = document.querySelector("#add-questions")
-        let totalForms = document.querySelector("#id_form-TOTAL_FORMS")
+        let totalForms = document.querySelector("#id_question_set-INITIAL_FORMS")
         let formNum = questionForm.length-1
 
 
@@ -40,7 +40,7 @@ question.setAttribute("id","question_text_"+(counter+1));
 question.style.display = 'block';
 question.querySelector( '#question_number_' ).innerHTML = translations.question+"("+(counter+1)+")";
 question.querySelector( "#question_number_").setAttribute("id","question_number_"+(counter+1));
-question.querySelector( "#id_form-0-question_degree").setAttribute("id","id_form-"+(counter+1)+"-question_degree");
+question.querySelector( "#id_question_set-1-question_degree").setAttribute("id","id_form-"+(counter+1)+"-question_degree");
 question.querySelector( "#id_form-"+(counter+1)+"-question_degree").value = "";
 question.querySelector( "#id_form-"+(counter+1)+"-question_degree").setAttribute("name","form-"+(counter+1)+"-question_degree");
 question.querySelector( '#remove-question_' ).setAttribute("id","remove-question_"+(counter+1));

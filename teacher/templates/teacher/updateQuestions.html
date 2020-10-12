@@ -33,15 +33,16 @@
 <!--        style="display:none;"-->
          {% for f in form %}
         <div class="j-question-form">
+            {{ f.id }}
 <!--             style="display:none;"-->
-        <div class="question " id="question_text_"  style="display:none;" >
+        <div class="question " id="question_text_" >
             <div class="border-bottom-question mb-3">
                 <span id="question_number_">{% trans 'Question' %} (1)</span>
 
             </div>
 
-                             <button class="raw-button remove-question" type="button" id="remove-question_">{% trans 'Remove Question' %}</button>
-
+<!--                             <button class="raw-button remove-question" type="button" id="remove-question_">{% trans 'Remove Question' %}</button>-->
+<a class="btn raw-button remove-question-special" href="{% url 'question-delete' f.id.value %} " id="remove-question_">{% trans 'Remove Question' %}</a>
 
                    <div class="form-row" >
             <div class="form-group col-md-4  " >
@@ -70,9 +71,9 @@
 
     <button class="raw-button save-btn exam-btn"  type="submit" id="save-btn">
         <i class="fa fa-floppy-o" aria-hidden="true"></i>
-        {% trans 'Save' %}
+        {% trans 'Update & Save' %}
     </button>
-     <a class="raw-button ml-5 exam-btn cancel-btn btn" href="{% url 'all-exams_list' %}">
+     <a class="raw-button ml-5 exam-btn cancel-btn btn" href="{% url 'teacher-exams' request.user %}">
          <i class="fa fa-times" aria-hidden="true"></i>
          {% trans 'Cancel' %}
      </a>
@@ -100,5 +101,5 @@
 {% endblock %}
 {% block custom_javascript %}
 <script src="{% static 'teacher/js/ckeditor5/build/ckeditor.js' %}"></script>
-<script src="{% static 'teacher/js/questions.js' %}"></script>
+<script src="{% static 'teacher/js/updateQuestions2.js' %}"></script>
 {% endblock %}

@@ -124,7 +124,7 @@ var parent_div = document.querySelector( '#parent-div' );
   for (i = 0; i < num_questions; i++) {
    let formRegex = RegExp(`form-(\d){1}-`,'g')
         formNum++
-        totalForms.setAttribute('value', `${formNum+1}`)
+        totalForms.setAttribute('value', `${formNum+2}`)
 var question_original = document.querySelector( '#question_text_' );
 var question = question_original.cloneNode(true);
 question.setAttribute("id","question_text_"+(counter+1));

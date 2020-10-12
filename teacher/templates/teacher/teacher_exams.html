@@ -9,23 +9,66 @@
 {% endblock %}
 {% block content %}
 <div class="home-page">
+
     {% get_current_language as MY_LANGUAGE %}
     <h5 style="display:none;" id="lang">{{  MY_LANGUAGE }}</h5>
-    <h1 class="mb-3">{% trans 'Exams by' %} {{ view.kwargs.username }}</h1>
+<!--    <h1 class="mb-3">{% trans 'Exams by' %} {{ view.kwargs.username }}</h1>-->
+      <form class="field form-inline" method="post" style="margin-bottom:10px;" id="searchForm">
+        {% csrf_token %}
+         <div class="form-row">
+             <div class="form-group col-auto mb-2" id="searchBtn">
+                 <button type="submit" class="raw-button">{% trans 'Search' %}</button>
+             </div>
+              <div class="form-group col-auto mb-2" id="searchBox">
+      <input type="text" class="form-control"  placeholder="{% trans 'Search Phrase' %}">
+             </div>
+              <div class="form-group col-auto mb-2" id="searchOptions">
+                   <label for="selectSearchOptions" class="mr-2">{% trans 'Search By' %}</label>
+                  <select class="custom-select mr-sm-2" id="selectSearchOptions">
+        <option selected>{% trans 'Choose ..' %}</option>
+        <option value="examName">{% trans 'Exam Name' %}</option>
+        <option value="examUniqueIdentifier">{% trans 'Exam Unique Identifier' %}</option>
+      </select>
+             </div>
+         </div>
+      </form>
+    <div class="row teacher-exams-list-layout">
     {% for exam in exams %}
-        <article class="media content-section-exam">
-          <img class="rounded-circle article-img" src="{{ exam.teacher.profile.image.url }}">
-          <div class="media-body">
-            <div class="article-metadata">
-              <a class="mr-2" href="{% url 'teacher-exams' exam.teacher.username %}">{{ exam.username }}</a>
-              <small class="text-muted">{{ exam.exam_date|date:"F d, Y" }}</small>
+
+
+            <div class="col-md-4">
+        <div class="card card-exam">
+            <div class="card-header">
+                {% if  MY_LANGUAGE == 'en' %}
+                 <h3>
+                                           <img class="rounded-circle article-img" src="{{ exam.teacher.profile.image.url }}">
+                              <a class="mr-2 teacher-username" href="{% url 'teacher-exams' exam.teacher.username %}">{{ exam.teacher.username }}</a>
+                  </h3>
+                {% else %}
+
+                  <h3>
+                              <a class="mr-2 teacher-username " href="{% url 'teacher-exams' exam.teacher.username %}">{{ exam.teacher.username }}</a>
+                      <img class="rounded-circle article-img" src="{{ exam.teacher.profile.image.url }}">
+                  </h3>
+                {% endif %}
             </div>
-            <h2><a class="article-title" href="{% url 'exam-detail' exam.id %}">{{ exam.exam_name }}</a></h2>
-            <p class="article-content">{{ exam.exam_note }}</p>
-          </div>
-        </article>
+  <div class="card-body">
+   <div class="card-title">
+                   <h2><a class="teacher-username" href="{% url 'exam-detail' exam.id %}">{{ exam.exam_name }}</a></h2>
+                     <small class="text-muted">{{ exam.exam_date|date:"F d, Y" }}</small>
+       </div>
+    <p class="card-text">{{ exam.exam_note }}</p>
+    <a href="{% url 'exam-update' exam.id %}" class="btn update-exam-button">{% trans 'Update' %}</a>
+          <a href="{% url 'exam-delete' exam.id %}" class="ml-4 btn  delete-exam-button">{% trans 'Delete' %}</a>
+
+  </div>
+</div>
+        </div>
+
     {% endfor %}
+        </div>
     </div>
+
 {% endblock content %}
 {% block custom_javascript %}
 <script src="{% static 'teacher/js/exam.js' %}"></script>
