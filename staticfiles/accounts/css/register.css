@@ -1,3 +1,7 @@
+/*
+الكلاس المستخدم لتخصيص ظهور الرسالة الترحيبية
+ في صفحة التسجيل العامة (للغة الإنجليزية)
+*/
 .welcome-message{
 border-bottom:7px solid #dddddd;
 width: max-content;
@@ -5,20 +9,33 @@ margin-bottom: 20px;
 margin-left: 30%;
 
 }
-
+/*
+الكلاس المستخدم لتخصيص ظهور الرسالة الترحيبية
+ في صفحة التسجيل العامة (للغة العربية)
+*/
 .welcome-message-arabic{
 border-bottom:7px solid #dddddd;
 width: max-content;
 margin-bottom: 20px;
 margin-right: 47%;
 }
+/*
+الكلاس المستخدم لتخصيص الظهور باللغة العربية
+*/
 .arabic{
 direction: rtl;
 text-align: right;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور تفاصيل الموقع والنبذة التعريفية عنه (باللغة الإنجليزية)
+*/
 .details{
 margin-right: 20%;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور الرسالة الترحيبية
+ في صفحة التسجيل العامة (باللغة العربية)
+*/
 .details-arabic{
 margin-right: 20%;
 }
@@ -28,22 +45,40 @@ margin-right: 20%;
 .register-student{
 
 }
+/*
+الكلاس المستخدم لتخصيص ظهور زر تسجيل الطالب عند تحريك الماوس من فوقه دون ضغطه
+*/
 .register-student a:hover{
 color:white;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور زر تسجيل المعلم عند تحريك الماوس من فوقه دون ضغطه
+*/
 .register-teacher a:hover{
 color:white;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور كلمة "انضم إلينا" ( باللغة العربية)
+*/
 .join-us-arabic{
 margin-right: 50%;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور كلمة "انضم إلينا" ( باللغة الإنجليزية)
+*/
 .join-us{
 margin-left: 34%;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور زر تسجيل الطالب وزر تسجيل المعلم ( باللغة العربية)
+*/
 .signup-buttons-arabic{
 margin-right: 40%;
 margin-top: 4%;
 }
+/*
+الكلاس المستخدم لتخصيص ظهور زر تسجيل الطالب وزر تسجيل المعلم ( باللغة الإنجليزية)
+*/
 .signup-buttons{
 margin-top: 4%;
 margin-left: 18%;

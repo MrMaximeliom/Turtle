@@ -11,9 +11,16 @@ def create_profile(sender,instance,created,**kwargs):
          # تكون الصورة الشخصية مطابقة لجنس المستخدم الجديد
 
          if instance.gender == 'Male':
-             new_profile.image = "/profile_pics/default_male.jpg"
+             if instance.is_teacher == 1:
+                 new_profile.image = "/profile_pics/teacher_male.jpg"
+             else:
+                 new_profile.image = "/profile_pics/boy_student.jpg"
          else:
-            new_profile.image = "/profile_pics/default_female.jpg"
+             if instance.is_teacher == 1:
+                 new_profile.image = "/profile_pics/female_teacher.jpg"
+             else:
+                 new_profile.image = "/profile_pics/girl_student.jpg"
+
 
 
 @receiver(post_save,sender=User)

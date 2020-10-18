@@ -1,38 +1,50 @@
 {% extends "home/base.html" %}
 {% load static i18n %}
 {% load static %}
+{% load update_page %}
 {% block custom_css %}
 <link href="{% static 'teacher/css/exam.css' %}" type="text/css" rel="stylesheet">
+<link href="{% static 'student/css/search_exams.css' %}" type="text/css" rel="stylesheet">
+<link href="{% static 'accounts/css/styles.css' %}" type="text/css" rel="stylesheet">
+
 {% endblock %}
 {% block title %}
 {{ title }}
 {% endblock %}
 {% block content %}
 <div class="home-page">
-
+<!--<h1>{{ request.get_full_path }}</h1>-->
     {% get_current_language as MY_LANGUAGE %}
     <h5 style="display:none;" id="lang">{{  MY_LANGUAGE }}</h5>
 <!--    <h1 class="mb-3">{% trans 'Exams by' %} {{ view.kwargs.username }}</h1>-->
-      <form class="field form-inline" method="post" style="margin-bottom:10px;" id="searchForm">
+      <form class="field form-inline" method="post" style="margin-bottom:10px;" id="searchForm" action="{% url 'teacher-exams' user.username%}">
         {% csrf_token %}
          <div class="form-row">
              <div class="form-group col-auto mb-2" id="searchBtn">
-                 <button type="submit" class="raw-button">{% trans 'Search' %}</button>
+                 <button type="submit" class="raw-button" name="base_search" value="base">{% trans 'Search' %}</button>
              </div>
               <div class="form-group col-auto mb-2" id="searchBox">
-      <input type="text" class="form-control"  placeholder="{% trans 'Search Phrase' %}">
+      <input type="text" class="form-control" name="search_phrase"  placeholder="{% trans 'Search Phrase' %}">
              </div>
               <div class="form-group col-auto mb-2" id="searchOptions">
                    <label for="selectSearchOptions" class="mr-2">{% trans 'Search By' %}</label>
-                  <select class="custom-select mr-sm-2" id="selectSearchOptions">
-        <option selected>{% trans 'Choose ..' %}</option>
+                  <select class="custom-select mr-sm-2" id="selectSearchOptions" name="search_option">
+        <option selected value="none">{% trans 'Choose ..' %}</option>
         <option value="examName">{% trans 'Exam Name' %}</option>
         <option value="examUniqueIdentifier">{% trans 'Exam Unique Identifier' %}</option>
       </select>
              </div>
+              <div class="form-group col-auto mb-2" >
+                 <button  class="raw-button" id="searchType" type="button" data-toggle="modal" data-target="#advancedSearchModal" >{% trans 'Advanced Search' %}</button>
+             </div>
          </div>
       </form>
     <div class="row teacher-exams-list-layout">
+        {% if exams == 'none' %}
+
+
+        {% else %}
+
     {% for exam in exams %}
 
 
@@ -55,18 +67,146 @@
   <div class="card-body">
    <div class="card-title">
                    <h2><a class="teacher-username" href="{% url 'exam-detail' exam.id %}">{{ exam.exam_name }}</a></h2>
-                     <small class="text-muted">{{ exam.exam_date|date:"F d, Y" }}</small>
+       {% if MY_LANGUAGE == 'en' %}
+                     <small  class="text-muted exam_date" id="exam_date">{% trans 'Exam Date:' %}&nbsp;{{ exam.exam_date|date:"d/m/Y" }}</small>
+
+
+       {% else %}
+                     <small  class="text-muted exam_date" id="exam_date">{{ exam.exam_date|date:"d/m/Y" }}&nbsp;{% trans 'Exam Date:' %}</small>
+
+       {% endif %}
        </div>
-    <p class="card-text">{{ exam.exam_note }}</p>
+    <p class="card-text">
+         <p class="exam_notes"> {% trans 'Exam Notes:' %}</p>
+      <p>{{ exam.exam_note }}</p>
+
+    <p class="card-text">
+
+          {% trans 'Exam Period:' %}
+
+      <svg  style="width:20px;color: #5c374c;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+         <span class="exam-period">{{ exam.exam_period }}</span>
+
+
+
+         <p class="card-text card_exam_status">
+           {% trans 'Exam Status:' %}
+          <span class="exam_status_icon"></span>
+           <span class="exam_status">{{ exam.exam_status }}</span>
+
+       </p>
+
+
+
+
     <a href="{% url 'exam-update' exam.id %}" class="btn update-exam-button">{% trans 'Update' %}</a>
           <a href="{% url 'exam-delete' exam.id %}" class="ml-4 btn  delete-exam-button">{% trans 'Delete' %}</a>
+
 
   </div>
 </div>
         </div>
 
     {% endfor %}
+        {% endif %}
+
         </div>
+  {% if is_paginated  and page_obj.paginator.count > 1 %}
+		{% if page_obj.has_previous %}
+			<a class = "btn btn-outline-info mb-4" href = "?page=1">First</a>
+			<a class = "btn btn-outline-info mb-4" href = "?page={{ page_obj.previous_page_number }}">Previous</a>
+		{% endif %}
+
+		{% for num in page_obj.paginator.page_range %}
+			{% if page_obj.number == num %}
+				<a class = "btn btn-info mb-4" href = "?page={{num}}"> {{ num }} </a>
+			{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3'%}
+				<a class = "btn btn-outline-info mb-4" href = "?page={{num}}">{{ num }}</a>
+			{% endif %}
+		{% endfor %}
+
+		{% if page_obj.has_next %}
+			<a class = "btn btn-outline-info mb-4" href = "?page={{ page_obj.next_page_number }}">Next</a>
+			<a class = "btn btn-outline-info mb-4" href = "?page={{ page_obj.paginator.num_pages }}">Last</a>
+		{% endif %}
+
+	{% endif %}
+
+
+    <div class="modal fade" id="advancedSearchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Advanced Search</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form class="field form-inline" method="post" style="margin-bottom:10px;"  action="{% url 'teacher-exams' user.username%}">
+        {% csrf_token %}
+          <div  id="advancedSearch">
+
+              <h3 class="  border-bottom-title-profile">{% trans 'Search By:' %}</h3>
+
+              <div class="form-group">
+                    <div class=" col-auto mb-3 mt-3 ">
+<!--                    <label for="examNameInput" class="form-control handle-label">{% trans 'Exam Name:' %}</label>-->
+                    <input type="text" name="exam_name" class=""  id="examNameInput" placeholder="{% trans 'Exam Name:' %}">
+                        </div>
+                    <div class=" col-auto mb-3 mt-3">
+<!--                     <label for="uniqueIdentifierInput" class="form-control handle-label">{% trans 'Exam Unique Identifier:' %}</label>-->
+                    <input type="text" name="unique_identifier" class="" id="uniqueIdentifierInput" placeholder="{% trans 'Exam Unique Identifier:' %}">
+                        </div>
+
+              </div>
+
+              <h3 class=" border-bottom-title-profile">{% trans 'Exam Status:' %}</h3>
+
+                    <div class="form-group">
+                    <div class=" col-auto mb-3 mt-3">
+                    <label for="examStatusInput" class="form-control handle-label">{% trans 'Exam Status:' %}</label>
+                 <select name="exam_status" class="custom-select mr-sm-2" id="examStatusInput">
+                     <option value="none" selected>{% trans 'Choose ..' %}</option>
+                     <option value="Active">Active</option>
+                     <option value="Expired">Expired</option>
+                     <option></option>
+                 </select>
+
+                        </div>
+              </div>
+
+              <h3 class="border-bottom-title-profile">{% trans 'Order by:' %}</h3>
+
+                      <div class="form-group">
+                    <div class=" col-auto mb-3 mt-3">
+                    <label for="orderByInput" class="form-control handle-label">{% trans 'Exam Date:' %}</label>
+                 <select name="order_by" class="custom-select mr-sm-2" id="orderByInput">
+                     <option value="none" selected>{% trans 'Choose ..' %}</option>
+                     <option value="-exam_date">Newest Exams</option>
+                     <option value="exam_date">Oldest Exams</option>
+                     <option></option>
+                 </select>
+
+                        </div>
+              </div>
+              <div class="form-row">
+                   <div class="form-group col-auto mb-2" id="advancedSearchBtn">
+                 <button type="submit" class="raw-button" name="advanced_search" value="advance">{% trans 'Search' %}</button>
+             </div>
+
+              </div>
+
+          </div>
+          </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
     </div>
 
 {% endblock content %}

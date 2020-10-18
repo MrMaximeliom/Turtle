@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'support.apps.SupportConfig',
     'errors.apps.ErrorsConfig',
     'teacher.apps.TeacherConfig',
+    'student.apps.StudentConfig',
     'ckeditor',
     'dajaxice',
     'dajax',

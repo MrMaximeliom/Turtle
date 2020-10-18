@@ -68,7 +68,14 @@
                   <i class="fa fa-paper-plane"></i>
                   {% trans 'Contact Us' %}
               </a>
-                {% else %}
+                     {% if request.user.is_authenticated %}
+                    <a class="nav-item nav-link" href="{% url 'profile-page' %}">
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                  {% trans 'Profile' %}
+              </a>
+                    {% endif %}
+                    {% endif %}
+                {% if MY_LANGUAGE == 'ar' %}
                 <a class="nav-item nav-link" href="{% url 'home-page' %}">
 
                   {% trans 'Home' %}
@@ -84,6 +91,13 @@
                  {% trans 'Contact Us' %}
                         <i class="fa fa-paper-plane"></i>
               </a>
+                     {% if request.user.is_authenticated %}
+                    <a class="nav-item nav-link" href="{% url 'profile-page' %}">
+                           {% trans 'Profile' %}
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+
+              </a>
+                {% endif %}
                 {% endif %}
                 </div>
 
@@ -91,7 +105,7 @@
             <!-- Navbar Right Side dropdown-toggle -->
             <div class="navbar-nav" id="user-dropDown">
                 {% if request.user.is_authenticated %}
-                <a href="#">
+                <a href="{% url 'profile-page' %}">
    <img src="{{ user.profile.image.url }}" width="40" height="40" class="rounded-circle">
                     </a>
 
@@ -125,6 +139,7 @@
                    </div>
 
                 {% else %}
+                <!-- Arabic Section of Nav Bar for registered users -->
                 {% if MY_LANGUAGE == 'ar' %}
                                  <a class="nav-item nav-link" href="{% url 'login-page' %}">
 
@@ -178,50 +193,7 @@
             <h3>{% trans 'Our Sidebar' %}</h3>
 
               <ul class="list-group">
-<!--              <li class="list-group-item list-group-item-light "><a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="" >-->
-<!--                        <i class="fas fa-book-reader"></i>-->
-<!--                        {% trans 'Home' %}-->
-<!--                   <i class="fa fa-caret-down sidebar-dropdown-icon"></i>-->
-<!--                    </a>-->
-<!--                    <ul class="collapse list-unstyled" id="homeSubmenu">-->
-<!--                        <li>-->
-<!--                            <a href="#">Home 1</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <a href="#">Home 2</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <a href="#">Home 3</a></li>-->
-<!--                    </ul>-->
-<!--              </li>-->
-<!--                <li class="list-group-item list-group-item-light"> <a href="#">-->
-<!--                        <i class="fas fa-briefcase"></i>-->
-<!--                        {% trans 'About' %}-->
-<!--                    </a></li>-->
-<!--                <li class="list-group-item list-group-item-light ">-->
-<!--                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="">-->
-<!--                        <i class="fas fa-copy"></i>-->
-<!--                        {% trans 'Categories' %}-->
-<!--                          <i class="fa fa-caret-down sidebar-dropdown-icon"></i>-->
-<!--                    </a>-->
-<!--                    <ul class="collapse list-unstyled" id="pageSubmenu">-->
-<!--                        <li>-->
-<!--                            <a href="#">Page 1</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <a href="#">Page 2</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <a href="#">Page 3</a>-->
-<!--                </li>-->
-<!--                    </ul>-->
-<!--                </li>-->
-<!--                <li class="list-group-item list-group-item-light">-->
-<!--               <a href="#">-->
-<!--                        <i class="fas fa-image"></i>-->
-<!--                        {% trans 'Portfolio' %}-->
-<!--                    </a>-->
-<!--          </li>-->
+
                      <li class="list-group-item list-group-item-light">
                      <a href="{% url 'compare-page' %}">
                         <i class="fas fa-book-open"></i>
@@ -248,31 +220,7 @@
                         {% trans 'Create Exam' %}
                     </a>
                 </li>
-                  <!-- First Solution -->
-<!--                  <li class="list-group-item list-group-item-light ">-->
-<!--                    <a href="#pageSubmenu" data-toggle="collapse"  aria-expanded="false" class="">-->
-<!--                        <svg class="teacher-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
-<!--  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />-->
-<!--  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />-->
-<!--</svg>-->
-<!--                        {% trans 'Manage Exams' %}-->
-<!--                          <i class="fa fa-caret-down sidebar-dropdown-icon"></i>-->
-<!--                    </a>-->
-<!--                    <ul class="collapse list-unstyled" id="pageSubmenu">-->
-<!--                        <li>-->
-<!--                            <svg class="teacher-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
-<!--  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />-->
-<!--</svg>-->
-<!--                            <a href="{% url 'teacher-exams' user.username %}">{% trans 'Update Exam' %}</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <svg class="teacher-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
-<!--  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />-->
-<!--</svg>-->
-<!--                            <a href="#">{% trans 'Delete Exam' %}</a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </li>-->
+
                   <!-- Better Solution -->
                   <li class="list-group-item list-group-item-light ">
                     <a href="{% url 'teacher-exams' user.username %}"  class="">
@@ -283,9 +231,21 @@
                         {% trans 'Manage Exams' %}
                     </a>
                   </li>
+                         <li class="list-group-item list-group-item-light ">
+                    <a href="#"  class="">
+<svg xmlns="http://www.w3.org/2000/svg" class="teacher-icon" fill="#941351" viewBox="0 0 64 64"><title>Test</title><g id="Test"><path d="M57,0H13a1,1,0,0,0-1,1V8.59l-5.71,5.7C5.85,14.73,6,12,6,63a1,1,0,0,0,1,1H51a1,1,0,0,0,1-1V60h5a1,1,0,0,0,1-1V1A1,1,0,0,0,57,0ZM16,7.41V14H9.41ZM50,62H8V16h9a1,1,0,0,0,1-1V6H50Zm6-4H52V5a1,1,0,0,0-1-1H17c-.55,0-.63.21-3,2.59V2H56Z"/><path d="M31.93,21.37l1-2.39c.27,0-.83,0,4.11,0,.17,0,0-.39,1.07,2.37a1,1,0,0,0,1.86-.74l-4-10a1,1,0,0,0-1.86,0l-4,10A1,1,0,0,0,31.93,21.37ZM35,13.69,36.32,17H33.68Z"/><path d="M45,27H17a1,1,0,0,0,0,2H45A1,1,0,0,0,45,27Z"/><path d="M45,33H38a1,1,0,0,0,0,2h7A1,1,0,0,0,45,33Z"/><path d="M13,35H34a1,1,0,0,0,0-2H13A1,1,0,0,0,13,35Z"/><path d="M45,39H23a1,1,0,0,0,0,2H45A1,1,0,0,0,45,39Z"/><path d="M13,41h6a1,1,0,0,0,0-2H13A1,1,0,0,0,13,41Z"/><path d="M45,45H41a1,1,0,0,0,0,2h4A1,1,0,0,0,45,45Z"/><path d="M13,47H37a1,1,0,0,0,0-2H13A1,1,0,0,0,13,47Z"/><path d="M40,51H27a1,1,0,0,0,0,2H40A1,1,0,0,0,40,51Z"/><path d="M23,51H13a1,1,0,0,0,0,2H23A1,1,0,0,0,23,51Z"/><path d="M45,15H44V14a1,1,0,0,0-2,0v1H41a1,1,0,0,0,0,2h1v1a1,1,0,0,0,2,0V17h1A1,1,0,0,0,45,15Z"/></g></svg>
+                        {% trans 'Student Results' %}
+                    </a>
+                  </li>
+                  <li class="list-group-item list-group-item-light ">
+                    <a href="#"  class="">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="teacher-icon" fill="#941351" viewBox="0 0 64 64"><title>Library</title><g id="Library"><path d="M13,17a1,1,0,0,1-1-1,1,1,0,0,0-1-1H7a1,1,0,0,0-1,1,1,1,0,0,1-1,1,1,1,0,0,0-1,1V56a1,1,0,0,0,1,1,1,1,0,0,1,1,1,1,1,0,0,0,1,1h4a1,1,0,0,0,1-1,1,1,0,0,1,1-1,1,1,0,0,0,1-1V18A1,1,0,0,0,13,17ZM12,55.17A3,3,0,0,0,10.17,57H7.83A3,3,0,0,0,6,55.17V18.83A3,3,0,0,0,7.83,17h2.34A3,3,0,0,0,12,18.83Z"/><path d="M59.21,34.35C54.09,5.32,54.52,7,54,6.63s-.2-.26-8.62,1.22A1,1,0,0,0,44.59,9c1.31,7.45.06.37,1.41,8H38V15a1,1,0,0,0-1-1H30V1a1,1,0,0,0-1-1H17a1,1,0,0,0-1,1v9H1a1,1,0,0,0-1,1V63a1,1,0,0,0,1,1H47a1,1,0,0,0,1-1V28.37c1.83,10.37,3.3,18.72,6.14,34.8a1,1,0,0,0,1,.83c.14,0,1.28-.21,8.05-1.4A1,1,0,0,0,64,61.44C62.87,55.12,65,66.94,59.21,34.35Zm.87,16.46-5.91,1C51.51,36.73,51.72,38,48.49,19.63l5.91-1C57.9,38.47,56.59,31,60.08,50.81Zm-6-34.19-5.91,1-.39-2.25,5.9-1Zm.47,37.2,5.91-1,.4,2.25-5.91,1ZM52.64,8.6l.67,3.8-5.91,1-.67-3.79ZM46,19v2H38V19Zm0,39H38V23h8ZM36,52H30V50h6Zm-6,2h6v2H30Zm6-38V48H30V16ZM2,12H16V62H2ZM18,2H28V62H18ZM30,58h6v4H30Zm8,4V60h8v2Zm17.93-.16-.67-3.79,5.91-1,.67,3.8Z"/><path d="M25,5H21a1,1,0,0,0-1,1V58a1,1,0,0,0,1,1h4a1,1,0,0,0,1-1V6A1,1,0,0,0,25,5ZM24,57H22V7h2Z"/><path d="M43,54V26a1,1,0,0,0-2,0V54A1,1,0,0,0,43,54Z"/></g></svg>
+                        {% trans 'Exam Results' %}
+                    </a>
+                  </li>
                   {% elif request.user.is_authenticated and request.user.is_student %}
  <li class="list-group-item list-group-item-light">
-                     <a href="{% url 'create_exam-page' %}">
+                     <a href="{% url 'search-exams' %}">
                        <i class="fas fa-search"></i>
                         {% trans 'Search For Exam' %}
                     </a>
@@ -320,125 +280,57 @@
             <h3>{% trans 'Our Sidebar' %}</h3>
 
                            <ul class="list-group">
-<!--              <li class="list-group-item list-group-item-light "><a href="#ArabichomeSubmenu" data-toggle="collapse" aria-expanded="false" class="" >-->
-<!--                    <i class="fa fa-caret-down sidebar-dropdown-icon"></i>-->
-
-<!--                  {% trans 'Home' %}-->
-<!--                  <i class="fas fa-home"></i>-->
-
-
-<!--                    </a>-->
-<!--                    <ul class="collapse list-unstyled" id="ArabichomeSubmenu">-->
-<!--                        <li>-->
-<!--                            <a href="#">Home 1</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <a href="#">Home 2</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <a href="#">Home 3</a></li>-->
-<!--                    </ul>-->
-<!--              </li>-->
-<!--                <li class="list-group-item list-group-item-light"> <a href="#">-->
-<!--                        {% trans 'About' %}-->
-<!--                        <i class="fas fa-briefcase"></i>-->
-
-<!--                    </a></li>-->
-<!--                <li class="list-group-item list-group-item-light ">-->
-<!--                    <a href="#ArabicpageSubmenu" data-toggle="collapse" aria-expanded="false" class="">-->
-<!--                        <i class="fa fa-caret-down sidebar-dropdown-icon"></i>-->
-<!--                        {% trans 'Categories' %}-->
-<!--                         <i class="fas fa-copy"></i>-->
-
-<!--                    </a>-->
-<!--                    <ul class="collapse list-unstyled" id="ArabicpageSubmenu">-->
-<!--                        <li>-->
-<!--                            <a href="#">Page 1</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <a href="#">Page 2</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <a href="#">Page 3</a>-->
-<!--                </li>-->
-<!--                    </ul>-->
-<!--                </li>-->
-<!--                <li class="list-group-item list-group-item-light">-->
-<!--               <a href="#">-->
-<!--                    {% trans 'Portfolio' %}-->
-<!--                        <i class="fas fa-image"></i>-->
-
-<!--                    </a>-->
-<!--          </li>-->
              <li class="list-group-item list-group-item-light">
                      <a href="{% url 'compare-page' %}">
                           {% trans 'Compare' %}
-                        <i class="fas fa-book-open"></i>
+                        <i class="fas fa-book-open teacher-icon-arabic"></i>
 
                     </a>
                 </li>
                 <li class="list-group-item list-group-item-light">
                     <a href="#">
                           {% trans 'FAQ' %}
-                        <i class="fas fa-question"></i>
+                        <i class="fas fa-question teacher-icon-arabic" style="margin-left: -9px;
+"></i>
 
                     </a>
                 </li>
-<!--                <li class="list-group-item list-group-item-light">-->
-<!--                     <a href="#">-->
-<!--                          {% trans 'Contact' %}-->
-<!--                        <i class="fas fa-paper-plane"></i>-->
-
-<!--                    </a>-->
-<!--                </li>-->
 
                 {% if request.user.is_authenticated and request.user.is_teacher%}
                 <li class="list-group-item list-group-item-light">
                      <a href="{% url 'create_exam-page' %}">
                         {% trans 'Create Exam' %}
-                          <i class="fas fa-edit"></i>
+                          <i class="fas fa-edit teacher-icon-arabic"></i>
                     </a>
                 </li>
-<!--                                <li class="list-group-item list-group-item-light ">-->
-<!--                    <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="" style="margin-left:-19px;">-->
-<!--                          <i class="fa fa-caret-down sidebar-dropdown-icon"></i>-->
 
-<!--                        {% trans 'Manage Exams' %}-->
-<!--                    <svg class="teacher-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
-<!--  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />-->
-<!--  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />-->
-<!--</svg>-->
-<!--                    </a>-->
-<!--                    <ul class="collapse list-unstyled" id="pageSubmenu2">-->
-<!--                        <li>-->
-
-<!--                            <a href="{% url 'teacher-exams' user.username %}">{% trans 'Update Exam' %}</a>-->
-<!--                             <svg class="teacher-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
-<!--  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />-->
-<!--</svg>-->
-<!--                        </li>-->
-<!--                        <li>-->
-
-<!--                            <a href="#">{% trans 'Delete Exam' %}</a>-->
-<!--                            <svg class="teacher-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
-<!--  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />-->
-<!--</svg>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </li>-->
                                 <li class="list-group-item list-group-item-light ">
                     <a href="{% url 'teacher-exams' user.username %}"  style="margin-left:-19px;">
 
                         {% trans 'Manage Exams' %}
-                    <svg class="teacher-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg class="teacher-icon-arabic" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
 </svg>
                     </a>
                                 </li>
+                               <li class="list-group-item list-group-item-light ">
+                    <a href="#"  class="">
+            {% trans 'Student Results' %}
+<svg xmlns="http://www.w3.org/2000/svg" class="teacher-icon-arabic" fill="#941351" viewBox="0 0 64 64"><title>Test</title><g id="Test"><path d="M57,0H13a1,1,0,0,0-1,1V8.59l-5.71,5.7C5.85,14.73,6,12,6,63a1,1,0,0,0,1,1H51a1,1,0,0,0,1-1V60h5a1,1,0,0,0,1-1V1A1,1,0,0,0,57,0ZM16,7.41V14H9.41ZM50,62H8V16h9a1,1,0,0,0,1-1V6H50Zm6-4H52V5a1,1,0,0,0-1-1H17c-.55,0-.63.21-3,2.59V2H56Z"/><path d="M31.93,21.37l1-2.39c.27,0-.83,0,4.11,0,.17,0,0-.39,1.07,2.37a1,1,0,0,0,1.86-.74l-4-10a1,1,0,0,0-1.86,0l-4,10A1,1,0,0,0,31.93,21.37ZM35,13.69,36.32,17H33.68Z"/><path d="M45,27H17a1,1,0,0,0,0,2H45A1,1,0,0,0,45,27Z"/><path d="M45,33H38a1,1,0,0,0,0,2h7A1,1,0,0,0,45,33Z"/><path d="M13,35H34a1,1,0,0,0,0-2H13A1,1,0,0,0,13,35Z"/><path d="M45,39H23a1,1,0,0,0,0,2H45A1,1,0,0,0,45,39Z"/><path d="M13,41h6a1,1,0,0,0,0-2H13A1,1,0,0,0,13,41Z"/><path d="M45,45H41a1,1,0,0,0,0,2h4A1,1,0,0,0,45,45Z"/><path d="M13,47H37a1,1,0,0,0,0-2H13A1,1,0,0,0,13,47Z"/><path d="M40,51H27a1,1,0,0,0,0,2H40A1,1,0,0,0,40,51Z"/><path d="M23,51H13a1,1,0,0,0,0,2H23A1,1,0,0,0,23,51Z"/><path d="M45,15H44V14a1,1,0,0,0-2,0v1H41a1,1,0,0,0,0,2h1v1a1,1,0,0,0,2,0V17h1A1,1,0,0,0,45,15Z"/></g></svg>
+                    </a>
+                  </li>
+                  <li class="list-group-item list-group-item-light ">
+                    <a href="#"  class="">
+             {% trans 'Exam Results' %}
+
+                  <svg xmlns="http://www.w3.org/2000/svg" class="teacher-icon-arabic" fill="#941351" viewBox="0 0 64 64"><title>Library</title><g id="Library"><path d="M13,17a1,1,0,0,1-1-1,1,1,0,0,0-1-1H7a1,1,0,0,0-1,1,1,1,0,0,1-1,1,1,1,0,0,0-1,1V56a1,1,0,0,0,1,1,1,1,0,0,1,1,1,1,1,0,0,0,1,1h4a1,1,0,0,0,1-1,1,1,0,0,1,1-1,1,1,0,0,0,1-1V18A1,1,0,0,0,13,17ZM12,55.17A3,3,0,0,0,10.17,57H7.83A3,3,0,0,0,6,55.17V18.83A3,3,0,0,0,7.83,17h2.34A3,3,0,0,0,12,18.83Z"/><path d="M59.21,34.35C54.09,5.32,54.52,7,54,6.63s-.2-.26-8.62,1.22A1,1,0,0,0,44.59,9c1.31,7.45.06.37,1.41,8H38V15a1,1,0,0,0-1-1H30V1a1,1,0,0,0-1-1H17a1,1,0,0,0-1,1v9H1a1,1,0,0,0-1,1V63a1,1,0,0,0,1,1H47a1,1,0,0,0,1-1V28.37c1.83,10.37,3.3,18.72,6.14,34.8a1,1,0,0,0,1,.83c.14,0,1.28-.21,8.05-1.4A1,1,0,0,0,64,61.44C62.87,55.12,65,66.94,59.21,34.35Zm.87,16.46-5.91,1C51.51,36.73,51.72,38,48.49,19.63l5.91-1C57.9,38.47,56.59,31,60.08,50.81Zm-6-34.19-5.91,1-.39-2.25,5.9-1Zm.47,37.2,5.91-1,.4,2.25-5.91,1ZM52.64,8.6l.67,3.8-5.91,1-.67-3.79ZM46,19v2H38V19Zm0,39H38V23h8ZM36,52H30V50h6Zm-6,2h6v2H30Zm6-38V48H30V16ZM2,12H16V62H2ZM18,2H28V62H18ZM30,58h6v4H30Zm8,4V60h8v2Zm17.93-.16-.67-3.79,5.91-1,.67,3.8Z"/><path d="M25,5H21a1,1,0,0,0-1,1V58a1,1,0,0,0,1,1h4a1,1,0,0,0,1-1V6A1,1,0,0,0,25,5ZM24,57H22V7h2Z"/><path d="M43,54V26a1,1,0,0,0-2,0V54A1,1,0,0,0,43,54Z"/></g></svg>
+                    </a>
+                  </li>
+
   {% elif request.user.is_authenticated and request.user.is_student %}
  <li class="list-group-item list-group-item-light">
-                     <a href="{% url 'create_exam-page' %}" style="margin-left:-12px;">
+                     <a href="{% url 'search-exams' %}" style="margin-left:-12px;">
                            {% trans 'Search For Exam' %}
                        <i class="fas fa-search"></i>
 

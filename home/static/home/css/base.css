@@ -197,6 +197,11 @@ width:21px;
 margin-left:-4px;
 color: #941351;
 }
+.teacher-icon-arabic{
+width:21px;
+margin-left:-1px;
+color: #941351;
+}
 .username-dropdown{
 margin-top: 15px;
 }
@@ -767,7 +772,7 @@ background-color: red;
 color:white;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.update-exam-button:hover{
+.more-details-button:hover,.update-exam-button:hover{
 transition: all 0.5s ease-out;
 background-color: #E77B73;
 color:white;
@@ -794,6 +799,19 @@ margin-top: 20px;
 box-shadow: 0px 5px 15px 0px rgba(28,0,181,0.3);
 cursor: pointer;
 border-color:#E77B73;
+}
+.more-details-button{
+background: white;
+width: -moz-fit-content;
+outline: none;
+color: #E77B73;
+height: 35px;
+border-radius: 12px;
+margin-top: 20px;
+box-shadow: 0px 5px 15px 0px rgba(28,0,181,0.3);
+cursor: pointer;
+border-color:#E77B73;
+margin-left: 55px;
 }
 .delete-exam-button{
 background: white;

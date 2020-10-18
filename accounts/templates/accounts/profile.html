@@ -4,6 +4,7 @@
 {% load static %}
 {% block custom_css %}
 <link href="{% static 'accounts/css/styles.css' %}" type="text/css" rel="stylesheet">
+<link href="{% static 'accounts/css/modalProfilePic.css' %}" type="text/css" rel="stylesheet">
 {% endblock %}
 {% block title %}
 
@@ -21,7 +22,7 @@
 
 
       <div class="media">
-        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" id="myImg" >
         <div class="media-body">
           <h2 class="account-heading">{{ user.username }}</h2>
           <p class="text-secondary">{{ user.email }}</p>
@@ -29,7 +30,7 @@
       </div>
       <form method="Post" enctype="multipart/form-data" class="field">
           {% csrf_token %}
-          <fieldset class="form-group">
+          <fieldset class="">
               <legend class=" mb-4 info border-bottom-title-profile">{% trans 'Profile Info' %}</legend>
           </fieldset>
               <div class="form-row">
@@ -73,7 +74,7 @@
 <div class="home-page-profile-arabic" >
 <div class="update-profile-form-arabic">
      <div class="media">
-        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" id="myImg">
         <div class="media-body-profile-arabic">
           <h2 class="account-heading">{{ user.username }}</h2>
           <p class="text-secondary">{{ user.email }}</p>
@@ -81,7 +82,7 @@
       </div>
       <form method="Post" enctype="multipart/form-data" class="field">
           {% csrf_token %}
-          <fieldset class="form-group">
+          <fieldset class="">
               <legend class=" mb-4 info-arabic border-bottom-title-profile">{% trans 'Profile Info' %}</legend>
           </fieldset>
               <div class="form-row">
@@ -119,9 +120,23 @@
       </form>
 
 </div>
+
     </div>
 {% endif %}
+    <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- The Close Button -->
+  <span class="close">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img01">
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
+</div>
 {% endblock %}
   <!--- بلوك خاص بملفات الجافا اسكريبت لهذه الصفحة تحديدا -->
 {% block custom_javascript %}
+<script src="{% static 'accounts/js/HandleModalProfilePic.js' %}"></script>
 {% endblock %}

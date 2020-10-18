@@ -3,6 +3,7 @@ right: 15%;
 position: relative;
 border: 2px solid #ddd;
 margin-bottom: 30px;
+
 }
 .border-bottom-question{
 border-bottom:3px solid #dddddd;
@@ -18,4 +19,12 @@ margin-bottom:-16px;
 position: absolute;
 left: 83%;
 top: 4%;
+}
+.remove-question-special{
+position: absolute;
+left: 82%;
+top: 4%;
+}
+.remove-question-special:hover{
+color:white;
 }

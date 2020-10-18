@@ -15,6 +15,7 @@ body {
   /* ends here */
 }
 
+
 .custom-content{
 margin-left:370px;
 }
@@ -162,6 +163,11 @@ color:#375C47;
 .home-page{
 	margin-top:100px;
 }
+.teacher-exams-list-layout
+{
+position: relative;
+right: 10%;
+}
 .home-page h1, h2, h3, h4, h5, h6{
 	/*color:#0B6478;* default*/
 	color:#0092B3;
@@ -171,6 +177,7 @@ margin-top:100px;
 direction:rtl;
 text-align:right;
 margin-right: 280px;
+/*font-family: 'Lalezar', cursive ;*/
 }
 .terms-page{
     margin-right:170px;
@@ -185,6 +192,31 @@ margin-top:100px;
 margin-bottom: -84px;
 width: max-content;
 }
+.teacher-icon{
+width:21px;
+margin-left:-4px;
+color: #941351;
+}
+.teacher-icon-arabic{
+width:21px;
+margin-left:-1px;
+color: #941351;
+}
+.username-dropdown{
+margin-top: 15px;
+}
+.teacher-username{
+color: #0092B3;
+}
+
+.teacher-username:hover{
+text-decoration:none;
+/*color:#941351;*/
+color:#E77B73;
+
+
+}
+
 /* changing behaviour of drop-down icon (used in sidebar)*/
 .sidebar-dropdown-icon   {
   margin-left:5px;
@@ -308,6 +340,7 @@ a.article-title:hover {
   width: 65px;
   margin-right: 16px;
 }
+
 
 .article-metadata {
   padding-bottom: 1px;
@@ -733,6 +766,66 @@ margin-right: 667px;
 .navbar-sign-up{
 margin-top: 20px;
 }
+.delete-exam-button:hover{
+transition: all 0.5s ease-out;
+background-color: red;
+color:white;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.more-details-button:hover,.update-exam-button:hover{
+transition: all 0.5s ease-out;
+background-color: #E77B73;
+color:white;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card-exam{
+width: 18rem;
+margin-bottom: 20px;
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+}
+.card-exam:hover{
+transition: box-shadow 0.5s ease-out;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.update-exam-button{
+background: white;
+width: -moz-fit-content;
+outline: none;
+color: #E77B73;
+height: 35px;
+border-radius: 12px;
+margin-top: 20px;
+box-shadow: 0px 5px 15px 0px rgba(28,0,181,0.3);
+cursor: pointer;
+border-color:#E77B73;
+}
+.more-details-button{
+background: white;
+width: -moz-fit-content;
+outline: none;
+color: #E77B73;
+height: 35px;
+border-radius: 12px;
+margin-top: 20px;
+box-shadow: 0px 5px 15px 0px rgba(28,0,181,0.3);
+cursor: pointer;
+border-color:#E77B73;
+margin-left: 55px;
+}
+.delete-exam-button{
+background: white;
+width: -moz-fit-content;
+outline: none;
+color: #E77B73;
+height: 35px;
+border-radius: 12px;
+margin-top: 20px;
+box-shadow: 0px 5px 15px 0px rgba(28,0,181,0.3);
+cursor: pointer;
+border-color:#E77B73;
+}
+
 .raw-button{
   background: #E77B73;
   width: -moz-fit-content;

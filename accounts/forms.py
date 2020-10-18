@@ -300,4 +300,5 @@ class ProfileUpdateForm(forms.ModelForm):
         fields = ['image']
         labels = {
             'image':_('image')
+
         }

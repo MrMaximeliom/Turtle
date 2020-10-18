@@ -7,12 +7,12 @@ from ckeditor.widgets import CKEditorWidget
 from django.forms import modelformset_factory,inlineformset_factory
 
 TIME_LENGTH = (
-    ('10 minutes', '10 minutes'),
-    ('15 minutes', '15 minutes'),
-    ('30 minutes', '30 minutes'),
-    ('1 hour', '1 hour'),
-    ('1:30 hour', '1:30 hour'),
-    ('2 hours', '2 hours'),
+    (lazy('10 minutes'),'10 minutes'),
+    (lazy('15 minutes'), '15 minutes'),
+    (lazy('30 minutes'), '30 minutes'),
+    (lazy('1 hour'), '1 hour'),
+    (lazy('1:30 hour'), '1:30 hour'),
+    (lazy('2 hours'),'2 hours'),
 )
 
 

@@ -15,8 +15,8 @@ $("#user-dropDown" ).css('direction','rtl');
 
 
 }
-//disabled for now
-//setTimeout(function(){
-//   message_box.style.display = "none";
-//}, 2000);
+//enabled again
+setTimeout(function(){
+   message_box.style.display = "none";
+}, 2000);
 });

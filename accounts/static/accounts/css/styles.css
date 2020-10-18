@@ -94,7 +94,8 @@ width: max-content;
 الكلاس المستخدم لتخصيص ظهور صفحة الملف الشخصي
 */
 .home-page-profile{
-margin-top: 76px;
+margin-top: 90px;
+}
 /*
 الكلاس المستخدم لتخصيص ظهور فورم تحديث الملف الشخصي
 */
@@ -106,7 +107,7 @@ width:75%;
 الكلاس المستخدم لتخصيص ظهور صفحة الملف الشخصي (باللغة العربية)
 */
 .home-page-profile-arabic{
-margin-top: 76px;
+margin-top: 90px;
 direction: rtl;
 text-align: right;
 }
