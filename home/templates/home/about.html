@@ -1,28 +1,36 @@
 {% extends "home/base.html" %}
+{% load static i18n %}
+{% load static %}
+{% block custom_css %}
+<link href="{% static 'home/css/about.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+{% block title %}
+{{ title }}
+{% endblock %}
 {% block content %}
 <div class="home-page">
     <h1><p>
-        <span class="about-title">Welcome</span>
-        <span class="about-subtitle">To ExaOnline</span>
+        <span class="starting-title">Welcome</span>
+        <span class="rest-title">To ExaOnline</span>
     </p></h1>
     <p>ExaOnline is a web based custom online essay examination system. Online essay examination website also helps an employer to take an assessment test to the mass people in easy and efficient way.</p>
 
     <h1><p>
-        <span class="about-title">Online</span>
-        <span class="about-subtitle">Essay Examination</span>
+        <span class="starting-title">Online</span>
+        <span class="rest-title">Essay Examination</span>
     </p></h1>
     <p>ExaOnline has been creating, facilitating and grading online essay exams. Our wealth of online essay examination experience, instant exam results and easy-to-use exam interface sets us apart as the leading online essay examination service provider.</p>
     <p>Our online essay examination service provides the best online essay examination solution which caters for virtually all assessment needs and is easy-to-use with all common web browsers, operating systems and smart devices.</p>
 
     <h1><p>
-        <span class="about-title">Who</span>
-        <span class="about-subtitle">we are?</span>
+        <span class="starting-title">Who</span>
+        <span class="rest-title">we are?</span>
     </p></h1>
     <p>The brains behind ExaOnline are great believer in the potential of high quality product and services. We are a team of , information technology graduates, constantly reinventing and transforming themselves to meet the needs of the clients.</p>
 
     <h1><p>
-        <span class="about-title">Our</span>
-        <span class="about-subtitle">Mission & Vision</span>
+        <span class="starting-title">Our</span>
+        <span class="rest-title">Mission & Vision</span>
     </p></h1>
     <h6><strong>Our Mission</strong></h6>
     <p>Our mission is to work along and across the continents, to continue on our quest for exellence.</p>

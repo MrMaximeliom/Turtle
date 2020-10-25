@@ -238,9 +238,20 @@ class TeacherSignUpForm(UserCreationForm):
             'gender' : _('gender'),
             'username' : _('username')
         }
-
-
         exclude = ["is_teacher"]
+
+        def clean_username(self, username):
+            from django.utils.text import slugify
+            from django.core.exceptions import ValidationError
+
+            slug = slugify(username)
+
+            if User.objects.filter(username=username).exists():
+                raise ValidationError('A user with this username already exists.')
+
+            return username
+
+
 """
 فورم تسجيل طالب جديد ، حقوله تحتوي على:
 - الاسم الأول - الاسم الأخير

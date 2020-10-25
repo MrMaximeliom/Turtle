@@ -12,7 +12,12 @@
   {% get_current_language as MY_LANGUAGE %}
     <h5 style="display:none;" id="lang">{{  MY_LANGUAGE }}</h5>
   <article class="media content-section-exam">
+<!-- {% if request.user.is_teacher  %}-->
+<!--    <h3>User is Teacher</h3>-->
+<!--    {% else %}-->
+<!--    <h3>User is student</h3>-->
 
+<!--    {% endif %}-->
     <img class="rounded-circle article-img" src="{{  object.teacher.profile.image.url }}">
     <div class="media-body">
       <div class="article-metadata">
@@ -26,11 +31,35 @@
         {% endif %}
       </div>
       <h2 class="article-title">{{ object.exam_name }}</h2>
-      <p class="article-content">{{ object.exam_note }}</p>
+      <div class="exam-content">
+        <h5>{% trans 'Exam Notes' %}</h5>
+        {{ object.exam_note }}
+      </div>
+      <div class="exam-content">
+        <h5>{% trans 'Exam Number of Questions' %}</h5>
+        {{ object.exam_number_of_questions }}
+      </div>
+      <div class="exam-content">
+         <h5>{% trans 'Exam Period:' %}</h5>
+
+      <svg  style="width:20px;color: #5c374c;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+         <span class="exam-period">{{ exam.exam_period }}</span>
+
+      </div>
+      <div class="exam-content">
+        <h5>{% trans 'Exam Status' %}</h5>
+        <span class="exam_status_icon"></span>
+        <span class="exam_status_label">{{ object.exam_status }}</span>
+      </div>
+      {% if object.exam_status == 'Active' and request.user.is_student %}
+       <a href="#" class="btn update-exam-button">{% trans 'Start Attempt' %}</a>
+      {% endif %}
     </div>
   </article>
 </div>
 {% endblock content %}
 {% block custom_javascript %}
-<script src="{% static 'teacher/js/exam.js' %}"></script>
+<script src="{% static 'teacher/js/exam_detail.js' %}"></script>
 {% endblock %}

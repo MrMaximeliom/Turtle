@@ -16,7 +16,7 @@
     {% get_current_language as MY_LANGUAGE %}
     <h5 style="display:none;" id="lang">{{  MY_LANGUAGE }}</h5>
 <!--    <h1 class="mb-3">{% trans 'Exams by' %} {{ view.kwargs.username }}</h1>-->
-      <form class="field form-inline" method="post" style="margin-bottom:10px;" id="searchForm" action="{% url 'search-exams' %}">
+      <form class="field form-inline search" method="post" style="margin-bottom:10px;" id="searchForm" action="{% url 'search-exams' %}">
         {% csrf_token %}
          <div class="form-row" id="basicSearch">
              <div class="form-group col-auto mb-2" id="searchBtn">
@@ -69,11 +69,11 @@
    <div class="card-title">
                    <h2><a class="teacher-username" href="{% url 'exam-detail' exam.id %}">{{ exam.exam_name }}</a></h2>
        {% if MY_LANGUAGE == 'en' %}
-                     <small  class="text-muted exam_date" id="exam_date">{% trans 'Exam Date:' %}&nbsp;{{ exam.exam_date|date:"d/m/Y" }}</small>
+       <small  class="text-muted " id="exam_date">{% trans 'Exam Date:' %}&nbsp;<span class="exam_date">{{ exam.exam_date|date:"d/m/Y" }}</span></small>
 
 
        {% else %}
-                     <small  class="text-muted exam_date" id="exam_date">{{ exam.exam_date|date:"d/m/Y" }}&nbsp;{% trans 'Exam Date:' %}</small>
+       <small  class="text-muted" id="exam_date"><span class=" exam_date">{{ exam.exam_date|date:"d/m/Y" }}</span>&nbsp;{% trans 'Exam Date:' %}</small>
 
        {% endif %}
        </div>
@@ -101,8 +101,9 @@
 
 
 
-
-    <a href="#" class="btn update-exam-button">{% trans 'Start Attempt' %}</a>
+{% if exam.exam_status == 'Active' %}
+    <a href="{% url 'exam-detail' exam.id %}" class="btn update-exam-button">{% trans 'Start Attempt' %}</a>
+      {% endif %}
 
   </div>
 </div>
@@ -113,21 +114,21 @@
         </div>
         {% if is_paginated and page_obj.paginator.count > 1 %}
 		{% if page_obj.has_previous %}
-			<a class = "btn btn-outline-info mb-4" href = "?page=1">First</a>
-			<a class = "btn btn-outline-info mb-4" href = "?page={{ page_obj.previous_page_number }}">Previous</a>
+			<a class = "btn handle-pagination-outline mb-4" href = "?page=1">First</a>
+			<a class = "btn handle-pagination-outline mb-4" href = "?page={{ page_obj.previous_page_number }}">Previous</a>
 		{% endif %}
 
 		{% for num in page_obj.paginator.page_range %}
 			{% if page_obj.number == num %}
-				<a class = "btn btn-info mb-4" href = "?page={{num}}"> {{ num }} </a>
+				<a class = "btn handle-pagination-selected mb-4" href = "?page={{num}}"> {{ num }} </a>
 			{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3'%}
-				<a class = "btn btn-outline-info mb-4" href = "?page={{num}}">{{ num }}</a>
+				<a class = "btn handle-pagination-outline mb-4" href = "?page={{num}}">{{ num }}</a>
 			{% endif %}
 		{% endfor %}
 
 		{% if page_obj.has_next %}
-			<a class = "btn btn-outline-info mb-4" href = "?page={{ page_obj.next_page_number }}">Next</a>
-			<a class = "btn btn-outline-info mb-4" href = "?page={{ page_obj.paginator.num_pages }}">Last</a>
+			<a class = "btn handle-pagination-outline mb-4" href = "?page={{ page_obj.next_page_number }}">Next</a>
+			<a class = "btn handle-pagination-outline mb-4" href = "?page={{ page_obj.paginator.num_pages }}">Last</a>
 		{% endif %}
 
 	{% endif %}
@@ -162,11 +163,11 @@
                 </div>
               <div class="form-group">
                     <div class=" col-auto mb-3 mt-3 ">
-                    <label for="examNameInput" class="form-control handle-label">{% trans 'Exam Name:' %}</label>
+<!--                    <label for="examNameInput" class="form-control handle-label">{% trans 'Exam Name:' %}</label>-->
                     <input type="text" name="exam_name" class="form-control"  id="examNameInput" placeholder="{% trans 'Exam Name:' %}">
                         </div>
                     <div class=" col-auto mb-3 mt-3">
-                     <label for="uniqueIdentifierInput" class="form-control handle-label">{% trans 'Exam Unique Identifier:' %}</label>
+<!--                     <label for="uniqueIdentifierInput" class="form-control handle-label">{% trans 'Exam Unique Identifier:' %}</label>-->
                     <input type="text" name="unique_identifier" class="form-control" id="uniqueIdentifierInput" placeholder="{% trans 'Exam Unique Identifier:' %}">
                         </div>
 
@@ -181,8 +182,7 @@
                      <option value="none" selected>{% trans 'Choose ..' %}</option>
                      <option value="Active">Active</option>
                      <option value="Expired">Expired</option>
-                     <option value="Both">Active&Expired</option>
-                     <option></option>
+
                  </select>
 
                         </div>
@@ -221,4 +221,5 @@
 {% endblock content %}
 {% block custom_javascript %}
 <script src="{% static 'teacher/js/exam.js' %}"></script>
+<script src="{% static 'student/js/searchExam.js' %}"></script>
 {% endblock %}

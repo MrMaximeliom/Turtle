@@ -2,6 +2,8 @@ from django.core.validators import RegexValidator
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.utils.translation import gettext as _
+from django.conf import settings
+from django.contrib.sessions.models import Session
 
 """
 خيارات تحديد الجنس 
@@ -314,3 +316,16 @@ class Profile(models.Model):
         #     img.thumbnail(output_size)
         #     img.save(self.image.path)
 
+# # Test to create user session table:
+# class UserSession(models.Model):
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
+#     session = models.OneToOneField(Session, on_delete=models.CASCADE)
+#
+# # Model to store the list of logged in users
+# class LoggedInUser(models.Model):
+#     user = models.OneToOneField(User, related_name='logged_in_user',on_delete=models.CASCADE)
+#     # Session keys are 32 characters long
+#     session_key = models.CharField(max_length=32, null=True, blank=True)
+#
+#     def __str__(self):
+#         return self.user.username

@@ -1,15 +1,40 @@
 from django.contrib.auth import authenticate,login as auth_login
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ValidationError
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import TeacherSignUpForm, StudentSignUpForm, loginForm
 from django.utils.translation import gettext as _
 from django.contrib.auth import logout
 from .forms import UserUpdateForm , ProfileUpdateForm
+from .models import User
+from django.http import JsonResponse
+from django.contrib.auth.password_validation import validate_password as validate
+from django import forms
 
 """
 تستخدم هذه الواجهة لإظهار فورم تسجيل معلم جديد
 """
+def validate_username(request):
+    username = request.GET.get('username', None)
+    data = {
+        'is_taken': User.objects.filter(username__iexact=username).exists()
+    }
+    if data['is_taken']:
+        data['error_message'] = _('A user with this username already exists.')
+    return JsonResponse(data)
+
+def validate_password(request):
+    password1 = request.GET.get('password1', None)
+    data = { 'is_invalid': False, 'error_message':'error'}
+    try:
+        validate(password1)
+    except ValidationError as error:
+        data = {
+        'is_invalid': True,
+         'error_message':error.messages
+        }
+    return JsonResponse(data)
 
 def teacher_sign_up(request):
     form = TeacherSignUpForm()
@@ -27,6 +52,10 @@ def teacher_sign_up(request):
         }
 
         if form.is_valid():
+            # teacher_username = form.cleaned_data('username')
+            # username = User.objects.filter(username=teacher_username)
+            # if username.exists():
+            #     form.
             teacher_model = form.save(commit=False)
             teacher_model.is_teacher = True
             teacher_model.save()

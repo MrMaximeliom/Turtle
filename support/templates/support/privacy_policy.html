@@ -3,6 +3,8 @@
 {% load static i18n %}
 {% load static %}
 {% block custom_css %}
+<link href="{% static 'home/css/about.css' %}" type="text/css" rel="stylesheet">
+
 {% endblock %}
 {% block title %}
 
@@ -16,13 +18,16 @@
 <div class="home-page">
     {% if MY_LANGUAGE == 'en' %}
     <div class="terms-page">
-<h1>{% trans 'Privacy Policy' %}</h1>
+        <h1><span class="starting-title">{% trans 'Privacy' %} </span> <span class="rest-title">{% trans 'Policy' %}</span> </h1>
+        <div class="details">
 <p>{% trans 'Last updated: June 12, 2020' %}</p>
 <p>{% trans 'This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.' %}</p>
 <p>{% trans 'We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy' %}</p>
     <p>{% trans 'If you have any questions or concerns about the information in this Privacy Policy, or about our handling of personal data more generally, or if you would like more detailed information, you should email us at [hysoca7@gmail.com].' %}</p>
-<h2>{% trans 'The information we collect about you' %}</h2>
-    <p>{% trans 'By registering an account on  ExaOnline and in turn using our Services, we will collect from you the following information (“Personal Data”):' %}</p>
+        </div>
+        <h2><span class="starting-title">{% trans 'The information' %} </span> <span class="rest-title"> {% trans 'we collect about you' %}</span> </h2>
+    <div class="details">
+        <p>{% trans 'By registering an account on  ExaOnline and in turn using our Services, we will collect from you the following information (“Personal Data”):' %}</p>
     <ul>
         <li>{% trans 'Your Name ( first and last names )' %}</li>
         <li>{% trans 'Your Email Address' %}</li>
@@ -30,7 +35,10 @@
         <li>{% trans 'Country of residence/origin' %}</li>
         <li>{% trans 'Details of grades scored on examinations you took in our site' %}</li>
     </ul>
-<h2>{% trans 'Our legal basis for using your Personal Data' %}</h2>
+    </div>
+
+        <h2><span class="starting-title">{% trans 'Our legal basis' %} </span> <span class="rest-title">{% trans 'for using your Personal Data' %}</span></h2>
+        <div class="details">
 <p>{% trans 'Where we use your Personal Data, we process it on the following bases:' %}</p>
     <ul>
         <li>{% trans 'Create a personal account for you contains all your primary personal information that you provided to us.' %}</li>
@@ -39,25 +47,36 @@
     </ul>
 <p>{% trans 'We will never collect any unnecessary Personal Data from you and do not process your information in any way, other than as specified in this Policy.' %}</p>
     <p>{% trans 'We make every effort to maintain the accuracy and completeness of your Personal Data, which we store, and to ensure all of your Personal Data is up to date. However, you can assist us with this by promptly contacting us if there are any changes to your Personal Data. We shall not be responsible for any losses you suffer arising from any inaccurate, inauthentic, deficient or incomplete Personal Information that you provide to us.' %}</p>
-    <h2>{% trans 'How long we will keep your Personal Data' %}</h2>
+        </div>
+        <h2><span class="starting-title">{% trans 'How long' %} </span><span class="rest-title">{% trans 'we will keep your Personal Data' %}</span> </h2>
+        <div class="details">
     <p>{% trans 'your account data will be saved by us until you submit a request for us to delete your data through the Website, after which your data will be deleted according to the timeline provided by the Website when you request the deletion.'%}
-</p>
-    <h2>{% trans 'Who we share your Personal Data with' %}</h2>
-    <p>{% trans "We don’t share your personal data with any other third parties." %}</p>
-    <h2>{% trans 'Use of your Personal Data for automated decision-making' %}</h2>
+</p></div>
+        <h2><span class="starting-title">{% trans 'Who' %}</span><span class="rest-title">{% trans 'we share your Personal Data with' %}</span> </h2>
+    <div class="details">
+        <p>{% trans "We don’t share your personal data with any other third parties." %}</p>
+        </div>
+        <h2><span class="starting-title">{% trans 'Use of your Personal Data' %}</span><span class="rest-title"> {% trans 'for automated decision-making' %}</span> </h2>
+        <div class="details">
     <p>{% trans "We do not make any automated decisions using this information." %}</p>
-    <h2>{% trans 'Changes to this policy' %}</h2>
+            </div>
+        <h2><span class="starting-title">{% trans 'Changes' %} </span><span class="rest-title">{% trans  'to this policy' %}</span></h2>
+        <div class="details">
     <p>{% trans 'Except to the extent limited by applicable law, we reserve the right to update this policy to reflect changes to our information practices by prominently posting notice of the update on our Services, and as required, obtaining your consent. Any updates will become effective immediately after posting the updates to this policy and apply to all information collected about you, or where required, upon your consent. You agree that you will review this policy periodically. If we make any changes to this policy, we will change the "Last Updated" date above.' %}</p>
+        </div>
     </div>
     {% else %}
     <div class="terms-page-arabic">
-        <h1>{% trans 'Privacy Policy' %}</h1>
+<h1><span class="starting-title">{% trans 'Privacy' %} </span> <span class="rest-title">{% trans 'Policy' %}</span> </h1>
+        <div class="details">
 <p>{% trans 'Last updated: June 12, 2020' %}</p>
 <p>{% trans 'This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.' %}</p>
 <p>{% trans 'We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy' %}</p>
     <p>{% trans 'If you have any questions or concerns about the information in this Privacy Policy, or about our handling of personal data more generally, or if you would like more detailed information, you should email us at [hysoca7@gmail.com].' %}</p>
-<h2>{% trans 'The information we collect about you' %}</h2>
-    <p>{% trans 'By registering an account on  ExaOnline and in turn using our Services, we will collect from you the following information (“Personal Data”):' %}</p>
+        </div>
+        <h2><span class="starting-title">{% trans 'The information' %} </span> <span class="rest-title"> {% trans 'we collect about you' %}</span> </h2>
+    <div class="details">
+        <p>{% trans 'By registering an account on  ExaOnline and in turn using our Services, we will collect from you the following information (“Personal Data”):' %}</p>
     <ul>
         <li>{% trans 'Your Name ( first and last names )' %}</li>
         <li>{% trans 'Your Email Address' %}</li>
@@ -65,7 +84,10 @@
         <li>{% trans 'Country of residence/origin' %}</li>
         <li>{% trans 'Details of grades scored on examinations you took in our site' %}</li>
     </ul>
-<h2>{% trans 'Our legal basis for using your Personal Data' %}</h2>
+    </div>
+
+        <h2><span class="starting-title">{% trans 'Our legal basis' %} </span> <span class="rest-title">{% trans 'for using your Personal Data' %}</span></h2>
+        <div class="details">
 <p>{% trans 'Where we use your Personal Data, we process it on the following bases:' %}</p>
     <ul>
         <li>{% trans 'Create a personal account for you contains all your primary personal information that you provided to us.' %}</li>
@@ -74,16 +96,23 @@
     </ul>
 <p>{% trans 'We will never collect any unnecessary Personal Data from you and do not process your information in any way, other than as specified in this Policy.' %}</p>
     <p>{% trans 'We make every effort to maintain the accuracy and completeness of your Personal Data, which we store, and to ensure all of your Personal Data is up to date. However, you can assist us with this by promptly contacting us if there are any changes to your Personal Data. We shall not be responsible for any losses you suffer arising from any inaccurate, inauthentic, deficient or incomplete Personal Information that you provide to us.' %}</p>
-    <h2>{% trans 'How long we will keep your Personal Data' %}</h2>
+        </div>
+        <h2><span class="starting-title">{% trans 'How long' %} </span><span class="rest-title">{% trans 'we will keep your Personal Data' %}</span> </h2>
+        <div class="details">
     <p>{% trans 'your account data will be saved by us until you submit a request for us to delete your data through the Website, after which your data will be deleted according to the timeline provided by the Website when you request the deletion.'%}
-</p>
-    <h2>{% trans 'Who we share your Personal Data with' %}</h2>
-    <p>{% trans "We don’t share your personal data with any other third parties." %}</p>
-    <h2>{% trans 'Use of your Personal Data for automated decision-making' %}</h2>
+</p></div>
+        <h2><span class="starting-title">{% trans 'Who' %}</span><span class="rest-title">{% trans 'we share your Personal Data with' %}</span> </h2>
+    <div class="details">
+        <p>{% trans "We don’t share your personal data with any other third parties." %}</p>
+        </div>
+        <h2><span class="starting-title">{% trans 'Use of your Personal Data' %}</span><span class="rest-title"> {% trans 'for automated decision-making' %}</span> </h2>
+        <div class="details">
     <p>{% trans "We do not make any automated decisions using this information." %}</p>
-    <h2>{% trans 'Changes to this policy' %}</h2>
+            </div>
+        <h2><span class="starting-title">{% trans 'Changes' %} </span><span class="rest-title">{% trans  'to this policy' %}</span></h2>
+        <div class="details">
     <p>{% trans 'Except to the extent limited by applicable law, we reserve the right to update this policy to reflect changes to our information practices by prominently posting notice of the update on our Services, and as required, obtaining your consent. Any updates will become effective immediately after posting the updates to this policy and apply to all information collected about you, or where required, upon your consent. You agree that you will review this policy periodically. If we make any changes to this policy, we will change the "Last Updated" date above.' %}</p>
-
+        </div>
     </div>
     {% endif %}
     </div>

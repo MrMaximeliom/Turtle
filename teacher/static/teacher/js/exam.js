@@ -1,4 +1,9 @@
 //$( document ).ready(function() {
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+today = dd + '/' + mm + '/' + yyyy;
 function examStatus(exam_status){
 let translated_exam_status;
 switch(exam_status){
@@ -38,6 +43,7 @@ break;
 return translated_exam_period;
 }
 var language = $( "#lang" ).text();
+var exam_card = document.querySelectorAll( '.card-exam' );
 var card_exam_status = document.querySelectorAll( '.card_exam_status' );
 var exam_status_label = document.querySelectorAll( '.exam_status' );
 var exam_period = document.querySelectorAll( '.exam-period' );
@@ -50,7 +56,8 @@ $("article").css('direction','rtl');
 $("article").css('text-align','right');
 $(".article-img").css('margin-left','16px');
 $("#searchForm").css('direction','rtl');
-$("#searchForm").css('margin-right','200px');
+$("#searchForm").css('position','relative');
+$("#searchForm").css('left','-15%');
 for(var i = 0; i < card_exam_status.length; i++) {
 card_exam_status[i].style.direction = 'rtl'
 
@@ -93,6 +100,7 @@ exam_status_icon[i].innerHTML = '<svg xmlns="http://www.w3.org/2000/svg"  viewBo
 }
 
 }
+
 
 
 

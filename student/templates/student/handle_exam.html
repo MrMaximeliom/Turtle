@@ -1,0 +1,120 @@
+{% extends "home/base.html" %}
+{% load static i18n %}
+{% load static %}
+{% block custom_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'student/css/handle_exam.css' %}">
+
+
+{% endblock %}
+{% block title %}
+{% get_current_language as MY_LANGUAGE %}
+
+
+{{ title }}
+{% endblock %}
+{% if MY_LANGUAGE == 'en' %}
+ {% block examNav %}
+<h5 class="handle-exam-pagination-label">Exam Navigation</h5>
+               {% endblock %}
+{% block extendedSideBar %}
+<!--<table class="table table-bordered">-->
+<!--  <thead>-->
+<!--    <tr>-->
+<!--      <th scope="col">#</th>-->
+<!--      <th scope="col">First</th>-->
+<!--      <th scope="col">Last</th>-->
+<!--    </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--    <tr>-->
+<!--      <th scope="row">1</th>-->
+<!--      <td>Mark</td>-->
+<!--      <td>Otto</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <th scope="row">2</th>-->
+<!--      <td>Jacob</td>-->
+<!--      <td>Thornton</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <th scope="row">3</th>-->
+<!--      <td >Larry the Bird</td>-->
+<!--      <td>@twitter</td>-->
+<!--    </tr>-->
+<!--  </tbody>-->
+<!--</table>-->
+<div class="handle-exam-pagination">
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+
+
+</div>
+<div>
+    <h3 class="handle-exam-timer">Timer Goes Here</h3>
+</div>
+               {% endblock %}
+{% else %}
+ {% block examNavArabic %}
+<h5 class="handle-exam-pagination-label">Exam Navigation</h5>
+               {% endblock %}
+{% block arabicExtendedSideBar %}
+<div class="handle-exam-pagination">
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+
+
+</div>
+<div>
+    <h3 class="handle-exam-timer">Timer Goes Here</h3>
+</div>
+               {% endblock %}
+
+{% endif %}
+
+{% block content %}
+<div class="home-page">
+
+
+
+</div>
+
+{% endblock content %}
+{% block custom_javascript %}
+{% endblock %}

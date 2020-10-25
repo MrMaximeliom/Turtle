@@ -88,7 +88,6 @@ def create_questions(request):
         if formset.is_valid():
             new_formset = formset.save(commit=False)
             for form in new_formset:
-                # Exam.objects.filter(id=5).first()
                 form.exam_id = request.session['exam_id']
                 form.save()
             messages.success(request, _('Your Exam Questions has been created Successfully!'))
@@ -140,6 +139,13 @@ def teacherExamListView(request,username):
         elif today < record.exam_date or today == record.exam_date:
             record.exam_status = 'Active'
         record.save()
+    user = get_object_or_404(User, username=username)
+    queryset = Exam.objects.filter(teacher=user).order_by('-exam_date')
+    for exam in queryset:
+        questions = Question.objects.filter(exam_id=exam.id).count()
+        print(questions)
+        exam.exam_number_of_questions = questions
+        exam.save()
     context = {
         'title': lazy("All teacher's exams"),
     }
@@ -160,9 +166,12 @@ def teacherExamListView(request,username):
                     if search_option == 'examName':
                         queryset = Exam.objects.filter(teacher=user, exam_name=search_phrase)
                         filters['exam_name'] = search_phrase
+                        filters.pop('exam_unique_identifier', None)
                     else:
+                        print("Iam here now baby")
                         queryset = Exam.objects.filter(teacher=user, exam_unique_identifier=search_phrase)
                         filters['exam_unique_identifier'] = search_phrase
+                        filters.pop('exam_name', None)
                 else:
                     queryset = Exam.objects.filter(teacher=user, exam_name=search_phrase)
             if not queryset.exists():
@@ -215,6 +224,7 @@ def teacherExamListView(request,username):
                 if request.session['basic_search'] != False:
                     filters = request.session['basic_search']
                     queryset = Exam.objects.filter(teacher=user,**filters)
+                    print("filters are",filters)
                     paginator = Paginator(queryset, 5)
                     page = request.GET.get('page')
                     context['page_obj'] = paginator.get_page(page)
@@ -224,13 +234,13 @@ def teacherExamListView(request,username):
                 if request.session['advanced_search'] != False:
                     filters = request.session['advanced_search']
                     queryset = Exam.objects.filter(teacher=user,**filters)
-                    paginator = Paginator(queryset, 5)
+                    paginator = Paginator(queryset, 6)
                     page = request.GET.get('page')
                     context['page_obj'] = paginator.get_page(page)
                     context['exams'] = paginator.get_page(page)
                     context['is_paginated'] = True
             else:
-                paginator = Paginator(queryset, 5)
+                paginator = Paginator(queryset, 6)
                 page = request.GET.get('page')
                 context['page_obj'] = paginator.get_page(page)
                 context['exams'] = paginator.get_page(page)
@@ -240,99 +250,13 @@ def teacherExamListView(request,username):
         print('here i am in get')
         user = get_object_or_404(User, username=username)
         queryset = Exam.objects.filter(teacher=user).order_by('-exam_date')
-        paginator = Paginator(queryset, 5)
+        paginator = Paginator(queryset, 6)
         page = request.GET.get('page')
         context['page_obj'] = paginator.get_page(page)
         context['exams'] = paginator.get_page(page)
         context['is_paginated'] = True
         return render(request, 'teacher/teacher_exams.html', context)
-#
-# class TeacherExamListView(ListView):
-#     model = Exam
-#     template_name = 'teacher/teacher_exams.html'  # <app>/<model>_<viewtype>.html
-#     context_object_name = 'exams'
-#     extra_context = {
-#         'title': lazy("All teacher's exams"),
-#         'update': True
-#     }
-#
-#     def get_queryset(self):
-#         from datetime import date
-#         today = date.today()
-#         basic_search_btn = self.request.GET.get('base_search')
-#         advanced_search_btn = self.request.GET.get('advanced_search')
-#         context = self.extra_context
-#         context['search_bar'] = False
-#         user = get_object_or_404(User, username=self.kwargs.get('username'))
-#         queryset = Exam.objects.filter(teacher=user).order_by('-exam_date')
-#         for record in queryset:
-#             if today > record.exam_date:
-#                 record.exam_status = 'Expired'
-#             elif today < record.exam_date or today == record.exam_date:
-#                 record.exam_status = 'Active'
-#             record.save()
-#         if basic_search_btn != None:
-#             context['search_bar'] = True
-#             search_phrase = self.request.GET.get('search_phrase')
-#             search_option = self.request.GET.get('search_option')
-#             if search_phrase != '' and search_phrase != None and search_phrase != 'Search Phrase' and search_phrase != 'عبارة البحث':
-#                 if search_option != 'none' and search_option != None:
-#                     if search_option == 'examName':
-#                         queryset = Exam.objects.filter(teacher=user, exam_name=search_phrase)
-#                     else:
-#                         queryset = Exam.objects.filter(teacher=user, exam_unique_identifier=search_phrase)
-#                 else:
-#                     queryset = Exam.objects.filter(teacher=user, exam_name=search_phrase)
-#             if not queryset.exists():
-#                 messages.error(self.request,_("Sorry we didn't found any match for your search! Please Try another one!"))
-#                 queryset = Exam.objects.filter(teacher=user).order_by('-exam_date')
-#         elif advanced_search_btn != None:
-#             context['search_bar'] = True
-#             exam_name = self.request.GET.get('exam_name')
-#             exam_unique_identifier = self.request.GET.get('unique_identifier')
-#             exam_status = self.request.GET.get('exam_status')
-#             order_by = self.request.GET.get('order_by')
-#             filters = {'exam_status': 'Active'}
-#             if exam_name != None and exam_name != '':
-#                 filters['exam_name'] = exam_name
-#             if exam_unique_identifier != None and exam_unique_identifier != '':
-#                 filters['exam_unique_identifier'] = exam_unique_identifier
-#             if exam_status != None and exam_status != '' and exam_status != 'none':
-#                 print(exam_status)
-#                 filters['exam_status'] = exam_status
-#             if order_by != None and order_by != '' and order_by != 'none':
-#                 print(order_by)
-#                 print(order_by)
-#                 if order_by == '-exam_date':
-#                     queryset = Exam.objects.filter(**filters).order_by('-exam_date')
-#                 else:
-#                     queryset = Exam.objects.filter(**filters).order_by('exam_date')
-#             else:
-#                 queryset = Exam.objects.filter(**filters)
-#         context['path'] = self.request.get_full_path()
-#         if 'page' in self.request.get_full_path():
-#             path = self.request.get_full_path().split('?page=', 1)
-#             context['path'] = path[0]
-#
-#         if not queryset.exists():
-#             context['exams'] = 'none'
-#             messages.error(self.request, _('There is no exam matching your search!! Please Try again!'))
-#         self.paginate_by = 5
-#         return queryset
-#
-#     def get_context_data(self, **kwargs):
-#         # Call the base implementation first to get a context
-#         context = super().get_context_data(**kwargs)
-#         # Add in a QuerySet of all the books
-#         user = get_object_or_404(User, username=self.kwargs.get('username'))
-#         exam_query = Exam.objects.filter(teacher=user).order_by('-exam_date')
-#
-#         if not exam_query.exists():
-#             context['exams'] = 'none'
-#             messages.error(self.request, _('You did not create any exam yet! please create one and try again!'))
-#         return context
-#
-#     paginate_by = 5
+
 
 class ExamUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Exam
@@ -346,6 +270,9 @@ class ExamUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def form_valid(self, form):
         form.instance.teacher = self.request.user
+        self.request.session['exam_number_of_questions'] = form.cleaned_data['exam_number_of_questions']
+        print('here in valid',self.request.session['exam_number_of_questions'])
+
         return super().form_valid(form)
 
     def test_func(self):
@@ -367,18 +294,42 @@ def QuestionUpdateView(request):
     }
 
     exam_question_count = {
-        'count': Question.objects.filter(exam_id=request.session['updated_exam_id']).count()
+        # 'count': Question.objects.filter(exam_id=request.session['updated_exam_id']).count()
+        'count': request.session['exam_number_of_questions']
     }
+    print(exam_question_count['count'])
     exam = Exam.objects.get(id=request.session['updated_exam_id'])
     if request.method == 'POST':
         print("here now")
         formset = UpdateQuestionFormSet(request.POST, request.FILES, instance=exam)
+        createQuestionFormset = QuestionFormset(data=request.POST)
+
         context = {
             'title': lazy('Update Exam Questions'),
             'form': formset,
+            'createForm':createQuestionFormset,
             'translations': translations,
             'exam_question_count': exam_question_count,
         }
+        # x = 0
+        # for form in formset:
+        #     print("here in formooos:")
+        #     question_id = request.POST.get('question_set-'+str(x)+'-id')
+        #     print('x is:', x,'question id:',question_id,'QUESTION UPDATED ID',request.session['updated_exam_id'], form.errors)
+        #
+        #     form.id = question_id
+        #     print('form details:', form.id)
+        #     x += 1
+        #     # form.exam_id = request.session['updated_exam_id']
+        #     form.save()
+        num_questions = request.POST.get('num_questions')
+
+        if num_questions is not None and num_questions != 0 and num_questions != "":
+            if createQuestionFormset.is_valid():
+                new_formset = createQuestionFormset.save(commit=False)
+                for form in new_formset:
+                    form.exam_id = request.session['updated_exam_id']
+                    form.save()
 
         if formset.is_valid():
 
@@ -389,14 +340,21 @@ def QuestionUpdateView(request):
             return redirect('exam-update-questions')
 
         else:
-
-            new_formset = formset.save(commit=False)
+            print(
+                "here in errors else"
+            )
             print(formset.forms)
-            for form in new_formset:
+
+            for form in formset:
                 print("formset errors")
                 print(form.errors, "\n")
+            new_formset = formset.save(commit=False)
+
+
+
     else:
         formset = UpdateQuestionFormSet(instance=exam)
+        createQuestionFormset = QuestionFormset(queryset=Question.objects.none())
         if exam_question_count['count'] == 0:
             request.session['exam_id'] = request.session['updated_exam_id']
             messages.error(request, _('Your Exam Does not contain any questions! please add at least one!'))
@@ -407,9 +365,14 @@ def QuestionUpdateView(request):
             'form': formset,
             'translations': translations,
             'exam_question_count': exam_question_count,
+            'createForm': createQuestionFormset,
+
         }
 
     return render(request, 'teacher/updateQuestions.html', context)
+
+
+
 
 
 class ExamDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -442,6 +405,7 @@ class QuestionDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         if self.request.user == question.exam.teacher:
             return True
         return False
+
 
 
 class QuestionListView(ListView):

@@ -24,7 +24,7 @@ def contact_us(request):
         'title':'Contact Us',
         'contact':'active',
     }
-    return render(request,'home/contact_us.html',context)
+    return render(request,'home/contact.html',context)
 
 
 

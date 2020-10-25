@@ -22,15 +22,22 @@
         {{ form.password |as_crispy_field }}
       </div>
     </div>
+        <div class="form-row">
       <div class="form-group col-md-5 mb-2 first-field" id="signup-btn">
     <button class="dropbtn raw-button "  type="submit"> {% trans 'Log In' %}</button>
 
 </div>
+        </div>
        <div class="form-row">
       <div class="form-group col-md-4 mb-2 first-field">
           <small class="text-muted">
             {% trans 'Do you need an account?' %}  <a href="{% url 'register-page'%}" class="ml-2" >{% trans 'Sign Up' %}</a>
           </small>
+              <div class="form-group ">
+             <small class="text-muted">
+        <a href="{% url 'register-page'%}"  >{% trans 'Forgot Password?' %}</a>
+          </small>
+              </div>
       </div>
        </div>
   </form>

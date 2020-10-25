@@ -35,7 +35,6 @@ class Exam(models.Model):
     exam_date = models.DateField(verbose_name=_('exam date'), blank=False)
     exam_period = models.CharField(max_length=250,verbose_name=_('exam period'), blank=False)
     exam_note = models.TextField(verbose_name=_('exam notes'), blank=True, max_length=300)
-    exam_secret_key = models.CharField(verbose_name=_('exam secret key'), blank=False, max_length=10)
     exam_full_mark = models.IntegerField(blank=False, verbose_name=_('exam full mark'))
     exam_pass_mark = models.IntegerField(blank=False, verbose_name=_('exam pass mark'))
     exam_status = models.CharField(max_length=30, verbose_name=_('exam status'), blank=True)

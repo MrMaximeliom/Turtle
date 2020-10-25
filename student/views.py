@@ -115,13 +115,13 @@ def all_exams_listview(request):
                 if request.session['advanced_search']:
                     filters = request.session['advanced_search']
                     queryset = Exam.objects.filter(**filters)
-                    paginator = Paginator(queryset, 5)
+                    paginator = Paginator(queryset, 6)
                     page = request.GET.get('page')
                     context['page_obj'] = paginator.get_page(page)
                     context['exams'] = paginator.get_page(page)
                     context['is_paginated'] = True
             else:
-                paginator = Paginator(queryset, 5)
+                paginator = Paginator(queryset, 6)
                 page = request.GET.get('page')
                 context['page_obj'] = paginator.get_page(page)
                 context['exams'] = paginator.get_page(page)
@@ -129,7 +129,7 @@ def all_exams_listview(request):
         return render(request, 'student/search_exams.html', context)
     else:
         queryset = Exam.objects.filter(exam_status='Active').order_by('-exam_date')
-        paginator = Paginator(queryset, 5)
+        paginator = Paginator(queryset, 6)
         page = request.GET.get('page')
         context['page_obj'] = paginator.get_page(page)
         context['exams'] = paginator.get_page(page)
@@ -223,3 +223,6 @@ class AllExamsListView(ListView):
             context['exams'] = 'none'
             messages.error(self.request, _('There is no exam created yet!! Please Try again later!'))
         return context
+
+def examAttempt(request):
+    return render(request,'student/handle_exam.html')

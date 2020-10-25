@@ -13,7 +13,7 @@ class StudentExam(models.Model):
 class StudentResponse(models.Model):
     student = models.ForeignKey(User, on_delete=models.CASCADE)
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    student_response_text =  models.TextField(blank=False, verbose_name=_('answer here'))
+    student_response_text =  models.TextField(blank=True, verbose_name=_('answer here'))
     student_response_degree = models.FloatField(blank=False,verbose_name=_('student degree'))
 
 class StudentGrade(models.Model):

@@ -6,3 +6,11 @@
   margin-bottom: 20px;
   width: 60%;
 }
+.search{
+margin-bottom: 10px;
+position: relative;
+left: -10%;
+}
+.handle-pagination{
+margin-top: 30px;
+}

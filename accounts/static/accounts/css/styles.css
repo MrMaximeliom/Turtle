@@ -132,9 +132,9 @@ margin-top: 10px;
 الكلاس المستخدم لتخصيص ظهور حقل ملاحظات الامتحان (باللغة الإنجليزية)
 */
 .exam-notes{
-left: 12%;
 top: 20%;
 margin-bottom: 40px;
+margin-top:10px;
 }
 /*
 الكلاس المستخدم لتخصيص ظهور حقل ملاحظات الامتحان (باللغةالعربية)
@@ -161,6 +161,7 @@ color:#c40303;
 text-align:right;
 direction:rtl;
 position: absolute;
+width: max-content;
 }
 /*
 الكلاس المستخدم لتخصيص ظهور حقل اسم الامتحان ( باللغة العربية)
@@ -187,3 +188,24 @@ color: gray;
 width:190px;
 }
 /* ending testing code */
+
+.handle-agree-checkbox{
+position: absolute;
+left: -6%;
+right: 46%;
+top: 18%;
+cursor:pointer;
+}
+.handle-agree-checkbox-arabic{
+position: absolute;
+left: 100%;
+right: 54%;
+top: 18%;
+cursor: pointer;
+
+}
+.handle-checkbox{
+position: relative;
+left: 44%;
+bottom: 80%;
+}

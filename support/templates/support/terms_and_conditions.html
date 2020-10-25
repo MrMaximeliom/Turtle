@@ -3,6 +3,7 @@
 {% load static i18n %}
 {% load static %}
 {% block custom_css %}
+<link href="{% static 'home/css/about.css' %}" type="text/css" rel="stylesheet">
 
 {% endblock %}
 {% block title %}
@@ -18,57 +19,59 @@
 {% if MY_LANGUAGE == 'en' %}
 <div class="terms-page">
 
-<h2><strong style="font-family: 'Lalezar', cursive ;">{% trans 'Terms of Service' %}</strong></h2>
-
+   <h2><strong style="font-family: 'Lalezar', cursive ;"><span class="starting-title">{% trans 'Terms' %}</span> <span class="rest-title">{% trans 'of Service' %}</span></strong></h2>
+<div class="details">
 <p>{% trans 'Welcome to ExaOnline!' %}</p>
 
 <p>{% trans 'Please read these Terms of Service (the "TOS") and the  Privacy Policy and Honor Code prior to registering for ExaOnline or using any portion of the ExaOnline website (the "Site," which consists of all content and pages located within the ExaOnline.com web domain)' %}</p>
 
 <p>{% trans 'ExaOnline reserves the right to modify these TOS at any time without any advance notice to you. Any changes to these TOS will be effective immediately upon posting on this page or on any other section of the Site. By accessing the Site after any changes have been made, you signify your agreement to the modified TOS and all of the changes contained therein.' %}</p>
 <p>{% trans 'Be sure to return to this page periodically to ensure familiarity with the most current version of these TOS.' %}</p>
-
-<h3><strong>{% trans 'Rules For Online Conduct' %}</strong></h3>
-
+</div>
+   <h3><strong><span class="starting-title">{% trans 'Rules' %} </span> <span class="rest-title">{% trans 'For Online Conduct' %}</span></strong></h3>
+<div class="details">
 <p>{% trans 'You agree that you are fully responsible for your own use of the Site in compliance with the Agreements and all applicable local, national and international laws, rules and regulations, including copyright laws.' %}</p>
 
 <p>{% trans "As a condition of your use of the services offered by ExaOnline on the Site, you hereby undertake that you will not use the Site in any manner intended to damage, disable, overburden or impair any ExaOnline server or the network(s) connected to any ExaOnline server or to interfere with any third party's use and enjoyment of the Site. You may not attempt to gain unauthorized access to the Site, other accounts, computer systems or networks connected to any ExaOnline server through hacking, password mining or any other means. You may not obtain or attempt to obtain any materials or information stored on the Site, its servers or associated computers through any means not intentionally made available through the Site." %}</p>
-
-<h3><strong>{% trans 'User Accounts And Authority' %}</strong></h3>
-
+</div>
+   <h3><strong><span class="starting-title">{% trans 'User' %}</span> <span class="rest-title"> {% trans 'Accounts And Authority' %}</span></strong></h3>
+<div class="details">
 <p>{% trans 'In order to participate fully in the activities and services offered by ExaOnline on the Site, you must provide your name, an email address and a user password in order to create a user account (the "User Account"). You agree that you will never divulge or share access or access information for your User Account with any third party for any reason. In setting up your User Account, you may be prompted to enter additional optional information (e.g., your address). You represent that all information provided by you is accurate and current. You agree to maintain and update your information to keep it accurate and current.' %}</p>
 
 <p>{% trans 'We care about the confidentiality and security of your personal information. Please see our Privacy Policy for more information about what information ExaOnline may collect about you and how ExaOnline uses that information. By accessing the Site, you signify that you consent to the collection and use of your information by ExaOnline.' %}</p>
-
-   <h3><strong>{% trans ' Your Right To Use Content On The Site' %}</strong></h3>
+</div>
+   <h3><strong><span class="starting-title">{% trans ' Your Right' %}</span></strong> <span class="rest-title">{% trans 'To Use Content On The Site' %}</span></strong></h3>
+   <div class="details">
 <p>{% trans 'Unless otherwise expressly stated on the Site, the exams – alongside with all its reports such as users’ reports - offered on the Site are for your personal use' %}</p>
-
+   </div>
 </div>
 {% else %}
 <div class="terms-page-arabic">
-<h2><strong>{% trans 'Terms of Service' %}</strong></h2>
-
+   <h2><strong style="font-family: 'Lalezar', cursive ;"><span class="starting-title">{% trans 'Terms' %}</span> <span class="rest-title">{% trans 'of Service' %}</span></strong></h2>
+<div class="details">
 <p>{% trans 'Welcome to ExaOnline!' %}</p>
 
 <p>{% trans 'Please read these Terms of Service (the "TOS") and the  Privacy Policy and Honor Code prior to registering for ExaOnline or using any portion of the ExaOnline website (the "Site," which consists of all content and pages located within the ExaOnline.com web domain)' %}</p>
 
 <p>{% trans 'ExaOnline reserves the right to modify these TOS at any time without any advance notice to you. Any changes to these TOS will be effective immediately upon posting on this page or on any other section of the Site. By accessing the Site after any changes have been made, you signify your agreement to the modified TOS and all of the changes contained therein.' %}</p>
 <p>{% trans 'Be sure to return to this page periodically to ensure familiarity with the most current version of these TOS.' %}</p>
-
-<h3><strong>{% trans 'Rules For Online Conduct' %}</strong></h3>
-
+</div>
+   <h3><strong><span class="starting-title">{% trans 'Rules' %} </span> <span class="rest-title">{% trans 'For Online Conduct' %}</span></strong></h3>
+<div class="details">
 <p>{% trans 'You agree that you are fully responsible for your own use of the Site in compliance with the Agreements and all applicable local, national and international laws, rules and regulations, including copyright laws.' %}</p>
 
 <p>{% trans "As a condition of your use of the services offered by ExaOnline on the Site, you hereby undertake that you will not use the Site in any manner intended to damage, disable, overburden or impair any ExaOnline server or the network(s) connected to any ExaOnline server or to interfere with any third party's use and enjoyment of the Site. You may not attempt to gain unauthorized access to the Site, other accounts, computer systems or networks connected to any ExaOnline server through hacking, password mining or any other means. You may not obtain or attempt to obtain any materials or information stored on the Site, its servers or associated computers through any means not intentionally made available through the Site." %}</p>
-
-<h3><strong>{% trans 'User Accounts And Authority' %}</strong></h3>
-
+</div>
+   <h3><strong><span class="starting-title">{% trans 'User' %}</span> <span class="rest-title"> {% trans 'Accounts And Authority' %}</span></strong></h3>
+<div class="details">
 <p>{% trans 'In order to participate fully in the activities and services offered by ExaOnline on the Site, you must provide your name, an email address and a user password in order to create a user account (the "User Account"). You agree that you will never divulge or share access or access information for your User Account with any third party for any reason. In setting up your User Account, you may be prompted to enter additional optional information (e.g., your address). You represent that all information provided by you is accurate and current. You agree to maintain and update your information to keep it accurate and current.' %}</p>
 
 <p>{% trans 'We care about the confidentiality and security of your personal information. Please see our Privacy Policy for more information about what information ExaOnline may collect about you and how ExaOnline uses that information. By accessing the Site, you signify that you consent to the collection and use of your information by ExaOnline.' %}</p>
-
-   <h3><strong>{% trans ' Your Right To Use Content On The Site' %}</strong></h3>
+</div>
+   <h3><strong><span class="starting-title">{% trans ' Your Right' %}</span></strong> <span class="rest-title">{% trans 'To Use Content On The Site' %}</span></strong></h3>
+   <div class="details">
 <p>{% trans 'Unless otherwise expressly stated on the Site, the exams – alongside with all its reports such as users’ reports - offered on the Site are for your personal use' %}</p>
-
+   </div>
 </div>
 {% endif %}
 </div>

@@ -1,12 +1,13 @@
 {% extends "home/base.html" %}
+{% load static i18n %}
 {% load static %}
-{% load i18n %}
+{% block custom_css %}
+<link href="{% static 'home/css/contact.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
 {% block title %}
 {{ title }}
 {% endblock %}
-{% block custom_css %}
-<link rel="stylesheet" type="text/css" href="{% static 'home/css/contact_us.css' %}">
-{% endblock %}
+
 {% block content %}
 <div class="home-page">
      <h1><p>
@@ -40,16 +41,12 @@
                         </div>
                         <label>Message</label>
                         <textarea rows="5" placeholder="Your Message"></textarea>
-                        <button class="contact-button" type="submit">Send</button>
+                        <button type="submit">Send</button>
                    </form>
                </div>
                <div class="contact-right">
                     <h3>Reach Us</h3>
                     <table>
-                         <tr>
-                              <td>Name</td>
-                              <td>Malaz Siddiq</td>
-                         </tr>
                          <tr>
                               <td>Email</td>
                               <td>mlzsddg07@gmail.com</td>
@@ -61,25 +58,6 @@
                          <tr>
                               <td>Address</td>
                               <td>Al-ardha Street, Omdurman, Khartoum, Sudan</td>
-                         </tr>
-                         <tr>
-                              <td><hr></td>
-                         </tr>
-                          <tr>
-                              <td>Name</td>
-                              <td>Moa'yed Abdulhafiez</td>
-                         </tr>
-                         <tr>
-                              <td>Email</td>
-                              <td>hysoca7@gmail.com</td>
-                         </tr>
-                         <tr>
-                              <td>Phone Number</td>
-                              <td>+249 99 962 7379</td>
-                         </tr>
-                         <tr>
-                              <td>Address</td>
-                              <td>Al-shaheed Taha Al-Mahie, Khartoum, Sudan</td>
                          </tr>
                     </table>
                </div>

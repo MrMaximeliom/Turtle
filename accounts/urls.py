@@ -8,5 +8,7 @@ urlpatterns = [
    path('login/',views.login, name='login-page'),
    path('registration/',views.register_page, name='register-page'),
    path('profile/',views.profile_page, name='profile-page'),
+   path('ajax/validate_username/', views.validate_username, name='validate_username'),
+   path('ajax/validate_password/', views.validate_password, name='validate_password'),
 
 ]

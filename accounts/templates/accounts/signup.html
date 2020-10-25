@@ -23,7 +23,7 @@
            <h3 class="border-bottom-title mb-4">{% trans 'Keep on going your future is a head of you!' %}</h3>
 
         {% endif %}
-<form class="field" method="post">
+<form class="field" method="post" autocomplete="off" data-validate-username-url="{% url 'validate_username' %}" data-validate-password-url="{% url 'validate_password' %}">
 {% csrf_token %}
  <div class="form-row">
        <!--- إذا كانت لغة الموقع هي اللغة العربية -->
@@ -65,24 +65,27 @@
       </div>
       <div class="form-group col-md-4 mb-2">
         {{ form.username|as_crispy_field }}
+          <p style="display:none;" id="username_error" class="invalid-feedback"></p>
       </div>
     </div>
         <div class="form-row">
       <div class="form-group col-md-4 mb-2 first-field">
         {{ form.password1|as_crispy_field }}
+          <p style="display:none;" id="password1_error" class="invalid-feedback"></p>
       </div>
       <div class="form-group col-md-4 mb-2">
         {{ form.password2|as_crispy_field }}
       </div>
     </div>
-<div class="form-row">
-    <div class="form-group form-check col-md-5 mb-2 first-field ">
-        <input type="radio">{% trans 'I Agree To' %} <a href="#">{% trans 'Terms' %}</a> {% trans 'and' %} <a href="#">{% trans 'Conditions' %}</a>
+<div class="form-row" id="agreeContainer">
+    <div class="form-group form-checkbox col-md-5 mb-2 first-field " >
+        <input type="checkbox" class="handle-agree-checkbox" id="agreeCheckBox">{% trans 'I Agree To' %} <a href="{% url 'terms-and-conditions-page' %}">{% trans 'Terms and Conditions' %}</a>
+            <button class="raw-button"  type="submit" id="signupBtn" style="cursor: not-allowed;background: #FFA39B;" > {% trans 'Sign Up' %}</button>
+
       </div>
 </div>
 <div class="form-row">
 <div class="form-group col-md-5 mb-2 first-field" id="signup-btn">
-    <button class="raw-button"  type="submit"> {% trans 'Sign Up' %}</button>
 </div>
 </div>
 </form>
@@ -93,4 +96,5 @@
 {% endblock %}
 {% block custom_javascript %}
 <script src="{% static 'accounts/js/change_text_direction.js' %}"></script>
+<script src="{% static 'accounts/js/handle_signup_ajax.js' %}"></script>
 {% endblock %}
