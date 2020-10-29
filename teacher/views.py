@@ -66,6 +66,8 @@ def create_new_exam(request):
 
 @login_required
 def create_questions(request):
+    if 'last_question_number' not in request.session:
+        request.session['last_question_number'] = 1
     translations = {
         'remove_question': _('Remove Question'),
         'question': _('Question')
@@ -89,6 +91,8 @@ def create_questions(request):
             new_formset = formset.save(commit=False)
             for form in new_formset:
                 form.exam_id = request.session['exam_id']
+                form.question_number = request.session['last_question_number']
+                request.session['last_question_number'] = request.session['last_question_number'] + 1
                 form.save()
             messages.success(request, _('Your Exam Questions has been created Successfully!'))
             return redirect('teacher-exams', request.user)
@@ -106,6 +110,7 @@ def create_questions(request):
             'translations': translations,
             'exam_question_count': exam_question_count,
         }
+    request.session['last_question_number'] = 1
 
     return render(request, 'teacher/createQuestions.html', context)
 
@@ -140,16 +145,28 @@ def teacherExamListView(request,username):
             record.exam_status = 'Active'
         record.save()
     user = get_object_or_404(User, username=username)
+    # handle questions numbers
+    examSet = Exam.objects.filter(teacher=user).order_by('-exam_date')
+
+
     queryset = Exam.objects.filter(teacher=user).order_by('-exam_date')
     for exam in queryset:
         questions = Question.objects.filter(exam_id=exam.id).count()
-        print(questions)
+
         exam.exam_number_of_questions = questions
         exam.save()
     context = {
         'title': lazy("All teacher's exams"),
     }
+
     if request.method == 'POST' or request.session['teacher_searched']:
+        for exam in examSet:
+            question_number = 1
+            questions_set = Question.objects.filter(exam_id=exam.id)
+            for question in questions_set:
+                question.question_number = question_number
+                question_number = question_number + 1
+                question.save()
         print('here i am')
         basic_search_btn = request.POST.get('base_search')
         advanced_search_btn = request.POST.get('advanced_search')
@@ -219,12 +236,12 @@ def teacherExamListView(request,username):
             print('advanced_search',advanced_search_btn)
             if request.POST.get('base_search') != None or request.POST.get('advanced_search') != None:
                 request.session['teacher_searched'] = True
-                print('in getto')
+
             if  'basic_search'  in request.session:
                 if request.session['basic_search'] != False:
                     filters = request.session['basic_search']
                     queryset = Exam.objects.filter(teacher=user,**filters)
-                    print("filters are",filters)
+
                     paginator = Paginator(queryset, 5)
                     page = request.GET.get('page')
                     context['page_obj'] = paginator.get_page(page)
@@ -311,24 +328,18 @@ def QuestionUpdateView(request):
             'translations': translations,
             'exam_question_count': exam_question_count,
         }
-        # x = 0
-        # for form in formset:
-        #     print("here in formooos:")
-        #     question_id = request.POST.get('question_set-'+str(x)+'-id')
-        #     print('x is:', x,'question id:',question_id,'QUESTION UPDATED ID',request.session['updated_exam_id'], form.errors)
-        #
-        #     form.id = question_id
-        #     print('form details:', form.id)
-        #     x += 1
-        #     # form.exam_id = request.session['updated_exam_id']
-        #     form.save()
-        num_questions = request.POST.get('num_questions')
 
+        num_questions = request.POST.get('num_questions')
+        spec_query = Question.objects.filter(exam_id=request.session['updated_exam_id']).order_by('-id')[0]
+        latest_question_number = spec_query.question_number
+        question_number = latest_question_number+1
         if num_questions is not None and num_questions != 0 and num_questions != "":
             if createQuestionFormset.is_valid():
                 new_formset = createQuestionFormset.save(commit=False)
                 for form in new_formset:
                     form.exam_id = request.session['updated_exam_id']
+                    form.question_number = question_number
+                    question_number = question_number+1
                     form.save()
 
         if formset.is_valid():

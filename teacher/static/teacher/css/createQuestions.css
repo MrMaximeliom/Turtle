@@ -5,6 +5,19 @@ border: 2px solid #ddd;
 margin-bottom: 30px;
 
 }
+.handle-question{
+right: 5%;
+position: relative;
+border: 2px solid #ddd;
+margin-bottom: 30px;
+width:90%;
+}
+
+.handle-question:hover{
+transition: box-shadow 0.5s ease-out;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+border: red;
+}
 .border-bottom-question{
 border-bottom:3px solid #dddddd;
 width: max-content;
@@ -27,4 +40,11 @@ top: 4%;
 }
 .remove-question-special:hover{
 color:white;
+}
+.handle-question-degree{
+position: absolute;
+left: 80%;
+}
+.handle-question-text{
+margin-left: 100px;
 }

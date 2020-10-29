@@ -1,12 +1,15 @@
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.utils.translation import gettext as _
 from django.utils.translation import gettext_lazy as lazy
 from django.views.generic import ListView
-
+from encrypted_id import decode
+from django.template.response import TemplateResponse
 from accounts.models import User
-from teacher.models import Exam
+from teacher.models import Exam,Question
+from .forms import StudentResponseForm,QuestionsForm
 
 
 def all_exams_listview(request):
@@ -147,12 +150,14 @@ class AllExamsListView(ListView):
         'update': True
     }
 
+
     def get_queryset(self):
         from datetime import date
         today = date.today()
         basic_search_btn = self.request.GET.get('base_search')
         advanced_search_btn = self.request.GET.get('advanced_search')
         querySet = Exam.objects.all()
+
         for record in querySet:
             if today > record.exam_date:
                 record.exam_status = 'Expired'
@@ -205,6 +210,12 @@ class AllExamsListView(ListView):
                     querySet = Exam.objects.filter(**filters).order_by('exam_date')
             else:
                 querySet = Exam.objects.filter(**filters)
+
+
+
+
+
+
         return querySet
 
     def get_context_data(self, **kwargs):
@@ -214,15 +225,69 @@ class AllExamsListView(ListView):
         # user = get_object_or_404(User, username=self.kwargs.get('username'))
         exam_query = Exam.objects.all()
         teacher_names = User.objects.filter(is_teacher=1)
+        encryptedIds = list()
         context['teacher_names'] = teacher_names
         querySet = self.get_queryset()
         if not querySet.exists():
             context['exams'] = 'none'
+            context['examIDs'] = 'none'
             messages.error(self.request, _('There is no exam matching your search!! Please Try again!'))
+
+
         if not exam_query.exists():
             context['exams'] = 'none'
+            context['examIDs'] = 'none'
             messages.error(self.request, _('There is no exam created yet!! Please Try again later!'))
-        return context
 
-def examAttempt(request):
-    return render(request,'student/handle_exam.html')
+        return context
+@login_required
+def examAttempt(request,pk):
+    exams = Exam.objects.all()
+    checked = False
+    for exam in exams:
+        if exam.ekey == pk:
+            checked = True
+            break
+    if not checked:
+        return TemplateResponse(request,status=404,template='errors/error_400.html')
+    exam_id = decode(pk,"teacher_exam")
+    exam_details = Exam.objects.get(id=exam_id)
+    exam_period = exam_details.exam_period
+    questions = Question.objects.filter(exam_id=exam_id)
+    questions_count = Question.objects.filter(exam_id=exam_id).count()
+    paginator = Paginator(questions, 6)
+    page = request.GET.get('page')
+
+
+    if request.method == 'POST' :
+        studentResponseForm = StudentResponseForm(request.POST)
+        if studentResponseForm.is_valid():
+            studentResponseForm.save()
+            messages.success(request, _('Your Exam Attempt Completed Successfully!'))
+            return redirect('home-page')
+
+    else:
+        studentResponseForm = StudentResponseForm()
+    # lito = {}
+    # counter = 0
+    # for question,page in questions,paginator.get_page('1').paginator.page_range:
+    #     print("hp")
+    translations = {
+        'remove_question': _('Remove Question'),
+        'question': _('Question')
+    }
+    context = {
+        'student_form':studentResponseForm,
+        'questions':paginator.get_page(page),
+        'questions2':questions,
+        'page_obj':paginator.get_page(page),
+        'is_paginated':True,
+        'num_pages':paginator.num_pages,
+        'per_page':6,
+        'translations': translations,
+        'exam_question_count': questions_count,
+        'exam_period':exam_period,
+    }
+
+
+    return render(request,'student/handle_exam.html',context)

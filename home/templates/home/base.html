@@ -4,7 +4,7 @@
 <html>
 <head>
   {% get_current_language as MY_LANGUAGE %}
-        <h5 style="display:none;" id="lang">{{  MY_LANGUAGE }}</h5>
+        <span style="display:none;" id="lang">{{  MY_LANGUAGE }}</span>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -195,12 +195,7 @@
                         {% trans 'FAQ' %}
                     </a>
                 </li>
-<!--                <li class="list-group-item list-group-item-light">-->
-<!--                     <a href="#">-->
-<!--                        <i class="fas fa-paper-plane"></i>-->
-<!--                        {% trans 'Contact' %}-->
-<!--                    </a>-->
-<!--                </li>-->
+
 
                   {% if request.user.is_authenticated and request.user.is_teacher%}
                 <li class="list-group-item-special list-group-item-light">

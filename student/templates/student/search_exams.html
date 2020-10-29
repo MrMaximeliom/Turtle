@@ -46,6 +46,7 @@
 
         {% else %}
 
+
     {% for exam in exams %}
 
 
@@ -102,7 +103,7 @@
 
 
 {% if exam.exam_status == 'Active' %}
-    <a href="{% url 'exam-detail' exam.id %}" class="btn update-exam-button">{% trans 'Start Attempt' %}</a>
+    <a href="{% url 'start-attempt' exam.ekey %}" class="btn update-exam-button">{% trans 'Start Attempt' %}</a>
       {% endif %}
 
   </div>

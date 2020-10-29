@@ -44,23 +44,7 @@ console.log('counter is'+localStorage.getItem("current_counter"))
 
 
 }
-//if(createCounter > 0){
-//for (i = 0; i < createCounter ; i++) {
-//var question = document.querySelector( '#create_question_text_' );
-//question.setAttribute("id","create_question_text_"+(counter+1));
-//question.querySelector( '#create_question_number_' ).innerHTML = translations.question+"("+(counter+1)+")";
-//question.querySelector( "#create_question_number_").setAttribute("id","question_number_"+(counter+1));
-//question.querySelector( '#create-remove-question_' ).setAttribute("id","remove-question_"+(counter+1));
-//question.querySelector( '#remove-question_'+(counter+1) ).innerHTML = translations.remove_question;
-////question.querySelector( '#remove-question_'+(counter+1) ).setAttribute("data-toggle","modal");
-////question.querySelector( '#remove-question_'+(counter+1) ).setAttribute("data-target","#deleteModal");
-//++counter;
-//console.log('iam else')
-//console.log('counter is'+localStorage.getItem("current_counter"))
-//
-//
-//}
-//}
+
 }
 function createQuestions(num_questions){
     let controlButtons = document.querySelector("#controlButtons")

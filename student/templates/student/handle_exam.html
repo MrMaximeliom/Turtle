@@ -4,6 +4,7 @@
 {% block custom_css %}
     <link rel="stylesheet" type="text/css" href="{% static 'home/css/base.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'student/css/handle_exam.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'teacher/css/createQuestions.css' %}">
 
 
 {% endblock %}
@@ -18,58 +19,31 @@
 <h5 class="handle-exam-pagination-label">Exam Navigation</h5>
                {% endblock %}
 {% block extendedSideBar %}
-<!--<table class="table table-bordered">-->
-<!--  <thead>-->
-<!--    <tr>-->
-<!--      <th scope="col">#</th>-->
-<!--      <th scope="col">First</th>-->
-<!--      <th scope="col">Last</th>-->
-<!--    </tr>-->
-<!--  </thead>-->
-<!--  <tbody>-->
-<!--    <tr>-->
-<!--      <th scope="row">1</th>-->
-<!--      <td>Mark</td>-->
-<!--      <td>Otto</td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--      <th scope="row">2</th>-->
-<!--      <td>Jacob</td>-->
-<!--      <td>Thornton</td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--      <th scope="row">3</th>-->
-<!--      <td >Larry the Bird</td>-->
-<!--      <td>@twitter</td>-->
-<!--    </tr>-->
-<!--  </tbody>-->
-<!--</table>-->
-<div class="handle-exam-pagination">
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
 
+<div class="handle-exam-pagination">
+{% if is_paginated and page_obj.paginator.count > 1 %}
+
+    <span style="display:none;" id="num_pages">{{ num_pages }}</span>
+    <span style="display:none;" id="per_page">{{ per_page }}</span>
+	{% for question in questions2 %}
+
+				<a class = "btn handle-pagination-outline mb-4 js-question-page" href = "#{{question.id}}" name="" >
+                   {{ question.question_number}}
+                    <span style="display:none;" id="question_id">{{question.id}}</span>
+
+                </a>
+
+
+
+	{% endfor %}
+
+
+
+	{% endif %}
 
 </div>
 <div>
-    <h3 class="handle-exam-timer">Timer Goes Here</h3>
+    <h3 class="handle-exam-timer" id="exam-period">{{ exam_period }}</h3>
 </div>
                {% endblock %}
 {% else %}
@@ -78,43 +52,86 @@
                {% endblock %}
 {% block arabicExtendedSideBar %}
 <div class="handle-exam-pagination">
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
-    			<a class = "btn handle-pagination-outline mb-2" href = "?page=1">1</a>
+{% if is_paginated and page_obj.paginator.count > 1 %}
+<!--		{% if page_obj.has_previous %}-->
+<!--			<a class = "btn handle-pagination-outline mb-4" href = "?page=1">First</a>-->
+<!--			<a class = "btn handle-pagination-outline mb-4" href = "?page={{ page_obj.previous_page_number }}">Previous</a>-->
+<!--		{% endif %}-->
 
+		{% for num in page_obj.paginator.page_range %}
+			{% if page_obj.number == num %}
+				<a class = "btn handle-pagination-selected mb-4" href = "?page={{num}}"> {{ num }} </a>
+			{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3'%}
+				<a class = "btn handle-pagination-outline mb-4" href = "?page={{num}}">{{ num }}</a>
+			{% endif %}
+		{% endfor %}
 
-</div>
+<!--		{% if page_obj.has_next %}-->
+<!--			<a class = "btn handle-pagination-outline mb-4" href = "?page={{ page_obj.next_page_number }}">Next</a>-->
+<!--			<a class = "btn handle-pagination-outline mb-4" href = "?page={{ page_obj.paginator.num_pages }}">Last</a>-->
+<!--		{% endif %}-->
+
+	{% endif %}
+    </div>
 <div>
-    <h3 class="handle-exam-timer">Timer Goes Here</h3>
+    <h3 class="handle-exam-timer">{{ exam_period }}</h3>
 </div>
                {% endblock %}
 
 {% endif %}
 
 {% block content %}
+{{ exam_question_count|json_script:"my-questions" }}
+{{ translations|json_script:"my-translations" }}
 <div class="home-page">
+      <h5 style="display:none;" id="lang">{{  MY_LANGUAGE }}</h5>
+	   <form class="field" id="parent-div" method="post" data-report-url = "{% url 'home-page' %}">
 
+         {% csrf_token %}
+		   {% for question in questions %}
 
+		     <div class="j-question-form" id="question_parent" >
+<!--             style="display:none;"-->
+
+        <div class="handle-question " id="{{ question.id }}"  >
+            <div class="border-bottom-question mb-3">
+                <span id="question_number_">{% trans 'Question' %} ({{ question.question_number}})</span>
+<span class="handle-question-degree">{% trans 'Question Degree ' %}({{ question.question_degree }})</span>
+            </div>
+
+                   <div class="form-row " >
+            <div class="form-group col-md-4  " >
+
+                          </div>
+        </div>
+
+         <div class="form-row fit-border-bottom">
+                          <div class="form-group col-md-6 " id="question_area_" >
+							  <div id="question_text"  class="handle-question-text">{{ question.question_text|safe  }}</div>
+                          </div>
+		 </div>
+			<div class="form-row fit-border-bottom">
+             <div class="form-group col-md-6  " id="answer_area_" >
+                          <textarea placeholder="{% trans 'answer here' %}"  cols="20" id="answer_{{question.question_number}}" class="answer_class"></textarea>
+
+                          </div>
+			</div>
+
+         </div>
+        </div>
+
+		   {% endfor %}
+           {% if page_obj.number == num_pages %}
+            <div class="form-group col-md-5 mb-5 mt-2 first-field" id="signup-btn-arabic">
+    <button class="raw-button"  type="submit"> {% trans 'Finish Attempt' %}</button>
+</div>
+           {% endif %}
+	   </form>
 
 </div>
 
 {% endblock content %}
 {% block custom_javascript %}
+<script src="{% static 'teacher/js/ckeditor5/build/ckeditor.js' %}"></script>
+<script src="{% static 'student/js/handle_exam.js' %}"></script>
 {% endblock %}

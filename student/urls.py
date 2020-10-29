@@ -7,5 +7,5 @@ examAttempt,
 
 urlpatterns = [
     path('search-exams/', all_exams_listview, name='search-exams'),
-    path('handle-attempt/', examAttempt, name='start-attempt'),
+    path('handle-attempt/<str:pk>', examAttempt, name='start-attempt'),
     ]
