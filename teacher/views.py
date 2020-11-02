@@ -1,21 +1,19 @@
-from ckeditor.widgets import CKEditorWidget
-from django.contrib.auth.decorators import login_required
-from django.core.paginator import Paginator
-from django.urls import resolve
-from django.forms import modelformset_factory
-from django.utils.translation import gettext as _
-from django.utils.translation import gettext_lazy as lazy
-from .forms import QuestionFormset, UpdateQuestionFormSet
-from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib import messages
-from django.views.generic import ListView, DetailView, UpdateView, DeleteView, TemplateView
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 import random
 import string
-from .models import Exam, Question
+
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.core.paginator import Paginator
+from django.shortcuts import render, redirect, get_object_or_404
+from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as lazy
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView
+
 from accounts.models import User
 from .forms import CreateExam
-from django.core.serializers import serialize
+from .forms import QuestionFormset, UpdateQuestionFormSet
+from .models import Exam, Question
 
 
 def get_random_string(length):
@@ -70,23 +68,20 @@ def create_questions(request):
         request.session['last_question_number'] = 1
     translations = {
         'remove_question': _('Remove Question'),
-        'question': _('Question')
+        'question': _('Question'),
+        'questions_degrees_do_not_match_full_mark': _('questions total degrees must equal exam full degree!'),
     }
     if 'exam_number_of_questions' not in request.session:
         request.session['exam_number_of_questions'] = 0
     exam_question_count = {
         'count': request.session['exam_number_of_questions']
     }
+    exam = Exam.objects.get(id=request.session['exam_id'])
     if request.method == 'POST':
         # form = CreateExamQuestions(request.POST, instance=request.user)
         formset = QuestionFormset(data=request.POST)
 
-        context = {
-            'title': lazy('Create Exam Questions'),
-            'form': formset,
-            'translations': translations,
-            'exam_question_count': exam_question_count,
-        }
+
         if formset.is_valid():
             new_formset = formset.save(commit=False)
             for form in new_formset:
@@ -104,11 +99,12 @@ def create_questions(request):
     else:
         # form = CreateExamQuestions()
         formset = QuestionFormset(queryset=Question.objects.none())
-        context = {
+    context = {
             'title': lazy('Create Exam Questions'),
             'form': formset,
             'translations': translations,
             'exam_question_count': exam_question_count,
+             'exam_full_mark':exam.exam_full_mark,
         }
     request.session['last_question_number'] = 1
 
@@ -307,7 +303,8 @@ class ExamUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 def QuestionUpdateView(request):
     translations = {
         'remove_question': _('Remove Question'),
-        'question': _('Question')
+        'question': _('Question'),
+        'questions_degrees_do_not_match_full_mark':_('questions total degrees must equal exam full degree!'),
     }
 
     exam_question_count = {
@@ -315,7 +312,16 @@ def QuestionUpdateView(request):
         'count': request.session['exam_number_of_questions']
     }
     print(exam_question_count['count'])
+
+
     exam = Exam.objects.get(id=request.session['updated_exam_id'])
+
+    question_number = 1
+    questions_set = Question.objects.filter(exam_id=exam.id)
+    for question in questions_set:
+        question.question_number = question_number
+        question_number = question_number + 1
+        question.save()
     if request.method == 'POST':
         print("here now")
         formset = UpdateQuestionFormSet(request.POST, request.FILES, instance=exam)
@@ -377,6 +383,7 @@ def QuestionUpdateView(request):
             'translations': translations,
             'exam_question_count': exam_question_count,
             'createForm': createQuestionFormset,
+            'exam_full_mark':exam.exam_full_mark,
 
         }
 

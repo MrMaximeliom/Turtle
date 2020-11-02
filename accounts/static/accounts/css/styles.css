@@ -209,3 +209,9 @@ position: relative;
 left: 44%;
 bottom: 80%;
 }
+.home-btn{
+font-size: 17px;
+}
+.home-btn:hover{
+color:white;
+}

@@ -257,6 +257,31 @@ $("#closeIcon").css('right','93%');
 
 
 }
+form = document.querySelector("#parent-div");
+full_degree = document.querySelector("#full_degree");
+message_box = document.querySelector("#message");
+form.addEventListener('submit', (event) => {
+
+var totalAnswers = 0 ;
+[...document.querySelectorAll('.js-question-degree')].forEach(function(item) {
+if(item.value != ""){
+totalAnswers = parseInt(totalAnswers,10) + parseInt(item.value,10);
+console.log("value is : ",item.value);
+}
+
+});
+if (parseInt(totalAnswers,10) != parseInt(full_degree.innerHTML,10)){
+//message_box.innerHTML = translations.questions_degrees_do_not_match_full_mark;
+//message_box.classList.add("alert-danger");
+alert("questions total degrees must equal exam full degree!");
+console.log("total degrees:",totalAnswers," Exam Full degree: ",full_degree.innerHTML);
+ event.preventDefault();
+return false;
+}
+else{
+return true;
+}
+});
 
 
 

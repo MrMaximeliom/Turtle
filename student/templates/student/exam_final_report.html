@@ -1,0 +1,62 @@
+{% extends "home/base.html" %}
+{% load static i18n %}
+{% load static %}
+{% block custom_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/css/styles.css' %}">
+
+
+{% endblock %}
+{% block title %}
+{% get_current_language as MY_LANGUAGE %}
+
+
+{{ title }}
+{% endblock %}
+{% block content %}
+<div class="home-page">
+       <h5 style="display:none;" id="lang">{{  MY_LANGUAGE }}</h5>
+
+
+    <div class="card text-center w-75">
+  <div class="card-body">
+    <h5 class="card-title">{% trans 'Exam Attempt Report' %}</h5>
+    <p class="card-text">Exam Statistics</p>
+      <table class="table">
+  <tbody>
+    <tr>
+
+
+      <th scope="row">{% trans 'Exam Name:' %}</th>
+    <td>{{ exam_name }}</td>
+        <th scope="row">{% trans 'Exam Attempt Date:' %}</th>
+<td>{{ attempt_date }}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">{% trans 'Exam Period:' %}</th>
+      <td>{{ exam_period }}</td>
+     <th scope="row">{% trans 'Attempt Period:' %}</th>
+      <td id="attempt_period">Attempt Period instance</td>
+    </tr>
+    <tr>
+     <th scope="row">{% trans 'Total Questions:' %}</th>
+      <td>{{ questions_count }} </td>
+     <th scope="row">{% trans 'Answered Questions:' %}</th>
+      <td> {{ answered_questions_count }} </td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+</div>
+    <div class="col-md-5 mb-2 mt-5">
+     <a class="raw-button ml-5 home-btn  btn" href="{% url 'home-page'  %}">
+<!--         <i class="fa fa-times" aria-hidden="true"></i>-->
+         {% trans 'Go Home' %}
+     </a>
+        </div>
+</div>
+{% endblock content %}
+{% block custom_javascript %}
+<script src="{% static 'student/js/handle_exam_final_report.js' %}"></script>
+{% endblock %}

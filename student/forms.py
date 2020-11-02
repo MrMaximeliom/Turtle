@@ -1,3 +1,6 @@
+from django.forms import modelformset_factory
+from django.utils.functional import lazy
+
 from .models import StudentResponse
 from teacher.models import Question
 from django import forms
@@ -15,6 +18,21 @@ class StudentResponseForm(forms.ModelForm):
             'student_response_degree': _('Student Response Degree'),
         }
         exclude = ['student','question','student_response_degree']
+
+StudentResponseFormset = modelformset_factory(
+    StudentResponse, extra=1,exclude=['student','question','student_response_degree'],
+    labels={
+        'student': _('Student'),
+        'question': _('Question'),
+        'student_response_text': _('Student Response Text'),
+        'student_response_degree': _('Student Response Degree'),
+    }
+    ,
+widgets = {
+    'student_response_text': forms.Textarea(attrs={'class':'answer_class','placeholder': lazy('answer here'), 'cols': 25, 'rows': 2}),
+
+}
+)
 
 class QuestionsForm(forms.ModelForm):
     class Meta:

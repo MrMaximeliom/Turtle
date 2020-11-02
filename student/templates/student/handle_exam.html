@@ -74,7 +74,7 @@
 	{% endif %}
     </div>
 <div>
-    <h3 class="handle-exam-timer">{{ exam_period }}</h3>
+    <h3 class="handle-exam-timer" id="exam-period">{{ exam_period }}</h3>
 </div>
                {% endblock %}
 
@@ -85,11 +85,14 @@
 {{ translations|json_script:"my-translations" }}
 <div class="home-page">
       <h5 style="display:none;" id="lang">{{  MY_LANGUAGE }}</h5>
-	   <form class="field" id="parent-div" method="post" data-report-url = "{% url 'home-page' %}">
+    <span style="display:none;" id="exam_id" >{{ exam_id }}</span>
+           <span style="display:none;" id="user_id" >{{ request.user.id }}</span>
+	   <form class="field" id="parent-div" method="post" data-report-url = "{% url 'submit-answers' %}" action="{% url 'start-attempt'  ekey  %}">
 
          {% csrf_token %}
-		   {% for question in questions %}
 
+		   {% for question in questions %}
+<input style="display:none;" name="question_id" value="{{ question.id }}">
 		     <div class="j-question-form" id="question_parent" >
 <!--             style="display:none;"-->
 
@@ -112,7 +115,7 @@
 		 </div>
 			<div class="form-row fit-border-bottom">
              <div class="form-group col-md-6  " id="answer_area_" >
-                          <textarea placeholder="{% trans 'answer here' %}"  cols="20" id="answer_{{question.question_number}}" class="answer_class"></textarea>
+                          <textarea placeholder="{% trans 'answer here' %}"  cols="40" rows="10" id="answer_{{question.question_number}}" name="answer_{{question.question_number}}" class="answer_class"></textarea>
 
                           </div>
 			</div>
@@ -121,6 +124,7 @@
         </div>
 
 		   {% endfor %}
+
            {% if page_obj.number == num_pages %}
             <div class="form-group col-md-5 mb-5 mt-2 first-field" id="signup-btn-arabic">
     <button class="raw-button"  type="submit"> {% trans 'Finish Attempt' %}</button>
@@ -132,6 +136,5 @@
 
 {% endblock content %}
 {% block custom_javascript %}
-<script src="{% static 'teacher/js/ckeditor5/build/ckeditor.js' %}"></script>
 <script src="{% static 'student/js/handle_exam.js' %}"></script>
 {% endblock %}

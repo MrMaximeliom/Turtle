@@ -1,0 +1,65 @@
+{% extends "home/base.html" %}
+{% load static i18n %}
+{% load static %}
+{% block custom_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'student/css/handle_exam_confirm.css' %}">
+
+
+{% endblock %}
+{% block title %}
+
+{{ title }}
+{% get_current_language as MY_LANGUAGE %}
+
+
+{{ title }}
+{% endblock %}
+{% block content %}
+<div class="home-page">
+       <h5 style="display:none;" id="lang">{{  MY_LANGUAGE }}</h5>
+    <div class="row ">
+<div class="col-md-4">
+    <div class="row handle-questions">Question:</div>
+    {% for question in questions %}
+    <div class="mb-2">{{ question.question_number }}</div>
+    {% endfor %}
+</div>
+    <div class="col-md-4 handle-answers-container">
+    <div class="row handle-answers">
+        <span class="handle-answers-title">Answers:</span>
+    </div>
+    {% for answer in answers_status %}
+    <div class="mb-2 js-answer-status" >{{ answer }} </div>
+    {% endfor %}
+</div>
+    </div>
+      <div>
+              <span id="exam-period">{{ exam_period }}</span>
+          </div>
+      <form class="field" id="confirm-form" method="post"  action="{% url 'exam-confirm-report' %}">
+
+         {% csrf_token %}
+
+             <div class="form-group col-md-5 mb-5 mt-2 first-field" id="confirm-btn">
+    <button class="raw-button"  type="submit" id="confirm"> {% trans 'Finish Attempt' %}</button>
+                    <a class="raw-button ml-5 exam-btn cancel-btn btn" href="{% url 'start-attempt' exam_ekey %}">
+         <i class="fa fa-times" aria-hidden="true"></i>
+         {% trans 'Cancel' %}
+     </a>
+</div>
+      </form>
+
+
+
+
+
+
+</div>
+{% endblock content %}
+{% block custom_javascript %}
+<script src="{% static 'student/js/handle_exam_timer.js' %}"></script>
+<script src="{% static 'student/js/handle_exam_confirm.js' %}"></script>
+
+{% endblock %}

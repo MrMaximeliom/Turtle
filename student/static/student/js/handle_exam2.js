@@ -67,7 +67,94 @@ else{
    function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
+//changing answer text area to ckeditor
 
+//[...document.querySelectorAll('.answer_class')].forEach(function(item) {
+//var id = item.getAttribute("id");
+////console.log("#"+id);
+//if( language == 'ar'){
+//ClassicEditor
+//        .create( document.querySelector( "#"+id ), {
+//
+//				toolbar: {
+//					items: [
+//						'|',
+//						'bold',
+//						'italic',
+//						'link',
+//						'bulletedList',
+//						'numberedList',
+//						'|',
+//						'indent',
+//						'outdent',
+//						'|',
+//						'blockQuote',
+//						'undo',
+//						'redo'
+//					]
+//				},
+//			language: {
+//  ui: 'ar',
+//  content: 'ar'
+//},
+//				licenseKey: '',
+////				 contentsLangDirection: 'rtl',
+//			} )
+//			.then( editor => {
+//				window.editor = editor;
+//				editor.setData("");
+////				editor.setData(setAnswers(id));
+//			} )
+//			.catch( error => {
+//				console.error( 'Oops, something gone wrong!' );
+//				console.error( 'Please, report the following error in the https://github.com/ckeditor/ckeditor5 with the build id and the error stack trace:' );
+//				console.warn( 'Build id: 3oic26nlqaps-l580ifb6a79x' );
+//				console.error( error );
+//			} );
+//}
+//else{
+//ClassicEditor
+//        .create( document.querySelector( "#"+id ), {
+//
+//				toolbar: {
+//					items: [
+//						'|',
+//						'bold',
+//						'italic',
+//						'link',
+//						'bulletedList',
+//						'numberedList',
+//						'|',
+//						'indent',
+//						'outdent',
+//						'|',
+//						'blockQuote',
+//						'undo',
+//						'redo'
+//					]
+//				},
+//			language: {
+//  ui: 'en',
+//  content: 'en'
+//},
+//				licenseKey: '',
+////				 contentsLangDirection: 'rtl',
+//			} )
+//			.then( editor => {
+//				window.editor = editor;
+//				editor.setData("");
+////				editor.setData(setAnswers(id));
+////                getAnswers(editor.getData(),id);
+//			} )
+//			.catch( error => {
+//				console.error( 'Oops, something gone wrong!' );
+//				console.error( 'Please, report the following error in the https://github.com/ckeditor/ckeditor5 with the build id and the error stack trace:' );
+//				console.warn( 'Build id: 3oic26nlqaps-l580ifb6a79x' );
+//				console.error( error );
+//			} );
+//}
+//
+//});
 [...document.querySelectorAll('.answer_class')].forEach(function(item) {
 item.addEventListener('change', function() {
 var id = item.getAttribute("id");
@@ -102,7 +189,6 @@ console.log($('#user_id').html());
 [...document.querySelectorAll('.answer_class')].forEach(function(item) {
 console.log("setting answers");
 var id = item.getAttribute("id");
-console.log("id is:",id);
  item.innerHTML = setAnswers(id);
 
 });
@@ -111,14 +197,12 @@ console.log("id is:",id);
 //}
 function setAnswers(id){
 let my_answers;
-console.log("answers now in set answers",localStorage.getItem("answers"));
-if(localStorage.getItem("answers") == "NaN" || localStorage.getItem("answers") == "submitted"  ||  localStorage.getItem("answers") === null){
-
+answersss = localStorage.getItem("answers");
+if(localStorage.getItem("answers") == "NaN" || localStorage.getItem("answers") == "submitted" ||  answersss == "null"){
 return "";
 
 }
 else{
-
 console.log("id is: ",id,"answers are:",localStorage.getItem("answers"));
 my_answers =  JSON.parse(localStorage.getItem("answers"));
 if(typeof my_answers[`${id}`] === "undefined"){
@@ -159,24 +243,23 @@ break;
 return translated_exam_period;
 }
 var exam_period = examPeriod(document.querySelector('#exam-period').innerHTML);
-localStorage.setItem('exam_period',exam_period);
 let examTime;
-if(localStorage.getItem("current_time") != "NaN" && localStorage.getItem("current_time") != null){
+if(localStorage.getItem("current_time") != "NaN"){
 
-console.log("first");
+
 if(localStorage.getItem("current_time") == "finished"){
 examTime = exam_period;
-console.log("second if");
+
 }
 else{
 examTime = parseFloat(localStorage.getItem("current_time"))
-console.log("else");
+
 }
 
 }
 else{
 examTime = exam_period;
-console.log("outside else");
+
 }
 //examTime (originally here ))
 var time_in_minutes = examTime;
@@ -253,8 +336,10 @@ $.ajax({
 
 }
 
-console.log("current_time in handle exam is:",localStorage.getItem("current_time"));
 
+$("form").submit(function(){
+localStorage.setItem("current_time","finished");
+});
 
 });
 $(window).bind("load", function() {
@@ -262,16 +347,8 @@ if ( localStorage.getItem("executed") == "true"){
 
 }
 else{
+
 selectedQuestion =  localStorage.getItem("current_question");
-
-if( selectedQuestion != "undefined" & selectedQuestion !== null){
-
-
-
-
-console.log("value is ",localStorage.getItem("current_question"));
-
-
     $('html, body').animate({
 
         scrollTop:  $("#"+selectedQuestion).offset().top - 180
@@ -280,7 +357,6 @@ console.log("value is ",localStorage.getItem("current_question"));
 $("#"+selectedQuestion).css('transition', "box-shadow 0.5s ease-out");
 $("#"+selectedQuestion).css('box-shadow',"0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)");
 $("#"+selectedQuestion).css('border', "red");
-}
 }
 
 

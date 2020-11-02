@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-24 13:10+0200\n"
+"POT-Creation-Date: 2020-11-01 21:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -132,7 +132,7 @@ msgstr "المعلومات الشخصية"
 #: teacher/templates/teacher/exam_detail.html:28
 #: teacher/templates/teacher/exam_form.html:21
 #: teacher/templates/teacher/teacher_exams.html:104
-#: teacher/templates/teacher/updateQuestions.html:74
+#: teacher/templates/teacher/updateQuestions.html:110
 msgid "Update"
 msgstr "تحديث"
 
@@ -424,83 +424,77 @@ msgstr "تسجيل معلم "
 msgid "As Student"
 msgstr "تسجيل طالب "
 
-#: home/templates/home/base.html:189 home/templates/home/base.html:279
+#: home/templates/home/base.html:189 home/templates/home/base.html:274
 msgid "Compare"
 msgstr "المقارنة"
 
-#: home/templates/home/base.html:195 home/templates/home/base.html:286
+#: home/templates/home/base.html:195 home/templates/home/base.html:281
 msgid "FAQ"
 msgstr "الأسئلة المتكررة"
 
-#: home/templates/home/base.html:201
-#: support/templates/support/cookies_policy.html:94
-#: support/templates/support/cookies_policy.html:180
-msgid "Contact"
-msgstr "الاتصال بنا"
-
-#: home/templates/home/base.html:209 home/templates/home/base.html:296
+#: home/templates/home/base.html:204 home/templates/home/base.html:291
 msgid "Create Exam"
 msgstr "إنشاء امتحان"
 
-#: home/templates/home/base.html:220 home/templates/home/base.html:304
+#: home/templates/home/base.html:215 home/templates/home/base.html:299
 msgid "Manage Exams"
 msgstr "إدارة الامتحانات"
 
-#: home/templates/home/base.html:226 home/templates/home/base.html:313
+#: home/templates/home/base.html:221 home/templates/home/base.html:308
 msgid "Student Results"
 msgstr "نتائج الطلاب"
 
-#: home/templates/home/base.html:232 home/templates/home/base.html:319
+#: home/templates/home/base.html:227 home/templates/home/base.html:314
 msgid "Exam Results"
 msgstr "نتائج الامتحان"
 
-#: home/templates/home/base.html:239 home/templates/home/base.html:328
+#: home/templates/home/base.html:234 home/templates/home/base.html:323
 msgid "Search For Exam"
 msgstr "البحث عن امتحان"
 
-#: home/templates/home/base.html:393
+#: home/templates/home/base.html:388
 #: support/templates/support/terms_and_conditions.html:22
 #: support/templates/support/terms_and_conditions.html:50
 msgid "Terms"
 msgstr "الأحكام"
 
-#: home/templates/home/base.html:393 home/templates/home/base.html:407
+#: home/templates/home/base.html:388 home/templates/home/base.html:402
 msgid "&"
 msgstr "و"
 
-#: home/templates/home/base.html:393
+#: home/templates/home/base.html:388
 msgid "Conditions"
 msgstr "الشروط"
 
-#: home/templates/home/base.html:398
+#: home/templates/home/base.html:393
 msgid "Privacy Policy"
 msgstr "سياسة الخصصوصية"
 
-#: home/templates/home/base.html:403
+#: home/templates/home/base.html:398
 msgid "Cookies Policy"
 msgstr "سياسة ملفات تعريف الارتباط"
 
-#: home/templates/home/base.html:407
+#: home/templates/home/base.html:402
 msgid "Copyright"
 msgstr "حقوق النشر"
 
-#: home/templates/home/base.html:407
+#: home/templates/home/base.html:402
 msgid "All rights reserved"
 msgstr "جميع الحقوق محفوظة"
 
-#: home/templates/home/base.html:407
+#: home/templates/home/base.html:402
 msgid "Made with"
 msgstr "صنع بال"
 
-#: home/templates/home/base.html:407
+#: home/templates/home/base.html:402
 msgid "by"
 msgstr "بواسطة"
 
-#: home/templates/home/base.html:407
+#: home/templates/home/base.html:402
 msgid "Malaz"
 msgstr "ملاذ"
 
-#: home/templates/home/base.html:408
+#: home/templates/home/base.html:403
 msgid "Moa'yed"
 msgstr "مؤيد"
 
@@ -524,36 +518,57 @@ msgstr "النتائج"
 msgid "HomePage"
 msgstr "الصفحة الرئيسية"
 
-#: student/forms.py:11
+#: student/forms.py:15 student/forms.py:25
 #, fuzzy
 #| msgid "As Student"
 msgid "Student"
 msgstr "تسجيل طالب "
 
-#: student/forms.py:12 teacher/templates/teacher/add_question.html:35
+#: student/forms.py:16 student/forms.py:26
+#: student/templates/student/handle_exam.html:101 student/views.py:290
+#: teacher/templates/teacher/add_question.html:35
 #: teacher/templates/teacher/createQuestions.html:39
-#: teacher/templates/teacher/updateQuestions.html:40 teacher/views.py:71
-#: teacher/views.py:293
+#: teacher/templates/teacher/updateQuestions.html:41
+#: teacher/templates/teacher/updateQuestions.html:76 teacher/views.py:73
+#: teacher/views.py:310
 msgid "Question"
 msgstr "السؤال"
 
-#: student/forms.py:13
+#: student/forms.py:17 student/forms.py:27
 #, fuzzy
 #| msgid "Student Results"
 msgid "Student Response Text"
 msgstr "نتائج الطلاب"
 
-#: student/forms.py:14
+#: student/forms.py:18 student/forms.py:28
 #, fuzzy
 #| msgid "question degree"
 msgid "Student Response Degree"
 msgstr "درجة السؤال"
 
-#: student/models.py:11 teacher/forms.py:76 teacher/models.py:40
+#: student/forms.py:46 teacher/forms.py:29 teacher/forms.py:48
+#: teacher/forms.py:100 teacher/forms.py:120
+msgid "question text"
+msgstr "نص السؤال"
+
+#: student/forms.py:47 teacher/forms.py:31 teacher/forms.py:102
+#: teacher/forms.py:122
+msgid "question degree"
+msgstr "درجة السؤال"
+
+#: student/forms.py:50 teacher/forms.py:34
+msgid "add your question here!"
+msgstr "قم بإضافة سؤالك هنا!"
+
+#: student/forms.py:52 teacher/forms.py:38 teacher/forms.py:50
+msgid "add your question degree here!"
+msgstr "قم بإضافة درجة سؤالك هنا!"
+
+#: student/models.py:11 teacher/forms.py:76 teacher/models.py:42
 msgid "exam status"
 msgstr "حالة الامتحان"
 
-#: student/models.py:16
+#: student/models.py:16 student/templates/student/handle_exam.html:118
 #, fuzzy
 #| msgid "optimal answer here"
 msgid "answer here"
@@ -581,13 +596,73 @@ msgstr ""
 msgid "student total degree"
 msgstr "درجة السؤال"
 
+#: student/templates/student/exam_confirmation_report.html:46
+#: student/templates/student/handle_exam.html:130
+msgid "Finish Attempt"
+msgstr ""
+
+#: student/templates/student/exam_confirmation_report.html:49
+#: teacher/templates/teacher/add_question.html:72
+#: teacher/templates/teacher/createExam.html:81
+#: teacher/templates/teacher/createQuestions.html:77
+#: teacher/templates/teacher/createQuestions.html:93
+#: teacher/templates/teacher/exam_confirm_delete.html:22
+#: teacher/templates/teacher/question_confirm_delete.html:22
+#: teacher/templates/teacher/updateQuestions.html:114
+#: teacher/templates/teacher/updateQuestions.html:130
+msgid "Cancel"
+msgstr "إلغاء"
+
+#: student/templates/student/exam_final_report.html:22
+msgid "Exam Attempt Report"
+msgstr "تقرير محاولة الامتحان"
+
+#: student/templates/student/exam_final_report.html:29
+#: student/templates/student/search_exams.html:167
+#: student/templates/student/search_exams.html:168
+#: teacher/templates/teacher/teacher_exams.html:158
+#: teacher/templates/teacher/teacher_exams.html:159
+msgid "Exam Name:"
+msgstr "اسم الامتحان:"
+
+#: student/templates/student/exam_final_report.html:31
+msgid "Exam Attempt Date:"
+msgstr "تاريخ محاولة الامتحان:"
+
+#: student/templates/student/exam_final_report.html:36
+#: student/templates/student/search_exams.html:87
+#: teacher/templates/teacher/exam_detail.html:43
+#: teacher/templates/teacher/teacher_exams.html:85
+msgid "Exam Period:"
+msgstr "مدة الامتحان:"
+
+#: student/templates/student/exam_final_report.html:38
+msgid "Attempt Period:"
+msgstr "مدة المحاولة"
+
+#: student/templates/student/exam_final_report.html:42
+msgid "Total Questions:"
+msgstr "مجموع الأسئلة"
+
+#: student/templates/student/exam_final_report.html:44
+msgid "Answered Questions:"
+msgstr "الأسئلة المجابة"
+
+#: student/templates/student/exam_final_report.html:55
+msgid "Go Home"
+msgstr "الذهاب للرئيسية"
+
+#: student/templates/student/handle_exam.html:102
+msgid "Question Degree "
+msgstr "درجة السؤال"
+
 #: student/templates/student/search_exams.html:18
 #: teacher/templates/teacher/teacher_exams.html:19
 msgid "Exams by"
 msgstr "الامتحانات التي أنشئت بواسطة "
 
 #: student/templates/student/search_exams.html:23
-#: student/templates/student/search_exams.html:207
+#: student/templates/student/search_exams.html:208
 #: teacher/templates/teacher/teacher_exams.html:24
 #: teacher/templates/teacher/teacher_exams.html:199
 msgid "Search"
@@ -604,9 +679,9 @@ msgid "Search By"
 msgstr "البحث بواسطة"
 
 #: student/templates/student/search_exams.html:31
-#: student/templates/student/search_exams.html:157
-#: student/templates/student/search_exams.html:182
-#: student/templates/student/search_exams.html:197
+#: student/templates/student/search_exams.html:158
+#: student/templates/student/search_exams.html:183
+#: student/templates/student/search_exams.html:198
 #: teacher/templates/teacher/teacher_exams.html:32
 #: teacher/templates/teacher/teacher_exams.html:174
 #: teacher/templates/teacher/teacher_exams.html:189
@@ -634,60 +709,45 @@ msgstr "المعرف الرقمي الفريد للامتحان"
 msgid "Advanced Search"
 msgstr "بحث متقدم"
 
-#: student/templates/student/search_exams.html:72
-#: student/templates/student/search_exams.html:76
-#: student/templates/student/search_exams.html:195
+#: student/templates/student/search_exams.html:73
+#: student/templates/student/search_exams.html:77
+#: student/templates/student/search_exams.html:196
 #: teacher/templates/teacher/teacher_exams.html:71
 #: teacher/templates/teacher/teacher_exams.html:75
 #: teacher/templates/teacher/teacher_exams.html:187
 msgid "Exam Date:"
 msgstr ":تاريخ الامتحان"
 
-#: student/templates/student/search_exams.html:81
+#: student/templates/student/search_exams.html:82
 #: teacher/templates/teacher/teacher_exams.html:80
 msgid "Exam Notes:"
 msgstr "ملاحظات الامتحان:"
 
-#: student/templates/student/search_exams.html:86
-#: teacher/templates/teacher/exam_detail.html:43
-#: teacher/templates/teacher/teacher_exams.html:85
-msgid "Exam Period:"
-msgstr "مدة الامتحان:"
-
-#: student/templates/student/search_exams.html:96
-#: student/templates/student/search_exams.html:176
-#: student/templates/student/search_exams.html:180
+#: student/templates/student/search_exams.html:97
+#: student/templates/student/search_exams.html:177
+#: student/templates/student/search_exams.html:181
 #: teacher/templates/teacher/teacher_exams.html:95
 #: teacher/templates/teacher/teacher_exams.html:168
 #: teacher/templates/teacher/teacher_exams.html:172
 msgid "Exam Status:"
 msgstr "حالة الامتحان:"
 
-#: student/templates/student/search_exams.html:105
+#: student/templates/student/search_exams.html:106
 #: teacher/templates/teacher/exam_detail.html:57
 msgid "Start Attempt"
 msgstr "بدأ المحاولة"
 
-#: student/templates/student/search_exams.html:150
+#: student/templates/student/search_exams.html:151
 #: teacher/templates/teacher/teacher_exams.html:154
 msgid "Search By:"
 msgstr "البحث بواسطة:"
 
-#: student/templates/student/search_exams.html:154
+#: student/templates/student/search_exams.html:155
 msgid "Teacher Name:"
 msgstr "اسم المعلم"
 
-#: student/templates/student/search_exams.html:166
-#: student/templates/student/search_exams.html:167
-#: teacher/templates/teacher/teacher_exams.html:158
-#: teacher/templates/teacher/teacher_exams.html:159
-#, fuzzy
-#| msgid "Exam Name"
-msgid "Exam Name:"
-msgstr "اسم الامتحان"
-
-#: student/templates/student/search_exams.html:170
 #: student/templates/student/search_exams.html:171
+#: student/templates/student/search_exams.html:172
 #: teacher/templates/teacher/teacher_exams.html:162
 #: teacher/templates/teacher/teacher_exams.html:163
 #, fuzzy
@@ -695,24 +755,45 @@ msgstr "اسم الامتحان"
 msgid "Exam Unique Identifier:"
 msgstr "المعرف الرقمي الفريد للامتحان"
 
-#: student/templates/student/search_exams.html:191
+#: student/templates/student/search_exams.html:192
 #: teacher/templates/teacher/teacher_exams.html:183
 msgid "Order by:"
 msgstr ""
 
-#: student/views.py:62 student/views.py:178 teacher/views.py:178
+#: student/views.py:70 student/views.py:187 teacher/views.py:195
 msgid ""
 "Sorry we didn't found any match for your search! Please Try another one!"
 msgstr ""
 
-#: student/views.py:96 student/views.py:101 student/views.py:221
-#: teacher/views.py:210 teacher/views.py:215
+#: student/views.py:104 student/views.py:109 student/views.py:233
+#: teacher/views.py:227 teacher/views.py:232
 msgid "There is no exam matching your search!! Please Try again!"
 msgstr ""
 
-#: student/views.py:224
+#: student/views.py:238
 msgid "There is no exam created yet!! Please Try again later!"
 msgstr ""
+
+#: student/views.py:289 teacher/templates/teacher/add_question.html:39
+#: teacher/templates/teacher/createQuestions.html:43
+#: teacher/templates/teacher/updateQuestions.html:45
+#: teacher/templates/teacher/updateQuestions.html:46
+#: teacher/templates/teacher/updateQuestions.html:80 teacher/views.py:72
+#: teacher/views.py:309
+msgid "Remove Question"
+msgstr "إزالة السؤال"
+
+#: student/views.py:304
+msgid "Exam Attempt"
+msgstr "محاولة الامتحان"
+
+#: student/views.py:378
+msgid "Attempt Submit Confirmation"
+msgstr "تأكيد إنهاء المحاولة"
+
+#: student/views.py:398
+msgid "Attempt Report"
+msgstr "تقرير محاولة الامتحان"
 
 #: support/templates/support/cookies_policy.html:20
 #: support/templates/support/cookies_policy.html:41
@@ -1049,6 +1130,11 @@ msgstr "يمكنك معرفة المزيد عن ملفات تعريف الارت
 #: support/templates/support/cookies_policy.html:178
 msgid "All About Cookies"
 msgstr "حول ملفات تعريف الارتباط"
+
+#: support/templates/support/cookies_policy.html:94
+#: support/templates/support/cookies_policy.html:180
+msgid "Contact"
+msgstr "الاتصال بنا"
 
 #: support/templates/support/cookies_policy.html:94
 #: support/templates/support/cookies_policy.html:180
@@ -1482,65 +1568,48 @@ msgstr ""
 "هذا الموقع، هي للاستخدام الشخصي الخاص بك ، ما لم يرد خلاف ذلك صراحةً ضمن "
 "الموقع."
 
-#: teacher/forms.py:29 teacher/forms.py:48 teacher/forms.py:100
-#: teacher/forms.py:120
-msgid "question text"
-msgstr "نص السؤال"
-
 #: teacher/forms.py:30 teacher/forms.py:49 teacher/forms.py:101
 #: teacher/forms.py:121
 msgid "question optimal answer"
 msgstr "الإجابة النموذجية"
 
-#: teacher/forms.py:31 teacher/forms.py:102 teacher/forms.py:122
-msgid "question degree"
-msgstr "درجة السؤال"
-
-#: teacher/forms.py:34
-msgid "add your question here!"
-msgstr "قم بإضافة سؤالك هنا!"
-
 #: teacher/forms.py:36
 msgid "add your question's optimal answer here!"
 msgstr "قم بإضافة إجابة السؤال النموذجية هنا!"
-
-#: teacher/forms.py:38 teacher/forms.py:50
-msgid "add your question degree here!"
-msgstr "قم بإضافة درجة سؤالك هنا!"
 
 #: teacher/forms.py:69
 msgid "teacher"
 msgstr "معلم"
 
-#: teacher/forms.py:70 teacher/models.py:34
+#: teacher/forms.py:70 teacher/models.py:35
 msgid "exam name"
 msgstr "اسم الامتحان"
 
-#: teacher/forms.py:71 teacher/models.py:35
+#: teacher/forms.py:71 teacher/models.py:37
 msgid "exam date"
 msgstr "تاريخ الامتحان"
 
-#: teacher/forms.py:72 teacher/models.py:36
+#: teacher/forms.py:72 teacher/models.py:38
 msgid "exam period"
 msgstr "مدة الامتحان"
 
-#: teacher/forms.py:73 teacher/models.py:38
+#: teacher/forms.py:73 teacher/models.py:40
 msgid "exam full mark"
 msgstr "الدرجة الكاملة للامتحان"
 
-#: teacher/forms.py:74 teacher/models.py:37
+#: teacher/forms.py:74 teacher/models.py:39
 msgid "exam notes"
 msgstr "ملاحظات الامتحان"
 
-#: teacher/forms.py:75 teacher/models.py:39
+#: teacher/forms.py:75 teacher/models.py:41
 msgid "exam pass mark"
 msgstr "درجة مرور الامتحان"
 
-#: teacher/forms.py:77 teacher/models.py:42
+#: teacher/forms.py:77 teacher/models.py:44
 msgid "exam number of questions"
 msgstr "عدد أسئلة الامتحان"
 
-#: teacher/forms.py:78 teacher/models.py:41
+#: teacher/forms.py:78 teacher/models.py:43
 msgid "exam unique identifier"
 msgstr "المعرف الرقمي الفريد للامتحان"
 
@@ -1580,90 +1649,75 @@ msgstr "عدد أسئلة الامتحان!"
 msgid "exam unique identifier!"
 msgstr "المعرف الرقمي الفريد للامتحان"
 
-#: teacher/models.py:8
+#: teacher/models.py:9
 msgid "Information Technology"
 msgstr "تقنية المعلومات"
 
-#: teacher/models.py:9
+#: teacher/models.py:10
 msgid "Computer Science"
 msgstr "علوم الحاسوب"
 
-#: teacher/models.py:10
+#: teacher/models.py:11
 msgid "Software Engineering"
 msgstr "هندسة البرمجيات"
 
-#: teacher/models.py:13
+#: teacher/models.py:14
 msgid "Cloud Computing"
 msgstr "الحوسبة السحابية"
 
-#: teacher/models.py:14
+#: teacher/models.py:15
 msgid "Cyber Security"
 msgstr "الأمن الإلكتروني"
 
-#: teacher/models.py:15
+#: teacher/models.py:16
 msgid "Advanced Databases"
 msgstr "قواعد البيانات المتقدمة"
 
-#: teacher/models.py:16
+#: teacher/models.py:17
 msgid "Network Principles"
 msgstr "مبادئ الشبكات"
 
-#: teacher/models.py:17
+#: teacher/models.py:18
 msgid "Network Security"
 msgstr "حماية الشبكة"
 
-#: teacher/models.py:18
+#: teacher/models.py:19
 msgid "Multimedia"
 msgstr "الوسائط المتعددة"
 
-#: teacher/models.py:19
+#: teacher/models.py:20
 msgid "Programming Principles"
 msgstr "مبادئ البرمجة"
 
-#: teacher/models.py:24
+#: teacher/models.py:25
 msgid "field name"
 msgstr "اسم المجال"
 
-#: teacher/models.py:29
+#: teacher/models.py:30
 msgid "course"
+msgstr ""
+
+#: teacher/models.py:36
+msgid "encrypted id"
 msgstr ""
 
 #: teacher/templates/teacher/add_question.html:24
 #: teacher/templates/teacher/createQuestions.html:26
-#: teacher/templates/teacher/updateQuestions.html:26
+#: teacher/templates/teacher/updateQuestions.html:27
 msgid "Add Questions"
 msgstr "إضافة أسئلة"
 
 #: teacher/templates/teacher/add_question.html:27
 #: teacher/templates/teacher/createQuestions.html:29
-#: teacher/templates/teacher/updateQuestions.html:29
+#: teacher/templates/teacher/updateQuestions.html:30
 msgid "choose number of questions"
 msgstr "اختر عدد الأسئلة"
-
-#: teacher/templates/teacher/add_question.html:39
-#: teacher/templates/teacher/createQuestions.html:43
-#: teacher/templates/teacher/updateQuestions.html:44
-#: teacher/templates/teacher/updateQuestions.html:45 teacher/views.py:70
-#: teacher/views.py:292
-msgid "Remove Question"
-msgstr "إزالة السؤال"
 
 #: teacher/templates/teacher/add_question.html:68
 #: teacher/templates/teacher/createExam.html:77
 #: teacher/templates/teacher/createQuestions.html:73
 msgid "Save"
 msgstr "حفظ"
-
-#: teacher/templates/teacher/add_question.html:72
-#: teacher/templates/teacher/createExam.html:81
-#: teacher/templates/teacher/createQuestions.html:77
-#: teacher/templates/teacher/createQuestions.html:93
-#: teacher/templates/teacher/exam_confirm_delete.html:22
-#: teacher/templates/teacher/question_confirm_delete.html:22
-#: teacher/templates/teacher/updateQuestions.html:78
-#: teacher/templates/teacher/updateQuestions.html:94
-msgid "Cancel"
-msgstr "إلغاء"
 
 #: teacher/templates/teacher/createExam.html:37
 msgid "Exam Date"
@@ -1674,29 +1728,32 @@ msgid "Exam UID"
 msgstr "المعرف الفريد للامتحان"
 
 #: teacher/templates/teacher/createQuestions.html:48
-#: teacher/templates/teacher/updateQuestions.html:49
+#: teacher/templates/teacher/updateQuestions.html:50
+#: teacher/templates/teacher/updateQuestions.html:85
 msgid "question full degree"
 msgstr "الدرجة الكاملة للسؤال"
 
 #: teacher/templates/teacher/createQuestions.html:55
-#: teacher/templates/teacher/updateQuestions.html:56
+#: teacher/templates/teacher/updateQuestions.html:57
+#: teacher/templates/teacher/updateQuestions.html:92
 msgid "question here"
 msgstr "اكتب السؤال هنا"
 
 #: teacher/templates/teacher/createQuestions.html:59
-#: teacher/templates/teacher/updateQuestions.html:60
+#: teacher/templates/teacher/updateQuestions.html:61
+#: teacher/templates/teacher/updateQuestions.html:96
 msgid "optimal answer here"
 msgstr "اكتب الإجابة النموذجية هنا"
 
 #: teacher/templates/teacher/createQuestions.html:87
-#: teacher/templates/teacher/updateQuestions.html:88
+#: teacher/templates/teacher/updateQuestions.html:124
 msgid "Delete Question?"
 msgstr "إزالة السؤال؟"
 
 #: teacher/templates/teacher/createQuestions.html:94
 #: teacher/templates/teacher/exam_detail.html:29
 #: teacher/templates/teacher/teacher_exams.html:105
-#: teacher/templates/teacher/updateQuestions.html:95
+#: teacher/templates/teacher/updateQuestions.html:131
 #: venv/lib/python3.8/site-packages/django/forms/formsets.py:391
 msgid "Delete"
 msgstr "حذف"
@@ -1757,17 +1814,17 @@ msgstr "إنشاء امتحان جديد"
 msgid "Your New Exam has been created Successfully!"
 msgstr "لقد تم إنشاء امتحانك الجديد بنجاح!"
 
-#: teacher/views.py:93
+#: teacher/views.py:97
 msgid "Your Exam Questions has been created Successfully!"
 msgstr "لقد تمت إضافة الأسئلة إلى امتحانك الجديد بنجاح!"
 
-#: teacher/views.py:328
+#: teacher/views.py:350
 #, fuzzy
 #| msgid "Your Exam Questions has been created Successfully!"
 msgid "Your Exam Questions has been updated Successfully!"
 msgstr "لقد تمت إضافة الأسئلة إلى امتحانك الجديد بنجاح!"
 
-#: teacher/views.py:348
+#: teacher/views.py:371
 msgid "Your Exam Does not contain any questions! please add at least one!"
 msgstr ""
 

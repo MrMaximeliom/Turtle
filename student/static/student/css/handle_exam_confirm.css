@@ -1,0 +1,16 @@
+.handle-answers{
+border-bottom: 3px solid #ddd;
+
+margin-bottom: 5px;
+}
+.handle-questions{
+border-bottom: 3px solid #ddd;
+margin-bottom: 5px;
+}
+
+.handle-answers-container{
+border-left: 3px solid #ddd;
+}
+.handle-answers-title{
+margin-left:12px;
+}
